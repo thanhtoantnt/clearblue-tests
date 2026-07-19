@@ -94,9 +94,10 @@ build_redis() {  # $1=srcdir
 build_openssl() {  # $1=srcdir
   ( cd "$1"
     [ -f Makefile ] || ./config CC=gclang CFLAGS="$GFLAGS" no-asm shared -d >/tmp/prbc_os.log 2>&1 || return 1
-    make -j"$(nproc)" >/tmp/prbc_os_mk.log 2>&1 || {
+    # build_libs only — skip fuzz/test/apps targets that can break on PR edits
+    make -j"$(nproc)" build_libs >/tmp/prbc_os_mk.log 2>&1 || {
       ./config CC=gclang CFLAGS="$GFLAGS" no-asm shared -d >/tmp/prbc_os.log 2>&1 || return 1
-      make -j"$(nproc)" >/tmp/prbc_os_mk.log 2>&1 || return 1; }
+      make -j"$(nproc)" build_libs >/tmp/prbc_os_mk.log 2>&1 || return 1; }
     local a; a=$(find . -name 'libcrypto.so*' -type f | head -1)
     get-bc -o /tmp/prbc_out.bc "${a:-libcrypto.so.3}" >/dev/null 2>&1 || return 1
   )
@@ -143,7 +144,7 @@ PY
 }
 
 # ---- main ------------------------------------------------------------------
-read_prs() {  # $1=project -> echo PR list (from committed results)
+read_prs() {  # $1=project -> echo PR list (from committed results); skip non-PR rows
   local proj=$1 src
   for src in "$REPO/results/$proj/summary.tsv" "$REPO/results/round2/summary.tsv"; do
     [ -f "$src" ] || continue
@@ -152,7 +153,7 @@ read_prs() {  # $1=project -> echo PR list (from committed results)
     else
       awk -F'\t' 'NR>1 {print $1}' "$src"
     fi
-  done
+  done | awk '/^[0-9]+$|^syn[0-9]+$/ {print}'   # keep only numeric PRs or syn<N>
 }
 
 do_project() {
@@ -184,7 +185,11 @@ do_project() {
     local out="$bcdir/pr-$pr.bc"
     [ -s "$out" ] && { log "$proj pr-$pr.bc exists, skip"; got=$((got+1)); continue; }
 
-    ( cd "$srcdir"; git reset --hard "$base" >/dev/null 2>&1; git checkout -- . >/dev/null 2>&1; git clean -fd >/dev/null 2>&1 || true )
+    # preserve per-object .o.bc (gllvm sidecars) + build dirs so get-bc can still
+    # link the whole artifact after make only rebuilds the changed PR file.
+    # git clean -e needs separate patterns for hidden (.*.bc) vs normal (*.bc).
+    ( cd "$srcdir"; git reset --hard "$base" >/dev/null 2>&1; git checkout -- . >/dev/null 2>&1
+      git clean -fd -e '*.bc' -e '.*.bc' -e 'build-prbc' -e 'build-gllvm' >/dev/null 2>&1 || true )
 
     if [[ "$pr" == syn* ]]; then
       synthetic_touch "$srcdir" "${pr#syn}" || { log "$proj $pr touch fail"; fail=$((fail+1)); continue; }
