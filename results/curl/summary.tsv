@@ -1,0 +1,11 @@
+pr	inc_s	scr_s	body	callers	total	inc_seg	scr_seg	status
+22328	4	10	0	0	0	0s	6s 73ms	ok
+22326	5	10	0	0	0	0s	6s 260ms	ok
+22324	4	10	0	0	0	0s	5s 897ms	ok
+22322	4	10	0	0	0	0s	6s 144ms	ok
+22317	5	9	0	0	0	0s	5s 937ms	ok
+22315	6	12	0	0	0	0s	6s 926ms	ok
+22313	4	9	1	1	2	0s	4s 685ms	ok
+22310	5	9	3	1	4	0s	5s 593ms	ok
+22309	4	11	4	1	5	0s	6s 378ms	ok
+22304	5	10	7	18	25	0s	5s 767ms	ok
