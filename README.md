@@ -31,26 +31,26 @@ difference is the feature's payoff.
 incremental-persist-bench/
 ├── README.md
 ├── scripts/
-│   └── run_bench.sh          # store + inc-vs-scratch for every bc/<proj>/*.bc
-├── bc/                       # committed bitcode (the reproducible anchors)
-│   ├── curl/{old.bc,new.bc}
-│   ├── git/{old.bc,new.bc}
-│   ├── libuv/{old.bc,new.bc}
-│   ├── darknet/{old.bc,new.bc}
-│   ├── redis/{old.bc,new.bc}
-│   └── openssl/{old.bc,new.bc}
+│   ├── build_pr_bc.sh        # regenerate per-PR bitcode -> bc/<proj>/pr-<NNNN>.bc
+│   └── run_bench.sh          # store old.bc + inc-vs-scratch for every bc/<proj>/*.bc
+├── bc/                       # committed bitcode
+│   ├── curl/{old.bc, pr-22328.bc, pr-22326.bc, ...}
+│   ├── git/{old.bc, pr-2356.bc, pr-2355.bc, ...}
+│   ├── libuv/{old.bc, pr-5193.bc, ...}
+│   ├── darknet/{old.bc, pr-2657.bc, ...}
+│   ├── redis/{old.bc, pr-15462.bc, ...}
+│   └── openssl/{old.bc, pr-31940.bc, ...}
 └── results/                  # recorded runs (committed)
     ├── curl/summary.tsv      # 10-PR table
     ├── git/summary.tsv       # 20-PR table
-    └── round2/summary.tsv    # libuv / darknet / redis / openssl (20 PRs each)
+    └── round2/summary.tsv    # libuv / darknet / redis / openssl (20 each)
 ```
 
-Each `bc/<proj>/old.bc` is the baseline (stored once). Every other `*.bc`
-(`new.bc`, or a `pr-NNNN.bc` you add) is benched against that store.
-
-> The committed `bc/` ships **old.bc + one new.bc per project** (one PR sample).
-> The full per-PR tables in `results/` were produced by rebuilding a `new.bc`
-> per PR from source (see *Reproducing the full per-PR tables* below).
+Each `bc/<proj>/` holds **one `old.bc`** (the stored baseline) and **many
+`pr-<NNNN>.bc`** files — one bitcode per PR, each built by applying that PR's
+source onto the baseline and recompiling with the identical gllvm flags.
+`run_bench.sh` stores `old.bc` once, then benches **every** `pr-*.bc` against
+that single store (incremental) and from scratch.
 
 ## Prerequisites
 
@@ -69,21 +69,41 @@ Each `bc/<proj>/old.bc` is the baseline (stored once). Every other `*.bc`
 
 ## Quick start
 
+### Option A — reproduce from committed bitcode (no rebuild)
+
+If `bc/<proj>/` already contains `pr-*.bc` files, you can run the benchmark
+directly:
+
 ```bash
 git clone <this-repo> incremental-persist-bench
 cd incremental-persist-bench
 
 export CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
 
-# all projects (store + inc vs scratch on the committed new.bc samples)
+# all projects (store old.bc, then inc vs scratch on every pr-*.bc)
 ./scripts/run_bench.sh
 
 # one project only
 ONLY=curl ./scripts/run_bench.sh
-
-# tune parallelism / per-run timeout
-NWORKERS=8 TIMEOUT=3600 ./scripts/run_bench.sh
 ```
+
+### Option B — regenerate per-PR bitcode from source, then bench
+
+```bash
+# 1. clone the upstream sources into ~/clearblue/local-tests/{curl,git,...}
+#    (see build_pr_bc.sh header for the list)
+
+# 2. rebuild each PR's bitcode into bc/<proj>/pr-<NNNN>.bc
+#    (needs network: git-fetches each PR ref from github)
+./scripts/build_pr_bc.sh curl        # one project
+./scripts/build_pr_bc.sh all         # every project
+PRS="22328 22326" ./scripts/build_pr_bc.sh curl   # specific PRs
+
+# 3. bench them
+ONLY=curl ./scripts/run_bench.sh
+```
+
+Tune with `NWORKERS=8 TIMEOUT=3600 ./scripts/run_bench.sh`.
 
 Output goes to `results/<proj>/summary.tsv` (+ `store.log`, `inc_*.log`,
 `scr_*.log`). The script prints each summary at the end.
@@ -143,27 +163,29 @@ The committed `old.bc` per project was built from the baseline commit shown in
 each project's `summary.tsv` run. Reuse requires the **same** flags for store
 and incremental; mismatched flags invalidate fingerprints.
 
-## Reproducing the full per-PR tables
+## Reproducing the per-PR tables
 
-The committed `bc/` only has one `new.bc` per project. The recorded
-`results/<proj>/summary.tsv` tables were produced by rebuilding a `new.bc`
-**per PR** from source and benching each against the store. To reproduce a full
-table:
-
-1. Clone the upstream project at the baseline commit.
-2. Build `old.bc` (recipe above) and copy it to `bc/<proj>/old.bc`.
-3. For each PR: apply the PR, rebuild with **identical** flags, and save the
-   bitcode as `bc/<proj>/pr-NNNN.bc`.
-4. Re-run `./scripts/run_bench.sh ONLY=<proj>` — every `pr-*.bc` is benched
-   against the single store automatically.
-
-Example PR loop (sketch; needs `gh` + the project cloned):
+The committed `results/<proj>/summary.tsv` tables were produced by rebuilding a
+bitcode **per PR** and benching each against the store. To reproduce:
 
 ```bash
-git fetch origin pull/NNNN/head:pr-NNNN
-# copy the PR's changed .c/.h onto the baseline tree, rebuild with gllvm, then:
-get-bc -o bc/curl/pr-NNNN.bc path/to/libcurl.so
+# needs the upstream sources cloned (Option B above) + network to fetch PR refs
+./scripts/build_pr_bc.sh <project>     # -> bc/<project>/pr-<NNNN>.bc for every PR in results/
+ONLY=<project> ./scripts/run_bench.sh  # stores old.bc, benches each pr-*.bc
 ```
+
+`build_pr_bc.sh` reads the PR list straight from the committed `summary.tsv`
+(`results/<proj>/` for curl/git, `results/round2/` for the others), so it
+reproduces exactly the PRs in the recorded tables. A few notes:
+
+- It fetches each PR ref over SSH (`git fetch origin pull/NNNN/head`) and reads
+  the changed `.c/.h` from `git diff` — **no GitHub API needed**.
+- PRs that don't apply cleanly or don't build are skipped (logged as fail); the
+  recorded tables already dropped those.
+- `darknet` round-2 includes `syn0..syn8` entries (synthetic no-op edits used
+  when real darknet PRs didn't apply); `build_pr_bc.sh` reproduces those via
+  `synthetic_touch`.
+- It is **resumable**: a `pr-*.bc` that already exists is skipped.
 
 See the FermatAnalyzer doc `docs/cb-check-incremental-persist.md` for the
 end-to-end recipe used for the curl (10 PR) and git (20 PR) sweeps.
