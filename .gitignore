@@ -1,0 +1,12 @@
+# regeneratable by scripts/run_bench.sh; can be 0.1–5 GB each
+/persist/
+
+# per-run logs written by the script (keep committed summary.tsv + samples)
+/results/*/inc_*.log
+/results/*/scr_*.log
+!/results/*/sample_inc.log
+!/results/*/sample_scr.log
+
+# editor/OS noise
+.DS_Store
+*.swp
