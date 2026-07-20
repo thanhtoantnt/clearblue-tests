@@ -33,6 +33,10 @@ META = {
                 "artifact": "libcrypto.so.3 (libcrypto only)",
                 "build": "./config CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' no-asm shared -d ; make build_libs",
                 "out_kind": "libcrypto (~900k inst)"},
+    "c-ares": {"base": "589b5887", "repo": "c-ares/c-ares", "upstream": "https://github.com/c-ares/c-ares",
+                "artifact": "libcares.so.2.19.4 (shared lib)",
+                "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DCARES_SHARED=ON -DCARES_STATIC=OFF",
+                "out_kind": "libcares (~40k inst)"},
 }
 
 def du(f):
