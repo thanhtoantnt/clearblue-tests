@@ -45,6 +45,10 @@ META = {
                 "artifact": "libmbedtls.so.4.2.0 (shared lib)",
                 "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DENABLE_PROGRAMS=OFF -DENABLE_TESTING=OFF -DUSE_SHARED_MBEDTLS_LIBRARY=ON",
                 "out_kind": "libmbedtls (~25k inst)"},
+    "openssh": {"base": "cadefc724", "repo": "openssh/openssh-portable", "upstream": "https://github.com/openssh/openssh-portable",
+                "artifact": "sshd (server binary)",
+                "build": "autoreconf -fi ; ./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' ; make sshd",
+                "out_kind": "sshd (~75k inst)"},
 }
 
 def du(f):

@@ -148,6 +148,30 @@ ninja -C build-gllvm
 get-bc -o libevent.bc build-gllvm/lib/libevent_core-2.2.so.1.0.1   # soname may vary
 ```
 
+### mbedtls (cmake)
+
+```bash
+git submodule update --init --recursive    # required
+pip install jsonschema jinja2              # mbedtls build scripts need these
+cmake -S . -B build-gllvm -G Ninja \
+  -DCMAKE_C_COMPILER=gclang \
+  -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -DENABLE_PROGRAMS=OFF -DENABLE_TESTING=OFF \
+  -DUSE_SHARED_MBEDTLS_LIBRARY=ON
+ninja -C build-gllvm
+get-bc -o mbedtls.bc build-gllvm/library/libmbedtls.so.4.2.0   # soname may vary
+```
+
+### openssh-portable (autotools)
+
+```bash
+autoreconf -fi
+./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers'
+make -j$(nproc) sshd        # build just the server
+get-bc -o openssh.bc sshd
+```
+
 ### darknet (Makefile)
 
 ```bash
@@ -243,6 +267,7 @@ store / incremental flags and measured project sizes.
 
 | Project | Artifact | Approx size | Functions / inst (order of) |
 |---------|----------|------------:|-----------------------------|
+| openssh | `sshd` | ~3 MB | ~1.8k fn / ~75k inst |
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |
 | libevent | `libevent_core.so` | ~1 MB | ~0.7k fn / ~30k inst |
