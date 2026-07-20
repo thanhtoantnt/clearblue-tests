@@ -40,6 +40,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     darknet) echo "$SRC_ROOT/darknet|pjreddie/darknet|darknet|darknet" ;;
     redis)   echo "$SRC_ROOT/redis|redis/redis|src/redis-server|redis" ;;
     openssl) echo "$SRC_ROOT/openssl|openssl/openssl|libcrypto.so.3|openssl" ;;
+    c-ares)  echo "$SRC_ROOT/c-ares|c-ares/c-ares|@cmake|cares" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -71,6 +72,16 @@ build_libuv() {  # $1=srcdir
   get-bc -o /tmp/prbc_out.bc "$bdir"/libuv.so.1.0.0 >/dev/null 2>&1 || \
     get-bc -o /tmp/prbc_out.bc "$bdir"/libuv.so >/dev/null 2>&1 || return 1
   rm -rf "$bdir"
+}
+build_cares() {  # $1=srcdir
+  ( cd "$1"
+    rm -rf build-prbc && mkdir build-prbc && cd build-prbc
+    cmake .. -G Ninja -DCMAKE_C_COMPILER=gclang \
+      -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
+      -DCARES_SHARED=ON -DCARES_STATIC=OFF >/tmp/prbc_cares_cm.log 2>&1 || return 1
+    ninja -j"$(nproc)" >/tmp/prbc_cares_nj.log 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libcares.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+  )
 }
 build_darknet() {  # $1=srcdir
   ( cd "$1"

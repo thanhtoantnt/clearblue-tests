@@ -122,6 +122,18 @@ ninja -C build-gllvm
 get-bc -o libuv.bc build-gllvm/libuv.so.1.0.0
 ```
 
+### c-ares (cmake)
+
+```bash
+cmake -S . -B build-gllvm -G Ninja \
+  -DCMAKE_C_COMPILER=gclang \
+  -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -DCARES_SHARED=ON -DCARES_STATIC=OFF
+ninja -C build-gllvm
+get-bc -o c-ares.bc build-gllvm/lib/libcares.so.2.19.4   # soname may vary
+```
+
 ### darknet (Makefile)
 
 ```bash
@@ -217,6 +229,7 @@ store / incremental flags and measured project sizes.
 
 | Project | Artifact | Approx size | Functions / inst (order of) |
 |---------|----------|------------:|-----------------------------|
+| c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | libuv | `libuv.so` | few MB | ~1k fn / ~50k inst |
 | curl | `libcurl` | ~7 MB | ~2.5k fn / ~220k inst |
 | darknet | `darknet` | tens of MB | ~1k fn / ~120k inst |
