@@ -53,6 +53,10 @@ META = {
                 "artifact": "libzstd.so.1.6.0 (multithreaded shared lib)",
                 "build": "make -C lib lib-mt CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers'",
                 "out_kind": "libzstd (mt, ~300k inst)"},
+    "wolfssl": {"base": "5dd7717d1", "repo": "wolfSSL/wolfssl", "upstream": "https://github.com/wolfSSL/wolfssl",
+                "artifact": "libwolfssl.so.45.0.0 (shared lib)",
+                "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DWOLFSSL_SHARED=ON -DBUILD_SHARED_LIBS=ON -DWOLFSSL_EXAMPLES=OFF -DWOLFSSL_CRYPT_TESTS=OFF",
+                "out_kind": "libwolfssl (~160k inst)"},
 }
 
 def du(f):
