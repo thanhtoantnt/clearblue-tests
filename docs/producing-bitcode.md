@@ -244,6 +244,7 @@ store / incremental flags and measured project sizes.
 | Project | Artifact | Approx size | Functions / inst (order of) |
 |---------|----------|------------:|-----------------------------|
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
+| mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |
 | libevent | `libevent_core.so` | ~1 MB | ~0.7k fn / ~30k inst |
 | libuv | `libuv.so` | few MB | ~1k fn / ~50k inst |
 | curl | `libcurl` | ~7 MB | ~2.5k fn / ~220k inst |

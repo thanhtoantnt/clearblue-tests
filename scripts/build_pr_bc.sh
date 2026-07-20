@@ -42,6 +42,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     openssl) echo "$SRC_ROOT/openssl|openssl/openssl|libcrypto.so.3|openssl" ;;
     c-ares)  echo "$SRC_ROOT/c-ares|c-ares/c-ares|@cmake|cares" ;;
     libevent) echo "$SRC_ROOT/libevent|libevent/libevent|@cmake|libevent" ;;
+    mbedtls) echo "$SRC_ROOT/mbedtls|Mbed-TLS/mbedtls|@cmake|mbedtls" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -95,6 +96,17 @@ build_libevent() {  # $1=srcdir
     ninja -j"$(nproc)" >/tmp/prbc_lev_nj.log 2>&1 || return 1
     # core is the smallest meaningful target; soname version varies
     get-bc -o /tmp/prbc_out.bc "$(find . -name 'libevent_core*.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+  )
+}
+build_mbedtls() {  # $1=srcdir
+  ( cd "$1"
+    rm -rf build-prbc && mkdir build-prbc && cd build-prbc
+    cmake .. -G Ninja -DCMAKE_C_COMPILER=gclang \
+      -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
+      -DENABLE_PROGRAMS=OFF -DENABLE_TESTING=OFF \
+      -DUSE_SHARED_MBEDTLS_LIBRARY=ON >/tmp/prbc_mb_cm.log 2>&1 || return 1
+    ninja -j"$(nproc)" >/tmp/prbc_mb_nj.log 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libmbedtls.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
   )
 }
 build_darknet() {  # $1=srcdir
