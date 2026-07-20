@@ -134,6 +134,20 @@ ninja -C build-gllvm
 get-bc -o c-ares.bc build-gllvm/lib/libcares.so.2.19.4   # soname may vary
 ```
 
+### libevent (cmake)
+
+```bash
+cmake -S . -B build-gllvm -G Ninja \
+  -DCMAKE_C_COMPILER=gclang \
+  -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  -DCMAKE_BUILD_TYPE=Debug \
+  -DEVENT__LIBRARY_TYPE=SHARED \
+  -DEVENT__DISABLE_OPENSSL=ON -DEVENT__DISABLE_MBEDTLS=ON \
+  -DEVENT__DISABLE_TESTS=ON -DEVENT__DISABLE_SAMPLES=ON
+ninja -C build-gllvm
+get-bc -o libevent.bc build-gllvm/lib/libevent_core-2.2.so.1.0.1   # soname may vary
+```
+
 ### darknet (Makefile)
 
 ```bash
@@ -230,6 +244,7 @@ store / incremental flags and measured project sizes.
 | Project | Artifact | Approx size | Functions / inst (order of) |
 |---------|----------|------------:|-----------------------------|
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
+| libevent | `libevent_core.so` | ~1 MB | ~0.7k fn / ~30k inst |
 | libuv | `libuv.so` | few MB | ~1k fn / ~50k inst |
 | curl | `libcurl` | ~7 MB | ~2.5k fn / ~220k inst |
 | darknet | `darknet` | tens of MB | ~1k fn / ~120k inst |

@@ -37,6 +37,10 @@ META = {
                 "artifact": "libcares.so.2.19.4 (shared lib)",
                 "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DCARES_SHARED=ON -DCARES_STATIC=OFF",
                 "out_kind": "libcares (~40k inst)"},
+    "libevent": {"base": "e1f0335d", "repo": "libevent/libevent", "upstream": "https://github.com/libevent/libevent",
+                "artifact": "libevent_core-2.2.so.1.0.1 (shared lib)",
+                "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DEVENT__LIBRARY_TYPE=SHARED -DEVENT__DISABLE_OPENSSL=ON -DEVENT__DISABLE_MBEDTLS=ON -DEVENT__DISABLE_TESTS=ON -DEVENT__DISABLE_SAMPLES=ON",
+                "out_kind": "libevent_core (~30k inst)"},
 }
 
 def du(f):

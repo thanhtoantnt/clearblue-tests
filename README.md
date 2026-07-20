@@ -130,6 +130,7 @@ via gllvm; all `-O0 -g`. Store time and one full per-PR sweep per project.
 
 | Project | Store | SEGs (≈) | Inst (≈) | PRs | Avg inc | Avg scratch | Med speedup | Wins |
 |---------|------:|---------:|---------:|----:|--------:|------------:|------------:|-----:|
+| libevent | ~4s | 0.7k | ~30k | 12 | ~1s | ~2s | ~50% | 12/12 |
 | c-ares  | ~5s   | 1.0k     | ~40k     | 9   | ~1s     | ~3s         | **~67%**    | **9/9**  |
 | libuv   | ~3s   | 0.8k     | ~50k     | 20  | ~1s     | ~2s         | ~50%        | 17/20 |
 | curl    | ~13s  | 2.3k     | ~218k    | 10  | ~5s     | ~10s        | ~53%        | 10/10 |
