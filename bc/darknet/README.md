@@ -17,6 +17,18 @@ make CC=gclang CPP=gclang++ DEBUG=1 GPU=0 CFLAGS='-Wall -Wno-unused-result -Wno-
 get-bc -o <file>.bc <artifact>
 ```
 See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the full recipe.
+## Reproduce the results
+From the repo root, run the benchmark harness for this project only. It stores `old.bc` once, then runs each `pr-*.bc` incremental (against the store) and from scratch, writing `results/darknet/summary.tsv`.
+```bash
+export CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+ONLY=darknet ./scripts/run_bench.sh
+```
+Tune with `NWORKERS=8 TIMEOUT=3600 ONLY=darknet ./scripts/run_bench.sh`.
+To **rebuild** these `pr-*.bc` from source instead of using the committed copies, see [`../../scripts/build_pr_bc.sh`](../../scripts/build_pr_bc.sh):
+```bash
+./scripts/build_pr_bc.sh darknet   # needs upstream source cloned + network
+```
+Result columns (`inc_s`/`scratch_s`, `body_dirty`/`callers`, SEG phase times) are explained in [`../../README.md`](../../README.md#result-columns) and [`../../docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md).
 ## Files in this folder (19 total)
 | File | PR / source | Title | Changed C/C++ files |
 |------|-------------|-------|---------------------|

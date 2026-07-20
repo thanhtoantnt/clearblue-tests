@@ -72,6 +72,21 @@ def main():
                      f"{m['build']}\nget-bc -o <file>.bc <artifact>\n```\n")
         lines.append("See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the "
                      "full recipe.\n")
+        # Reproduce section
+        lines.append("## Reproduce the results\n")
+        lines.append(
+            "From the repo root, run the benchmark harness for this project only. "
+            "It stores `old.bc` once, then runs each `pr-*.bc` incremental (against "
+            "the store) and from scratch, writing `results/{proj}/summary.tsv`.\n".format(proj=proj))
+        lines.append("```bash\nexport CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check\n"
+                     "ONLY={proj} ./scripts/run_bench.sh\n```\n".format(proj=proj))
+        lines.append("Tune with `NWORKERS=8 TIMEOUT=3600 ONLY={proj} ./scripts/run_bench.sh`.\n".format(proj=proj))
+        lines.append("To **rebuild** these `pr-*.bc` from source instead of using the committed "
+                     "copies, see [`../../scripts/build_pr_bc.sh`](../../scripts/build_pr_bc.sh):\n")
+        lines.append("```bash\n./scripts/build_pr_bc.sh {proj}   # needs upstream source cloned + network\n```\n".format(proj=proj))
+        lines.append("Result columns (`inc_s`/`scratch_s`, `body_dirty`/`callers`, SEG phase times) "
+                     "are explained in [`../../README.md`](../../README.md#result-columns) and "
+                     "[`../../docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md).\n")
         lines.append(f"## Files in this folder ({len(prs) + (1 if (d/'old.bc').exists() else 0)} total)\n")
         lines.append("| File | PR / source | Title | Changed C/C++ files |\n|------|-------------|-------|---------------------|\n")
         lines.append(f"| `old.bc` ({du(d/'old.bc')}) | baseline `{m['base']}` | — | — |\n")
