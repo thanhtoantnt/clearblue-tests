@@ -44,6 +44,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     libevent) echo "$SRC_ROOT/libevent|libevent/libevent|@cmake|libevent" ;;
     mbedtls) echo "$SRC_ROOT/mbedtls|Mbed-TLS/mbedtls|@cmake|mbedtls" ;;
     openssh) echo "$SRC_ROOT/openssh-portable|openssh/openssh-portable|sshd|openssh" ;;
+    zstd)    echo "$SRC_ROOT/zstd|facebook/zstd|lib/libzstd.so.1.6.0|zstd" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -116,6 +117,13 @@ build_openssh() {  # $1=srcdir  $2=artifact (sshd)
     [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" >/tmp/prbc_ss_cf.log 2>&1 || return 1
     make -j"$(nproc)" sshd >/tmp/prbc_ss_mk.log 2>&1 || return 1
     get-bc -o /tmp/prbc_out.bc sshd >/dev/null 2>&1 || return 1
+  )
+}
+build_zstd() {  # $1=srcdir
+  ( cd "$1"
+    make -C lib clean >/dev/null 2>&1
+    make -C lib -j"$(nproc)" lib-mt CC=gclang CFLAGS="$GFLAGS" >/tmp/prbc_zstd_mk.log 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc "$(find lib -maxdepth 1 -name 'libzstd.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
   )
 }
 build_darknet() {  # $1=srcdir

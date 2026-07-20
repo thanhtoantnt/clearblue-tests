@@ -172,6 +172,14 @@ make -j$(nproc) sshd        # build just the server
 get-bc -o openssh.bc sshd
 ```
 
+### zstd (make, multithreaded lib)
+
+```bash
+make -C lib -j$(nproc) lib-mt CC=gclang \
+  CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers'
+get-bc -o zstd.bc lib/libzstd.so.1.6.0   # soname may vary
+```
+
 ### darknet (Makefile)
 
 ```bash
@@ -267,6 +275,7 @@ store / incremental flags and measured project sizes.
 
 | Project | Artifact | Approx size | Functions / inst (order of) |
 |---------|----------|------------:|-----------------------------|
+| zstd | `libzstd.so` | ~8 MB | ~1.5k fn / ~300k inst |
 | openssh | `sshd` | ~3 MB | ~1.8k fn / ~75k inst |
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |

@@ -49,6 +49,10 @@ META = {
                 "artifact": "sshd (server binary)",
                 "build": "autoreconf -fi ; ./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' ; make sshd",
                 "out_kind": "sshd (~75k inst)"},
+    "zstd": {"base": "5c7b7bad", "repo": "facebook/zstd", "upstream": "https://github.com/facebook/zstd",
+                "artifact": "libzstd.so.1.6.0 (multithreaded shared lib)",
+                "build": "make -C lib lib-mt CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers'",
+                "out_kind": "libzstd (mt, ~300k inst)"},
 }
 
 def du(f):
