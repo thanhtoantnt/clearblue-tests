@@ -18,17 +18,23 @@ get-bc -o <file>.bc <artifact>
 ```
 See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the full recipe.
 ## Reproduce the results
-From the repo root, run the benchmark harness for this project only. It stores `old.bc` once, then runs each `pr-*.bc` incremental (against the store) and from scratch, writing `results/darknet/summary.tsv`.
+Three explicit `cb-check` invocations reproduce one data point: **store** the baseline once, then run a sample **incremental** (reuses stored SEGs) and **scratch** (no store) to compare.
 ```bash
-export CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
-ONLY=darknet ./scripts/run_bench.sh
+CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+
+# 1) store the baseline once (writes ./persist/darknet/seg/ ...)
+$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
+     -persist-dir=./persist/darknet bc/darknet/old.bc
+
+# 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)
+$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
+     -enable-incremental-persist -persist-dir=./persist/darknet bc/darknet/pr-NNNN.bc
+
+# 3) scratch on the same bitcode (no store; full rebuild)
+$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/darknet/pr-NNNN.bc
 ```
-Tune with `NWORKERS=8 TIMEOUT=3600 ONLY=darknet ./scripts/run_bench.sh`.
-To **rebuild** these `pr-*.bc` from source instead of using the committed copies, see [`../../scripts/build_pr_bc.sh`](../../scripts/build_pr_bc.sh):
-```bash
-./scripts/build_pr_bc.sh darknet   # needs upstream source cloned + network
-```
-Result columns (`inc_s`/`scratch_s`, `body_dirty`/`callers`, SEG phase times) are explained in [`../../README.md`](../../README.md#result-columns) and [`../../docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md).
+Run steps 2–3 for each `pr-*.bc` in this folder. Compare the `SEG-Building spends time ***...***` line and the `[Incremental persist] body-dirty: N, +callers: M` line. Incremental wins when `inc` wall-time < `scratch` wall-time.
+Result columns and log fields are explained in [`../../docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md) and [`../../README.md`](../../README.md#result-columns).
 ## Files in this folder (19 total)
 | File | PR / source | Title | Changed C/C++ files |
 |------|-------------|-------|---------------------|

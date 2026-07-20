@@ -72,21 +72,28 @@ def main():
                      f"{m['build']}\nget-bc -o <file>.bc <artifact>\n```\n")
         lines.append("See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the "
                      "full recipe.\n")
-        # Reproduce section
+        # Reproduce section — explicit cb-check commands
         lines.append("## Reproduce the results\n")
-        lines.append(
-            "From the repo root, run the benchmark harness for this project only. "
-            "It stores `old.bc` once, then runs each `pr-*.bc` incremental (against "
-            "the store) and from scratch, writing `results/{proj}/summary.tsv`.\n".format(proj=proj))
-        lines.append("```bash\nexport CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check\n"
-                     "ONLY={proj} ./scripts/run_bench.sh\n```\n".format(proj=proj))
-        lines.append("Tune with `NWORKERS=8 TIMEOUT=3600 ONLY={proj} ./scripts/run_bench.sh`.\n".format(proj=proj))
-        lines.append("To **rebuild** these `pr-*.bc` from source instead of using the committed "
-                     "copies, see [`../../scripts/build_pr_bc.sh`](../../scripts/build_pr_bc.sh):\n")
-        lines.append("```bash\n./scripts/build_pr_bc.sh {proj}   # needs upstream source cloned + network\n```\n".format(proj=proj))
-        lines.append("Result columns (`inc_s`/`scratch_s`, `body_dirty`/`callers`, SEG phase times) "
-                     "are explained in [`../../README.md`](../../README.md#result-columns) and "
-                     "[`../../docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md).\n")
+        lines.append("Three explicit `cb-check` invocations reproduce one data point: "
+                     "**store** the baseline once, then run a sample **incremental** "
+                     "(reuses stored SEGs) and **scratch** (no store) to compare.\n")
+        lines.append("```bash\nCBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check\n\n"
+                     "# 1) store the baseline once (writes ./persist/{proj}/seg/ ...)\n"
+                     "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
+                     "     -persist-dir=./persist/{proj} bc/{proj}/old.bc\n\n"
+                     "# 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)\n"
+                     "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
+                     "     -enable-incremental-persist -persist-dir=./persist/{proj} bc/{proj}/pr-NNNN.bc\n\n"
+                     "# 3) scratch on the same bitcode (no store; full rebuild)\n"
+                     "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/{proj}/pr-NNNN.bc\n"
+                     "```\n".format(proj=proj))
+        lines.append("Run steps 2–3 for each `pr-*.bc` in this folder. Compare the "
+                     "`SEG-Building spends time ***...***` line and the "
+                     "`[Incremental persist] body-dirty: N, +callers: M` line. "
+                     "Incremental wins when `inc` wall-time < `scratch` wall-time.\n")
+        lines.append("Result columns and log fields are explained in "
+                     "[`../../docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md) "
+                     "and [`../../README.md`](../../README.md#result-columns).\n")
         lines.append(f"## Files in this folder ({len(prs) + (1 if (d/'old.bc').exists() else 0)} total)\n")
         lines.append("| File | PR / source | Title | Changed C/C++ files |\n|------|-------------|-------|---------------------|\n")
         lines.append(f"| `old.bc` ({du(d/'old.bc')}) | baseline `{m['base']}` | — | — |\n")
