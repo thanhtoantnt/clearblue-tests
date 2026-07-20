@@ -199,6 +199,55 @@ this bitcode (e.g. curl tool sources when you only extract `libcurl`), or when
 the IR is unchanged after compile. Incremental can still be faster because it
 skips full SPEG.
 
+## Bug-finding behavior (checker runs)
+
+The benches above use `-enable-build-seg-only` (SEG phase only, no checkers).
+When you run the **actual bug checkers** (`--ps-npd`, etc.) in incremental
+mode, there is one crucial behavior to understand:
+
+> **Incremental runs checkers only on the functions that changed** (the dirty
+> set). It does **not** reproduce a full-module bug report.
+
+Why: the clean SEGs are loaded from the store and **not re-checked**; SPEG /
+checkers run only on the in-memory (dirty) SEGs. This is by design:
+
+- It is the right behavior for **PR review**: "report what *this* change
+  introduces", not "report every pre-existing bug".
+- A finding in unchanged code will **not** appear in an incremental report,
+  even though scratch (whole-module) would report it.
+- To get the full whole-module report, run without `-enable-incremental-persist`.
+
+### Exact commands to find a bug introduced by a PR
+
+```bash
+CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+CHK="-segbuilder-aa=falconplus --ps-npd --enable-heap-alloc-failure --psa-enable-arg-symbol"
+
+# 1) store clean baseline once
+$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only -persist-dir=./P old.bc
+
+# 2) incremental check on the PR — checks ONLY the dirty functions
+$CBC --hide-progress-bar -nworkers=16 -enable-incremental-persist -persist-dir=./P \
+     $CHK --report=pr-report.json new.bc
+
+# (for comparison) full-module check, no store
+$CBC --hide-progress-bar -nworkers=16 $CHK --report=full-report.json new.bc
+```
+
+### Proven with an injected bug
+
+A null-deref was injected into darknet (`int darknet_injected_npd_test(int x){
+int *p=(int*)0; if(x>0)p=(int*)0; return *p; }`). After storing the clean
+baseline, the incremental run:
+
+- detected `body-dirty: 1` (precisely the injected function)
+- ran SPEG on **1 function** (1020 clean SEGs loaded from store)
+- **found 2 NPD findings, both in the injected function**
+
+Scratch (whole-module) would report every pre-existing NPD in darknet too;
+incremental correctly reports only the diff. See the `bug-finding-demo/`
+folder in the repro repo for the committed `.bc` + full walkthrough.
+
 ## What “dirty” means
 
 1. **Body-dirty** — function IR body fingerprint (structural mix of BB sizes /
