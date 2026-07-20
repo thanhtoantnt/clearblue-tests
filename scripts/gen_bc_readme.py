@@ -41,6 +41,10 @@ META = {
                 "artifact": "libevent_core-2.2.so.1.0.1 (shared lib)",
                 "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DEVENT__LIBRARY_TYPE=SHARED -DEVENT__DISABLE_OPENSSL=ON -DEVENT__DISABLE_MBEDTLS=ON -DEVENT__DISABLE_TESTS=ON -DEVENT__DISABLE_SAMPLES=ON",
                 "out_kind": "libevent_core (~30k inst)"},
+    "mbedtls": {"base": "12556bc2a2", "repo": "Mbed-TLS/mbedtls", "upstream": "https://github.com/Mbed-TLS/mbedtls",
+                "artifact": "libmbedtls.so.4.2.0 (shared lib)",
+                "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DENABLE_PROGRAMS=OFF -DENABLE_TESTING=OFF -DUSE_SHARED_MBEDTLS_LIBRARY=ON",
+                "out_kind": "libmbedtls (~25k inst)"},
 }
 
 def du(f):
