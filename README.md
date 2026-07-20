@@ -8,11 +8,11 @@ Goal: anyone with a built `cb-check` from that branch can clone this repo and
 reproduce the store / incremental / scratch numbers, or add their own PR
 bitcode and re-run.
 
-Companion docs (in the FermatAnalyzer tree):
+Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tree):
 
-- `docs/cb-check-incremental-persist.md` — what the feature is / how it works
-- `docs/producing-bitcode.md` — how the `.bc` files here were compiled
-- `docs/cb-check-modes.md` — normal / store / pure-load modes
+- [`docs/cb-check-incremental-persist.md`](./docs/cb-check-incremental-persist.md) — what the feature is / how it works
+- [`docs/producing-bitcode.md`](./docs/producing-bitcode.md) — how the `.bc` files here were compiled
+- [`docs/cb-check-modes.md`](./docs/cb-check-modes.md) — normal / store / pure-load modes
 
 ## What it measures
 
@@ -152,8 +152,8 @@ Always re-measure on your own hardware; these are indicative, not a guarantee.
 ## How the `.bc` files were produced
 
 Typed-pointer LLVM 15 bitcode via [gllvm](https://github.com/SRI-CSL/gllvm)
-(`gclang` + `get-bc`). Exact recipes are in the FermatAnalyzer doc
-`docs/producing-bitcode.md`. In short, for each project:
+(`gclang` + `get-bc`). Exact recipes are in [`docs/producing-bitcode.md`](./docs/producing-bitcode.md).
+In short, for each project:
 
 - configure with `CC=gclang`
 - `CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers'`
@@ -187,7 +187,7 @@ reproduces exactly the PRs in the recorded tables. A few notes:
   `synthetic_touch`.
 - It is **resumable**: a `pr-*.bc` that already exists is skipped.
 
-See the FermatAnalyzer doc `docs/cb-check-incremental-persist.md` for the
+See [`docs/cb-check-incremental-persist.md`](./docs/cb-check-incremental-persist.md) for the
 end-to-end recipe used for the curl (10 PR) and git (20 PR) sweeps.
 
 ## Caveats
