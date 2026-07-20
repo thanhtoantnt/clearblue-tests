@@ -1,0 +1,4207 @@
+Script started on 2026-07-20 00:12:21-04:00 [<not executed on terminal>]
+cb-check static analyzer . ===enterprise version===
+[Warning] You are running a licence free version of cb-check. Don't distribute it.
+Module Statistical Results: 
+	 Total Number of Functions: 2179
+		 Number of Implemented Functions: 1845
+		 Number of External Functions: 334
+		 External Functions Rate: 15.3%
+	 Instruction Count: 136299 (Avg: 73.875 per function)
+	 Function With Most Instructions: 3728 (Function: process_server_config_line_depth)
+	 Avg Cyclomatic Complexity: 4.587
+	 Max Cyclomatic Complexity: 356 (Function: process_server_config_line_depth)
+Basic IR transformations ........Done!
+Generating SSA IR ........Done!
+Processing unreachable code ........Done!
+Unrolling and breaking loops ........Done!
+Indexing ........Done!
+[SPEG] Start ... 1845functions to run!
+[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 17%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 52%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%DEBUG Func:main, sz1=44, sz2=95
+Callee:memset, sz1=0, sz2=0
+Callee:platform_pre_listen, sz1=1, sz2=1
+Callee:platform_post_listen, sz1=1, sz2=1
+Callee:process_server_config_line, sz1=1, sz2=1
+Callee:load_server_config, sz1=8, sz2=18
+Callee:ssh_get_authentication_socket, sz1=1, sz2=2
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_is_sk, sz1=0, sz2=1
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:disconnect_controlling_tty, sz1=0, sz2=3
+Callee:auth2_methods_valid, sz1=2, sz2=6
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sigemptyset, sz1=0, sz2=0
+Callee:sigprocmask, sz1=0, sz2=0
+Callee:geteuid, sz1=0, sz2=0
+Callee:setgroups, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:fprintf, sz1=0, sz2=0
+Callee:exit, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:OpenSSL_version, sz1=0, sz2=0
+Callee:usage, sz1=0, sz2=3
+Callee:open, sz1=0, sz2=0
+Callee:dup, sz1=0, sz2=0
+Callee:getpid, sz1=0, sz2=0
+Callee:snprintf, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+Callee:unsetenv, sz1=0, sz2=0
+Callee:uname, sz1=0, sz2=0
+Callee:strcasecmp, sz1=0, sz2=0
+Callee:print_config, sz1=2, sz2=3
+Callee:strcmp, sz1=0, sz2=0
+Callee:setenv, sz1=0, sz2=0
+Callee:accumulate_host_timing_secret, sz1=8, sz2=16
+Callee:getuid, sz1=0, sz2=0
+Callee:getpwnam, sz1=0, sz2=0
+Callee:endpwent, sz1=0, sz2=0
+Callee:stat, sz1=0, sz2=0
+Callee:pack_config, sz1=11, sz2=12
+Callee:prepare_proctitle, sz1=1, sz2=1
+Callee:umask, sz1=0, sz2=0
+Callee:daemon, sz1=0, sz2=0
+Callee:chdir, sz1=0, sz2=0
+Callee:socketpair, sz1=0, sz2=0
+Callee:send_rexec_state, sz1=6, sz2=11
+Callee:close, sz1=0, sz2=0
+Callee:server_listen, sz1=3, sz2=6
+Callee:fopen, sz1=0, sz2=0
+Callee:fclose, sz1=0, sz2=0
+Callee:server_accept_loop, sz1=24, sz2=45
+Callee:initialize_server_options, sz1=0, sz2=1
+Callee:servconf_add_hostkey, sz1=2, sz2=3
+Callee:servconf_add_hostcert, sz1=2, sz2=3
+Callee:fill_default_server_options, sz1=5, sz2=8
+Callee:setsid, sz1=0, sz2=0
+Callee:dup2, sz1=0, sz2=0
+Callee:execv, sz1=0, sz2=0
+Callee:sshkey_check_rsa_length, sz1=0, sz2=1
+Callee:sshkey_from_private, sz1=1, sz2=4
+Callee:sshkey_shield_private, sz1=8, sz2=25
+Callee:parse_server_config, sz1=2, sz2=2
+Callee:parse_server_match_testspec, sz1=1, sz2=6
+Callee:sshkey_ssh_name, sz1=1, sz2=1
+Callee:a2port, sz1=0, sz2=3
+Callee:convtime, sz1=0, sz2=1
+Callee:percent_expand, sz1=2, sz2=2
+Callee:sanitise_stdfd, sz1=0, sz2=8
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_equal_public, sz1=0, sz2=2
+Callee:sshkey_equal, sz1=1, sz2=3
+Callee:sshkey_fingerprint, sz1=6, sz2=7
+Callee:sshkey_load_private, sz1=1, sz2=1
+Callee:sshkey_load_public, sz1=2, sz2=5
+Callee:log_verbose_add, sz1=0, sz2=2
+Callee:log_init, sz1=0, sz2=5
+Callee:log_redirect_stderr_to, sz1=0, sz2=6
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+Callee:daemonized, sz1=1, sz2=6
+Callee:argv_assemble, sz1=8, sz2=10
+Callee:path_absolute, sz1=0, sz2=0
+Callee:ssh_signal, sz1=1, sz2=7
+Callee:seed_rng, sz1=2, sz2=7
+Callee:closefrom, sz1=0, sz2=10
+Callee:ssh_get_progname, sz1=0, sz2=3
+Callee:BSDgetopt, sz1=1, sz2=1
+Callee:compat_init_setproctitle, sz1=0, sz2=3
+Callee:setproctitle, sz1=0, sz2=4
+Callee:strlcpy, sz1=0, sz2=0
+Callee:strtonum, sz1=0, sz2=2
+DEBUG Func:platform_pre_listen, sz1=1, sz2=1
+Callee:oom_adjust_setup, sz1=1, sz2=8
+DEBUG Func:platform_post_listen, sz1=1, sz2=1
+Callee:ssh_systemd_notify_ready, sz1=1, sz2=1
+DEBUG Func:platform_pre_restart, sz1=2, sz2=2
+Callee:oom_adjust_restore, sz1=1, sz2=6
+Callee:ssh_systemd_notify_reload, sz1=3, sz2=3
+DEBUG Func:platform_post_fork_child, sz1=1, sz2=1
+Callee:oom_adjust_restore, sz1=1, sz2=6
+DEBUG Func:add_one_listen_addr, sz1=3, sz2=8
+Callee:memset, sz1=0, sz2=0
+Callee:getaddrinfo, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:snprintf, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+Callee:ssh_gai_strerror, sz1=0, sz2=3
+DEBUG Func:process_server_config_line, sz1=1, sz2=1
+Callee:process_server_config_line_depth, sz1=32, sz2=60
+DEBUG Func:process_server_config_line_depth, sz1=32, sz2=60
+Callee:strlen, sz1=0, sz2=0
+Callee:strchr, sz1=0, sz2=0
+Callee:parse_token, sz1=1, sz2=2
+Callee:valid_rdomain, sz1=0, sz2=1
+Callee:queue_listen_addr, sz1=2, sz2=2
+Callee:__isoc99_sscanf, sz1=0, sz2=0
+Callee:load_server_config, sz1=8, sz2=18
+Callee:match_cfg_line, sz1=7, sz2=16
+Callee:sshkey_names_valid2, sz1=1, sz2=7
+Callee:auth2_methods_valid, sz1=2, sz2=6
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcasecmp, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:getuid, sz1=0, sz2=0
+Callee:servconf_add_hostkey, sz1=2, sz2=3
+Callee:derelativise_path, sz1=4, sz2=11
+Callee:servconf_add_hostcert, sz1=2, sz2=3
+Callee:strspn, sz1=0, sz2=0
+Callee:strtol, sz1=0, sz2=0
+Callee:strdelim, sz1=0, sz2=1
+Callee:a2port, sz1=0, sz2=3
+Callee:convtime_double, sz1=0, sz2=5
+Callee:convtime, sz1=0, sz2=1
+Callee:hpdelim, sz1=1, sz2=1
+Callee:cleanhostname, sz1=0, sz2=1
+Callee:tilde_expand_filename, sz1=1, sz2=2
+Callee:ssh_digest_alg_by_name, sz1=0, sz2=1
+Callee:kex_names_valid, sz1=2, sz2=6
+Callee:ciphers_valid, sz1=1, sz2=5
+Callee:log_facility_number, sz1=0, sz2=1
+Callee:log_level_number, sz1=0, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:match_user, sz1=3, sz2=5
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+Callee:xasprintf, sz1=1, sz2=1
+Callee:addr_match_list, sz1=2, sz2=8
+Callee:mac_valid, sz1=1, sz2=5
+Callee:rtrim, sz1=0, sz2=2
+Callee:strprefix, sz1=0, sz2=3
+Callee:parse_ipqos, sz1=0, sz2=2
+Callee:permitopen_port, sz1=0, sz2=2
+Callee:argv_split, sz1=2, sz2=4
+Callee:argv_assemble, sz1=8, sz2=10
+Callee:argv_next, sz1=0, sz2=0
+Callee:argv_consume, sz1=0, sz2=0
+Callee:argv_free, sz1=0, sz2=1
+Callee:atoi_err, sz1=0, sz2=1
+Callee:parse_pattern_interval, sz1=1, sz2=4
+Callee:opt_array_append, sz1=1, sz2=1
+Callee:opt_array_free2, sz1=0, sz2=1
+Callee:lookup_setenv_in_list, sz1=1, sz2=4
+Callee:scan_scaled, sz1=0, sz2=3
+Callee:_ssh__compat_glob, sz1=2, sz2=3
+Callee:_ssh__compat_globfree, sz1=0, sz2=1
+DEBUG Func:parse_token, sz1=1, sz2=2
+Callee:strcasecmp, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:queue_listen_addr, sz1=2, sz2=2
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:parse_server_config_depth, sz1=5, sz2=7
+Callee:process_server_config_line_depth, sz1=32, sz2=60
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:sshbuf_dup_string, sz1=2, sz2=4
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:load_server_config, sz1=8, sz2=18
+Callee:strlen, sz1=0, sz2=0
+Callee:sshbuf_allocate, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:exit, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:fopen, sz1=0, sz2=0
+Callee:fclose, sz1=0, sz2=0
+Callee:strspn, sz1=0, sz2=0
+Callee:perror, sz1=0, sz2=0
+Callee:fileno, sz1=0, sz2=0
+Callee:fstat, sz1=0, sz2=0
+Callee:getline, sz1=0, sz2=0
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:match_cfg_line, sz1=7, sz2=16
+Callee:strchr, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:strcasecmp, sz1=0, sz2=0
+Callee:match_test_missing_fatal, sz1=1, sz2=1
+Callee:match_cfg_line_group, sz1=2, sz2=5
+Callee:a2port, sz1=0, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:match_pattern_list, sz1=0, sz2=3
+Callee:match_usergroup_pattern_list, sz1=0, sz2=1
+Callee:match_hostname, sz1=1, sz2=4
+Callee:xstrdup, sz1=1, sz2=2
+Callee:addr_match_list, sz1=2, sz2=8
+Callee:strprefix, sz1=0, sz2=3
+Callee:argv_next, sz1=0, sz2=0
+Callee:argv_consume, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_PRFxN_4a_3b, sz1=1, sz2=1
+Callee:libcrux_ml_kem_hash_functions_portable_PRFxN_3b, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_kem_sampling_sample_from_binomial_distribution_66, sz1=1, sz2=1
+Callee:libcrux_ml_kem_sampling_sample_from_binomial_distribution_2_ea, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_kem_sampling_sample_from_binomial_distribution_2_ea, sz1=1, sz2=3
+Callee:Eurydice_array_to_slice_shared_99, sz1=0, sz2=0
+Callee:libcrux_ml_kem_polynomial_from_i16_array_d6_ea, sz1=1, sz2=1
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_kem_polynomial_from_i16_array_d6_ea, sz1=1, sz2=1
+Callee:libcrux_ml_kem_polynomial_from_i16_array_ea, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_kem_polynomial_from_i16_array_ea, sz1=1, sz2=3
+Callee:libcrux_ml_kem_polynomial_ZERO_ea, sz1=0, sz2=1
+Callee:Eurydice_slice_subslice_shared_a6, sz1=0, sz2=0
+Callee:libcrux_ml_kem_vector_portable_from_i16_array_b8, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_vector_portable_from_i16_array_b8, sz1=1, sz2=2
+Callee:libcrux_secrets_int_classify_public_classify_ref_6d_39, sz1=0, sz2=0
+Callee:libcrux_ml_kem_vector_portable_vector_type_from_i16_array, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_vector_portable_vector_type_from_i16_array, sz1=1, sz2=2
+Callee:Eurydice_slice_subslice_shared_a6, sz1=0, sz2=0
+Callee:core_result_unwrap_26_d3, sz1=1, sz2=1
+DEBUG Func:core_result_unwrap_26_d3, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_PRFxN_3b, sz1=1, sz2=3
+Callee:Eurydice_array_to_slice_mut_78, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_b5, sz1=0, sz2=0
+Callee:libcrux_sha3_portable_shake256, sz1=1, sz2=1
+DEBUG Func:libcrux_sha3_portable_shake256, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_portable_keccak1_22, sz1=2, sz2=5
+DEBUG Func:libcrux_sha3_generic_keccak_portable_keccak1_22, sz1=2, sz2=5
+Callee:libcrux_sha3_generic_keccak_absorb_final_80_bd0, sz1=1, sz2=2
+Callee:libcrux_sha3_generic_keccak_new_80_71, sz1=0, sz2=1
+Callee:libcrux_sha3_generic_keccak_absorb_block_80_e90, sz1=1, sz2=2
+Callee:libcrux_sha3_simd_portable_squeeze_9b_b2, sz1=0, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+DEBUG Func:libcrux_sha3_generic_keccak_absorb_final_80_bd0, sz1=1, sz2=2
+Callee:libcrux_sha3_simd_portable_load_last_a1_22, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+DEBUG Func:libcrux_sha3_simd_portable_load_last_a1_22, sz1=1, sz2=1
+Callee:libcrux_sha3_simd_portable_load_last_22, sz1=1, sz2=4
+DEBUG Func:libcrux_sha3_simd_portable_load_last_22, sz1=1, sz2=4
+Callee:Eurydice_array_to_subslice_mut_d42, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_58, sz1=0, sz2=0
+Callee:libcrux_sha3_simd_portable_load_block_b2, sz1=1, sz2=5
+DEBUG Func:libcrux_ml_kem_sampling_sample_from_xof_91, sz1=2, sz2=6
+Callee:libcrux_ml_kem_hash_functions_portable_shake128_init_absorb_final_4a_78, sz1=1, sz2=1
+Callee:libcrux_ml_kem_hash_functions_portable_shake128_squeeze_first_three_blocks_4a_78, sz1=0, sz2=1
+Callee:libcrux_ml_kem_sampling_sample_from_uniform_distribution_next_b6, sz1=0, sz2=3
+Callee:libcrux_ml_kem_hash_functions_portable_shake128_squeeze_next_block_4a_78, sz1=0, sz2=1
+Callee:libcrux_ml_kem_sampling_sample_from_uniform_distribution_next_b60, sz1=0, sz2=3
+Callee:libcrux_ml_kem_sampling_sample_from_xof_call_mut_0a_91, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_shake128_init_absorb_final_4a_78, sz1=1, sz2=1
+Callee:libcrux_ml_kem_hash_functions_portable_shake128_init_absorb_final_78, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_kem_sampling_sample_from_xof_call_mut_0a_91, sz1=1, sz2=2
+Callee:libcrux_ml_kem_polynomial_from_i16_array_d6_ea, sz1=1, sz2=1
+Callee:Eurydice_array_to_subslice_shared_e70, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_shake128_init_absorb_final_78, sz1=1, sz2=3
+Callee:libcrux_sha3_portable_incremental_shake128_init, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_e9, sz1=0, sz2=0
+Callee:libcrux_sha3_portable_incremental_shake128_absorb_final, sz1=1, sz2=1
+DEBUG Func:libcrux_sha3_portable_incremental_shake128_absorb_final, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_absorb_final_80_bd, sz1=1, sz2=2
+DEBUG Func:libcrux_sha3_generic_keccak_absorb_final_80_bd, sz1=1, sz2=2
+Callee:libcrux_sha3_simd_portable_load_last_a1_37, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+DEBUG Func:libcrux_sha3_simd_portable_load_last_a1_37, sz1=1, sz2=1
+Callee:libcrux_sha3_simd_portable_load_last_37, sz1=1, sz2=4
+DEBUG Func:libcrux_sha3_simd_portable_load_last_37, sz1=1, sz2=4
+Callee:Eurydice_array_to_subslice_mut_d41, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_2c, sz1=0, sz2=0
+Callee:libcrux_sha3_simd_portable_load_block_60, sz1=1, sz2=5
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+DEBUG Func:libcrux_sha3_simd_portable_load_block_60, sz1=1, sz2=5
+Callee:libcrux_sha3_traits_set_ij_71, sz1=0, sz2=0
+Callee:libcrux_sha3_traits_get_ij_71, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:core_result_unwrap_26_e0, sz1=1, sz2=1
+Callee:core_num__u64__from_le_bytes, sz1=0, sz2=1
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_G_4a_78, sz1=1, sz2=1
+Callee:libcrux_ml_kem_hash_functions_portable_G, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_G, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_mut_17, sz1=0, sz2=0
+Callee:libcrux_sha3_portable_sha512, sz1=1, sz2=1
+DEBUG Func:libcrux_sha3_portable_sha512, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_portable_keccak1_dc, sz1=2, sz2=5
+DEBUG Func:libcrux_sha3_generic_keccak_portable_keccak1_dc, sz1=2, sz2=5
+Callee:libcrux_sha3_generic_keccak_absorb_block_80_e91, sz1=1, sz2=2
+Callee:libcrux_sha3_generic_keccak_absorb_final_80_bd1, sz1=1, sz2=2
+Callee:libcrux_sha3_simd_portable_squeeze_9b_c6, sz1=0, sz2=1
+Callee:libcrux_sha3_generic_keccak_new_80_71, sz1=0, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+DEBUG Func:libcrux_sha3_generic_keccak_absorb_block_80_e91, sz1=1, sz2=2
+Callee:libcrux_sha3_simd_portable_load_block_a1_c6, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+DEBUG Func:libcrux_sha3_generic_keccak_absorb_final_80_bd1, sz1=1, sz2=2
+Callee:libcrux_sha3_simd_portable_load_last_a1_dc, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+DEBUG Func:libcrux_sha3_simd_portable_load_last_a1_dc, sz1=1, sz2=1
+Callee:libcrux_sha3_simd_portable_load_last_dc, sz1=1, sz2=4
+DEBUG Func:libcrux_sha3_simd_portable_load_last_dc, sz1=1, sz2=4
+Callee:Eurydice_array_to_subslice_mut_d43, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_e2, sz1=0, sz2=0
+Callee:libcrux_sha3_simd_portable_load_block_c6, sz1=1, sz2=5
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+DEBUG Func:libcrux_sha3_simd_portable_load_block_c6, sz1=1, sz2=5
+Callee:libcrux_sha3_traits_set_ij_71, sz1=0, sz2=0
+Callee:libcrux_sha3_traits_get_ij_71, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:core_result_unwrap_26_e0, sz1=1, sz2=1
+Callee:core_num__u64__from_le_bytes, sz1=0, sz2=1
+DEBUG Func:libcrux_sha3_simd_portable_load_block_a1_c6, sz1=1, sz2=1
+Callee:libcrux_sha3_simd_portable_load_block_c6, sz1=1, sz2=5
+DEBUG Func:crypto_kem_mlkem768_enc, sz1=2, sz2=3
+Callee:crypto_kem_mlkem768_enc_seeded, sz1=1, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:crypto_kem_mlkem768_enc_seeded, sz1=1, sz2=3
+Callee:libcrux_ml_kem_mlkem768_portable_validate_public_key, sz1=0, sz2=1
+Callee:libcrux_ml_kem_mlkem768_portable_encapsulate, sz1=1, sz2=1
+Callee:explicit_bzero, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_kem_mlkem768_portable_encapsulate, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ind_cca_instantiations_portable_encapsulate_26, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_ind_cca_instantiations_portable_encapsulate_26, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ind_cca_encapsulate_99, sz1=3, sz2=12
+DEBUG Func:libcrux_ml_kem_ind_cca_encapsulate_99, sz1=3, sz2=12
+Callee:libcrux_ml_kem_hash_functions_portable_G_4a_78, sz1=1, sz2=1
+Callee:libcrux_ml_kem_variant_entropy_preprocess_39_13, sz1=0, sz2=1
+Callee:libcrux_ml_kem_utils_into_padded_array_c9, sz1=0, sz2=1
+Callee:Eurydice_array_to_subslice_from_mut_5f1, sz1=0, sz2=0
+Callee:libcrux_ml_kem_types_as_slice_e6_3d, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_17, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_ff, sz1=0, sz2=0
+Callee:libcrux_ml_kem_hash_functions_portable_H_4a_78, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_01, sz1=0, sz2=0
+Callee:libcrux_ml_kem_ind_cpa_encrypt_d5, sz1=2, sz2=2
+Callee:libcrux_ml_kem_types_from_19_52, sz1=0, sz2=0
+Callee:libcrux_ml_kem_variant_kdf_39_52, sz1=0, sz2=1
+DEBUG Func:serialise_rekeylimit, sz1=4, sz2=4
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:serialise_s64, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_timingsecret, sz1=3, sz2=3
+Callee:sshbuf_put_u64, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_s32, sz1=2, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+DEBUG Func:ssh_get_authentication_socket_path, sz1=1, sz2=8
+Callee:memset, sz1=0, sz2=0
+Callee:socket, sz1=0, sz2=0
+Callee:fcntl, sz1=0, sz2=0
+Callee:connect, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:ssh_get_authentication_socket, sz1=1, sz2=2
+Callee:ssh_get_authentication_socket_path, sz1=1, sz2=8
+Callee:getenv, sz1=0, sz2=0
+DEBUG Func:ssh_lock_agent, sz1=4, sz2=5
+Callee:ssh_request_reply_decode, sz1=3, sz2=5
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:ssh_request_reply_decode, sz1=3, sz2=5
+Callee:ssh_request_reply, sz1=4, sz2=5
+Callee:decode_reply, sz1=0, sz2=0
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+DEBUG Func:ssh_request_reply, sz1=4, sz2=5
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:ssh_fetch_identitylist, sz1=6, sz2=9
+Callee:ssh_request_reply, sz1=4, sz2=5
+Callee:calloc, sz1=0, sz2=0
+Callee:deserialise_identity2, sz1=3, sz2=4
+Callee:ssh_free_identitylist, sz1=0, sz2=2
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+DEBUG Func:deserialise_identity2, sz1=3, sz2=4
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_from_blob, sz1=2, sz2=3
+DEBUG Func:ssh_agent_has_key, sz1=1, sz2=3
+Callee:ssh_fetch_identitylist, sz1=6, sz2=9
+Callee:ssh_free_identitylist, sz1=0, sz2=2
+Callee:sshkey_equal_public, sz1=0, sz2=2
+DEBUG Func:ssh_agent_sign, sz1=9, sz2=13
+Callee:ssh_request_reply, sz1=4, sz2=5
+Callee:sshkey_is_sk, sz1=0, sz2=1
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:agent_encode_alg, sz1=0, sz2=2
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_check_sigtype, sz1=2, sz2=4
+Callee:sshkey_puts, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:deserialise_port, sz1=4, sz2=5
+Callee:memset, sz1=0, sz2=0
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:deserialise_count, sz1=4, sz2=4
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_listenaddress, sz1=7, sz2=8
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:deserialise_nullable_string, sz1=2, sz2=2
+Callee:deserialise_count, sz1=4, sz2=4
+Callee:free_queued_listen_addrs, sz1=0, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+DEBUG Func:deserialise_hostkeyfile, sz1=6, sz2=8
+Callee:ssh_err, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:deserialise_nullable_string, sz1=2, sz2=2
+Callee:deserialise_count, sz1=4, sz2=4
+Callee:free_string_array, sz1=0, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+DEBUG Func:deserialise_ipqos, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_gatewayports, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_streamlocalbindmask, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_mode, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_streamlocalbindunlink, sz1=3, sz2=3
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_logfacility, sz1=3, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:log_facility_name, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_loglevel, sz1=3, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:log_level_name, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_permituserenv, sz1=4, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:deserialise_nullable_string, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_subsystem, sz1=5, sz2=6
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_count, sz1=4, sz2=4
+Callee:free_string_array, sz1=0, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+DEBUG Func:deserialise_maxstartups, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_persourcenetblocksize, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_persourcepenalties, sz1=4, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:deserialise_double, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_rekeylimit, sz1=4, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:deserialise_s64, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sshkey_type_from_name, sz1=1, sz2=1
+Callee:type_from_name, sz1=0, sz2=2
+DEBUG Func:sshkey_type_from_shortname, sz1=1, sz2=1
+Callee:type_from_name, sz1=0, sz2=2
+DEBUG Func:sshkey_match_keyname_to_sigalgs, sz1=1, sz2=2
+Callee:sshkey_type_from_name, sz1=1, sz2=1
+Callee:match_pattern_list, sz1=0, sz2=3
+DEBUG Func:sshkey_alg_list, sz1=1, sz2=1
+Callee:xextendf, sz1=2, sz2=3
+DEBUG Func:sshkey_names_valid2, sz1=1, sz2=7
+Callee:sshkey_type_from_name, sz1=1, sz2=1
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:sshkey_type_is_cert, sz1=0, sz2=1
+Callee:match_pattern_list, sz1=0, sz2=3
+DEBUG Func:sshkey_new, sz1=1, sz2=6
+Callee:calloc, sz1=0, sz2=0
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:cert_new, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_impl_from_type, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+DEBUG Func:cert_new, sz1=1, sz2=3
+Callee:calloc, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:cert_free, sz1=1, sz2=4
+DEBUG Func:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+DEBUG Func:sshbuf_check_reserve, sz1=1, sz2=1
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+DEBUG Func:sshbuf_allocate, sz1=1, sz2=3
+Callee:sshbuf_check_reserve, sz1=1, sz2=1
+Callee:sshbuf_maybe_pack, sz1=0, sz2=0
+Callee:recallocarray, sz1=0, sz2=7
+DEBUG Func:sshbuf_reserve, sz1=1, sz2=1
+Callee:sshbuf_allocate, sz1=1, sz2=3
+DEBUG Func:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:sshbuf_consume_end, sz1=2, sz2=2
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:sshbuf_consume_upto_child, sz1=3, sz2=3
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:fmt_intarg, sz1=1, sz2=2
+Callee:fmt_multistate_int, sz1=0, sz2=0
+Callee:ssh_digest_alg_name, sz1=0, sz2=1
+DEBUG Func:pty_allocate, sz1=2, sz2=7
+Callee:openpty, sz1=0, sz2=0
+Callee:ttyname, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:pty_make_controlling_tty, sz1=1, sz2=7
+Callee:ioctl, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:setsid, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:pty_setowner, sz1=2, sz2=8
+Callee:getgrnam, sz1=0, sz2=0
+Callee:chown, sz1=0, sz2=0
+Callee:chmod, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:stat, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:srclimit_init, sz1=4, sz2=4
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:srclimit_check_allow, sz1=3, sz2=6
+Callee:srclimit_peer_addr, sz1=0, sz2=2
+Callee:srclimit_mask_addr, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:addr_cmp, sz1=0, sz2=1
+Callee:addr_ntop, sz1=0, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:srclimit_mask_addr, sz1=1, sz2=3
+Callee:addr_netmask, sz1=0, sz2=3
+Callee:addr_and, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:srclimit_done, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:srclimit_penalty_check_allow, sz1=4, sz2=8
+Callee:memset, sz1=0, sz2=0
+Callee:srclimit_peer_addr, sz1=0, sz2=2
+Callee:srclimit_mask_addr, sz1=1, sz2=3
+Callee:expire_penalties, sz1=1, sz2=1
+Callee:penalties_by_addr_RB_FIND, sz1=0, sz2=1
+Callee:addr_ntop, sz1=0, sz2=2
+Callee:monotime_double, sz1=1, sz2=1
+Callee:addr_match_list, sz1=2, sz2=8
+DEBUG Func:expire_penalties, sz1=1, sz2=1
+Callee:expire_penalties_from_tree, sz1=1, sz2=6
+DEBUG Func:expire_penalties_from_tree, sz1=1, sz2=6
+Callee:penalties_by_expiry_RB_MINMAX, sz1=0, sz2=0
+Callee:penalties_by_expiry_RB_NEXT, sz1=0, sz2=0
+Callee:penalties_by_expiry_RB_REMOVE, sz1=0, sz2=1
+Callee:penalties_by_addr_RB_REMOVE, sz1=0, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+DEBUG Func:srclimit_penalise, sz1=9, sz2=14
+Callee:srclimit_mask_addr, sz1=1, sz2=3
+Callee:expire_penalties, sz1=1, sz2=1
+Callee:penalties_by_expiry_RB_REMOVE, sz1=0, sz2=1
+Callee:addr_masklen_ntop, sz1=0, sz2=4
+Callee:penalties_by_addr_RB_INSERT, sz1=0, sz2=2
+Callee:penalties_by_expiry_RB_INSERT, sz1=0, sz2=2
+Callee:srclimit_early_expire_penalties, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:addr_ntop, sz1=0, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:monotime_double, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+Callee:addr_match_list, sz1=2, sz2=8
+DEBUG Func:srclimit_early_expire_penalties, sz1=1, sz2=1
+Callee:srclimit_early_expire_penalties_from_tree, sz1=3, sz2=7
+DEBUG Func:srclimit_early_expire_penalties_from_tree, sz1=3, sz2=7
+Callee:penalties_by_expiry_RB_MINMAX, sz1=0, sz2=0
+Callee:penalties_by_expiry_RB_REMOVE, sz1=0, sz2=1
+Callee:penalties_by_addr_RB_REMOVE, sz1=0, sz2=1
+Callee:addr_masklen_ntop, sz1=0, sz2=4
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:srclimit_penalty_info, sz1=1, sz2=1
+Callee:srclimit_penalty_info_for_tree, sz1=3, sz2=5
+DEBUG Func:srclimit_penalty_info_for_tree, sz1=3, sz2=5
+Callee:penalties_by_expiry_RB_MINMAX, sz1=0, sz2=0
+Callee:penalties_by_expiry_RB_NEXT, sz1=0, sz2=0
+Callee:addr_masklen_ntop, sz1=0, sz2=4
+Callee:monotime_double, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:ga_init, sz1=5, sz2=10
+Callee:ga_free, sz1=0, sz2=1
+Callee:sysconf, sz1=0, sz2=0
+Callee:getgrouplist, sz1=0, sz2=0
+Callee:getgrgid, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xreallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:ga_match, sz1=1, sz2=1
+Callee:match_pattern, sz1=1, sz2=5
+DEBUG Func:auth2_methods_valid, sz1=2, sz2=6
+Callee:strchr, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:verify_host_key_dns, sz1=6, sz2=10
+Callee:is_numeric_hostname, sz1=1, sz2=4
+Callee:dns_result_totext, sz1=0, sz2=0
+Callee:dns_read_rdata, sz1=2, sz2=2
+Callee:dns_read_key, sz1=3, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:getrrsetbyname, sz1=0, sz2=11
+Callee:freerrset, sz1=0, sz2=1
+Callee:timingsafe_bcmp, sz1=0, sz2=0
+DEBUG Func:is_numeric_hostname, sz1=1, sz2=4
+Callee:memset, sz1=0, sz2=0
+Callee:getaddrinfo, sz1=0, sz2=0
+Callee:freeaddrinfo, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:dns_read_rdata, sz1=2, sz2=2
+Callee:xmalloc, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:dns_read_key, sz1=3, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshkey_fingerprint_raw, sz1=1, sz2=6
+DEBUG Func:export_dns_rr, sz1=2, sz2=4
+Callee:dns_read_key, sz1=3, sz2=3
+Callee:fprintf, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sshfatal, sz1=1, sz2=2
+Callee:cleanup_exit, sz1=0, sz2=1
+Callee:sshlogv, sz1=1, sz2=6
+DEBUG Func:compat_banner, sz1=1, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+Callee:match_pattern_list, sz1=0, sz2=3
+DEBUG Func:compat_kex_proposal, sz1=3, sz2=5
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:match_filter_denylist, sz1=0, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:vasnmprintf, sz1=1, sz2=10
+Callee:strlen, sz1=0, sz2=0
+Callee:vasprintf, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:__ctype_get_mb_cur_max, sz1=0, sz2=0
+Callee:mbtowc, sz1=0, sz2=0
+Callee:dangerous_locale, sz1=0, sz2=2
+Callee:wcwidth, sz1=0, sz2=0
+Callee:grow_dst, sz1=0, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:vis, sz1=0, sz2=1
+DEBUG Func:snmprintf, sz1=1, sz2=3
+Callee:vasnmprintf, sz1=1, sz2=10
+Callee:free, sz1=0, sz2=0
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:asmprintf, sz1=1, sz2=1
+Callee:vasnmprintf, sz1=1, sz2=10
+DEBUG Func:vfmprintf, sz1=1, sz2=3
+Callee:vasnmprintf, sz1=1, sz2=10
+Callee:fputs, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+DEBUG Func:fmprintf, sz1=1, sz2=1
+Callee:vfmprintf, sz1=1, sz2=3
+DEBUG Func:mprintf, sz1=1, sz2=1
+Callee:vfmprintf, sz1=1, sz2=3
+DEBUG Func:private2_uudecode, sz1=5, sz2=7
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:memcmp, sz1=0, sz2=0
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_b64tod, sz1=2, sz2=5
+DEBUG Func:private2_decrypt, sz1=12, sz2=26
+Callee:strlen, sz1=0, sz2=0
+Callee:calloc, sz1=0, sz2=0
+Callee:sshbuf_reserve, sz1=1, sz2=1
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshkey_froms, sz1=3, sz2=3
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:cipher_blocksize, sz1=0, sz2=0
+Callee:cipher_keylen, sz1=0, sz2=0
+Callee:cipher_authlen, sz1=0, sz2=0
+Callee:cipher_ivlen, sz1=0, sz2=0
+Callee:cipher_by_name, sz1=0, sz2=1
+Callee:cipher_init, sz1=0, sz2=11
+Callee:cipher_crypt, sz1=0, sz2=4
+Callee:cipher_free, sz1=0, sz2=4
+Callee:bcrypt_pbkdf, sz1=2, sz2=6
+DEBUG Func:sshkey_parse_private_fileblob, sz1=1, sz2=1
+Callee:sshkey_parse_private_fileblob_type, sz1=2, sz2=2
+DEBUG Func:sshkey_parse_pubkey_from_private_fileblob_type, sz1=1, sz2=1
+Callee:sshkey_parse_private2_pubkey, sz1=6, sz2=8
+DEBUG Func:sshkey_parse_private2_pubkey, sz1=6, sz2=8
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:private2_uudecode, sz1=5, sz2=7
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_froms, sz1=3, sz2=3
+Callee:sshkey_free, sz1=0, sz2=1
+DEBUG Func:sshbuf_get, sz1=2, sz2=2
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+DEBUG Func:sshbuf_get_u64, sz1=2, sz2=2
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+DEBUG Func:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+DEBUG Func:sshbuf_get_u16, sz1=2, sz2=2
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+DEBUG Func:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+DEBUG Func:sshbuf_peek_u64, sz1=1, sz2=1
+Callee:check_roffset, sz1=2, sz2=2
+DEBUG Func:check_roffset, sz1=2, sz2=2
+Callee:check_offset, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+DEBUG Func:check_offset, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:sshbuf_peek_u32, sz1=1, sz2=1
+Callee:check_roffset, sz1=2, sz2=2
+DEBUG Func:sshbuf_peek_u16, sz1=1, sz2=1
+Callee:check_roffset, sz1=2, sz2=2
+DEBUG Func:sshbuf_peek_u8, sz1=1, sz2=1
+Callee:check_roffset, sz1=2, sz2=2
+DEBUG Func:sshbuf_get_string, sz1=1, sz2=2
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+DEBUG Func:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_peek_string_direct, sz1=2, sz2=2
+DEBUG Func:sshbuf_peek_string_direct, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_peek_string_direct, sz1=2, sz2=2
+Callee:memchr, sz1=0, sz2=0
+DEBUG Func:sshbuf_get_stringb, sz1=4, sz2=4
+Callee:sshbuf_reserve, sz1=1, sz2=1
+Callee:sshbuf_get, sz1=2, sz2=2
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_peek_string_direct, sz1=2, sz2=2
+DEBUG Func:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_reserve, sz1=1, sz2=1
+DEBUG Func:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:sshbuf_putf, sz1=1, sz2=1
+Callee:sshbuf_putfv, sz1=2, sz2=3
+DEBUG Func:sshbuf_putfv, sz1=2, sz2=3
+Callee:sshbuf_reserve, sz1=1, sz2=1
+Callee:sshbuf_consume_end, sz1=2, sz2=2
+Callee:vsnprintf, sz1=0, sz2=0
+DEBUG Func:sshbuf_put_u64, sz1=1, sz2=1
+Callee:sshbuf_reserve, sz1=1, sz2=1
+DEBUG Func:sshbuf_put_u32, sz1=1, sz2=1
+Callee:sshbuf_reserve, sz1=1, sz2=1
+DEBUG Func:sshbuf_put_u16, sz1=1, sz2=1
+Callee:sshbuf_reserve, sz1=1, sz2=1
+DEBUG Func:ssh_add_identity_constrained, sz1=5, sz2=7
+Callee:ssh_request_reply_decode, sz1=3, sz2=5
+Callee:encode_constraints, sz1=7, sz2=8
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_private_serialize, sz1=0, sz2=0
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:encode_constraints, sz1=7, sz2=8
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:encode_dest_constraint, sz1=4, sz2=5
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_puts, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:encode_dest_constraint, sz1=4, sz2=5
+Callee:encode_dest_constraint_hop, sz1=6, sz2=7
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:encode_dest_constraint_hop, sz1=6, sz2=7
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_puts, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:ssh_remove_identity, sz1=5, sz2=7
+Callee:ssh_request_reply_decode, sz1=3, sz2=5
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_to_blob, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_update_card, sz1=5, sz2=6
+Callee:ssh_request_reply_decode, sz1=3, sz2=5
+Callee:encode_constraints, sz1=7, sz2=8
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:ssh_remove_all_identities, sz1=3, sz2=4
+Callee:ssh_request_reply_decode, sz1=3, sz2=5
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+DEBUG Func:ssh_agent_bind_hostkey, sz1=6, sz2=7
+Callee:ssh_request_reply_decode, sz1=3, sz2=5
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_puts, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:ssh_agent_query_extensions, sz1=9, sz2=13
+Callee:ssh_request_reply, sz1=4, sz2=5
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:stringlist_free, sz1=0, sz2=1
+DEBUG Func:ipv64_normalise_mapped, sz1=1, sz2=3
+Callee:memset, sz1=0, sz2=0
+Callee:htonl, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:get_peer_ipaddr, sz1=2, sz2=2
+Callee:get_socket_address, sz1=3, sz2=8
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:get_socket_address, sz1=3, sz2=8
+Callee:memset, sz1=0, sz2=0
+Callee:getnameinfo, sz1=0, sz2=0
+Callee:ipv64_normalise_mapped, sz1=1, sz2=3
+Callee:getsockname, sz1=0, sz2=0
+Callee:getpeername, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+Callee:ssh_gai_strerror, sz1=0, sz2=3
+DEBUG Func:get_local_ipaddr, sz1=2, sz2=2
+Callee:get_socket_address, sz1=3, sz2=8
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:get_local_name, sz1=3, sz2=6
+Callee:get_socket_address, sz1=3, sz2=8
+Callee:gethostname, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:get_peer_port, sz1=1, sz2=1
+Callee:get_sock_port, sz1=2, sz2=10
+DEBUG Func:get_sock_port, sz1=2, sz2=10
+Callee:memset, sz1=0, sz2=0
+Callee:getnameinfo, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:getsockname, sz1=0, sz2=0
+Callee:atoi, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:getpeername, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:ssh_gai_strerror, sz1=0, sz2=3
+DEBUG Func:get_local_port, sz1=1, sz2=1
+Callee:get_sock_port, sz1=2, sz2=10
+DEBUG Func:pkcs11_terminate, sz1=2, sz2=2
+Callee:helper_terminate, sz1=4, sz2=6
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:helper_terminate, sz1=4, sz2=6
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xrecallocarray, sz1=1, sz2=2
+DEBUG Func:pkcs11_sign, sz1=15, sz2=17
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:helper_by_key, sz1=5, sz2=6
+Callee:send_msg, sz1=6, sz2=7
+Callee:recv_msg, sz1=6, sz2=7
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_puts_plain, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:helper_by_key, sz1=5, sz2=6
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_putb, sz1=1, sz2=1
+Callee:sshbuf_equals, sz1=2, sz2=3
+DEBUG Func:send_msg, sz1=6, sz2=7
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:recv_msg, sz1=6, sz2=7
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:pkcs11_make_cert, sz1=9, sz2=11
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:helper_by_key, sz1=5, sz2=6
+Callee:helper_add_key, sz1=6, sz2=7
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshkey_cert_copy, sz1=4, sz2=6
+Callee:sshkey_from_private, sz1=1, sz2=4
+Callee:sshkey_to_certified, sz1=1, sz2=2
+Callee:sshkey_equal_public, sz1=0, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:helper_add_key, sz1=6, sz2=7
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshkey_putb, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:xrecallocarray, sz1=1, sz2=2
+DEBUG Func:pkcs11_add_provider, sz1=16, sz2=19
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:helper_terminate, sz1=4, sz2=6
+Callee:send_msg, sz1=6, sz2=7
+Callee:recv_msg, sz1=6, sz2=7
+Callee:helper_add_key, sz1=6, sz2=7
+Callee:helper_by_provider, sz1=0, sz2=1
+Callee:pkcs11_start_helper, sz1=6, sz2=19
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_froms, sz1=3, sz2=3
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+DEBUG Func:pkcs11_start_helper, sz1=6, sz2=19
+Callee:strlen, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:execlp, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:fprintf, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+Callee:socketpair, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:dup2, sz1=0, sz2=0
+Callee:fork, sz1=0, sz2=0
+Callee:_exit, sz1=0, sz2=0
+Callee:log_level_get, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+Callee:closefrom, sz1=0, sz2=10
+DEBUG Func:pkcs11_del_provider, sz1=2, sz2=3
+Callee:helper_terminate, sz1=4, sz2=6
+Callee:helper_by_provider, sz1=0, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:pkcs11_key_free, sz1=9, sz2=10
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:helper_terminate, sz1=4, sz2=6
+Callee:helper_by_key, sz1=5, sz2=6
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshkey_putb, sz1=1, sz2=1
+Callee:sshbuf_equals, sz1=2, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:xrecallocarray, sz1=1, sz2=2
+DEBUG Func:sshsk_sign, sz1=10, sz2=14
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:client_converse, sz1=13, sz2=18
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:sshkey_private_serialize, sz1=0, sz2=0
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:client_converse, sz1=13, sz2=18
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:start_helper, sz1=4, sz2=19
+Callee:reap_helper, sz1=1, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:log_level_get, sz1=0, sz2=0
+Callee:log_is_on_stderr, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:ssh_signal, sz1=1, sz2=7
+Callee:ssh_msg_send, sz1=3, sz2=7
+Callee:ssh_msg_recv, sz1=4, sz2=9
+DEBUG Func:start_helper, sz1=4, sz2=19
+Callee:fcntl, sz1=0, sz2=0
+Callee:strlen, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:execlp, sz1=0, sz2=0
+Callee:pipe, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:snprintf, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+Callee:socketpair, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:dup2, sz1=0, sz2=0
+Callee:write, sz1=0, sz2=0
+Callee:read, sz1=0, sz2=0
+Callee:fork, sz1=0, sz2=0
+Callee:_exit, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:ssh_signal, sz1=1, sz2=7
+Callee:closefrom, sz1=0, sz2=10
+DEBUG Func:reap_helper, sz1=1, sz2=4
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:waitpid, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sshsk_enroll, sz1=13, sz2=16
+Callee:sshbuf_get_stringb, sz1=4, sz2=4
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:client_converse, sz1=13, sz2=18
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:__errno_location, sz1=0, sz2=0
+Callee:sshkey_private_deserialize, sz1=5, sz2=11
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sshsk_load_resident, sz1=12, sz2=20
+Callee:calloc, sz1=0, sz2=0
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_get_stringb, sz1=4, sz2=4
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:client_converse, sz1=13, sz2=18
+Callee:sshsk_free_resident_keys, sz1=0, sz2=2
+Callee:sshsk_free_resident_key, sz1=0, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:sshkey_private_deserialize, sz1=5, sz2=11
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+Callee:freezero, sz1=0, sz2=2
+Callee:recallocarray, sz1=0, sz2=7
+DEBUG Func:ssh_err, sz1=1, sz2=3
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:ssherr_libcrypto, sz1=1, sz2=6
+DEBUG Func:sshbuf_set_parent, sz1=1, sz2=1
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+DEBUG Func:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:raise, sz1=0, sz2=0
+Callee:ssh_signal, sz1=1, sz2=7
+DEBUG Func:sshbuf_fromb, sz1=5, sz2=6
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_set_parent, sz1=1, sz2=1
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+DEBUG Func:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+DEBUG Func:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+DEBUG Func:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshbuf_reset, sz1=1, sz2=3
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:recallocarray, sz1=0, sz2=7
+DEBUG Func:sshbuf_set_max_size, sz1=1, sz2=3
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+Callee:sshbuf_maybe_pack, sz1=0, sz2=0
+Callee:recallocarray, sz1=0, sz2=7
+DEBUG Func:sshbuf_avail, sz1=1, sz2=1
+Callee:sshbuf_check_sanity, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_ind_cpa_generate_keypair_unpacked_39, sz1=4, sz2=9
+Callee:libcrux_ml_kem_variant_cpa_keygen_seed_39_13, sz1=1, sz2=3
+Callee:Eurydice_array_to_slice_shared_17, sz1=0, sz2=0
+Callee:libcrux_ml_kem_utils_into_padded_array_de, sz1=0, sz2=1
+Callee:libcrux_ml_kem_matrix_sample_matrix_A_91, sz1=1, sz2=1
+Callee:libcrux_ml_kem_utils_into_padded_array_29, sz1=0, sz2=1
+Callee:libcrux_ml_kem_ind_cpa_sample_vector_cbd_then_ntt_bf, sz1=2, sz2=5
+Callee:libcrux_ml_kem_ind_cpa_generate_keypair_unpacked_call_mut_73_39, sz1=0, sz2=1
+Callee:libcrux_ml_kem_matrix_compute_As_plus_e_68, sz1=0, sz2=4
+Callee:core_result_unwrap_26_39, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_variant_cpa_keygen_seed_39_13, sz1=1, sz2=3
+Callee:Eurydice_array_to_slice_shared_b5, sz1=0, sz2=0
+Callee:Eurydice_array_to_subslice_mut_d412, sz1=0, sz2=0
+Callee:libcrux_ml_kem_hash_functions_portable_G_4a_78, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_matrix_sample_matrix_A_91, sz1=1, sz2=1
+Callee:libcrux_ml_kem_sampling_sample_from_xof_91, sz1=2, sz2=6
+DEBUG Func:libcrux_ml_kem_ind_cpa_sample_vector_cbd_then_ntt_bf, sz1=2, sz2=5
+Callee:libcrux_ml_kem_utils_prf_input_inc_78, sz1=0, sz2=0
+Callee:libcrux_ml_kem_hash_functions_portable_PRFxN_4a_3b, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_78, sz1=0, sz2=0
+Callee:libcrux_ml_kem_sampling_sample_from_binomial_distribution_66, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ntt_ntt_binomially_sampled_ring_element_ea, sz1=0, sz2=6
+DEBUG Func:core_result_unwrap_26_39, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:print_config, sz1=2, sz2=3
+Callee:exit, sz1=0, sz2=0
+Callee:dump_config, sz1=3, sz2=12
+Callee:parse_server_match_config, sz1=2, sz2=4
+DEBUG Func:accumulate_host_timing_secret, sz1=8, sz2=16
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:sshkey_private_serialize, sz1=0, sz2=0
+Callee:sshkey_ssh_name, sz1=1, sz2=1
+Callee:ssh_digest_bytes, sz1=0, sz2=1
+Callee:ssh_digest_start, sz1=0, sz2=6
+Callee:ssh_digest_free, sz1=0, sz2=2
+Callee:ssh_digest_update, sz1=0, sz2=1
+Callee:ssh_digest_final, sz1=0, sz2=2
+Callee:xmalloc, sz1=1, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:pack_config, sz1=11, sz2=12
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_put_u64, sz1=1, sz2=1
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:prepare_proctitle, sz1=1, sz2=1
+Callee:xextendf, sz1=2, sz2=3
+DEBUG Func:send_rexec_state, sz1=6, sz2=11
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:exit, sz1=0, sz2=0
+Callee:pack_hostkeys, sz1=11, sz2=13
+Callee:fork, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:server_listen, sz1=3, sz2=6
+Callee:memset, sz1=0, sz2=0
+Callee:srclimit_init, sz1=4, sz2=4
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:listen_on_addrs, sz1=6, sz2=15
+Callee:freeaddrinfo, sz1=0, sz2=0
+DEBUG Func:server_accept_loop, sz1=24, sz2=45
+Callee:platform_pre_fork, sz1=0, sz2=0
+Callee:platform_post_fork_parent, sz1=0, sz2=0
+Callee:platform_post_fork_child, sz1=1, sz2=1
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sigemptyset, sz1=0, sz2=0
+Callee:sigprocmask, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:exit, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:socketpair, sz1=0, sz2=0
+Callee:send_rexec_state, sz1=6, sz2=11
+Callee:close, sz1=0, sz2=0
+Callee:ppoll, sz1=0, sz2=0
+Callee:child_alloc, sz1=1, sz2=1
+Callee:sigaddset, sz1=0, sz2=0
+Callee:close_listen_socks, sz1=0, sz2=1
+Callee:unlink, sz1=0, sz2=0
+Callee:child_reap_all_exited, sz1=2, sz2=6
+Callee:show_info, sz1=2, sz2=2
+Callee:sighup_restart, sz1=4, sz2=10
+Callee:cleanup_exit, sz1=0, sz2=1
+Callee:write, sz1=0, sz2=0
+Callee:child_close, sz1=3, sz2=4
+Callee:pack_hostkeys, sz1=11, sz2=13
+Callee:read, sz1=0, sz2=0
+Callee:kill, sz1=0, sz2=0
+Callee:accept, sz1=0, sz2=0
+Callee:usleep, sz1=0, sz2=0
+Callee:drop_connection, sz1=8, sz2=13
+Callee:child_register, sz1=7, sz2=10
+Callee:fork, sz1=0, sz2=0
+Callee:close_startup_pipes, sz1=1, sz2=1
+Callee:log_init, sz1=0, sz2=5
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+Callee:set_nonblock, sz1=1, sz2=4
+Callee:unset_nonblock, sz1=1, sz2=4
+Callee:reseed_prngs, sz1=2, sz2=6
+Callee:setproctitle, sz1=0, sz2=4
+DEBUG Func:servconf_add_hostkey, sz1=2, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:derelativise_path, sz1=4, sz2=11
+Callee:opt_array_append2, sz1=3, sz2=3
+DEBUG Func:derelativise_path, sz1=4, sz2=11
+Callee:sshfatal, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcasecmp, sz1=0, sz2=0
+Callee:getuid, sz1=0, sz2=0
+Callee:getcwd, sz1=0, sz2=0
+Callee:tilde_expand_filename, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+Callee:xasprintf, sz1=1, sz2=1
+Callee:path_absolute, sz1=0, sz2=0
+DEBUG Func:servconf_add_hostcert, sz1=2, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:derelativise_path, sz1=4, sz2=11
+Callee:opt_array_append, sz1=1, sz2=1
+DEBUG Func:fill_default_server_options, sz1=5, sz2=8
+Callee:option_clear_or_none, sz1=0, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:strcasecmp, sz1=0, sz2=0
+Callee:servconf_add_hostkey, sz1=2, sz2=3
+Callee:add_listen_addr, sz1=1, sz2=1
+Callee:assemble_algorithms, sz1=7, sz2=9
+Callee:xstrdup, sz1=1, sz2=2
+Callee:opt_array_append, sz1=1, sz2=1
+DEBUG Func:add_listen_addr, sz1=1, sz2=1
+Callee:add_one_listen_addr, sz1=3, sz2=8
+DEBUG Func:assemble_algorithms, sz1=7, sz2=9
+Callee:sshkey_alg_list, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:kex_alg_list, sz1=1, sz2=1
+Callee:cipher_alg_list, sz1=1, sz2=1
+Callee:match_filter_allowlist, sz1=0, sz2=1
+Callee:mac_alg_list, sz1=1, sz2=1
+Callee:kex_assemble_names, sz1=1, sz2=6
+DEBUG Func:child_alloc, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+DEBUG Func:child_reap_all_exited, sz1=2, sz2=6
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:waitpid, sz1=0, sz2=0
+Callee:child_exit, sz1=0, sz2=0
+Callee:child_reap, sz1=3, sz2=4
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:show_info, sz1=2, sz2=2
+Callee:srclimit_penalty_info, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sighup_restart, sz1=4, sz2=10
+Callee:platform_pre_restart, sz1=2, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:exit, sz1=0, sz2=0
+Callee:execv, sz1=0, sz2=0
+Callee:close_listen_socks, sz1=0, sz2=1
+Callee:unlink, sz1=0, sz2=0
+Callee:close_startup_pipes, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:ssh_signal, sz1=1, sz2=7
+DEBUG Func:child_close, sz1=3, sz2=4
+Callee:srclimit_done, sz1=1, sz2=1
+Callee:close, sz1=0, sz2=0
+Callee:child_finish, sz1=3, sz2=6
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:pack_hostkeys, sz1=11, sz2=13
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:sshkey_private_serialize, sz1=0, sz2=0
+Callee:sshkey_puts, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:drop_connection, sz1=8, sz2=13
+Callee:srclimit_check_allow, sz1=3, sz2=6
+Callee:srclimit_penalty_check_allow, sz1=4, sz2=8
+Callee:get_peer_ipaddr, sz1=2, sz2=2
+Callee:get_local_ipaddr, sz1=2, sz2=2
+Callee:get_peer_port, sz1=1, sz2=1
+Callee:get_local_port, sz1=1, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:write, sz1=0, sz2=0
+Callee:should_drop_connection, sz1=2, sz2=2
+Callee:time, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:log_ratelimit_init, sz1=0, sz2=1
+Callee:log_ratelimit, sz1=0, sz2=0
+DEBUG Func:child_register, sz1=7, sz2=10
+Callee:sshfatal, sz1=1, sz2=2
+Callee:get_peer_ipaddr, sz1=2, sz2=2
+Callee:get_local_ipaddr, sz1=2, sz2=2
+Callee:get_peer_port, sz1=1, sz2=1
+Callee:get_local_port, sz1=1, sz2=1
+Callee:sshbuf_fromb, sz1=5, sz2=6
+Callee:free, sz1=0, sz2=0
+Callee:getpeername, sz1=0, sz2=0
+Callee:xasprintf, sz1=1, sz2=1
+Callee:addr_sa_to_xaddr, sz1=0, sz2=1
+DEBUG Func:close_startup_pipes, sz1=1, sz2=1
+Callee:child_close, sz1=3, sz2=4
+DEBUG Func:should_drop_connection, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+Callee:arc4random_uniform, sz1=1, sz2=1
+DEBUG Func:child_finish, sz1=3, sz2=6
+Callee:memset, sz1=0, sz2=0
+Callee:srclimit_done, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+DEBUG Func:child_reap, sz1=3, sz2=4
+Callee:srclimit_penalise, sz1=9, sz2=14
+Callee:child_finish, sz1=3, sz2=6
+Callee:sshlog, sz1=1, sz2=1
+Callee:signal_is_crash, sz1=0, sz2=0
+DEBUG Func:listen_on_addrs, sz1=6, sz2=15
+Callee:getnameinfo, sz1=0, sz2=0
+Callee:socket, sz1=0, sz2=0
+Callee:fcntl, sz1=0, sz2=0
+Callee:bind, sz1=0, sz2=0
+Callee:listen, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:set_rdomain, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:set_nonblock, sz1=1, sz2=4
+Callee:ssh_gai_strerror, sz1=0, sz2=3
+Callee:set_reuseaddr, sz1=1, sz2=4
+Callee:sock_set_v6only, sz1=1, sz2=4
+DEBUG Func:sshkey_generate, sz1=1, sz2=4
+Callee:sshkey_new, sz1=1, sz2=6
+Callee:sshkey_type_is_cert, sz1=0, sz2=1
+Callee:sshkey_impl_from_type, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+DEBUG Func:sshkey_cert_copy, sz1=4, sz2=6
+Callee:calloc, sz1=0, sz2=0
+Callee:strdup, sz1=0, sz2=0
+Callee:cert_new, sz1=1, sz2=3
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshkey_from_private, sz1=1, sz2=4
+Callee:cert_free, sz1=1, sz2=4
+DEBUG Func:sshkey_from_private, sz1=1, sz2=4
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_new, sz1=1, sz2=6
+Callee:sshkey_impl_from_key, sz1=0, sz2=1
+Callee:sshkey_free, sz1=0, sz2=1
+DEBUG Func:sshkey_shield_private, sz1=8, sz2=25
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:sshkey_from_private, sz1=1, sz2=4
+Callee:sshkey_is_shielded, sz1=0, sz2=0
+Callee:sshkey_prekey_alloc, sz1=0, sz2=2
+Callee:sshkey_unshield_private, sz1=5, sz2=17
+Callee:sshkey_private_serialize, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_prekey_free, sz1=0, sz2=1
+Callee:ssh_digest_bytes, sz1=0, sz2=1
+Callee:ssh_digest_memory, sz1=0, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:cipher_blocksize, sz1=0, sz2=0
+Callee:cipher_keylen, sz1=0, sz2=0
+Callee:cipher_ivlen, sz1=0, sz2=0
+Callee:cipher_by_name, sz1=0, sz2=1
+Callee:cipher_init, sz1=0, sz2=11
+Callee:cipher_crypt, sz1=0, sz2=4
+Callee:cipher_free, sz1=0, sz2=4
+Callee:arc4random_buf, sz1=1, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshkey_unshield_private, sz1=5, sz2=17
+Callee:sshbuf_reserve, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:sshkey_is_shielded, sz1=0, sz2=0
+Callee:sshkey_private_deserialize, sz1=5, sz2=11
+Callee:private2_check_padding, sz1=2, sz2=3
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:ssh_digest_bytes, sz1=0, sz2=1
+Callee:ssh_digest_memory, sz1=0, sz2=2
+Callee:cipher_blocksize, sz1=0, sz2=0
+Callee:cipher_keylen, sz1=0, sz2=0
+Callee:cipher_ivlen, sz1=0, sz2=0
+Callee:cipher_by_name, sz1=0, sz2=1
+Callee:cipher_init, sz1=0, sz2=11
+Callee:cipher_crypt, sz1=0, sz2=4
+Callee:cipher_free, sz1=0, sz2=4
+DEBUG Func:sshkey_private_serialize_opt, sz1=8, sz2=12
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_is_shielded, sz1=0, sz2=0
+Callee:sshkey_shield_private, sz1=8, sz2=25
+Callee:sshkey_unshield_private, sz1=5, sz2=17
+Callee:sshkey_impl_from_key, sz1=0, sz2=1
+Callee:sshkey_ssh_name, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:sshkey_private_deserialize, sz1=5, sz2=11
+Callee:sshkey_type_from_name, sz1=1, sz2=1
+Callee:sshkey_ecdsa_nid_from_name, sz1=0, sz2=2
+Callee:sshkey_new, sz1=1, sz2=6
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshkey_froms, sz1=3, sz2=3
+Callee:sshkey_type_is_cert, sz1=0, sz2=1
+Callee:sshkey_impl_from_type, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:memcmp, sz1=0, sz2=0
+DEBUG Func:private2_check_padding, sz1=2, sz2=3
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:explicit_bzero, sz1=0, sz2=0
+DEBUG Func:sshkey_froms, sz1=3, sz2=3
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_from_blob_internal, sz1=7, sz2=12
+Callee:sshbuf_froms, sz1=4, sz2=5
+DEBUG Func:sshkey_deserialize_sk, sz1=1, sz2=1
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+DEBUG Func:sshkey_from_blob, sz1=2, sz2=3
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_from_blob_internal, sz1=7, sz2=12
+DEBUG Func:sshkey_sigalg_by_name, sz1=1, sz2=3
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshkey_ssh_name_from_type_nid, sz1=0, sz2=1
+DEBUG Func:sshkey_check_sigtype, sz1=2, sz2=4
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshkey_sigalg_by_name, sz1=1, sz2=3
+Callee:sshkey_get_sigtype, sz1=2, sz2=4
+DEBUG Func:sshkey_sign, sz1=4, sz2=7
+Callee:sshkey_is_sk, sz1=0, sz2=1
+Callee:pkcs11_sign, sz1=15, sz2=17
+Callee:sshsk_sign, sz1=10, sz2=14
+Callee:sshkey_is_shielded, sz1=0, sz2=0
+Callee:sshkey_shield_private, sz1=8, sz2=25
+Callee:sshkey_unshield_private, sz1=5, sz2=17
+Callee:sshkey_impl_from_key, sz1=0, sz2=1
+DEBUG Func:sshkey_to_certified, sz1=1, sz2=2
+Callee:cert_new, sz1=1, sz2=3
+Callee:sshkey_type_certified, sz1=0, sz2=0
+DEBUG Func:sshkey_drop_cert, sz1=1, sz2=3
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshkey_type_is_cert, sz1=0, sz2=1
+Callee:cert_free, sz1=1, sz2=4
+DEBUG Func:sshkey_certify_custom, sz1=13, sz2=19
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshbuf_put_u64, sz1=1, sz2=1
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshkey_impl_from_key, sz1=0, sz2=1
+Callee:sshkey_ssh_name, sz1=1, sz2=1
+Callee:sshkey_to_blob, sz1=1, sz2=1
+Callee:sshkey_type_is_valid_ca, sz1=0, sz2=1
+Callee:sshkey_get_sigtype, sz1=2, sz2=4
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:sshkey_certify, sz1=1, sz2=1
+Callee:sshkey_certify_custom, sz1=13, sz2=19
+DEBUG Func:default_key_sign, sz1=1, sz2=1
+Callee:sshkey_sign, sz1=4, sz2=7
+DEBUG Func:sshkey_cert_check_authority, sz1=1, sz2=3
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:strcmp, sz1=0, sz2=0
+Callee:match_pattern, sz1=1, sz2=5
+DEBUG Func:sshkey_cert_check_authority_now, sz1=1, sz2=2
+Callee:time, sz1=0, sz2=0
+Callee:sshkey_cert_check_authority, sz1=1, sz2=3
+DEBUG Func:sshkey_cert_check_host, sz1=2, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshkey_check_cert_sigtype, sz1=0, sz2=2
+Callee:sshkey_cert_check_authority_now, sz1=1, sz2=2
+DEBUG Func:sshkey_format_cert_validity, sz1=1, sz2=3
+Callee:snprintf, sz1=0, sz2=0
+Callee:format_absolute_time, sz1=0, sz2=3
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:sshkey_serialize_private_sk, sz1=3, sz2=3
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:sshkey_private_deserialize_sk, sz1=3, sz2=4
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_get_stringb, sz1=4, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+DEBUG Func:deserialise_timingsecret, sz1=3, sz2=3
+Callee:sshbuf_get_u64, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_s32, sz1=2, sz2=2
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+DEBUG Func:deserialise_nullable_string, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+DEBUG Func:deserialise_nullable_string_array, sz1=3, sz2=4
+Callee:deserialise_nullable_string, sz1=2, sz2=2
+Callee:deserialise_count, sz1=4, sz2=4
+Callee:free_string_array, sz1=0, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+DEBUG Func:deserialise_count, sz1=4, sz2=4
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:deserialise_s64, sz1=2, sz2=2
+Callee:sshbuf_get_u64, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+DEBUG Func:deserialise_double, sz1=1, sz2=1
+Callee:sshbuf_get, sz1=2, sz2=2
+DEBUG Func:deserialise_mode, sz1=1, sz2=1
+Callee:deserialise_s32, sz1=2, sz2=2
+DEBUG Func:dump_config, sz1=3, sz2=12
+Callee:free, sz1=0, sz2=0
+Callee:printf, sz1=0, sz2=0
+Callee:dump_cfg_fmtint, sz1=1, sz2=3
+Callee:format_listen_addrs, sz1=3, sz2=6
+Callee:dump_cfg_int, sz1=0, sz2=2
+Callee:dump_cfg_oct, sz1=0, sz2=2
+Callee:dump_cfg_string, sz1=0, sz2=2
+Callee:dump_cfg_strarray_oneline, sz1=0, sz2=2
+Callee:dump_cfg_strarray, sz1=0, sz2=2
+Callee:log_facility_name, sz1=0, sz2=0
+Callee:log_level_name, sz1=0, sz2=0
+Callee:iptos2str, sz1=0, sz2=1
+DEBUG Func:dump_cfg_fmtint, sz1=1, sz2=3
+Callee:lookup_opcode_name, sz1=0, sz2=0
+Callee:fmt_intarg, sz1=1, sz2=2
+Callee:printf, sz1=0, sz2=0
+DEBUG Func:format_listen_addrs, sz1=3, sz2=6
+Callee:getnameinfo, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+Callee:xasprintf, sz1=1, sz2=1
+Callee:ssh_gai_strerror, sz1=0, sz2=3
+DEBUG Func:serialise_nullable_string, sz1=2, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:serialise_nullable_string_array, sz1=2, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:serialise_nullable_string, sz1=2, sz2=2
+DEBUG Func:serialise_s64, sz1=2, sz2=2
+Callee:sshbuf_put_u64, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+DEBUG Func:serialise_double, sz1=1, sz2=1
+Callee:sshbuf_put, sz1=1, sz2=1
+DEBUG Func:serialise_mode, sz1=1, sz2=1
+Callee:serialise_s32, sz1=2, sz2=2
+DEBUG Func:deserialise_server_options, sz1=23, sz2=27
+Callee:memset, sz1=0, sz2=0
+Callee:deserialise_port, sz1=4, sz2=5
+Callee:deserialise_listenaddress, sz1=7, sz2=8
+Callee:deserialise_hostkeyfile, sz1=6, sz2=8
+Callee:deserialise_ipqos, sz1=3, sz2=3
+Callee:deserialise_gatewayports, sz1=3, sz2=3
+Callee:deserialise_streamlocalbindmask, sz1=3, sz2=3
+Callee:deserialise_streamlocalbindunlink, sz1=3, sz2=3
+Callee:deserialise_logfacility, sz1=3, sz2=4
+Callee:deserialise_loglevel, sz1=3, sz2=4
+Callee:deserialise_permituserenv, sz1=4, sz2=4
+Callee:deserialise_subsystem, sz1=5, sz2=6
+Callee:deserialise_maxstartups, sz1=3, sz2=3
+Callee:deserialise_persourcenetblocksize, sz1=3, sz2=3
+Callee:deserialise_persourcepenalties, sz1=4, sz2=4
+Callee:deserialise_rekeylimit, sz1=4, sz2=4
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:initialize_server_options, sz1=0, sz2=1
+Callee:deserialise_timingsecret, sz1=3, sz2=3
+Callee:deserialise_s32, sz1=2, sz2=2
+Callee:deserialise_nullable_string, sz1=2, sz2=2
+Callee:deserialise_nullable_string_array, sz1=3, sz2=4
+Callee:free_server_options, sz1=0, sz2=7
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:match_test_missing_fatal, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:match_cfg_line_group, sz1=2, sz2=5
+Callee:ga_init, sz1=5, sz2=10
+Callee:ga_free, sz1=0, sz2=1
+Callee:ga_match_pattern_list, sz1=0, sz2=1
+Callee:getpwnam, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:parse_server_match_config, sz1=2, sz2=4
+Callee:initialize_server_options, sz1=0, sz2=1
+Callee:parse_server_config, sz1=2, sz2=2
+Callee:copy_set_server_options, sz1=5, sz2=13
+Callee:free_server_options, sz1=0, sz2=7
+DEBUG Func:parse_server_config, sz1=2, sz2=2
+Callee:parse_server_config_depth, sz1=5, sz2=7
+Callee:process_queued_listen_addrs, sz1=1, sz2=2
+DEBUG Func:copy_set_server_options, sz1=5, sz2=13
+Callee:option_clear_or_none, sz1=0, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:assemble_algorithms, sz1=7, sz2=9
+Callee:copy_ipqos, sz1=0, sz2=1
+Callee:copy_gatewayports, sz1=0, sz2=1
+Callee:copy_streamlocalbindunlink, sz1=0, sz2=1
+Callee:copy_loglevel, sz1=0, sz2=0
+Callee:copy_subsystem, sz1=1, sz2=1
+Callee:copy_rekeylimit, sz1=0, sz2=2
+Callee:copy_server_option_string, sz1=1, sz2=2
+Callee:copy_server_option_int, sz1=0, sz2=0
+Callee:copy_server_option_strarray, sz1=1, sz2=1
+Callee:servconf_merge_subsystems, sz1=3, sz2=5
+DEBUG Func:copy_subsystem, sz1=1, sz2=1
+Callee:copy_server_option_strarray_values, sz1=2, sz2=3
+DEBUG Func:copy_server_option_string, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:copy_server_option_strarray, sz1=1, sz2=1
+Callee:copy_server_option_strarray_values, sz1=2, sz2=3
+DEBUG Func:servconf_merge_subsystems, sz1=3, sz2=5
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:copy_server_option_strarray_values, sz1=2, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:process_queued_listen_addrs, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:add_listen_addr, sz1=1, sz2=1
+DEBUG Func:parse_server_match_testspec, sz1=1, sz2=6
+Callee:fprintf, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:a2port, sz1=0, sz2=3
+Callee:xstrdup, sz1=1, sz2=2
+Callee:strprefix, sz1=0, sz2=3
+DEBUG Func:serialise_server_options, sz1=23, sz2=24
+Callee:serialise_rekeylimit, sz1=4, sz2=4
+Callee:serialise_timingsecret, sz1=3, sz2=3
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:serialise_nullable_string, sz1=2, sz2=2
+Callee:serialise_nullable_string_array, sz1=2, sz2=2
+Callee:serialise_port, sz1=4, sz2=4
+Callee:serialise_listenaddress, sz1=6, sz2=6
+Callee:serialise_hostkeyfile, sz1=5, sz2=5
+Callee:serialise_ipqos, sz1=3, sz2=3
+Callee:serialise_gatewayports, sz1=3, sz2=3
+Callee:serialise_streamlocalbindmask, sz1=3, sz2=3
+Callee:serialise_streamlocalbindunlink, sz1=3, sz2=3
+Callee:serialise_logfacility, sz1=3, sz2=3
+Callee:serialise_loglevel, sz1=3, sz2=3
+Callee:serialise_permituserenv, sz1=4, sz2=4
+Callee:serialise_subsystem, sz1=4, sz2=4
+Callee:serialise_maxstartups, sz1=3, sz2=3
+Callee:serialise_persourcenetblocksize, sz1=3, sz2=3
+Callee:serialise_persourcepenalties, sz1=4, sz2=4
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_port, sz1=4, sz2=4
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_listenaddress, sz1=6, sz2=6
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:serialise_nullable_string, sz1=2, sz2=2
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_hostkeyfile, sz1=5, sz2=5
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:serialise_nullable_string, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_ipqos, sz1=3, sz2=3
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_gatewayports, sz1=3, sz2=3
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_streamlocalbindmask, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:serialise_mode, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_streamlocalbindunlink, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_logfacility, sz1=3, sz2=3
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_loglevel, sz1=3, sz2=3
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_permituserenv, sz1=4, sz2=4
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:serialise_nullable_string, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_subsystem, sz1=4, sz2=4
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_maxstartups, sz1=3, sz2=3
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_persourcenetblocksize, sz1=3, sz2=3
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:serialise_persourcepenalties, sz1=4, sz2=4
+Callee:serialise_s32, sz1=2, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:serialise_double, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sshkey_ssh_name, sz1=1, sz2=1
+Callee:sshkey_ssh_name_from_type_nid, sz1=0, sz2=1
+DEBUG Func:sshkey_ssh_name_plain, sz1=1, sz2=2
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshkey_ssh_name_from_type_nid, sz1=0, sz2=1
+DEBUG Func:get_rdomain, sz1=1, sz2=1
+Callee:sys_get_rdomain, sz1=1, sz2=5
+DEBUG Func:set_rdomain, sz1=1, sz2=1
+Callee:sys_set_rdomain, sz1=1, sz2=5
+DEBUG Func:set_sock_tos, sz1=1, sz2=5
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:get_sock_af, sz1=0, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:setsockopt, sz1=0, sz2=0
+DEBUG Func:timeout_connect, sz1=3, sz2=8
+Callee:connect, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:waitfd, sz1=0, sz2=8
+Callee:sshlog, sz1=1, sz2=1
+Callee:set_nonblock, sz1=1, sz2=4
+Callee:unset_nonblock, sz1=1, sz2=4
+Callee:getsockopt, sz1=0, sz2=0
+DEBUG Func:pwcopy, sz1=2, sz2=2
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:a2tun, sz1=1, sz2=5
+Callee:strchr, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcasecmp, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+Callee:strtonum, sz1=0, sz2=2
+DEBUG Func:put_host_port, sz1=3, sz2=6
+Callee:sshfatal, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:asprintf, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:hpdelim, sz1=1, sz2=1
+Callee:hpdelim2, sz1=0, sz2=3
+DEBUG Func:parse_user_host_path, sz1=1, sz2=5
+Callee:free, sz1=0, sz2=0
+Callee:cleanhostname, sz1=0, sz2=1
+Callee:colon, sz1=0, sz2=0
+Callee:strrchr, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:parse_user_host_port, sz1=2, sz2=7
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:a2port, sz1=0, sz2=3
+Callee:hpdelim, sz1=1, sz2=1
+Callee:cleanhostname, sz1=0, sz2=1
+Callee:strrchr, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:parse_uri, sz1=4, sz2=10
+Callee:strlen, sz1=0, sz2=0
+Callee:strchr, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:a2port, sz1=0, sz2=3
+Callee:hpdelim2, sz1=0, sz2=3
+Callee:cleanhostname, sz1=0, sz2=1
+Callee:urldecode, sz1=1, sz2=5
+Callee:valid_domain, sz1=0, sz2=5
+Callee:strncmp, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:urldecode, sz1=1, sz2=5
+Callee:strlen, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:hexchar, sz1=0, sz2=0
+Callee:__ctype_b_loc, sz1=0, sz2=0
+Callee:xmalloc, sz1=1, sz2=2
+DEBUG Func:addargs, sz1=2, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:vasprintf, sz1=0, sz2=0
+Callee:xrecallocarray, sz1=1, sz2=2
+DEBUG Func:replacearg, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:vasprintf, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+DEBUG Func:tilde_expand, sz1=3, sz2=9
+Callee:strlen, sz1=0, sz2=0
+Callee:strchr, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:getpwnam, sz1=0, sz2=0
+Callee:strspn, sz1=0, sz2=0
+Callee:getpwuid, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+Callee:xasprintf, sz1=1, sz2=1
+DEBUG Func:tilde_expand_filename, sz1=1, sz2=2
+Callee:cleanup_exit, sz1=0, sz2=1
+Callee:tilde_expand, sz1=3, sz2=9
+DEBUG Func:dollar_expand, sz1=1, sz2=1
+Callee:vdollar_percent_expand, sz1=8, sz2=14
+DEBUG Func:vdollar_percent_expand, sz1=8, sz2=14
+Callee:strlen, sz1=0, sz2=0
+Callee:strchr, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_dup_string, sz1=2, sz2=4
+Callee:sshlog, sz1=1, sz2=1
+Callee:xmalloc, sz1=1, sz2=2
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:percent_expand, sz1=2, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:vdollar_percent_expand, sz1=8, sz2=14
+DEBUG Func:percent_dollar_expand, sz1=2, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:vdollar_percent_expand, sz1=8, sz2=14
+DEBUG Func:tun_open, sz1=1, sz2=1
+Callee:sys_tun_open, sz1=1, sz2=8
+DEBUG Func:tohex, sz1=2, sz2=4
+Callee:snprintf, sz1=0, sz2=0
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+Callee:strlcat, sz1=0, sz2=1
+DEBUG Func:xextendf, sz1=2, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:xvasprintf, sz1=1, sz2=2
+Callee:xasprintf, sz1=1, sz2=1
+DEBUG Func:ms_subtract_diff, sz1=1, sz2=1
+Callee:monotime_tv, sz1=1, sz2=1
+DEBUG Func:monotime_tv, sz1=1, sz2=1
+Callee:monotime_ts, sz1=1, sz2=5
+DEBUG Func:monotime_ts, sz1=1, sz2=5
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:clock_gettime, sz1=0, sz2=0
+Callee:gettimeofday, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:monotime, sz1=1, sz2=1
+Callee:monotime_ts, sz1=1, sz2=5
+DEBUG Func:monotime_double, sz1=1, sz2=1
+Callee:monotime_ts, sz1=1, sz2=5
+DEBUG Func:sshkey_free_contents, sz1=2, sz2=6
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:pkcs11_key_free, sz1=9, sz2=10
+Callee:sshkey_impl_from_type, sz1=0, sz2=0
+Callee:cert_free, sz1=1, sz2=4
+Callee:sshkey_prekey_free, sz1=0, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:cert_free, sz1=1, sz2=4
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshkey_sk_cleanup, sz1=1, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+DEBUG Func:sshkey_equal, sz1=1, sz2=3
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_equal_public, sz1=0, sz2=2
+Callee:cert_compare, sz1=2, sz2=3
+DEBUG Func:cert_compare, sz1=2, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:timingsafe_bcmp, sz1=0, sz2=0
+DEBUG Func:sshkey_serialize_sk, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:sshkey_putb, sz1=1, sz2=1
+Callee:to_blob_buf, sz1=4, sz2=7
+DEBUG Func:to_blob_buf, sz1=4, sz2=7
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshkey_type_is_cert, sz1=0, sz2=1
+Callee:sshkey_impl_from_type, sz1=0, sz2=0
+Callee:sshkey_ssh_name_from_type_nid, sz1=0, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:sshkey_puts, sz1=1, sz2=1
+Callee:sshkey_puts_opts_internal, sz1=3, sz2=4
+DEBUG Func:sshkey_puts_opts_internal, sz1=3, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:to_blob_buf, sz1=4, sz2=7
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+DEBUG Func:sshkey_putb_plain, sz1=1, sz2=1
+Callee:to_blob_buf, sz1=4, sz2=7
+DEBUG Func:sshkey_puts_plain, sz1=1, sz2=1
+Callee:sshkey_puts_opts_internal, sz1=3, sz2=4
+DEBUG Func:sshkey_to_blob, sz1=1, sz2=1
+Callee:to_blob, sz1=4, sz2=6
+DEBUG Func:to_blob, sz1=4, sz2=6
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:to_blob_buf, sz1=4, sz2=7
+DEBUG Func:sshkey_plain_to_blob, sz1=1, sz2=1
+Callee:to_blob, sz1=4, sz2=6
+DEBUG Func:sshkey_fingerprint_raw, sz1=1, sz2=6
+Callee:calloc, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:to_blob, sz1=4, sz2=6
+Callee:ssh_digest_bytes, sz1=0, sz2=1
+Callee:ssh_digest_memory, sz1=0, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshkey_fingerprint, sz1=6, sz2=7
+Callee:sshkey_fingerprint_raw, sz1=1, sz2=6
+Callee:fingerprint_hex, sz1=0, sz2=5
+Callee:fingerprint_b64, sz1=1, sz2=7
+Callee:fingerprint_bubblebabble, sz1=0, sz2=1
+Callee:fingerprint_randomart, sz1=1, sz2=6
+Callee:ssh_digest_alg_name, sz1=0, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:fingerprint_b64, sz1=1, sz2=7
+Callee:strlen, sz1=0, sz2=0
+Callee:calloc, sz1=0, sz2=0
+Callee:strcspn, sz1=0, sz2=0
+Callee:__b64_ntop, sz1=0, sz2=0
+Callee:freezero, sz1=0, sz2=2
+Callee:strlcat, sz1=0, sz2=1
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:fingerprint_randomart, sz1=1, sz2=6
+Callee:memset, sz1=0, sz2=0
+Callee:strlen, sz1=0, sz2=0
+Callee:calloc, sz1=0, sz2=0
+Callee:sshkey_size, sz1=0, sz2=1
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:snprintf, sz1=0, sz2=0
+DEBUG Func:sshkey_read, sz1=5, sz2=14
+Callee:strlen, sz1=0, sz2=0
+Callee:key_type_is_ecdsa_variant, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_impl_from_type, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_free_contents, sz1=2, sz2=6
+Callee:strcspn, sz1=0, sz2=0
+Callee:peek_type_nid, sz1=0, sz2=3
+Callee:strndup, sz1=0, sz2=0
+Callee:sshkey_fromb, sz1=1, sz2=1
+Callee:sshbuf_b64tod, sz1=2, sz2=5
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshkey_fromb, sz1=1, sz2=1
+Callee:sshkey_from_blob_internal, sz1=7, sz2=12
+DEBUG Func:sshkey_from_blob_internal, sz1=7, sz2=12
+Callee:sshkey_type_from_name, sz1=1, sz2=1
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_new, sz1=1, sz2=6
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_fromb, sz1=5, sz2=6
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_type_is_cert, sz1=0, sz2=1
+Callee:sshkey_impl_from_type, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+DEBUG Func:cert_parse, sz1=13, sz2=17
+Callee:sshbuf_get_u64, sz1=2, sz2=2
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_from_blob_internal, sz1=7, sz2=12
+Callee:sshkey_type_is_valid_ca, sz1=0, sz2=1
+Callee:sshkey_verify, sz1=0, sz2=1
+Callee:sshkey_get_sigtype, sz1=2, sz2=4
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:recallocarray, sz1=0, sz2=7
+DEBUG Func:sshkey_get_sigtype, sz1=2, sz2=4
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+DEBUG Func:sshkey_to_base64, sz1=3, sz2=5
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_putb, sz1=1, sz2=1
+Callee:sshbuf_dtob64_string, sz1=3, sz2=4
+DEBUG Func:sshkey_format_text, sz1=3, sz2=4
+Callee:sshbuf_putf, sz1=1, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_ssh_name, sz1=1, sz2=1
+Callee:sshkey_to_base64, sz1=3, sz2=5
+DEBUG Func:sshkey_write, sz1=4, sz2=8
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:feof, sz1=0, sz2=0
+Callee:sshkey_format_text, sz1=3, sz2=4
+Callee:fwrite, sz1=0, sz2=0
+DEBUG Func:revoked_certs_for_ca_key, sz1=2, sz2=4
+Callee:calloc, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_from_private, sz1=1, sz2=4
+Callee:sshkey_equal, sz1=1, sz2=3
+DEBUG Func:ssh_krl_revoke_cert_by_key_id, sz1=1, sz2=5
+Callee:calloc, sz1=0, sz2=0
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:revoked_certs_for_ca_key, sz1=2, sz2=4
+Callee:revoked_key_id_tree_RB_INSERT, sz1=0, sz2=2
+DEBUG Func:ssh_krl_revoke_key_explicit, sz1=3, sz2=4
+Callee:sshkey_type, sz1=0, sz2=1
+Callee:plain_key_blob, sz1=3, sz2=5
+Callee:revoke_blob, sz1=0, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:plain_key_blob, sz1=3, sz2=5
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_from_private, sz1=1, sz2=4
+Callee:sshkey_drop_cert, sz1=1, sz2=3
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_to_blob, sz1=1, sz2=1
+DEBUG Func:ssh_krl_revoke_key_sha1, sz1=1, sz2=2
+Callee:revoke_by_hash, sz1=0, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:ssh_krl_revoke_key_sha256, sz1=1, sz2=2
+Callee:revoke_by_hash, sz1=0, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:ssh_krl_revoke_key, sz1=3, sz2=4
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:ssh_krl_revoke_cert_by_key_id, sz1=1, sz2=5
+Callee:ssh_krl_revoke_key_explicit, sz1=3, sz2=4
+Callee:ssh_krl_revoke_cert_by_serial, sz1=1, sz2=1
+DEBUG Func:ssh_krl_to_blob, sz1=11, sz2=16
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_put_u64, sz1=1, sz2=1
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:free, sz1=0, sz2=0
+Callee:time, sz1=0, sz2=0
+Callee:revoked_certs_generate, sz1=11, sz2=20
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:revoked_blob_tree_RB_MINMAX, sz1=0, sz2=0
+Callee:revoked_blob_tree_RB_NEXT, sz1=0, sz2=0
+DEBUG Func:revoked_certs_generate, sz1=11, sz2=20
+Callee:sshbuf_put_u64, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:sshkey_puts, sz1=1, sz2=1
+Callee:choose_next_state, sz1=0, sz2=0
+Callee:put_bitmap, sz1=1, sz2=5
+Callee:bitmap_new, sz1=0, sz2=2
+Callee:bitmap_free, sz1=0, sz2=2
+Callee:bitmap_set_bit, sz1=0, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:revoked_serial_tree_RB_MINMAX, sz1=0, sz2=0
+Callee:revoked_serial_tree_RB_NEXT, sz1=0, sz2=0
+Callee:revoked_key_id_tree_RB_MINMAX, sz1=0, sz2=0
+Callee:revoked_key_id_tree_RB_NEXT, sz1=0, sz2=0
+DEBUG Func:put_bitmap, sz1=1, sz2=5
+Callee:malloc, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:bitmap_nbytes, sz1=0, sz2=1
+Callee:bitmap_to_string, sz1=0, sz2=1
+Callee:sshbuf_put_bignum2_bytes, sz1=1, sz2=1
+DEBUG Func:ssh_krl_from_blob, sz1=17, sz2=19
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_get_u64, sz1=2, sz2=2
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_fromb, sz1=5, sz2=6
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:format_timestamp, sz1=0, sz2=3
+Callee:parse_revoked_certs, sz1=14, sz2=22
+Callee:blob_section, sz1=3, sz2=5
+Callee:extension_section, sz1=7, sz2=8
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:sshbuf_cmp, sz1=2, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:ssh_krl_init, sz1=0, sz2=1
+Callee:ssh_krl_free, sz1=0, sz2=5
+DEBUG Func:parse_revoked_certs, sz1=14, sz2=22
+Callee:sshbuf_get_u64, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_from_blob, sz1=2, sz2=3
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:ssh_krl_revoke_cert_by_key_id, sz1=1, sz2=5
+Callee:cert_extension_subsection, sz1=7, sz2=8
+Callee:bitmap_new, sz1=0, sz2=2
+Callee:bitmap_free, sz1=0, sz2=2
+Callee:bitmap_test_bit, sz1=0, sz2=0
+Callee:bitmap_nbits, sz1=0, sz2=1
+Callee:bitmap_from_string, sz1=0, sz2=3
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:sshbuf_get_bignum2_bytes_direct, sz1=2, sz2=2
+Callee:sshlog, sz1=1, sz2=1
+Callee:ssh_krl_revoke_cert_by_serial, sz1=1, sz2=1
+Callee:ssh_krl_revoke_cert_by_serial_range, sz1=1, sz2=2
+DEBUG Func:blob_section, sz1=3, sz2=5
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:revoke_blob, sz1=0, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:extension_section, sz1=7, sz2=8
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:cert_extension_subsection, sz1=7, sz2=8
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:ssh_krl_check_key, sz1=2, sz2=3
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:is_key_revoked, sz1=3, sz2=8
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:is_key_revoked, sz1=3, sz2=8
+Callee:memset, sz1=0, sz2=0
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_fingerprint_raw, sz1=1, sz2=6
+Callee:revoked_certs_for_ca_key, sz1=2, sz2=4
+Callee:plain_key_blob, sz1=3, sz2=5
+Callee:revoked_blob_tree_RB_FIND, sz1=0, sz2=1
+Callee:is_cert_revoked, sz1=0, sz2=3
+DEBUG Func:ssh_krl_file_contains_key, sz1=5, sz2=7
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:ssh_krl_from_blob, sz1=17, sz2=19
+Callee:ssh_krl_check_key, sz1=2, sz2=3
+Callee:sshlog, sz1=1, sz2=1
+Callee:sshbuf_load_file, sz1=1, sz2=4
+Callee:ssh_krl_free, sz1=0, sz2=5
+DEBUG Func:krl_dump, sz1=8, sz2=17
+Callee:asmprintf, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:fprintf, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_from_blob, sz1=2, sz2=3
+Callee:sshkey_ssh_name, sz1=1, sz2=1
+Callee:tohex, sz1=2, sz2=4
+Callee:sshkey_fingerprint, sz1=6, sz2=7
+Callee:format_timestamp, sz1=0, sz2=3
+Callee:fputc, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:revoked_blob_tree_RB_MINMAX, sz1=0, sz2=0
+Callee:revoked_blob_tree_RB_NEXT, sz1=0, sz2=0
+Callee:revoked_serial_tree_RB_MINMAX, sz1=0, sz2=0
+Callee:revoked_serial_tree_RB_NEXT, sz1=0, sz2=0
+Callee:revoked_key_id_tree_RB_MINMAX, sz1=0, sz2=0
+Callee:revoked_key_id_tree_RB_NEXT, sz1=0, sz2=0
+DEBUG Func:crypto_kem_mlkem768_keypair, sz1=2, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:crypto_kem_mlkem768_keypair_seeded, sz1=1, sz2=2
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:crypto_kem_mlkem768_keypair_seeded, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:libcrux_ml_kem_mlkem768_portable_generate_key_pair, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_mlkem768_portable_generate_key_pair, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ind_cca_instantiations_portable_generate_keypair_e9, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_ind_cca_instantiations_portable_generate_keypair_e9, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ind_cca_generate_keypair_b8, sz1=2, sz2=9
+DEBUG Func:libcrux_ml_kem_ind_cca_generate_keypair_b8, sz1=2, sz2=9
+Callee:Eurydice_array_to_subslice_shared_d47, sz1=0, sz2=0
+Callee:Eurydice_array_to_subslice_from_shared_5f1, sz1=0, sz2=0
+Callee:libcrux_ml_kem_ind_cpa_generate_keypair_30, sz1=1, sz2=4
+Callee:Eurydice_array_to_slice_shared_f4, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_ff, sz1=0, sz2=0
+Callee:libcrux_ml_kem_ind_cca_serialize_kem_secret_key_52, sz1=1, sz2=1
+Callee:libcrux_ml_kem_types_from_b2_79, sz1=0, sz2=0
+Callee:libcrux_ml_kem_types_from_51_3d, sz1=0, sz2=0
+Callee:libcrux_ml_kem_types_from_17_bc, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_kem_ind_cpa_generate_keypair_30, sz1=1, sz2=4
+Callee:libcrux_ml_kem_ind_cpa_unpacked_default_70_68, sz1=0, sz2=1
+Callee:libcrux_ml_kem_ind_cpa_unpacked_default_8b_68, sz1=0, sz2=1
+Callee:libcrux_ml_kem_ind_cpa_generate_keypair_unpacked_39, sz1=4, sz2=9
+Callee:libcrux_ml_kem_ind_cpa_serialize_unpacked_secret_key_30, sz1=0, sz2=4
+DEBUG Func:libcrux_ml_kem_ind_cca_serialize_kem_secret_key_52, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ind_cca_serialize_kem_secret_key_mut_52, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_kem_ind_cca_serialize_kem_secret_key_mut_52, sz1=1, sz2=3
+Callee:Eurydice_array_to_subslice_mut_d417, sz1=0, sz2=0
+Callee:libcrux_ml_kem_hash_functions_portable_H_4a_78, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_01, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_H_4a_78, sz1=1, sz2=1
+Callee:libcrux_ml_kem_hash_functions_portable_H, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_H, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_mut_01, sz1=0, sz2=0
+Callee:libcrux_sha3_portable_sha256, sz1=1, sz2=1
+DEBUG Func:libcrux_sha3_portable_sha256, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_portable_keccak1_220, sz1=2, sz2=5
+DEBUG Func:libcrux_sha3_generic_keccak_portable_keccak1_220, sz1=2, sz2=5
+Callee:libcrux_sha3_generic_keccak_new_80_71, sz1=0, sz2=1
+Callee:libcrux_sha3_generic_keccak_absorb_block_80_e90, sz1=1, sz2=2
+Callee:libcrux_sha3_generic_keccak_absorb_final_80_bd2, sz1=1, sz2=2
+Callee:libcrux_sha3_simd_portable_squeeze_9b_b2, sz1=0, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+DEBUG Func:libcrux_sha3_generic_keccak_absorb_block_80_e90, sz1=1, sz2=2
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+Callee:libcrux_sha3_simd_portable_load_block_a1_b2, sz1=1, sz2=1
+DEBUG Func:libcrux_sha3_generic_keccak_absorb_final_80_bd2, sz1=1, sz2=2
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+Callee:libcrux_sha3_simd_portable_load_last_a1_220, sz1=1, sz2=1
+DEBUG Func:sshkey_dump_ec_key, sz1=1, sz2=6
+Callee:fputs, sz1=0, sz2=0
+Callee:EC_KEY_get0_group, sz1=0, sz2=0
+Callee:EC_KEY_get0_private_key, sz1=0, sz2=0
+Callee:sshkey_dump_ec_point, sz1=0, sz2=6
+Callee:BN_print_fp, sz1=0, sz2=0
+Callee:EC_KEY_get0_public_key, sz1=0, sz2=0
+DEBUG Func:sshkey_private_to_fileblob, sz1=2, sz2=2
+Callee:sshkey_private_to_blob2, sz1=17, sz2=31
+Callee:sshkey_private_to_blob_pem_pkcs8, sz1=5, sz2=21
+DEBUG Func:sshkey_private_to_blob2, sz1=17, sz2=31
+Callee:strlen, sz1=0, sz2=0
+Callee:calloc, sz1=0, sz2=0
+Callee:sshbuf_reserve, sz1=1, sz2=1
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshkey_private_serialize, sz1=0, sz2=0
+Callee:sshkey_to_blob, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:sshbuf_dtob64, sz1=5, sz2=8
+Callee:cipher_blocksize, sz1=0, sz2=0
+Callee:cipher_keylen, sz1=0, sz2=0
+Callee:cipher_authlen, sz1=0, sz2=0
+Callee:cipher_ivlen, sz1=0, sz2=0
+Callee:cipher_by_name, sz1=0, sz2=1
+Callee:cipher_init, sz1=0, sz2=11
+Callee:cipher_crypt, sz1=0, sz2=4
+Callee:cipher_free, sz1=0, sz2=4
+Callee:arc4random, sz1=1, sz2=1
+Callee:arc4random_buf, sz1=1, sz2=1
+Callee:bcrypt_pbkdf, sz1=2, sz2=6
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshkey_private_to_blob_pem_pkcs8, sz1=5, sz2=21
+Callee:strlen, sz1=0, sz2=0
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:EVP_PKEY_get0_EC_KEY, sz1=0, sz2=0
+Callee:sshkey_is_shielded, sz1=0, sz2=0
+Callee:sshkey_shield_private, sz1=8, sz2=25
+Callee:sshkey_unshield_private, sz1=5, sz2=17
+Callee:EVP_aes_128_cbc, sz1=0, sz2=0
+Callee:BIO_s_mem, sz1=0, sz2=0
+Callee:BIO_new, sz1=0, sz2=0
+Callee:PEM_write_bio_ECPrivateKey, sz1=0, sz2=0
+Callee:EVP_PKEY_up_ref, sz1=0, sz2=0
+Callee:EVP_PKEY_get0_RSA, sz1=0, sz2=0
+Callee:PEM_write_bio_RSAPrivateKey, sz1=0, sz2=0
+Callee:EVP_PKEY_new_raw_private_key, sz1=0, sz2=0
+Callee:PEM_write_bio_PrivateKey, sz1=0, sz2=0
+Callee:BIO_ctrl, sz1=0, sz2=0
+Callee:EVP_PKEY_free, sz1=0, sz2=0
+Callee:BIO_free, sz1=0, sz2=0
+DEBUG Func:sshkey_parse_private_fileblob_type, sz1=2, sz2=2
+Callee:sshkey_parse_private2, sz1=7, sz2=10
+Callee:sshkey_parse_private_pem_fileblob, sz1=3, sz2=30
+DEBUG Func:sshkey_parse_private2, sz1=7, sz2=10
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:private2_uudecode, sz1=5, sz2=7
+Callee:private2_decrypt, sz1=12, sz2=26
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_private_deserialize, sz1=5, sz2=11
+Callee:private2_check_padding, sz1=2, sz2=3
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_equal, sz1=1, sz2=3
+DEBUG Func:sshkey_parse_private_pem_fileblob, sz1=3, sz2=30
+Callee:calloc, sz1=0, sz2=0
+Callee:sshkey_curve_nid_to_name, sz1=0, sz2=0
+Callee:sshkey_new, sz1=1, sz2=6
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshkey_check_rsa_length, sz1=0, sz2=1
+Callee:EC_KEY_get0_group, sz1=0, sz2=0
+Callee:sshkey_ec_validate_public, sz1=0, sz2=9
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_ec_validate_private, sz1=0, sz2=9
+Callee:EC_KEY_get0_public_key, sz1=0, sz2=0
+Callee:BIO_s_mem, sz1=0, sz2=0
+Callee:BIO_new, sz1=0, sz2=0
+Callee:EVP_PKEY_up_ref, sz1=0, sz2=0
+Callee:EVP_PKEY_free, sz1=0, sz2=0
+Callee:BIO_free, sz1=0, sz2=0
+Callee:BIO_write, sz1=0, sz2=0
+Callee:clear_libcrypto_errors, sz1=0, sz2=1
+Callee:PEM_read_bio_PrivateKey, sz1=0, sz2=0
+Callee:convert_libcrypto_error, sz1=0, sz2=3
+Callee:EVP_PKEY_get_base_id, sz1=0, sz2=0
+Callee:EVP_PKEY_get1_RSA, sz1=0, sz2=0
+Callee:RSA_blinding_on, sz1=0, sz2=0
+Callee:EVP_PKEY_set1_RSA, sz1=0, sz2=0
+Callee:EVP_PKEY_get1_EC_KEY, sz1=0, sz2=0
+Callee:EVP_PKEY_get_raw_public_key, sz1=0, sz2=0
+Callee:EVP_PKEY_get_raw_private_key, sz1=0, sz2=0
+Callee:RSA_free, sz1=0, sz2=0
+Callee:EC_KEY_free, sz1=0, sz2=0
+Callee:sshkey_ecdsa_fixup_group, sz1=0, sz2=10
+DEBUG Func:ssh_ed25519_serialize_public, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+DEBUG Func:ssh_ed25519_deserialize_public, sz1=1, sz2=2
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_ed25519_serialize_private, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+DEBUG Func:ssh_ed25519_deserialize_private, sz1=2, sz2=3
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:ssh_ed25519_deserialize_public, sz1=1, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_ed25519_generate, sz1=1, sz2=2
+Callee:malloc, sz1=0, sz2=0
+Callee:crypto_sign_ed25519_keypair, sz1=1, sz2=8
+DEBUG Func:ssh_ed25519_sign, sz1=2, sz2=5
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:ssh_ed25519_encode_store_sig, sz1=5, sz2=7
+Callee:crypto_sign_ed25519, sz1=1, sz2=7
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_ed25519_verify, sz1=6, sz2=12
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:crypto_sign_ed25519_open, sz1=1, sz2=7
+Callee:sshlog, sz1=1, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_ed25519_encode_store_sig, sz1=5, sz2=7
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:ssh_digest_update_buffer, sz1=2, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:ssh_digest_update, sz1=0, sz2=1
+DEBUG Func:ssh_digest_buffer, sz1=2, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:ssh_digest_memory, sz1=0, sz2=2
+DEBUG Func:ssh_mldsa44_ed25519_serialize_public, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+DEBUG Func:ssh_mldsa44_ed25519_deserialize_public, sz1=1, sz2=2
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_mldsa44_ed25519_serialize_private, sz1=2, sz2=3
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:ssh_mldsa44_ed25519_serialize_public, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+DEBUG Func:ssh_mldsa44_ed25519_deserialize_private, sz1=2, sz2=4
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:ssh_mldsa44_ed25519_deserialize_public, sz1=1, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_mldsa44_ed25519_generate, sz1=1, sz2=3
+Callee:malloc, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:crypto_sign_mldsa44_ed25519_keygen, sz1=2, sz2=3
+DEBUG Func:ssh_mldsa44_ed25519_sign, sz1=6, sz2=10
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:crypto_sign_mldsa44_ed25519_sign, sz1=6, sz2=9
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+DEBUG Func:ssh_mldsa44_ed25519_verify, sz1=5, sz2=9
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:crypto_sign_mldsa44_ed25519_verify, sz1=3, sz2=5
+DEBUG Func:crypto_sign_mldsa44_ed25519_verify, sz1=3, sz2=5
+Callee:malloc, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:construct_m_prime, sz1=5, sz2=8
+Callee:crypto_sign_ed25519_open, sz1=1, sz2=7
+Callee:crypto_sign_mldsa44_verify, sz1=1, sz2=1
+DEBUG Func:construct_m_prime, sz1=5, sz2=8
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:ssh_digest_memory, sz1=0, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+DEBUG Func:crypto_sign_mldsa44_ed25519_sign, sz1=6, sz2=9
+Callee:malloc, sz1=0, sz2=0
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:construct_m_prime, sz1=5, sz2=8
+Callee:crypto_sign_ed25519_keypair_from_seed, sz1=1, sz2=4
+Callee:crypto_sign_ed25519, sz1=1, sz2=7
+Callee:crypto_sign_mldsa44_seeded, sz1=1, sz2=2
+Callee:crypto_sign_mldsa44_keypair_seeded, sz1=1, sz2=2
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:crypto_sign_mldsa44_ed25519_keygen, sz1=2, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:crypto_sign_mldsa44_ed25519_keygen_seeded, sz1=2, sz2=3
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:crypto_sign_mldsa44_ed25519_keygen_seeded, sz1=2, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:crypto_sign_ed25519_keypair_from_seed, sz1=1, sz2=4
+Callee:crypto_sign_mldsa44_keypair_seeded, sz1=1, sz2=2
+DEBUG Func:ssh_hmac_update_buffer, sz1=1, sz2=1
+Callee:ssh_digest_update_buffer, sz1=2, sz2=3
+DEBUG Func:crypto_sign_ed25519_keypair, sz1=1, sz2=8
+Callee:EVP_PKEY_free, sz1=0, sz2=0
+Callee:EVP_PKEY_get_raw_public_key, sz1=0, sz2=0
+Callee:EVP_PKEY_get_raw_private_key, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:EVP_PKEY_CTX_new_id, sz1=0, sz2=0
+Callee:EVP_PKEY_keygen_init, sz1=0, sz2=0
+Callee:EVP_PKEY_keygen, sz1=0, sz2=0
+Callee:EVP_PKEY_CTX_free, sz1=0, sz2=0
+DEBUG Func:crypto_sign_ed25519_keypair_from_seed, sz1=1, sz2=4
+Callee:EVP_PKEY_new_raw_private_key, sz1=0, sz2=0
+Callee:EVP_PKEY_free, sz1=0, sz2=0
+Callee:EVP_PKEY_get_raw_public_key, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:crypto_sign_ed25519, sz1=1, sz2=7
+Callee:EVP_MD_CTX_new, sz1=0, sz2=0
+Callee:EVP_DigestSignInit, sz1=0, sz2=0
+Callee:EVP_DigestSign, sz1=0, sz2=0
+Callee:EVP_MD_CTX_free, sz1=0, sz2=0
+Callee:EVP_PKEY_new_raw_private_key, sz1=0, sz2=0
+Callee:EVP_PKEY_free, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:crypto_sign_ed25519_open, sz1=1, sz2=7
+Callee:EVP_MD_CTX_new, sz1=0, sz2=0
+Callee:EVP_MD_CTX_free, sz1=0, sz2=0
+Callee:EVP_DigestVerifyInit, sz1=0, sz2=0
+Callee:EVP_DigestVerify, sz1=0, sz2=0
+Callee:EVP_PKEY_free, sz1=0, sz2=0
+Callee:EVP_PKEY_new_raw_public_key, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:kex_alg_list, sz1=1, sz2=1
+Callee:xextendf, sz1=2, sz2=3
+DEBUG Func:kex_name_valid, sz1=1, sz2=1
+Callee:kex_alg_by_name, sz1=0, sz2=1
+DEBUG Func:kex_is_pq_from_name, sz1=1, sz2=1
+Callee:kex_alg_by_name, sz1=0, sz2=1
+DEBUG Func:kex_type_from_name, sz1=1, sz2=1
+Callee:kex_alg_by_name, sz1=0, sz2=1
+DEBUG Func:kex_hash_from_name, sz1=1, sz2=1
+Callee:kex_alg_by_name, sz1=0, sz2=1
+DEBUG Func:kex_nid_from_name, sz1=1, sz2=1
+Callee:kex_alg_by_name, sz1=0, sz2=1
+DEBUG Func:kex_names_valid, sz1=2, sz2=6
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:kex_alg_by_name, sz1=0, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:kex_has_any_alg, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:match_list, sz1=1, sz2=5
+DEBUG Func:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_reserve, sz1=1, sz2=1
+DEBUG Func:sshbuf_poke_u64, sz1=1, sz2=1
+Callee:check_woffset, sz1=2, sz2=2
+DEBUG Func:check_woffset, sz1=2, sz2=2
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:check_offset, sz1=2, sz2=2
+DEBUG Func:sshbuf_poke_u32, sz1=1, sz2=1
+Callee:check_woffset, sz1=2, sz2=2
+DEBUG Func:sshbuf_poke_u16, sz1=1, sz2=1
+Callee:check_woffset, sz1=2, sz2=2
+DEBUG Func:sshbuf_poke_u8, sz1=1, sz2=1
+Callee:check_woffset, sz1=2, sz2=2
+DEBUG Func:sshbuf_poke, sz1=1, sz2=1
+Callee:check_woffset, sz1=2, sz2=2
+DEBUG Func:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_reserve, sz1=1, sz2=1
+DEBUG Func:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:strlen, sz1=0, sz2=0
+Callee:sshbuf_put_string, sz1=1, sz2=1
+DEBUG Func:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_put_string, sz1=1, sz2=1
+DEBUG Func:sshbuf_froms, sz1=4, sz2=5
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_peek_string_direct, sz1=2, sz2=2
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_set_parent, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+DEBUG Func:sshbuf_put_bignum2_bytes, sz1=1, sz2=1
+Callee:sshbuf_reserve, sz1=1, sz2=1
+DEBUG Func:sshbuf_get_bignum2_bytes_direct, sz1=2, sz2=2
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_peek_string_direct, sz1=2, sz2=2
+DEBUG Func:sshbuf_get_nulterminated_string, sz1=4, sz2=6
+Callee:strdup, sz1=0, sz2=0
+Callee:sshbuf_consume, sz1=2, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:free, sz1=0, sz2=0
+Callee:sshbuf_find, sz1=2, sz2=3
+DEBUG Func:sshbuf_dump, sz1=3, sz2=4
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:fprintf, sz1=0, sz2=0
+Callee:sshbuf_dump_data, sz1=0, sz2=2
+DEBUG Func:sshbuf_dtob16, sz1=2, sz2=4
+Callee:strdup, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:sshbuf_b16tod, sz1=2, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:b16tod, sz1=0, sz2=0
+DEBUG Func:sshbuf_dtob64, sz1=5, sz2=8
+Callee:strlen, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:__b64_ntop, sz1=0, sz2=0
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshbuf_dtob64_string, sz1=3, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_dtob64, sz1=5, sz2=8
+Callee:sshbuf_dup_string, sz1=2, sz2=4
+DEBUG Func:sshbuf_dup_string, sz1=2, sz2=4
+Callee:malloc, sz1=0, sz2=0
+Callee:memchr, sz1=0, sz2=0
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+DEBUG Func:sshbuf_b64tod, sz1=2, sz2=5
+Callee:strlen, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:__b64_pton, sz1=0, sz2=2
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:sshbuf_dtourlb64, sz1=7, sz2=8
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshbuf_consume_end, sz1=2, sz2=2
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_dtob64, sz1=5, sz2=8
+DEBUG Func:sshbuf_cmp, sz1=2, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:timingsafe_bcmp, sz1=0, sz2=0
+DEBUG Func:sshbuf_equals, sz1=2, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:memcmp, sz1=0, sz2=0
+DEBUG Func:sshbuf_find, sz1=2, sz2=3
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:memmem, sz1=0, sz2=0
+DEBUG Func:sshbuf_read, sz1=2, sz2=5
+Callee:memset, sz1=0, sz2=0
+Callee:sshbuf_reserve, sz1=1, sz2=1
+Callee:sshbuf_consume_end, sz1=2, sz2=2
+Callee:__errno_location, sz1=0, sz2=0
+Callee:read, sz1=0, sz2=0
+DEBUG Func:sshkey_save_private, sz1=3, sz2=4
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_private_to_fileblob, sz1=2, sz2=2
+Callee:sshkey_save_private_blob, sz1=1, sz2=2
+DEBUG Func:sshkey_save_private_blob, sz1=1, sz2=2
+Callee:umask, sz1=0, sz2=0
+Callee:sshbuf_write_file, sz1=2, sz2=7
+DEBUG Func:sshkey_perm_ok, sz1=1, sz2=3
+Callee:getuid, sz1=0, sz2=0
+Callee:fstat, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sshkey_load_private_type, sz1=2, sz2=4
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshkey_perm_ok, sz1=1, sz2=3
+Callee:sshkey_load_private_type_fd, sz1=3, sz2=3
+DEBUG Func:sshkey_load_private_type_fd, sz1=3, sz2=3
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_parse_private_fileblob_type, sz1=2, sz2=2
+Callee:sshbuf_load_fd, sz1=3, sz2=8
+DEBUG Func:sshkey_load_private, sz1=1, sz2=1
+Callee:sshkey_load_private_type, sz1=2, sz2=4
+DEBUG Func:sshkey_load_public, sz1=2, sz2=5
+Callee:__errno_location, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_try_load_public, sz1=2, sz2=11
+Callee:asprintf, sz1=0, sz2=0
+Callee:sshkey_load_pubkey_from_private, sz1=3, sz2=6
+DEBUG Func:sshkey_try_load_public, sz1=2, sz2=11
+Callee:strdup, sz1=0, sz2=0
+Callee:sshkey_new, sz1=1, sz2=6
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:stat, sz1=0, sz2=0
+Callee:fopen, sz1=0, sz2=0
+Callee:fclose, sz1=0, sz2=0
+Callee:getline, sz1=0, sz2=0
+Callee:strcspn, sz1=0, sz2=0
+Callee:sshkey_read, sz1=5, sz2=14
+Callee:strncmp, sz1=0, sz2=0
+DEBUG Func:sshkey_load_pubkey_from_private, sz1=3, sz2=6
+Callee:sshkey_parse_pubkey_from_private_fileblob_type, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshbuf_load_fd, sz1=3, sz2=8
+DEBUG Func:sshkey_load_cert, sz1=1, sz2=4
+Callee:free, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_try_load_public, sz1=2, sz2=11
+Callee:asprintf, sz1=0, sz2=0
+DEBUG Func:sshkey_load_private_cert, sz1=4, sz2=6
+Callee:sshkey_cert_copy, sz1=4, sz2=6
+Callee:sshkey_to_certified, sz1=1, sz2=2
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_equal_public, sz1=0, sz2=2
+Callee:sshkey_load_private_type, sz1=2, sz2=4
+Callee:sshkey_load_cert, sz1=1, sz2=4
+DEBUG Func:sshkey_in_file, sz1=2, sz2=8
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_new, sz1=1, sz2=6
+Callee:free, sz1=0, sz2=0
+Callee:fopen, sz1=0, sz2=0
+Callee:fclose, sz1=0, sz2=0
+Callee:getline, sz1=0, sz2=0
+Callee:sshkey_free, sz1=0, sz2=1
+Callee:sshkey_read, sz1=5, sz2=14
+DEBUG Func:sshkey_check_revoked, sz1=2, sz2=2
+Callee:ssh_krl_file_contains_key, sz1=5, sz2=7
+Callee:sshkey_in_file, sz1=2, sz2=8
+DEBUG Func:sshkey_save_public, sz1=1, sz2=8
+Callee:__errno_location, sz1=0, sz2=0
+Callee:fprintf, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:fclose, sz1=0, sz2=0
+Callee:sshkey_write, sz1=4, sz2=8
+Callee:fdopen, sz1=0, sz2=0
+Callee:ferror, sz1=0, sz2=0
+DEBUG Func:cipher_alg_list, sz1=1, sz2=1
+Callee:xextendf, sz1=2, sz2=3
+DEBUG Func:ciphers_valid, sz1=1, sz2=5
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:cipher_by_name, sz1=0, sz2=1
+DEBUG Func:sshlog, sz1=1, sz2=1
+Callee:sshlogv, sz1=1, sz2=6
+DEBUG Func:sshlogv, sz1=1, sz2=6
+Callee:getpid, sz1=0, sz2=0
+Callee:snprintf, sz1=0, sz2=0
+Callee:strrchr, sz1=0, sz2=0
+Callee:do_log, sz1=0, sz2=10
+Callee:match_pattern_list, sz1=0, sz2=3
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:sshlogdie, sz1=1, sz2=2
+Callee:cleanup_exit, sz1=0, sz2=1
+Callee:sshlogv, sz1=1, sz2=6
+DEBUG Func:sshlogdirect, sz1=1, sz2=1
+Callee:do_log, sz1=0, sz2=10
+DEBUG Func:match_pattern, sz1=1, sz2=5
+Callee:memset, sz1=0, sz2=0
+Callee:strlen, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:epsilon_closure, sz1=0, sz2=0
+Callee:xcalloc, sz1=1, sz2=2
+DEBUG Func:match_hostname, sz1=1, sz2=4
+Callee:free, sz1=0, sz2=0
+Callee:match_pattern_list, sz1=0, sz2=3
+Callee:xstrdup, sz1=1, sz2=2
+Callee:lowercase, sz1=0, sz2=1
+DEBUG Func:match_host_and_ip, sz1=2, sz2=2
+Callee:match_hostname, sz1=1, sz2=4
+Callee:addr_match_list, sz1=2, sz2=8
+DEBUG Func:match_user, sz1=3, sz2=5
+Callee:free, sz1=0, sz2=0
+Callee:strrchr, sz1=0, sz2=0
+Callee:match_pattern, sz1=1, sz2=5
+Callee:match_host_and_ip, sz1=2, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:match_list, sz1=1, sz2=5
+Callee:strlen, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:xmalloc, sz1=1, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:malloc, sz1=0, sz2=0
+DEBUG Func:xcalloc, sz1=1, sz2=2
+Callee:calloc, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:xreallocarray, sz1=1, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:reallocarray, sz1=0, sz2=0
+DEBUG Func:xrecallocarray, sz1=1, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:recallocarray, sz1=0, sz2=7
+DEBUG Func:xstrdup, sz1=1, sz2=2
+Callee:strlen, sz1=0, sz2=0
+Callee:xmalloc, sz1=1, sz2=2
+DEBUG Func:xvasprintf, sz1=1, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:vasprintf, sz1=0, sz2=0
+DEBUG Func:xasprintf, sz1=1, sz2=1
+Callee:xvasprintf, sz1=1, sz2=2
+DEBUG Func:libcrux_sha3_simd_portable_load_last_a1_220, sz1=1, sz2=1
+Callee:libcrux_sha3_simd_portable_load_last_220, sz1=1, sz2=4
+DEBUG Func:libcrux_sha3_simd_portable_load_last_220, sz1=1, sz2=4
+Callee:Eurydice_array_to_subslice_mut_d42, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_58, sz1=0, sz2=0
+Callee:libcrux_sha3_simd_portable_load_block_b2, sz1=1, sz2=5
+DEBUG Func:libcrux_sha3_simd_portable_load_block_b2, sz1=1, sz2=5
+Callee:libcrux_sha3_traits_set_ij_71, sz1=0, sz2=0
+Callee:libcrux_sha3_traits_get_ij_71, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:core_result_unwrap_26_e0, sz1=1, sz2=1
+Callee:core_num__u64__from_le_bytes, sz1=0, sz2=1
+DEBUG Func:core_result_unwrap_26_e0, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:libcrux_sha3_simd_portable_load_block_a1_b2, sz1=1, sz2=1
+Callee:libcrux_sha3_simd_portable_load_block_b2, sz1=1, sz2=5
+DEBUG Func:addr_match_list, sz1=2, sz2=8
+Callee:strdup, sz1=0, sz2=0
+Callee:addr_pton, sz1=0, sz2=4
+Callee:addr_pton_cidr, sz1=0, sz2=7
+Callee:free, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:match_pattern, sz1=1, sz2=5
+Callee:addr_netmatch, sz1=0, sz2=3
+DEBUG Func:addr_match_cidr_list, sz1=1, sz2=9
+Callee:strlen, sz1=0, sz2=0
+Callee:strdup, sz1=0, sz2=0
+Callee:addr_pton, sz1=0, sz2=4
+Callee:addr_pton_cidr, sz1=0, sz2=7
+Callee:free, sz1=0, sz2=0
+Callee:strspn, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:addr_netmatch, sz1=0, sz2=3
+DEBUG Func:mac_alg_list, sz1=1, sz2=1
+Callee:xextendf, sz1=2, sz2=3
+DEBUG Func:mac_init, sz1=2, sz2=3
+Callee:ssh_hmac_init, sz1=0, sz2=4
+Callee:umac_new, sz1=1, sz2=5
+Callee:umac128_new, sz1=1, sz2=5
+DEBUG Func:mac_valid, sz1=1, sz2=5
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:mac_setup, sz1=0, sz2=2
+DEBUG Func:stringlist_append, sz1=3, sz2=3
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:set_nonblock, sz1=1, sz2=4
+Callee:fcntl, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:unset_nonblock, sz1=1, sz2=4
+Callee:fcntl, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:set_nodelay, sz1=1, sz2=5
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:getsockopt, sz1=0, sz2=0
+Callee:setsockopt, sz1=0, sz2=0
+DEBUG Func:set_reuseaddr, sz1=1, sz2=4
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:setsockopt, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_kem_ind_cpa_build_unpacked_public_key_05, sz1=1, sz2=2
+Callee:libcrux_ml_kem_ind_cpa_unpacked_default_8b_68, sz1=0, sz2=1
+Callee:libcrux_ml_kem_ind_cpa_build_unpacked_public_key_mut_05, sz1=1, sz2=5
+DEBUG Func:libcrux_ml_kem_ind_cpa_encrypt_unpacked_d5, sz1=1, sz2=4
+Callee:Eurydice_array_to_subslice_mut_d414, sz1=0, sz2=0
+Callee:libcrux_ml_kem_ind_cpa_encrypt_c1_87, sz1=4, sz2=11
+Callee:Eurydice_array_to_subslice_from_mut_5f3, sz1=0, sz2=0
+Callee:libcrux_ml_kem_ind_cpa_encrypt_c2_30, sz1=0, sz2=3
+DEBUG Func:libcrux_ml_kem_ind_cpa_encrypt_c1_87, sz1=4, sz2=11
+Callee:Eurydice_array_to_slice_shared_78, sz1=0, sz2=0
+Callee:libcrux_ml_kem_sampling_sample_from_binomial_distribution_66, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_b5, sz1=0, sz2=0
+Callee:libcrux_ml_kem_utils_into_padded_array_29, sz1=0, sz2=1
+Callee:libcrux_ml_kem_ind_cpa_sample_vector_cbd_then_ntt_bf, sz1=2, sz2=5
+Callee:libcrux_ml_kem_ind_cpa_encrypt_c1_call_mut_f1_87, sz1=0, sz2=1
+Callee:libcrux_ml_kem_ind_cpa_encrypt_c1_call_mut_dd_87, sz1=0, sz2=1
+Callee:libcrux_ml_kem_ind_cpa_sample_ring_element_cbd_bf, sz1=2, sz2=4
+Callee:libcrux_ml_kem_hash_functions_portable_PRF_4a_3b0, sz1=1, sz2=1
+Callee:libcrux_ml_kem_matrix_compute_vector_u_68, sz1=0, sz2=5
+Callee:libcrux_ml_kem_ind_cpa_compress_then_serialize_u_21, sz1=0, sz2=3
+DEBUG Func:libcrux_ml_kem_ind_cpa_sample_ring_element_cbd_bf, sz1=2, sz2=4
+Callee:libcrux_ml_kem_utils_prf_input_inc_78, sz1=0, sz2=0
+Callee:libcrux_ml_kem_hash_functions_portable_PRFxN_4a_3b, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_78, sz1=0, sz2=0
+Callee:libcrux_ml_kem_sampling_sample_from_binomial_distribution_66, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_PRF_4a_3b0, sz1=1, sz2=1
+Callee:libcrux_ml_kem_hash_functions_portable_PRF_ec, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_PRF_ec, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_mut_78, sz1=0, sz2=0
+Callee:libcrux_sha3_portable_shake256, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_ind_cpa_build_unpacked_public_key_mut_05, sz1=1, sz2=5
+Callee:libcrux_ml_kem_utils_into_padded_array_de, sz1=0, sz2=1
+Callee:libcrux_ml_kem_matrix_sample_matrix_A_91, sz1=1, sz2=1
+Callee:Eurydice_slice_subslice_to_shared_72, sz1=0, sz2=0
+Callee:libcrux_ml_kem_serialize_deserialize_ring_elements_reduced_68, sz1=0, sz2=2
+Callee:Eurydice_slice_subslice_from_shared_6d, sz1=0, sz2=0
+DEBUG Func:crypto_kem_mlkem768_dec, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:libcrux_ml_kem_mlkem768_portable_decapsulate, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_mlkem768_portable_decapsulate, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ind_cca_instantiations_portable_decapsulate_19, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_kem_ind_cca_instantiations_portable_decapsulate_19, sz1=1, sz2=1
+Callee:libcrux_ml_kem_ind_cca_decapsulate_fd, sz1=3, sz2=18
+DEBUG Func:libcrux_ml_kem_ind_cca_decapsulate_fd, sz1=3, sz2=18
+Callee:libcrux_ml_kem_hash_functions_portable_G_4a_78, sz1=1, sz2=1
+Callee:libcrux_ml_kem_utils_into_padded_array_c9, sz1=0, sz2=1
+Callee:Eurydice_array_to_subslice_from_mut_5f1, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_17, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_01, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_51, sz1=0, sz2=0
+Callee:libcrux_ml_kem_types_unpack_private_key_64, sz1=0, sz2=0
+Callee:libcrux_ml_kem_ind_cpa_decrypt_01, sz1=0, sz2=3
+Callee:libcrux_ml_kem_utils_into_padded_array_66, sz1=0, sz2=1
+Callee:Eurydice_array_to_subslice_from_mut_5f2, sz1=0, sz2=0
+Callee:libcrux_ml_kem_types_as_ref_c1_52, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_81, sz1=0, sz2=0
+Callee:libcrux_ml_kem_hash_functions_portable_PRF_4a_3b, sz1=1, sz2=1
+Callee:libcrux_ml_kem_types_as_slice_a9_52, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_06, sz1=0, sz2=0
+Callee:libcrux_ml_kem_constant_time_ops_compare_ciphertexts_select_shared_secret_in_constant_time, sz1=0, sz2=2
+Callee:libcrux_ml_kem_ind_cpa_encrypt_d5, sz1=2, sz2=2
+Callee:libcrux_ml_kem_variant_kdf_39_52, sz1=0, sz2=1
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_PRF_4a_3b, sz1=1, sz2=1
+Callee:libcrux_ml_kem_hash_functions_portable_PRF_ce, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_kem_hash_functions_portable_PRF_ce, sz1=1, sz2=2
+Callee:libcrux_sha3_portable_shake256, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_01, sz1=0, sz2=0
+DEBUG Func:bandwidth_limit, sz1=1, sz2=3
+Callee:__errno_location, sz1=0, sz2=0
+Callee:monotime_tv, sz1=1, sz2=1
+Callee:nanosleep, sz1=0, sz2=0
+DEBUG Func:mktemp_proto, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:snprintf, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+DEBUG Func:unix_listener, sz1=1, sz2=10
+Callee:memset, sz1=0, sz2=0
+Callee:socket, sz1=0, sz2=0
+Callee:bind, sz1=0, sz2=0
+Callee:listen, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:unlink, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:sock_set_v6only, sz1=1, sz2=4
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:setsockopt, sz1=0, sz2=0
+DEBUG Func:daemonized, sz1=1, sz2=6
+Callee:open, sz1=0, sz2=0
+Callee:getpid, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:getppid, sz1=0, sz2=0
+Callee:getsid, sz1=0, sz2=0
+DEBUG Func:argv_split, sz1=2, sz2=4
+Callee:strlen, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:xcalloc, sz1=1, sz2=2
+Callee:xreallocarray, sz1=1, sz2=2
+DEBUG Func:argv_assemble, sz1=8, sz2=10
+Callee:sshfatal, sz1=1, sz2=2
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+DEBUG Func:exited_cleanly, sz1=1, sz2=4
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:waitpid, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:safe_path_fd, sz1=1, sz2=5
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:snprintf, sz1=0, sz2=0
+Callee:fstat, sz1=0, sz2=0
+Callee:safe_path, sz1=0, sz2=9
+DEBUG Func:child_set_env, sz1=4, sz2=9
+Callee:strlen, sz1=0, sz2=0
+Callee:strchr, sz1=0, sz2=0
+Callee:sshfatal, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:snprintf, sz1=0, sz2=0
+Callee:strncmp, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xmalloc, sz1=1, sz2=2
+Callee:xreallocarray, sz1=1, sz2=2
+DEBUG Func:parse_pattern_interval, sz1=1, sz2=4
+Callee:strchr, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:convtime, sz1=0, sz2=1
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:opt_array_append2, sz1=3, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:xrecallocarray, sz1=1, sz2=2
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:opt_array_append, sz1=1, sz2=1
+Callee:opt_array_append2, sz1=3, sz2=3
+DEBUG Func:ssh_signal, sz1=1, sz2=7
+Callee:memset, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sigfillset, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:sigaction, sz1=0, sz2=0
+Callee:strsignal, sz1=0, sz2=0
+DEBUG Func:stdfd_devnull, sz1=1, sz2=6
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:dup2, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:subprocess, sz1=6, sz2=28
+Callee:pipe, sz1=0, sz2=0
+Callee:geteuid, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+Callee:getuid, sz1=0, sz2=0
+Callee:stat, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:dup2, sz1=0, sz2=0
+Callee:execv, sz1=0, sz2=0
+Callee:kill, sz1=0, sz2=0
+Callee:fork, sz1=0, sz2=0
+Callee:_exit, sz1=0, sz2=0
+Callee:waitpid, sz1=0, sz2=0
+Callee:getpwuid, sz1=0, sz2=0
+Callee:fdopen, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xcalloc, sz1=1, sz2=2
+Callee:safe_path, sz1=0, sz2=9
+Callee:child_set_env, sz1=4, sz2=9
+Callee:path_absolute, sz1=0, sz2=0
+Callee:ssh_signal, sz1=1, sz2=7
+Callee:initgroups, sz1=0, sz2=0
+Callee:setresgid, sz1=0, sz2=0
+Callee:setresuid, sz1=0, sz2=0
+Callee:execve, sz1=0, sz2=0
+Callee:closefrom, sz1=0, sz2=10
+DEBUG Func:lookup_setenv_in_list, sz1=1, sz2=4
+Callee:strchr, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+Callee:lookup_env_in_list, sz1=0, sz2=2
+DEBUG Func:ptimeout_deadline_monotime_tsp, sz1=1, sz2=2
+Callee:ptimeout_deadline_tsp, sz1=0, sz2=0
+Callee:monotime_ts, sz1=1, sz2=5
+DEBUG Func:ptimeout_deadline_monotime, sz1=1, sz2=1
+Callee:ptimeout_deadline_monotime_tsp, sz1=1, sz2=2
+DEBUG Func:lib_contains_symbol, sz1=1, sz2=11
+Callee:memset, sz1=0, sz2=0
+Callee:strlen, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:mmap, sz1=0, sz2=0
+Callee:fstat, sz1=0, sz2=0
+Callee:munmap, sz1=0, sz2=0
+Callee:memmem, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:get_homedir, sz1=1, sz2=4
+Callee:getenv, sz1=0, sz2=0
+Callee:getuid, sz1=0, sz2=0
+Callee:getpwuid, sz1=0, sz2=0
+Callee:xstrdup, sz1=1, sz2=2
+DEBUG Func:ssh_ecdsa_serialize_public, sz1=2, sz2=3
+Callee:sshkey_curve_nid_to_name, sz1=0, sz2=0
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_ec_pkey, sz1=1, sz2=2
+DEBUG Func:ssh_ecdsa_deserialize_public, sz1=3, sz2=13
+Callee:sshkey_ecdsa_nid_from_name, sz1=0, sz2=2
+Callee:sshkey_curve_name_to_nid, sz1=0, sz2=1
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:free, sz1=0, sz2=0
+Callee:EC_KEY_get0_group, sz1=0, sz2=0
+Callee:sshkey_ec_validate_public, sz1=0, sz2=9
+Callee:EC_KEY_get0_public_key, sz1=0, sz2=0
+Callee:EVP_PKEY_free, sz1=0, sz2=0
+Callee:EC_KEY_free, sz1=0, sz2=0
+Callee:EC_KEY_new_by_curve_name, sz1=0, sz2=0
+Callee:EVP_PKEY_new, sz1=0, sz2=0
+Callee:EVP_PKEY_set1_EC_KEY, sz1=0, sz2=0
+Callee:sshbuf_get_eckey, sz1=2, sz2=7
+DEBUG Func:ssh_ecdsa_serialize_private, sz1=2, sz2=5
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:EVP_PKEY_get0_EC_KEY, sz1=0, sz2=0
+Callee:EC_KEY_get0_private_key, sz1=0, sz2=0
+Callee:ssh_ecdsa_serialize_public, sz1=2, sz2=3
+Callee:sshbuf_put_bignum2, sz1=1, sz2=4
+DEBUG Func:ssh_ecdsa_deserialize_private, sz1=2, sz2=9
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:BN_clear_free, sz1=0, sz2=0
+Callee:sshkey_ec_validate_private, sz1=0, sz2=9
+Callee:EVP_PKEY_get1_EC_KEY, sz1=0, sz2=0
+Callee:EC_KEY_free, sz1=0, sz2=0
+Callee:ssh_ecdsa_deserialize_public, sz1=3, sz2=13
+Callee:EVP_PKEY_set1_EC_KEY, sz1=0, sz2=0
+Callee:EC_KEY_set_private_key, sz1=0, sz2=0
+Callee:sshbuf_get_bignum2, sz1=1, sz2=4
+DEBUG Func:ssh_ecdsa_sign, sz1=1, sz2=8
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshkey_pkey_digest_sign, sz1=0, sz2=8
+Callee:sshkey_ec_nid_to_hash_alg, sz1=0, sz2=1
+Callee:ECDSA_SIG_free, sz1=0, sz2=0
+Callee:d2i_ECDSA_SIG, sz1=0, sz2=0
+Callee:ECDSA_SIG_get0, sz1=0, sz2=0
+Callee:ssh_ecdsa_encode_store_sig, sz1=7, sz2=9
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_ecdsa_verify, sz1=6, sz2=19
+Callee:calloc, sz1=0, sz2=0
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshkey_pkey_digest_verify, sz1=0, sz2=5
+Callee:sshkey_ec_nid_to_hash_alg, sz1=0, sz2=1
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:BN_clear_free, sz1=0, sz2=0
+Callee:sshkey_ssh_name_plain, sz1=1, sz2=2
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:ECDSA_SIG_new, sz1=0, sz2=0
+Callee:ECDSA_SIG_set0, sz1=0, sz2=0
+Callee:i2d_ECDSA_SIG, sz1=0, sz2=0
+Callee:ECDSA_SIG_free, sz1=0, sz2=0
+Callee:sshbuf_get_bignum2, sz1=1, sz2=4
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_ecdsa_encode_store_sig, sz1=7, sz2=9
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshkey_ssh_name_plain, sz1=1, sz2=2
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:sshbuf_put_stringb, sz1=3, sz2=3
+Callee:sshbuf_put_bignum2, sz1=1, sz2=4
+DEBUG Func:ssh_ecdsa_sk_cleanup, sz1=1, sz2=1
+Callee:sshkey_sk_cleanup, sz1=1, sz2=2
+DEBUG Func:ssh_ecdsa_sk_serialize_public, sz1=1, sz2=1
+Callee:sshkey_serialize_sk, sz1=1, sz2=1
+DEBUG Func:ssh_ecdsa_sk_deserialize_public, sz1=1, sz2=1
+Callee:sshkey_deserialize_sk, sz1=1, sz2=1
+DEBUG Func:ssh_ecdsa_sk_serialize_private, sz1=1, sz2=2
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_serialize_private_sk, sz1=3, sz2=3
+DEBUG Func:ssh_ecdsa_sk_deserialize_private, sz1=1, sz2=2
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_private_deserialize_sk, sz1=3, sz2=4
+DEBUG Func:ssh_ecdsa_sk_verify, sz1=13, sz2=34
+Callee:strlen, sz1=0, sz2=0
+Callee:calloc, sz1=0, sz2=0
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:EVP_MD_CTX_new, sz1=0, sz2=0
+Callee:EVP_MD_CTX_free, sz1=0, sz2=0
+Callee:EVP_sha256, sz1=0, sz2=0
+Callee:EVP_DigestVerifyInit, sz1=0, sz2=0
+Callee:EVP_DigestVerify, sz1=0, sz2=0
+Callee:sshkey_sig_details_free, sz1=0, sz2=1
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_putb, sz1=3, sz2=3
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:BN_clear_free, sz1=0, sz2=0
+Callee:ssh_digest_memory, sz1=0, sz2=2
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshbuf_froms, sz1=4, sz2=5
+Callee:ECDSA_SIG_new, sz1=0, sz2=0
+Callee:ECDSA_SIG_set0, sz1=0, sz2=0
+Callee:i2d_ECDSA_SIG, sz1=0, sz2=0
+Callee:ECDSA_SIG_free, sz1=0, sz2=0
+Callee:webauthn_check_prepare_hash, sz1=7, sz2=11
+Callee:sshbuf_get_bignum2, sz1=1, sz2=4
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:webauthn_check_prepare_hash, sz1=7, sz2=11
+Callee:strlen, sz1=0, sz2=0
+Callee:strchr, sz1=0, sz2=0
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:ssh_digest_buffer, sz1=2, sz2=3
+Callee:sshbuf_dtourlb64, sz1=7, sz2=8
+Callee:sshbuf_cmp, sz1=2, sz2=3
+DEBUG Func:ssh_ed25519_sk_cleanup, sz1=1, sz2=1
+Callee:sshkey_sk_cleanup, sz1=1, sz2=2
+DEBUG Func:ssh_ed25519_sk_serialize_public, sz1=1, sz2=1
+Callee:sshkey_serialize_sk, sz1=1, sz2=1
+DEBUG Func:ssh_ed25519_sk_deserialize_public, sz1=1, sz2=1
+Callee:sshkey_deserialize_sk, sz1=1, sz2=1
+DEBUG Func:ssh_ed25519_sk_serialize_private, sz1=1, sz2=1
+Callee:sshkey_serialize_private_sk, sz1=3, sz2=3
+DEBUG Func:ssh_ed25519_sk_deserialize_private, sz1=1, sz2=1
+Callee:sshkey_private_deserialize_sk, sz1=3, sz2=4
+DEBUG Func:ssh_ed25519_sk_verify, sz1=13, sz2=24
+Callee:strlen, sz1=0, sz2=0
+Callee:calloc, sz1=0, sz2=0
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:malloc, sz1=0, sz2=0
+Callee:sshkey_sig_details_free, sz1=0, sz2=1
+Callee:sshbuf_get_u32, sz1=2, sz2=2
+Callee:sshbuf_get_u8, sz1=2, sz2=2
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_put_u32, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:sshkey_ssh_name_plain, sz1=1, sz2=2
+Callee:ssh_digest_memory, sz1=0, sz2=2
+Callee:crypto_sign_ed25519_open, sz1=1, sz2=7
+Callee:sshbuf_put_u8, sz1=1, sz2=1
+Callee:sshlog, sz1=1, sz2=1
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_rsa_serialize_public, sz1=1, sz2=3
+Callee:EVP_PKEY_get0_RSA, sz1=0, sz2=0
+Callee:RSA_get0_key, sz1=0, sz2=0
+Callee:sshbuf_put_bignum2, sz1=1, sz2=4
+DEBUG Func:ssh_rsa_deserialize_public, sz1=1, sz2=7
+Callee:sshkey_check_rsa_length, sz1=0, sz2=1
+Callee:BN_clear_free, sz1=0, sz2=0
+Callee:EVP_PKEY_set1_RSA, sz1=0, sz2=0
+Callee:RSA_free, sz1=0, sz2=0
+Callee:RSA_new, sz1=0, sz2=0
+Callee:RSA_set0_key, sz1=0, sz2=0
+Callee:sshbuf_get_bignum2, sz1=1, sz2=4
+DEBUG Func:ssh_rsa_serialize_private, sz1=1, sz2=6
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:EVP_PKEY_get0_RSA, sz1=0, sz2=0
+Callee:RSA_get0_key, sz1=0, sz2=0
+Callee:RSA_get0_factors, sz1=0, sz2=0
+Callee:RSA_get0_crt_params, sz1=0, sz2=0
+Callee:sshbuf_put_bignum2, sz1=1, sz2=4
+DEBUG Func:ssh_rsa_deserialize_private, sz1=1, sz2=13
+Callee:sshkey_is_cert, sz1=0, sz2=1
+Callee:sshkey_check_rsa_length, sz1=0, sz2=1
+Callee:BN_clear_free, sz1=0, sz2=0
+Callee:EVP_PKEY_get1_RSA, sz1=0, sz2=0
+Callee:RSA_blinding_on, sz1=0, sz2=0
+Callee:EVP_PKEY_set1_RSA, sz1=0, sz2=0
+Callee:RSA_free, sz1=0, sz2=0
+Callee:RSA_new, sz1=0, sz2=0
+Callee:RSA_set0_key, sz1=0, sz2=0
+Callee:ssh_rsa_complete_crt_parameters, sz1=0, sz2=9
+Callee:RSA_set0_factors, sz1=0, sz2=0
+Callee:RSA_set0_crt_params, sz1=0, sz2=0
+Callee:sshbuf_get_bignum2, sz1=1, sz2=4
+DEBUG Func:ssh_rsa_sign, sz1=1, sz2=9
+Callee:strlen, sz1=0, sz2=0
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:sshkey_pkey_digest_sign, sz1=0, sz2=8
+Callee:EVP_PKEY_get_size, sz1=0, sz2=0
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:EVP_PKEY_get_bits, sz1=0, sz2=0
+Callee:ssh_rsa_hash_id_from_keyname, sz1=0, sz2=2
+Callee:ssh_rsa_encode_store_sig, sz1=5, sz2=8
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_rsa_verify, sz1=4, sz2=16
+Callee:sshkey_type_plain, sz1=0, sz2=0
+Callee:EVP_PKEY_get_size, sz1=0, sz2=0
+Callee:sshkey_pkey_digest_verify, sz1=0, sz2=5
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:sshbuf_get_cstring, sz1=2, sz2=4
+Callee:sshbuf_from, sz1=0, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strcmp, sz1=0, sz2=0
+Callee:EVP_PKEY_get_bits, sz1=0, sz2=0
+Callee:rsa_hash_id_from_ident, sz1=0, sz2=1
+Callee:ssh_rsa_hash_id_from_keyname, sz1=0, sz2=2
+Callee:realloc, sz1=0, sz2=0
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:ssh_rsa_encode_store_sig, sz1=5, sz2=8
+Callee:malloc, sz1=0, sz2=0
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:sshbuf_put_cstring, sz1=1, sz2=2
+Callee:ssh_rsa_hash_alg_ident, sz1=0, sz2=0
+DEBUG Func:ssh_msg_send, sz1=3, sz2=7
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:put_u32, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:ssh_msg_recv, sz1=4, sz2=9
+Callee:sshbuf_reserve, sz1=1, sz2=1
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_reset, sz1=1, sz2=3
+Callee:sshbuf_max_size, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:get_u32, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:seed_rng, sz1=2, sz2=7
+Callee:sshfatal, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:OpenSSL_version_num, sz1=0, sz2=0
+Callee:RAND_status, sz1=0, sz2=0
+Callee:ssh_compatible_openssl, sz1=0, sz2=0
+Callee:ssh_libcrypto_init, sz1=0, sz2=1
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:reseed_prngs, sz1=2, sz2=6
+Callee:sshfatal, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:RAND_poll, sz1=0, sz2=0
+Callee:RAND_seed, sz1=0, sz2=0
+Callee:RAND_bytes, sz1=0, sz2=0
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:umac_new, sz1=1, sz2=5
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:xcalloc, sz1=1, sz2=2
+Callee:AES_set_encrypt_key, sz1=0, sz2=0
+Callee:pdf_init, sz1=0, sz2=5
+Callee:uhash_init, sz1=0, sz2=5
+DEBUG Func:umac128_new, sz1=1, sz2=5
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:xcalloc, sz1=1, sz2=2
+Callee:AES_set_encrypt_key, sz1=0, sz2=0
+Callee:pdf_init.1583, sz1=0, sz2=5
+Callee:uhash_init.1584, sz1=0, sz2=5
+DEBUG Func:libcrux_ml_dsa_samplex4_matrix_flat_63, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_mut_7e, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_sample_up_to_four_ring_elements_flat_63, sz1=1, sz2=11
+DEBUG Func:libcrux_ml_dsa_sample_sample_up_to_four_ring_elements_flat_63, sz1=1, sz2=11
+Callee:Eurydice_array_to_slice_shared_e9, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_2c, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_sample_up_to_four_ring_elements_flat_xy, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_add_domain_separator, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_hash_functions_portable_init_absorb_11, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_first_five_blocks_11, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_4c, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_rejection_sample_less_than_field_modulus_37, sz1=0, sz2=3
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_next_block_11, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_2c0, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_polynomial_from_i32_array_ff_37, sz1=0, sz2=2
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_init_absorb_11, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_init_absorb, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_init_absorb, sz1=1, sz2=2
+Callee:libcrux_sha3_portable_incremental_shake128_init, sz1=0, sz2=1
+Callee:libcrux_sha3_portable_incremental_shake128_absorb_final, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_sample_sample_four_error_ring_elements_29, sz1=2, sz2=9
+Callee:Eurydice_array_to_slice_shared_58, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_2c0, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_polynomial_from_i32_array_ff_37, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_sample_add_error_domain_separator, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_f1, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_init_absorb_x4_9b, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_first_block_x4_9b, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_sample_rejection_sample_less_than_eta_37, sz1=1, sz2=3
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_next_block_x4_9b, sz1=0, sz2=1
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_init_absorb_x4_9b, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_init_absorb_x4, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_sample_rejection_sample_less_than_eta_37, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_sample_rejection_sample_less_than_eta_equals_4_37, sz1=0, sz2=3
+Callee:libcrux_ml_dsa_sample_rejection_sample_less_than_eta_equals_2_37, sz1=0, sz2=3
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_init_absorb_x4, sz1=1, sz2=2
+Callee:libcrux_sha3_portable_incremental_shake256_init, sz1=0, sz2=1
+Callee:libcrux_sha3_portable_incremental_shake256_absorb_final, sz1=1, sz2=1
+DEBUG Func:libcrux_sha3_portable_incremental_shake256_absorb_final, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_absorb_final_80_bd0, sz1=1, sz2=2
+DEBUG Func:libcrux_sha3_portable_incremental_absorb_final_42, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_xof_absorb_final_35_bd, sz1=2, sz2=4
+DEBUG Func:libcrux_sha3_generic_keccak_xof_absorb_final_35_bd, sz1=2, sz2=4
+Callee:libcrux_sha3_simd_portable_load_last_a1_22, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+Callee:libcrux_sha3_generic_keccak_xof_absorb_35_e9, sz1=1, sz2=3
+Callee:libcrux_sha3_generic_keccak_xof_buf_to_slices_81, sz1=0, sz2=1
+DEBUG Func:libcrux_sha3_generic_keccak_xof_absorb_35_e9, sz1=1, sz2=3
+Callee:Eurydice_array_to_subslice_mut_d42, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:libcrux_sha3_generic_keccak_xof_absorb_full_35_e9, sz1=1, sz2=4
+DEBUG Func:libcrux_sha3_generic_keccak_xof_absorb_full_35_e9, sz1=1, sz2=4
+Callee:libcrux_sha3_generic_keccak_keccakf1600_80_71, sz1=0, sz2=5
+Callee:libcrux_sha3_simd_portable_load_block_a1_b2, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_xof_buf_to_slices_81, sz1=0, sz2=1
+Callee:libcrux_sha3_generic_keccak_xof_fill_buffer_35_e9, sz1=0, sz2=2
+DEBUG Func:libcrux_sha3_portable_incremental_absorb_42, sz1=1, sz2=1
+Callee:libcrux_sha3_generic_keccak_xof_absorb_35_e9, sz1=1, sz2=3
+DEBUG Func:crypto_sign_mldsa44, sz1=2, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:crypto_sign_mldsa44_seeded, sz1=1, sz2=2
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:crypto_sign_mldsa44_seeded, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_44_portable_sign, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_ml_dsa_44_portable_sign, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_types_as_ref_9b_ab, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_instantiations_portable_ml_dsa_44_sign, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_instantiations_portable_ml_dsa_44_sign, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_shared_34, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_sign_5a, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_sign_5a, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_types_zero_c5_37, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_sign_mut_5a, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_sign_mut_5a, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_pre_hash_new_88, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_sign_internal_5a, sz1=11, sz2=38
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_sign_internal_5a, sz1=11, sz2=38
+Callee:Eurydice_array_to_slice_mut_17, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_17, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_01, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_mut_01, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_error_deserialize_to_vector_then_ntt_37, sz1=1, sz2=3
+Callee:libcrux_ml_dsa_encoding_t0_deserialize_to_vector_then_ntt_37, sz1=0, sz2=3
+Callee:libcrux_ml_dsa_ml_dsa_generic_derive_message_representative_43, sz1=2, sz2=9
+Callee:libcrux_ml_dsa_sample_sample_mask_vector_67, sz1=5, sz2=10
+Callee:Eurydice_array_to_slice_shared_201, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_matrix_compute_matrix_x_mask_37, sz1=0, sz2=4
+Callee:libcrux_ml_dsa_arithmetic_decompose_vector_37, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_constants_commitment_ring_element_size, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_mut_27, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_commitment_serialize_vector_37, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_shared_27, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_sample_challenge_ring_element_2e, sz1=2, sz2=11
+Callee:libcrux_ml_dsa_matrix_vector_times_ring_element_37, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_matrix_add_vectors_37, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_matrix_subtract_vectors_37, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_constants_beta, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_arithmetic_vector_infinity_norm_exceeds_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_mut_86, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_arithmetic_make_hint_37, sz1=0, sz2=3
+Callee:Eurydice_array_to_slice_shared_86, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_constants_gamma1_ring_element_size, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_mut_0d, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_signature_serialize_37, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_hash_functions_portable_init_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_final_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_polynomial_zero_ff_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_mut_200, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_samplex4_portable_matrix_flat_a8_37, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_201, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ntt_ntt_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_20, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_constants_error_ring_element_size, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_encoding_error_deserialize_to_vector_then_ntt_37, sz1=1, sz2=3
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ntt_ntt_37, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_encoding_error_deserialize_37, sz1=2, sz2=3
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_derive_message_representative_43, sz1=2, sz2=9
+Callee:Eurydice_array_to_slice_mut_17, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_init_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_final_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_pre_hash_pre_hash_oid_88, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_79, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_pre_hash_context_88, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_2f, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_sample_sample_mask_vector_67, sz1=5, sz2=10
+Callee:sshfatal, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_shared_17, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_add_error_domain_separator, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_f1, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_x4_9b_5a, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_8a, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_gamma1_deserialize_37, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_x4_9b_0e, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_4f, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_sample_mask_ring_element_2e, sz1=4, sz2=7
+DEBUG Func:libcrux_ml_dsa_arithmetic_decompose_vector_37, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_decompose_65, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_encoding_commitment_serialize_vector_37, sz1=1, sz2=2
+Callee:Eurydice_slice_subslice_mut_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_commitment_serialize_37, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_sample_sample_challenge_ring_element_2e, sz1=2, sz2=11
+Callee:Eurydice_array_to_slice_shared_58, sz1=0, sz2=0
+Callee:core_result_unwrap_26_e0, sz1=1, sz2=1
+Callee:core_num__u64__from_le_bytes, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_polynomial_from_i32_array_ff_37, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_hash_functions_portable_init_absorb_final_61, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_first_block_61, sz1=0, sz2=1
+Callee:Eurydice_array_to_subslice_shared_d40, sz1=0, sz2=0
+Callee:Eurydice_array_to_subslice_from_shared_5f, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_inside_out_shuffle, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_next_block_61, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_af, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_constants_beta, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_encoding_signature_serialize_37, sz1=1, sz2=2
+Callee:Eurydice_slice_subslice_mut_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_gamma1_serialize_37, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_encoding_gamma1_serialize_37, sz1=1, sz2=2
+Callee:Eurydice_slice_subslice_mut_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_simd_portable_gamma1_serialize_65, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_simd_portable_gamma1_serialize_65, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_gamma1_serialize, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_dsa_simd_portable_encoding_gamma1_serialize, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_simd_portable_encoding_gamma1_serialize_when_gamma1_is_2_pow_19, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_gamma1_serialize_when_gamma1_is_2_pow_17, sz1=0, sz2=1
+DEBUG Func:kex_names_cat, sz1=1, sz2=8
+Callee:strlen, sz1=0, sz2=0
+Callee:calloc, sz1=0, sz2=0
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:kex_has_any_alg, sz1=1, sz2=2
+Callee:strlcat, sz1=0, sz2=1
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:kex_assemble_names, sz1=1, sz2=6
+Callee:strdup, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:strsep, sz1=0, sz2=0
+Callee:match_filter_denylist, sz1=0, sz2=1
+Callee:match_filter_allowlist, sz1=0, sz2=1
+Callee:kex_names_cat, sz1=1, sz2=8
+DEBUG Func:sshbuf_load_fd, sz1=3, sz2=8
+Callee:sshbuf_put, sz1=1, sz2=1
+Callee:sshbuf_new, sz1=0, sz2=2
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:sshbuf_free, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:fstat, sz1=0, sz2=0
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:sshbuf_load_file, sz1=1, sz2=4
+Callee:__errno_location, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshbuf_load_fd, sz1=3, sz2=8
+DEBUG Func:sshbuf_write_file, sz1=2, sz2=7
+Callee:sshbuf_mutable_ptr, sz1=1, sz2=1
+Callee:sshbuf_len, sz1=1, sz2=1
+Callee:__errno_location, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:unlink, sz1=0, sz2=0
+Callee:atomicio, sz1=0, sz2=1
+DEBUG Func:ssherr_libcrypto, sz1=1, sz2=6
+Callee:snprintf, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:OPENSSL_init_crypto, sz1=0, sz2=0
+Callee:ERR_get_error_line_data, sz1=0, sz2=0
+Callee:ERR_error_string_n, sz1=0, sz2=0
+Callee:ERR_reason_error_string, sz1=0, sz2=0
+DEBUG Func:sshbuf_get_bignum2, sz1=1, sz2=4
+Callee:BN_new, sz1=0, sz2=0
+Callee:BN_clear_free, sz1=0, sz2=0
+Callee:sshbuf_get_bignum2_bytes_direct, sz1=2, sz2=2
+Callee:BN_bin2bn, sz1=0, sz2=0
+DEBUG Func:sshbuf_get_ec, sz1=2, sz2=3
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_peek_string_direct, sz1=2, sz2=2
+Callee:get_ec, sz1=0, sz2=1
+DEBUG Func:sshbuf_get_eckey, sz1=2, sz2=7
+Callee:sshbuf_get_string_direct, sz1=2, sz2=2
+Callee:sshbuf_peek_string_direct, sz1=2, sz2=2
+Callee:EC_KEY_get0_group, sz1=0, sz2=0
+Callee:EC_POINT_new, sz1=0, sz2=0
+Callee:EC_POINT_free, sz1=0, sz2=0
+Callee:EC_KEY_set_public_key, sz1=0, sz2=0
+Callee:get_ec, sz1=0, sz2=1
+DEBUG Func:sshbuf_put_bignum2, sz1=1, sz2=4
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:BN_num_bits, sz1=0, sz2=0
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:BN_bn2bin, sz1=0, sz2=0
+DEBUG Func:sshbuf_put_ec, sz1=1, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:sshbuf_put_string, sz1=1, sz2=1
+Callee:EC_POINT_point2oct, sz1=0, sz2=0
+DEBUG Func:sshbuf_put_eckey, sz1=1, sz2=3
+Callee:EC_KEY_get0_group, sz1=0, sz2=0
+Callee:EC_KEY_get0_public_key, sz1=0, sz2=0
+Callee:sshbuf_put_ec, sz1=1, sz2=3
+DEBUG Func:sshbuf_put_ec_pkey, sz1=1, sz2=2
+Callee:EVP_PKEY_get0_EC_KEY, sz1=0, sz2=0
+Callee:sshbuf_put_eckey, sz1=1, sz2=3
+DEBUG Func:ssh_krl_revoke_cert_by_serial, sz1=1, sz2=1
+Callee:ssh_krl_revoke_cert_by_serial_range, sz1=1, sz2=2
+DEBUG Func:ssh_krl_revoke_cert_by_serial_range, sz1=1, sz2=2
+Callee:revoked_certs_for_ca_key, sz1=2, sz2=4
+Callee:insert_serial_range, sz1=0, sz2=9
+DEBUG Func:libcrux_ml_kem_ind_cpa_encrypt_d5, sz1=2, sz2=2
+Callee:libcrux_ml_kem_ind_cpa_build_unpacked_public_key_05, sz1=1, sz2=2
+Callee:libcrux_ml_kem_ind_cpa_encrypt_unpacked_d5, sz1=1, sz2=4
+DEBUG Func:crypto_sign_mldsa44_keypair, sz1=2, sz2=3
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:crypto_sign_mldsa44_keypair_seeded, sz1=1, sz2=2
+Callee:arc4random_buf, sz1=1, sz2=1
+DEBUG Func:crypto_sign_mldsa44_keypair_seeded, sz1=1, sz2=2
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_44_portable_generate_key_pair, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_dsa_ml_dsa_44_portable_generate_key_pair, sz1=1, sz2=3
+Callee:libcrux_ml_dsa_ml_dsa_generic_instantiations_portable_ml_dsa_44_generate_key_pair, sz1=1, sz2=3
+Callee:libcrux_ml_dsa_types_new_9b_ab, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_types_new_7f_7d, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_instantiations_portable_ml_dsa_44_generate_key_pair, sz1=1, sz2=3
+Callee:Eurydice_array_to_slice_mut_34, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_mut_9f0, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_generate_key_pair_5a, sz1=5, sz2=23
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_generate_key_pair_5a, sz1=5, sz2=23
+Callee:Eurydice_array_to_slice_shared_78, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_mut_78, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_01, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_82, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_init_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_final_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_polynomial_zero_ff_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_mut_20, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_samplex4_sample_s1_and_s2_29, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_200, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_samplex4_portable_matrix_flat_a8_37, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_201, sz1=0, sz2=0
+Callee:Eurydice_array_to_subslice_shared_25, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ntt_ntt_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_20, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_200, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_matrix_compute_as1_plus_s2_37, sz1=0, sz2=4
+Callee:libcrux_ml_dsa_arithmetic_power2round_vector_37, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_encoding_verification_key_generate_serialized_37, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_constants_error_ring_element_size, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_signing_key_generate_serialized_2e, sz1=2, sz2=5
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_absorb_26, sz1=1, sz2=1
+Callee:libcrux_sha3_portable_incremental_absorb_42, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_absorb_final_26, sz1=1, sz2=1
+Callee:libcrux_sha3_portable_incremental_absorb_final_42, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_samplex4_sample_s1_and_s2_29, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_sample_sample_four_error_ring_elements_29, sz1=2, sz2=9
+DEBUG Func:libcrux_ml_dsa_samplex4_portable_matrix_flat_a8_37, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_samplex4_matrix_flat_63, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_encoding_signing_key_generate_serialized_2e, sz1=2, sz2=5
+Callee:Eurydice_array_to_slice_shared_17, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_mut_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_61_c9, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_encoding_error_serialize_37, sz1=2, sz2=3
+Callee:libcrux_ml_dsa_encoding_t0_serialize_37, sz1=0, sz2=2
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_61_c9, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_c9, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_encoding_error_serialize_37, sz1=2, sz2=3
+Callee:Eurydice_slice_subslice_mut_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_error_chunk_size, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_error_serialize_65, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_encoding_error_chunk_size, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_simd_portable_error_serialize_65, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_error_serialize, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_dsa_simd_portable_encoding_error_serialize, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_simd_portable_encoding_error_serialize_when_eta_is_4, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_error_serialize_when_eta_is_2, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_c9, sz1=1, sz2=2
+Callee:libcrux_sha3_portable_shake256, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_17, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_init_absorb_final_61, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_init_absorb_final_shake256, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_init_absorb_final_shake256, sz1=1, sz2=2
+Callee:libcrux_sha3_portable_incremental_shake256_init, sz1=0, sz2=1
+Callee:libcrux_sha3_portable_incremental_shake256_absorb_final, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_encoding_commitment_serialize_37, sz1=1, sz2=2
+Callee:Eurydice_slice_subslice_mut_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_simd_portable_commitment_serialize_65, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_simd_portable_commitment_serialize_65, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_commitment_serialize, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_dsa_simd_portable_encoding_commitment_serialize, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_simd_portable_encoding_commitment_serialize_4, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_simd_portable_encoding_commitment_serialize_6, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_simd_portable_decompose_65, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_arithmetic_decompose, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_simd_portable_arithmetic_decompose, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_arithmetic_decompose_element, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_simd_portable_arithmetic_decompose_element, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_x4_9b_5a, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_5a, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_encoding_gamma1_deserialize_37, sz1=1, sz2=2
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_simd_portable_gamma1_deserialize_65, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_x4_9b_0e, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_0e, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_sample_sample_mask_ring_element_2e, sz1=4, sz2=7
+Callee:sshfatal, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_shared_f1, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_8a, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_gamma1_deserialize_37, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_shared_4f, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_61_0e, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_61_5a, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_61_0e, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_0e, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_61_5a, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_5a, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_5a, sz1=1, sz2=2
+Callee:libcrux_sha3_portable_shake256, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_8a, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_hash_functions_portable_shake256_0e, sz1=1, sz2=2
+Callee:libcrux_sha3_portable_shake256, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_4f, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_simd_portable_gamma1_deserialize_65, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_gamma1_deserialize, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_dsa_simd_portable_encoding_gamma1_deserialize, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_simd_portable_encoding_gamma1_deserialize_when_gamma1_is_2_pow_19, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_gamma1_deserialize_when_gamma1_is_2_pow_17, sz1=0, sz2=1
+DEBUG Func:libcrux_ml_dsa_encoding_error_deserialize_37, sz1=2, sz2=3
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_error_chunk_size, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_error_deserialize_65, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_simd_portable_error_deserialize_65, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_encoding_error_deserialize, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_dsa_simd_portable_encoding_error_deserialize, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_simd_portable_encoding_error_deserialize_when_eta_is_4, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_simd_portable_encoding_error_deserialize_when_eta_is_2, sz1=0, sz2=0
+DEBUG Func:crypto_sign_mldsa44_verify, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_ml_dsa_44_portable_verify, sz1=1, sz2=3
+DEBUG Func:libcrux_ml_dsa_ml_dsa_44_portable_verify, sz1=1, sz2=3
+Callee:libcrux_ml_dsa_types_as_ref_7f_7d, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_types_as_ref_c5_37, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_instantiations_portable_ml_dsa_44_verify, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_instantiations_portable_ml_dsa_44_verify, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_verify_5a, sz1=1, sz2=2
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_verify_5a, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_pre_hash_new_88, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_verify_internal_5a, sz1=10, sz2=35
+DEBUG Func:libcrux_ml_dsa_ml_dsa_generic_ml_dsa_44_verify_internal_5a, sz1=10, sz2=35
+Callee:Eurydice_array_to_slice_shared_17, sz1=0, sz2=0
+Callee:memcmp, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_01, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_mut_01, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ml_dsa_generic_derive_message_representative_43, sz1=2, sz2=9
+Callee:Eurydice_array_to_slice_shared_201, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_constants_commitment_ring_element_size, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_mut_27, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_commitment_serialize_vector_37, sz1=1, sz2=2
+Callee:Eurydice_array_to_slice_shared_27, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_sample_sample_challenge_ring_element_2e, sz1=2, sz2=11
+Callee:libcrux_ml_dsa_constants_beta, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_arithmetic_vector_infinity_norm_exceeds_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_mut_86, sz1=0, sz2=0
+Callee:Eurydice_array_to_slice_shared_86, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_constants_gamma1_ring_element_size, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_init_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_absorb_final_26, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_hash_functions_portable_squeeze_26, sz1=0, sz2=1
+Callee:libcrux_ml_dsa_polynomial_zero_ff_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_mut_200, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_samplex4_portable_matrix_flat_a8_37, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_mut_201, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_ntt_ntt_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_20, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_hash_functions_portable_shake256_61_c9, sz1=1, sz2=1
+Callee:Eurydice_array_to_slice_shared_9f, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_constants_verification_key_size, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_verification_key_deserialize_37, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_constants_signature_size, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_0d, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_signature_deserialize_37, sz1=1, sz2=4
+Callee:libcrux_ml_dsa_matrix_compute_w_approx_37, sz1=0, sz2=8
+Callee:libcrux_ml_dsa_arithmetic_use_hint_37, sz1=1, sz2=4
+DEBUG Func:libcrux_ml_dsa_encoding_signature_deserialize_37, sz1=1, sz2=4
+Callee:Eurydice_slice_subslice_mut_c8, sz1=0, sz2=0
+Callee:Eurydice_slice_subslice_shared_c8, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_encoding_gamma1_deserialize_37, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_encoding_signature_set_hint, sz1=0, sz2=0
+DEBUG Func:libcrux_ml_dsa_arithmetic_use_hint_37, sz1=1, sz2=4
+Callee:libcrux_ml_dsa_polynomial_from_i32_array_ff_37, sz1=0, sz2=2
+Callee:libcrux_ml_dsa_polynomial_zero_ff_37, sz1=0, sz2=1
+Callee:Eurydice_array_to_slice_shared_af, sz1=0, sz2=0
+Callee:libcrux_ml_dsa_simd_portable_use_hint_65, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_simd_portable_use_hint_65, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_arithmetic_use_hint, sz1=1, sz2=1
+DEBUG Func:libcrux_ml_dsa_simd_portable_arithmetic_use_hint, sz1=1, sz2=1
+Callee:libcrux_ml_dsa_simd_portable_arithmetic_use_one_hint, sz1=2, sz2=2
+DEBUG Func:libcrux_ml_dsa_simd_portable_arithmetic_use_one_hint, sz1=2, sz2=2
+Callee:sshfatal, sz1=1, sz2=2
+Callee:libcrux_ml_dsa_simd_portable_arithmetic_decompose_element, sz1=1, sz2=1
+DEBUG Func:sha3_256, sz1=1, sz2=1
+Callee:libcrux_sha3_portable_sha256, sz1=1, sz2=1
+DEBUG Func:sha3_512, sz1=1, sz2=1
+Callee:libcrux_sha3_portable_sha512, sz1=1, sz2=1
+DEBUG Func:arc4random, sz1=1, sz2=1
+Callee:_rs_random_u32, sz1=2, sz2=3
+DEBUG Func:_rs_random_u32, sz1=2, sz2=3
+Callee:memset, sz1=0, sz2=0
+Callee:_rs_stir_if_needed, sz1=1, sz2=2
+Callee:_rs_rekey, sz1=1, sz2=3
+DEBUG Func:_rs_stir_if_needed, sz1=1, sz2=2
+Callee:_rs_forkdetect, sz1=0, sz2=2
+Callee:_rs_stir, sz1=4, sz2=7
+DEBUG Func:_rs_rekey, sz1=1, sz2=3
+Callee:memset, sz1=0, sz2=0
+Callee:chacha_encrypt_bytes, sz1=0, sz2=0
+Callee:_rs_init, sz1=1, sz2=4
+DEBUG Func:_rs_init, sz1=1, sz2=4
+Callee:_exit, sz1=0, sz2=0
+Callee:_rs_allocate, sz1=0, sz2=2
+Callee:chacha_keysetup, sz1=0, sz2=0
+Callee:chacha_ivsetup, sz1=0, sz2=0
+DEBUG Func:_rs_stir, sz1=4, sz2=7
+Callee:memset, sz1=0, sz2=0
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:_rs_rekey, sz1=1, sz2=3
+Callee:chacha_encrypt_bytes, sz1=0, sz2=0
+Callee:_rs_init, sz1=1, sz2=4
+Callee:_getentropy_fail, sz1=1, sz2=1
+Callee:_ssh_compat_getentropy, sz1=1, sz2=3
+DEBUG Func:_getentropy_fail, sz1=1, sz2=1
+Callee:sshfatal, sz1=1, sz2=2
+DEBUG Func:arc4random_buf, sz1=1, sz2=1
+Callee:_rs_random_buf, sz1=2, sz2=3
+DEBUG Func:_rs_random_buf, sz1=2, sz2=3
+Callee:memset, sz1=0, sz2=0
+Callee:_rs_stir_if_needed, sz1=1, sz2=2
+Callee:_rs_rekey, sz1=1, sz2=3
+DEBUG Func:arc4random_uniform, sz1=1, sz2=1
+Callee:arc4random, sz1=1, sz2=1
+DEBUG Func:bcrypt_pbkdf, sz1=2, sz2=6
+Callee:calloc, sz1=0, sz2=0
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:arc4random_buf, sz1=1, sz2=1
+Callee:crypto_hash_sha512, sz1=0, sz2=2
+Callee:bcrypt_hash, sz1=1, sz2=6
+Callee:freezero, sz1=0, sz2=2
+DEBUG Func:bcrypt_hash, sz1=1, sz2=6
+Callee:explicit_bzero, sz1=0, sz2=0
+Callee:Blowfish_initstate, sz1=0, sz2=0
+Callee:Blowfish_stream2word, sz1=0, sz2=0
+Callee:Blowfish_expand0state, sz1=0, sz2=2
+Callee:Blowfish_expandstate, sz1=0, sz2=2
+Callee:blf_enc, sz1=0, sz2=1
+DEBUG Func:blf_key, sz1=1, sz2=2
+Callee:Blowfish_initstate, sz1=0, sz2=0
+Callee:Blowfish_expand0state, sz1=0, sz2=2
+DEBUG Func:BSDgetopt, sz1=1, sz2=1
+Callee:getopt_internal, sz1=2, sz2=5
+DEBUG Func:getopt_internal, sz1=2, sz2=5
+Callee:strchr, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:permute_args, sz1=0, sz2=1
+Callee:parse_long_options, sz1=1, sz2=4
+DEBUG Func:parse_long_options, sz1=1, sz2=4
+Callee:strlen, sz1=0, sz2=0
+Callee:strchr, sz1=0, sz2=0
+Callee:strncmp, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:_ssh__compat_glob, sz1=2, sz2=3
+Callee:strnlen, sz1=0, sz2=0
+Callee:globexp1, sz1=1, sz2=2
+Callee:glob0, sz1=1, sz2=8
+DEBUG Func:globexp1, sz1=1, sz2=2
+Callee:glob0, sz1=1, sz2=8
+Callee:g_strchr, sz1=0, sz2=0
+DEBUG Func:glob0, sz1=1, sz2=8
+Callee:calloc, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:globtilde, sz1=0, sz2=5
+Callee:g_strchr, sz1=0, sz2=0
+Callee:g_charclass, sz1=0, sz2=2
+Callee:glob1, sz1=0, sz2=1
+Callee:globextend, sz1=0, sz2=5
+Callee:qsort, sz1=0, sz2=0
+DEBUG Func:glob3, sz1=1, sz2=6
+Callee:__errno_location, sz1=0, sz2=0
+Callee:closedir, sz1=0, sz2=0
+Callee:g_Ctoc, sz1=0, sz2=0
+Callee:glob2, sz1=0, sz2=4
+Callee:g_opendir, sz1=0, sz2=3
+Callee:match, sz1=0, sz2=0
+DEBUG Func:globexp2, sz1=2, sz2=2
+Callee:globexp1, sz1=1, sz2=2
+Callee:glob0, sz1=1, sz2=8
+DEBUG Func:oom_adjust_setup, sz1=1, sz2=8
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:fprintf, sz1=0, sz2=0
+Callee:fopen, sz1=0, sz2=0
+Callee:fclose, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:__isoc99_fscanf, sz1=0, sz2=0
+Callee:rewind, sz1=0, sz2=0
+DEBUG Func:oom_adjust_restore, sz1=1, sz2=6
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:fprintf, sz1=0, sz2=0
+Callee:fopen, sz1=0, sz2=0
+Callee:fclose, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:ssh_systemd_notify_ready, sz1=1, sz2=1
+Callee:ssh_systemd_notify, sz1=2, sz2=14
+DEBUG Func:ssh_systemd_notify, sz1=2, sz2=14
+Callee:memset, sz1=0, sz2=0
+Callee:socket, sz1=0, sz2=0
+Callee:strlen, sz1=0, sz2=0
+Callee:connect, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:free, sz1=0, sz2=0
+Callee:getenv, sz1=0, sz2=0
+Callee:stat, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:write, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:xvasprintf, sz1=1, sz2=2
+Callee:strlcpy, sz1=0, sz2=0
+DEBUG Func:ssh_systemd_notify_reload, sz1=3, sz2=3
+Callee:monotime_ts, sz1=1, sz2=5
+Callee:sshlog, sz1=1, sz2=1
+Callee:ssh_systemd_notify, sz1=2, sz2=14
+DEBUG Func:sys_get_rdomain, sz1=1, sz2=5
+Callee:strdup, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:getsockopt, sz1=0, sz2=0
+DEBUG Func:sys_set_rdomain, sz1=1, sz2=5
+Callee:strlen, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+Callee:setsockopt, sz1=0, sz2=0
+DEBUG Func:sys_tun_open, sz1=1, sz2=8
+Callee:strdup, sz1=0, sz2=0
+Callee:ioctl, sz1=0, sz2=0
+Callee:__errno_location, sz1=0, sz2=0
+Callee:strerror, sz1=0, sz2=0
+Callee:open, sz1=0, sz2=0
+Callee:snprintf, sz1=0, sz2=0
+Callee:close, sz1=0, sz2=0
+Callee:sshlog, sz1=1, sz2=1
+DEBUG Func:sys_tun_infilter, sz1=3, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+Callee:sshbuf_put_string, sz1=1, sz2=1
+DEBUG Func:sys_tun_outfilter, sz1=3, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:sshbuf_get_string, sz1=1, sz2=2
+Callee:ssh_err, sz1=1, sz2=3
+DEBUG Func:_ssh_compat_getentropy, sz1=1, sz2=3
+Callee:sshfatal, sz1=1, sz2=2
+Callee:ERR_get_error, sz1=0, sz2=0
+Callee:RAND_bytes, sz1=0, sz2=0
+[K[SPEG Computation]: 100%
+[Dumping SEG] spends time ***5s 269ms***
+SEG-Building spends time ***10s 54ms***
+SEG-Building uses memory ***1G 384M 736KB***
+
+
+Total Time: 	0min12s
+Total Memory:  ***1G 903M 396KB***
+
+Script done on 2026-07-20 00:12:34-04:00 [COMMAND_EXIT_CODE="0"]

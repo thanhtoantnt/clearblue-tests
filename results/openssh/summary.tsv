@@ -1,0 +1,12 @@
+sample	store_s	inc_s	scratch_s	body_dirty	callers	total_dirty	inc_seg	scr_seg	status
+pr-688	13	4	8	0	0	0	0s 271ms	5s 426ms	ok
+pr-689	13	3	8	0	0	0	0s 266ms	5s 293ms	ok
+pr-690	13	3	8	0	0	0	0s 265ms	5s 443ms	ok
+pr-691	13	3	8	0	0	0	0s 269ms	5s 365ms	ok
+pr-693	13	3	9	0	0	0	0s 269ms	5s 466ms	ok
+pr-694	13	3	8	1	2	3	0s 414ms	5s 151ms	ok
+pr-695	13	3	9	1	2	3	0s 408ms	5s 399ms	ok
+pr-697	13	3	8	0	0	0	0s 268ms	5s 392ms	ok
+pr-698	13	3	8	0	0	0	0s 268ms	5s 462ms	ok
+pr-699	13	3	8	0	0	0	0s 268ms	5s 202ms	ok
+pr-700	13	3	8	0	0	0	0s 268ms	5s 303ms	ok

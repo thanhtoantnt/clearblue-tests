@@ -43,6 +43,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     c-ares)  echo "$SRC_ROOT/c-ares|c-ares/c-ares|@cmake|cares" ;;
     libevent) echo "$SRC_ROOT/libevent|libevent/libevent|@cmake|libevent" ;;
     mbedtls) echo "$SRC_ROOT/mbedtls|Mbed-TLS/mbedtls|@cmake|mbedtls" ;;
+    openssh) echo "$SRC_ROOT/openssh-portable|openssh/openssh-portable|sshd|openssh" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -107,6 +108,14 @@ build_mbedtls() {  # $1=srcdir
       -DUSE_SHARED_MBEDTLS_LIBRARY=ON >/tmp/prbc_mb_cm.log 2>&1 || return 1
     ninja -j"$(nproc)" >/tmp/prbc_mb_nj.log 2>&1 || return 1
     get-bc -o /tmp/prbc_out.bc "$(find . -name 'libmbedtls.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+  )
+}
+build_openssh() {  # $1=srcdir  $2=artifact (sshd)
+  ( cd "$1"
+    [ -f configure ] || autoreconf -fi >/tmp/prbc_ss_ar.log 2>&1 || return 1
+    [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" >/tmp/prbc_ss_cf.log 2>&1 || return 1
+    make -j"$(nproc)" sshd >/tmp/prbc_ss_mk.log 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc sshd >/dev/null 2>&1 || return 1
   )
 }
 build_darknet() {  # $1=srcdir
