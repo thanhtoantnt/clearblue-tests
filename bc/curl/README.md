@@ -11,13 +11,46 @@ This folder holds typed-pointer LLVM 15 bitcode for **curl**, used as the input 
 | Artifact extracted | `libcurl-d.so.4.8.0 (libcurl, shared, no OpenSSL/LDAP/libpsl)`
 | Toolchain | gllvm `gclang` + `get-bc`, LLVM 15, `-Xclang -no-opaque-pointers`
 | Result size | `libcurl (debug shared lib)`
+## Reproduce the .bc files from source
+The committed `.bc` files are self-contained, but you can rebuild any of them from the upstream source. The key rule: **`old.bc` and every `pr-*.bc` must use the identical toolchain and flags** so `cb-check` fingerprints match.
+### Prerequisites (once)
 ```bash
-# how each .bc was built (same for old.bc and every pr-*.bc)
-cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON -DCURL_USE_OPENSSL=OFF -DCURL_DISABLE_LDAP=ON -DCURL_USE_LIBPSL=OFF
-get-bc -o <file>.bc <artifact>
+# gllvm wraps clang to embed bitcode -- https://github.com/SRI-CSL/gllvm
+go install github.com/SRI-CSL/gllvm/cmd/gclang@latest
+go install github.com/SRI-CSL/gllvm/cmd/get-bc@latest
+# point gllvm at LLVM 15 (typed pointers), then put it on PATH
+export LLVM_COMPILER_PATH=$HOME/tools/llvm15-official/bin
+export PATH=$HOME/go/bin:$LLVM_COMPILER_PATH:$PATH
+which gclang get-bc   # sanity check
 ```
+### 1. Build `old.bc` (the baseline)
+```bash
+git clone https://github.com/curl/curl.git curl
+cd curl
+git checkout bc440a89d4
+
+# build + extract bitcode (artifact: libcurl-d.so.4.8.0 (libcurl, shared, no OpenSSL/LDAP/libpsl))
+cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON -DCURL_USE_OPENSSL=OFF -DCURL_DISABLE_LDAP=ON -DCURL_USE_LIBPSL=OFF
+get-bc -o old.bc
+```
+### 2. Build `pr-NNNN.bc` (one per pull request)
+Reset to the baseline, apply the PR's source, rebuild with the **same** command, and save under a new name:
+```bash
+git reset --hard bc440a89d4
+# fetch the PR ref and copy its changed .c/.h onto the tree
+git fetch origin pull/NNNN/head:pr-NNNN
+mb=$(git merge-base HEAD pr-NNNN)
+git diff --name-only $mb pr-NNNN | grep -E '\.(c|h)$' | \
+  while read f; do git show pr-NNNN:$f > $f; done
+git branch -D pr-NNNN
+
+# rebuild with the SAME command as step 1
+cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON -DCURL_USE_OPENSSL=OFF -DCURL_DISABLE_LDAP=ON -DCURL_USE_LIBPSL=OFF
+get-bc -o pr-NNNN.bc
+```
+> `scripts/build_pr_bc.sh` automates steps 1-2 for every PR recorded in `results/<proj>/summary.tsv`; run it from the repo root: `./scripts/build_pr_bc.sh curl`.
 See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the full recipe.
-## Reproduce the results
+## Reproduce the results (cb-check analysis)
 Three explicit `cb-check` invocations reproduce one data point: **store** the baseline once, then run a sample **incremental** (reuses stored SEGs) and **scratch** (no store) to compare.
 ```bash
 CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
