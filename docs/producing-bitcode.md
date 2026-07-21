@@ -193,6 +193,22 @@ ninja -C build-gllvm
 get-bc -o wolfssl.bc build-gllvm/libwolfssl.so.45.0.0   # soname may vary
 ```
 
+### memcached (autotools; needs libevent)
+
+```bash
+# 1. install libevent first (see libevent recipe above), e.g.:
+#    cmake --install <libevent build dir> --prefix /tmp/libevent-install
+# 2. build memcached
+./autogen.sh
+autoreconf -fi && automake --add-missing --copy
+./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  --with-libevent=/tmp/libevent-install \
+  LDFLAGS='-L/tmp/libevent-install/lib -Wl,-rpath,/tmp/libevent-install/lib' \
+  CPPFLAGS='-I/tmp/libevent-install/include'
+make -j$(nproc)
+get-bc -o memcached.bc memcached
+```
+
 ### darknet (Makefile)
 
 ```bash
@@ -290,6 +306,7 @@ store / incremental flags and measured project sizes.
 |---------|----------|------------:|-----------------------------|
 | zstd | `libzstd.so` | ~8 MB | ~1.5k fn / ~300k inst |
 | wolfssl | `libwolfssl.so` | ~4 MB | ~2.1k fn / ~160k inst |
+| memcached | `memcached` | ~2 MB | ~0.6k fn / ~15k inst |
 | openssh | `sshd` | ~3 MB | ~1.8k fn / ~75k inst |
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |

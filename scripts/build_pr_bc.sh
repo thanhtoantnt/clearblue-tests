@@ -46,6 +46,8 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     openssh) echo "$SRC_ROOT/openssh-portable|openssh/openssh-portable|sshd|openssh" ;;
     zstd)    echo "$SRC_ROOT/zstd|facebook/zstd|lib/libzstd.so.1.6.0|zstd" ;;
     wolfssl) echo "$SRC_ROOT/wolfssl|wolfSSL/wolfssl|@cmake|wolfssl" ;;
+    nghttp2) echo "$SRC_ROOT/nghttp2|nghttp2/nghttp2|@cmake|nghttp2" ;;
+    memcached) echo "$SRC_ROOT/memcached|memcached/memcached|memcached|memcached" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -136,6 +138,29 @@ build_wolfssl() {  # $1=srcdir
       -DWOLFSSL_EXAMPLES=OFF -DWOLFSSL_CRYPT_TESTS=OFF >/tmp/prbc_ws_cm.log 2>&1 || return 1
     ninja -j"$(nproc)" >/tmp/prbc_ws_nj.log 2>&1 || return 1
     get-bc -o /tmp/prbc_out.bc "$(find . -name 'libwolfssl.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+  )
+}
+build_nghttp2() {  # $1=srcdir
+  ( cd "$1"
+    rm -rf build-prbc && mkdir build-prbc && cd build-prbc
+    cmake .. -G Ninja -DCMAKE_C_COMPILER=gclang \
+      -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
+      -DENABLE_SHARED_LIB=ON -DBUILD_STATIC_LIBS=OFF \
+      -DENABLE_APP=OFF -DENABLE_HPACK_TOOLS=OFF -DENABLE_EXAMPLES=OFF >/tmp/prbc_ng_cm.log 2>&1 || return 1
+    ninja -j"$(nproc)" >/tmp/prbc_ng_nj.log 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libnghttp2.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+  )
+}
+# memcached needs libevent; ensure libevent is installed to this prefix first
+# (cmake --install <libevent build dir> --prefix "$MC_LEV"), see producing-bitcode.md
+MC_LEV="${MC_LEV:-/tmp/libevent-install}"
+build_memcached() {  # $1=srcdir  $2=artifact (memcached)
+  ( cd "$1"
+    [ -f configure ] || { ./autogen.sh >/tmp/prbc_mc_ag.log 2>&1; autoreconf -fi >/tmp/prbc_mc_ar.log 2>&1; automake --add-missing --copy >/tmp/prbc_mc_am.log 2>&1; }
+    [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" --with-libevent="$MC_LEV" \
+      LDFLAGS="-L$MC_LEV/lib -Wl,-rpath,$MC_LEV/lib" CPPFLAGS="-I$MC_LEV/include" >/tmp/prbc_mc_cf.log 2>&1 || return 1
+    make -j"$(nproc)" >/tmp/prbc_mc_mk.log 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc memcached >/dev/null 2>&1 || return 1
   )
 }
 build_darknet() {  # $1=srcdir

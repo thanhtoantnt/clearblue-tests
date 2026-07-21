@@ -57,6 +57,10 @@ META = {
                 "artifact": "libwolfssl.so.45.0.0 (shared lib)",
                 "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DWOLFSSL_SHARED=ON -DBUILD_SHARED_LIBS=ON -DWOLFSSL_EXAMPLES=OFF -DWOLFSSL_CRYPT_TESTS=OFF",
                 "out_kind": "libwolfssl (~160k inst)"},
+    "memcached": {"base": "2d51e36", "repo": "memcached/memcached", "upstream": "https://github.com/memcached/memcached",
+                "artifact": "memcached (server binary)",
+                "build": "autoreconf -fi ; automake --add-missing --copy ; ./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' --with-libevent=<libevent prefix> ; make",
+                "out_kind": "memcached (~15k inst)"},
 }
 
 def du(f):
