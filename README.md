@@ -12,6 +12,7 @@ Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tr
 
 - [`docs/cb-check-incremental-persist.md`](./docs/cb-check-incremental-persist.md) — what the feature is / how it works
 - [`docs/producing-bitcode.md`](./docs/producing-bitcode.md) — how the `.bc` files here were compiled
+- [`docs/building-cb-check.md`](./docs/building-cb-check.md) — how to build the `cb-check` analyzer itself (incl. the RTTI-enabled LLVM 15 it needs)
 - [`docs/cb-check-modes.md`](./docs/cb-check-modes.md) — normal / store / pure-load modes
 
 ## What it measures
