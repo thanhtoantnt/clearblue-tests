@@ -43,6 +43,7 @@ META = {
                 "out_kind": "libevent_core (~30k inst)"},
     "mbedtls": {"base": "12556bc2a2", "repo": "Mbed-TLS/mbedtls", "upstream": "https://github.com/Mbed-TLS/mbedtls",
                 "artifact": "libmbedtls.so.4.2.0 (shared lib)",
+                "setup": "git submodule update --init --recursive && pip install jsonschema jinja2",
                 "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DENABLE_PROGRAMS=OFF -DENABLE_TESTING=OFF -DUSE_SHARED_MBEDTLS_LIBRARY=ON",
                 "out_kind": "libmbedtls (~25k inst)"},
     "openssh": {"base": "cadefc724", "repo": "openssh/openssh-portable", "upstream": "https://github.com/openssh/openssh-portable",
@@ -59,7 +60,8 @@ META = {
                 "out_kind": "libwolfssl (~160k inst)"},
     "memcached": {"base": "2d51e36", "repo": "memcached/memcached", "upstream": "https://github.com/memcached/memcached",
                 "artifact": "memcached (server binary)",
-                "build": "autoreconf -fi ; automake --add-missing --copy ; ./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' --with-libevent=<libevent prefix> ; make",
+                "setup": "# needs libevent: build it (see bc/libevent) then cmake --install <dir> --prefix /tmp/lev\n./autogen.sh && autoreconf -fi && automake --add-missing --copy",
+                "build": "./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' --with-libevent=/tmp/lev LDFLAGS='-L/tmp/lev/lib -Wl,-rpath,/tmp/lev/lib' CPPFLAGS='-I/tmp/lev/include' ; make",
                 "out_kind": "memcached (~15k inst)"},
 }
 
@@ -96,12 +98,53 @@ def main():
                      f"| Artifact extracted | `{m['artifact']}`\n"
                      f"| Toolchain | gllvm `gclang` + `get-bc`, LLVM 15, `-Xclang -no-opaque-pointers`\n"
                      f"| Result size | `{m['out_kind']}`\n")
-        lines.append("```bash\n# how each .bc was built (same for old.bc and every pr-*.bc)\n"
-                     f"{m['build']}\nget-bc -o <file>.bc <artifact>\n```\n")
+        # (build command shown in full in the 'Reproduce the .bc files' section below)
+        lines.append("## Reproduce the .bc files from source\n")
+        lines.append("The committed `.bc` files are self-contained, but you can rebuild any of them "
+                     "from the upstream source. The key rule: **`old.bc` and every `pr-*.bc` must "
+                     "use the identical toolchain and flags** so `cb-check` fingerprints match.\n")
+        lines.append("### Prerequisites (once)\n")
+        lines.append("```bash\n"
+                     "# gllvm wraps clang to embed bitcode -- https://github.com/SRI-CSL/gllvm\n"
+                     "go install github.com/SRI-CSL/gllvm/cmd/gclang@latest\n"
+                     "go install github.com/SRI-CSL/gllvm/cmd/get-bc@latest\n"
+                     "# point gllvm at LLVM 15 (typed pointers), then put it on PATH\n"
+                     "export LLVM_COMPILER_PATH=$HOME/tools/llvm15-official/bin\n"
+                     "export PATH=$HOME/go/bin:$LLVM_COMPILER_PATH:$PATH\n"
+                     "which gclang get-bc   # sanity check\n"
+                     "```\n")
+        lines.append(f"### 1. Build `old.bc` (the baseline)\n")
+        lines.append(f"```bash\n"
+                     f"git clone {m['upstream']}.git {proj}\n"
+                     f"cd {proj}\n"
+                     f"git checkout {m['base']}\n\n"
+                     + (f"# project-specific setup\n{m['setup']}\n\n" if m.get('setup') else "")
+                     + f"# build + extract bitcode (artifact: {m['artifact']})\n"
+                     f"{m['build']}\n"
+                     f"get-bc -o old.bc\n"
+                     f"```\n")
+        lines.append("### 2. Build `pr-NNNN.bc` (one per pull request)\n")
+        lines.append("Reset to the baseline, apply the PR's source, rebuild with the **same** "
+                     "command, and save under a new name:\n")
+        lines.append(f"```bash\n"
+                     f"git reset --hard {m['base']}\n"
+                     "# fetch the PR ref and copy its changed .c/.h onto the tree\n"
+                     "git fetch origin pull/NNNN/head:pr-NNNN\n"
+                     "mb=$(git merge-base HEAD pr-NNNN)\n"
+                     "git diff --name-only $mb pr-NNNN | grep -E '\\.(c|h)$' | \\\n"
+                     "  while read f; do git show pr-NNNN:$f > $f; done\n"
+                     "git branch -D pr-NNNN\n\n"
+                     f"# rebuild with the SAME command as step 1\n"
+                     f"{m['build']}\n"
+                     f"get-bc -o pr-NNNN.bc\n"
+                     f"```\n")
+        lines.append("> `scripts/build_pr_bc.sh` automates steps 1-2 for every PR recorded in "
+                     "`results/<proj>/summary.tsv`; run it from the repo root: "
+                     "`./scripts/build_pr_bc.sh " + proj + "`.\n")
         lines.append("See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the "
                      "full recipe.\n")
-        # Reproduce section — explicit cb-check commands
-        lines.append("## Reproduce the results\n")
+        # cb-check analysis section
+        lines.append("## Reproduce the results (cb-check analysis)\n")
         lines.append("Three explicit `cb-check` invocations reproduce one data point: "
                      "**store** the baseline once, then run a sample **incremental** "
                      "(reuses stored SEGs) and **scratch** (no store) to compare.\n")

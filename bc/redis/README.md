@@ -11,13 +11,46 @@ This folder holds typed-pointer LLVM 15 bitcode for **redis**, used as the input
 | Artifact extracted | `src/redis-server`
 | Toolchain | gllvm `gclang` + `get-bc`, LLVM 15, `-Xclang -no-opaque-pointers`
 | Result size | `redis-server (~540k inst)`
+## Reproduce the .bc files from source
+The committed `.bc` files are self-contained, but you can rebuild any of them from the upstream source. The key rule: **`old.bc` and every `pr-*.bc` must use the identical toolchain and flags** so `cb-check` fingerprints match.
+### Prerequisites (once)
 ```bash
-# how each .bc was built (same for old.bc and every pr-*.bc)
-make CC=gclang OPTIMIZATION=-O0 CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers -fno-lto -Wno-error -std=gnu11' LDFLAGS=-fno-lto MALLOC=libc BUILD_TLS=no
-get-bc -o <file>.bc <artifact>
+# gllvm wraps clang to embed bitcode -- https://github.com/SRI-CSL/gllvm
+go install github.com/SRI-CSL/gllvm/cmd/gclang@latest
+go install github.com/SRI-CSL/gllvm/cmd/get-bc@latest
+# point gllvm at LLVM 15 (typed pointers), then put it on PATH
+export LLVM_COMPILER_PATH=$HOME/tools/llvm15-official/bin
+export PATH=$HOME/go/bin:$LLVM_COMPILER_PATH:$PATH
+which gclang get-bc   # sanity check
 ```
+### 1. Build `old.bc` (the baseline)
+```bash
+git clone https://github.com/redis/redis.git redis
+cd redis
+git checkout 1aa21f97d
+
+# build + extract bitcode (artifact: src/redis-server)
+make CC=gclang OPTIMIZATION=-O0 CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers -fno-lto -Wno-error -std=gnu11' LDFLAGS=-fno-lto MALLOC=libc BUILD_TLS=no
+get-bc -o old.bc
+```
+### 2. Build `pr-NNNN.bc` (one per pull request)
+Reset to the baseline, apply the PR's source, rebuild with the **same** command, and save under a new name:
+```bash
+git reset --hard 1aa21f97d
+# fetch the PR ref and copy its changed .c/.h onto the tree
+git fetch origin pull/NNNN/head:pr-NNNN
+mb=$(git merge-base HEAD pr-NNNN)
+git diff --name-only $mb pr-NNNN | grep -E '\.(c|h)$' | \
+  while read f; do git show pr-NNNN:$f > $f; done
+git branch -D pr-NNNN
+
+# rebuild with the SAME command as step 1
+make CC=gclang OPTIMIZATION=-O0 CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers -fno-lto -Wno-error -std=gnu11' LDFLAGS=-fno-lto MALLOC=libc BUILD_TLS=no
+get-bc -o pr-NNNN.bc
+```
+> `scripts/build_pr_bc.sh` automates steps 1-2 for every PR recorded in `results/<proj>/summary.tsv`; run it from the repo root: `./scripts/build_pr_bc.sh redis`.
 See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the full recipe.
-## Reproduce the results
+## Reproduce the results (cb-check analysis)
 Three explicit `cb-check` invocations reproduce one data point: **store** the baseline once, then run a sample **incremental** (reuses stored SEGs) and **scratch** (no store) to compare.
 ```bash
 CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
