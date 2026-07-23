@@ -63,6 +63,11 @@ META = {
                 "setup": "# needs libevent: build it (see bc/libevent) then cmake --install <dir> --prefix /tmp/lev\n./autogen.sh && autoreconf -fi && automake --add-missing --copy",
                 "build": "./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' --with-libevent=/tmp/lev LDFLAGS='-L/tmp/lev/lib -Wl,-rpath,/tmp/lev/lib' CPPFLAGS='-I/tmp/lev/include' ; make",
                 "out_kind": "memcached (~15k inst)"},
+    "nghttp2": {"base": "d5ab3d92", "repo": "nghttp2/nghttp2", "upstream": "https://github.com/nghttp2/nghttp2",
+                "artifact": "libnghttp2.so.14.29.4 (shared lib)",
+                "setup": "git submodule update --init --recursive",
+                "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_STATIC_LIBS=OFF -DENABLE_APP=OFF -DENABLE_HPACK_TOOLS=OFF -DENABLE_EXAMPLES=OFF",
+                "out_kind": "libnghttp2 (~small HTTP/2 lib)"},
 }
 
 def du(f):
