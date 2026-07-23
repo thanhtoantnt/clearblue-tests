@@ -1,0 +1,28 @@
+Script started on 2026-07-23 11:59:22-04:00 [<not executed on terminal>]
+cb-check static analyzer . ===enterprise version===
+[Warning] You are running a licence free version of cb-check. Don't distribute it.
+Module Statistical Results: 
+	 Total Number of Functions: 609
+		 Number of Implemented Functions: 463
+		 Number of External Functions: 146
+		 External Functions Rate: 24.0%
+	 Instruction Count: 70396 (Avg: 152.043 per function)
+	 Function With Most Instructions: 2010 (Function: chacha_encrypt_bytes)
+	 Avg Cyclomatic Complexity: 9.570
+	 Max Cyclomatic Complexity: 118 (Function: ssh2_packet_add)
+Basic IR transformations ........Done!
+Generating SSA IR ........Done!
+Processing unreachable code ........Done!
+Unrolling and breaking loops ........Done!
+Indexing ........Done!
+[SPEG] Start ... 463functions to run!
+[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 17%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 34%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 52%[K[SPEG Computation]: 53%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%[K[SPEG Computation]: 60%[K[SPEG Computation]: 61%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 68%[K[SPEG Computation]: 69%[K[SPEG Computation]: 70%[K[SPEG Computation]: 71%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 77%[K[SPEG Computation]: 78%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 82%[K[SPEG Computation]: 83%[K[SPEG Computation]: 84%[K[SPEG Computation]: 85%[K[SPEG Computation]: 86%[K[SPEG Computation]: 87%[K[SPEG Computation]: 88%[K[SPEG Computation]: 89%[K[SPEG Computation]: 90%[K[SPEG Computation]: 91%[K[SPEG Computation]: 92%[K[SPEG Computation]: 93%[K[SPEG Computation]: 95%[K[SPEG Computation]: 96%[K[SPEG Computation]: 97%[K[SPEG Computation]: 98%[K[SPEG Computation]: 99%[K[SPEG Computation]: 100%
+[Dumping SEG] spends time ***0s 695ms***
+SEG-Building spends time ***5s 57ms***
+SEG-Building uses memory ***1G 741M 12KB***
+
+
+Total Time: 	0min7s
+Total Memory:  ***2G 148M 432KB***
+
+Script done on 2026-07-23 11:59:29-04:00 [COMMAND_EXIT_CODE="0"]

@@ -133,6 +133,7 @@ via gllvm; all `-O0 -g`. Store time and one full per-PR sweep per project.
 
 | Project | Store | SEGs (≈) | Inst (≈) | PRs | Avg inc | Avg scratch | Med speedup | Wins |
 |---------|------:|---------:|---------:|----:|--------:|------------:|------------:|-----:|
+| libssh2 | ~7s | ~1.2k | ~moderate | 8 | ~2s | ~6s | **~65%** | **8/8** |
 | nghttp2 | ~3s | ~0.5k | ~small | 8 | ~1s | ~4s | **~75%** | **8/8** |
 | memcached | ~8s | 0.6k | ~15k | 5 | ~2s | ~5s | ~60% | 5/5 |
 | wolfssl | ~16s | 2.1k | ~160k | 12 | ~4s | ~11s | **~64%** | **12/12** |

@@ -68,6 +68,10 @@ META = {
                 "setup": "git submodule update --init --recursive",
                 "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_STATIC_LIBS=OFF -DENABLE_APP=OFF -DENABLE_HPACK_TOOLS=OFF -DENABLE_EXAMPLES=OFF",
                 "out_kind": "libnghttp2 (~small HTTP/2 lib)"},
+    "libssh2": {"base": "fe667c60", "repo": "libssh2/libssh2", "upstream": "https://github.com/libssh2/libssh2",
+                "artifact": "libssh2.so.1.0.1 (shared lib, OpenSSL backend)",
+                "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON -DBUILD_EXAMPLES=OFF -DBUILD_TESTING=OFF -DENABLE_ZLIB_COMPRESSION=OFF",
+                "out_kind": "libssh2 (SSH client lib, ~moderate size)"},
 }
 
 def du(f):
