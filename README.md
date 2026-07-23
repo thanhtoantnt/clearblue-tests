@@ -15,6 +15,8 @@ Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tr
 - [`docs/building-cb-check.md`](./docs/building-cb-check.md) — how to build the `cb-check` analyzer itself (incl. the RTTI-enabled LLVM 15 it needs)
 - [`docs/cb-check-modes.md`](./docs/cb-check-modes.md) — normal / store / pure-load modes
 
+- [`results/main-vs-perf-incremental-persist-optimize.md`](./results/main-vs-perf-incremental-persist-optimize.md) — head-to-head: **main (PR #15)** vs **`perf/incremental-persist-optimize`** (store / zero-dirty / PR / no-persist; nworkers=16)
+
 ## What it measures
 
 For each project:
