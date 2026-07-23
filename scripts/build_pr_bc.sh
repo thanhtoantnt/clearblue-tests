@@ -47,6 +47,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     zstd)    echo "$SRC_ROOT/zstd|facebook/zstd|lib/libzstd.so.1.6.0|zstd" ;;
     wolfssl) echo "$SRC_ROOT/wolfssl|wolfSSL/wolfssl|@cmake|wolfssl" ;;
     nghttp2) echo "$SRC_ROOT/nghttp2|nghttp2/nghttp2|@cmake|nghttp2" ;;
+    libssh2) echo "$SRC_ROOT/libssh2|libssh2/libssh2|@cmake|libssh2" ;;
     memcached) echo "$SRC_ROOT/memcached|memcached/memcached|memcached|memcached" ;;
     *) die "unknown project: $1" ;;
   esac
@@ -150,6 +151,16 @@ build_nghttp2() {  # $1=srcdir
     ninja -j"$(nproc)" >/tmp/prbc_ng_nj.log 2>&1 || return 1
     get-bc -o /tmp/prbc_out.bc "$(find . -name 'libnghttp2.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
   )
+}
+build_libssh2() {  # $1=srcdir
+  local bdir; bdir=$(mktemp -d /tmp/prbc_ssh2.XXXXXX)
+  cmake -S "$1" -B "$bdir" -G Ninja -DCMAKE_C_COMPILER=gclang \
+    -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
+    -DBUILD_SHARED_LIBS=ON -DBUILD_EXAMPLES=OFF -DBUILD_TESTING=OFF \
+    -DENABLE_ZLIB_COMPRESSION=OFF >/tmp/prbc_ssh2_cm.log 2>&1 || { rm -rf "$bdir"; return 1; }
+  ninja -C "$bdir" -j"$(nproc)" >/tmp/prbc_ssh2_nj.log 2>&1 || { rm -rf "$bdir"; return 1; }
+  get-bc -o /tmp/prbc_out.bc "$(find "$bdir" -name 'libssh2.so*' -type f | head -1)" >/dev/null 2>&1 || { rm -rf "$bdir"; return 1; }
+  rm -rf "$bdir"
 }
 # memcached needs libevent; ensure libevent is installed to this prefix first
 # (cmake --install <libevent build dir> --prefix "$MC_LEV"), see producing-bitcode.md
