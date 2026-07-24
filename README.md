@@ -108,6 +108,22 @@ ONLY=curl ./scripts/run_bench.sh
 
 Tune with `NWORKERS=8 TIMEOUT=3600 ./scripts/run_bench.sh`.
 
+### Comparing two branches (A/B)
+
+To compare `main` vs a perf branch on the incremental feature, build both
+`cb-check` binaries and run the A/B harness. It stores `old.bc` once per
+branch, then runs incremental on each `pr-*.bc` (the real workflow — **store
+once, reuse**), and reports store + per-PR median for both:
+
+```bash
+MAIN=/tmp/cb-check-main PERF=/tmp/cb-check-perf ./scripts/ab_branches.sh
+python3 scripts/ab_summarize.py /tmp/ab2.tsv
+```
+
+See [`docs/ab-branch-comparison.md`](./docs/ab-branch-comparison.md) for the
+methodology (what to measure, what to skip, and the store-once rule that keeps
+the run to ~1 hour instead of ~3.5).
+
 Output goes to `results/<proj>/summary.tsv` (+ `store.log`, `inc_*.log`,
 `scr_*.log`). The script prints each summary at the end.
 
