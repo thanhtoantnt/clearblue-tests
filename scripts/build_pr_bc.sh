@@ -49,6 +49,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     nghttp2) echo "$SRC_ROOT/nghttp2|nghttp2/nghttp2|@cmake|nghttp2" ;;
     libssh2) echo "$SRC_ROOT/libssh2|libssh2/libssh2|@cmake|libssh2" ;;
     memcached) echo "$SRC_ROOT/memcached|memcached/memcached|memcached|memcached" ;;
+    libjpeg-turbo) echo "$SRC_ROOT/libjpeg-turbo|libjpeg-turbo/libjpeg-turbo|libjpeg.so.62.4.0|libjpegturbo" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -174,6 +175,40 @@ build_memcached() {  # $1=srcdir  $2=artifact (memcached)
     get-bc -o /tmp/prbc_out.bc memcached >/dev/null 2>&1 || return 1
   )
 }
+build_libjpegturbo() {  # $1=srcdir  $2=artifact
+  ( cd "$1"
+    rm -rf build-prbc && mkdir build-prbc && cd build-prbc
+    cmake .. -G Ninja -DCMAKE_C_COMPILER=gclang \
+      -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
+      -DENABLE_SHARED=1 -DENABLE_STATIC=0 -DENABLE_SIMD=OFF -DWITH_TURBOJPEG=0 \
+      >/tmp/prbc_ljt_cm.log 2>&1 || return 1
+    ninja -j"$(nproc)" >/tmp/prbc_ljt_nj.log 2>&1 || return 1
+    # get-bc broke after the binutils wipe; getbc-link reads .llvm_bc sidecar
+    # paths from the artifact and llvm-links them (same mechanism).
+    getbc-link "$(find . -name 'libjpeg.so*' -type f \! -type l | head -1)" \
+      -o /tmp/prbc_out.bc >/tmp/prbc_ljt_gb.log 2>&1 || return 1
+  )
+}
+# libjpeg-turbo synthetics need a REAL statement (not a comment): at -O0
+# comments are stripped and yield identical bitcode. Inject into the first
+# function body of src/*.c, distinct file per syn index.
+synthetic_touch_libjpegturbo() {  # $1=srcdir $2=index
+  ( cd "$1"
+    python3 - "$2" <<'PY'
+import sys, pathlib, re
+idx=int(sys.argv[1])
+files=sorted(p for p in pathlib.Path('src').glob('*.c')
+             if not any(x in p.name for x in ['main','cdjpeg']))
+if not files: sys.exit(1)
+p=files[idx % len(files)]; t=p.read_text(errors='ignore')
+m=re.search(r'\)\s*\{', t)          # first function-body brace
+if not m: sys.exit(2)
+inj=f'  volatile int __bench{idx}=sizeof(long)+{idx}; (void)__bench{idx};\n'
+if inj in t: sys.exit(3)
+p.write_text(t[:m.end()]+inj+t[m.end():])
+PY
+  )
+}
 build_darknet() {  # $1=srcdir
   ( cd "$1"
     make clean >/dev/null 2>&1
@@ -294,7 +329,9 @@ do_project() {
       git clean -fd -e '*.bc' -e '.*.bc' -e 'build-prbc' -e 'build-gllvm' >/dev/null 2>&1 || true )
 
     if [[ "$pr" == syn* ]]; then
-      synthetic_touch "$srcdir" "${pr#syn}" || { log "$proj $pr touch fail"; fail=$((fail+1)); continue; }
+      touch_fn=synthetic_touch
+      [ "$builder" = libjpegturbo ] && touch_fn=synthetic_touch_libjpegturbo
+      "$touch_fn" "$srcdir" "${pr#syn}" || { log "$proj $pr touch fail"; fail=$((fail+1)); continue; }
     else
       apply_pr_files "$srcdir" "$repo" "$pr" || { log "$proj pr-$pr apply fail"; fail=$((fail+1)); continue; }
     fi
