@@ -28,11 +28,12 @@ have() { awk -F'\t' -v b="$1" -v p="$2" -v m="$3" -v s="$4" 'NR>1 && $1==b && $2
 run_branch_project() {  # binary branch project
   local bin=$1 branch=$2 proj=$3
   local pdir="/tmp/ab_${branch}_${proj}"
+  local store_snap="/tmp/ab_${branch}_${proj}_snap"   # pristine store snapshot
   local args=(--hide-progress-bar -nworkers=$NWORKERS -enable-build-seg-only)
 
   # 1. store old.bc once
   if [ -z "$(have "$branch" "$proj" store old)" ]; then
-    rm -rf "$pdir"; mkdir -p "$pdir"
+    rm -rf "$pdir" "$store_snap"; mkdir -p "$pdir"
     local t0 t1 rc
     t0=$(date +%s%N)
     timeout 600 "$bin" "${args[@]}" -persist-dir="$pdir" "$BC/$proj/old.bc" >/dev/null 2>&1; rc=$?
@@ -40,15 +41,21 @@ run_branch_project() {  # binary branch project
     [ $rc -ne 0 ] && { echo "[$branch/$proj] store FAIL"; return; }
     printf '%s\t%s\tstore\told\t%s\n' "$branch" "$proj" "$(( (t1-t0)/1000000 ))" >> "$OUT"
     echo "[$branch/$proj] store: $(( (t1-t0)/1000000 ))ms"
+    # Snapshot the pristine store so each incremental run starts clean.
+    # Incremental mode writes rebuilt SEGs back to the dir; without a fresh
+    # copy each PR contaminates the next (rc=2 on large projects).
+    cp -r "$pdir" "$store_snap"
   fi
 
-  # 2. incremental on each pr-*.bc (reuse the same stored dir)
+  # 2. incremental on each pr-*.bc (reuse the stored SEGs)
   for bc in "$BC/$proj"/pr-*.bc; do
     [ -f "$bc" ] || continue
     local s=$(basename "$bc" .bc)
     local r
     for r in $(seq 1 "$RUNS"); do
       [ -n "$(have "$branch" "$proj" inc "$s")" ] && continue   # resumable
+      # Restore pristine store before each PR so prior runs don't contaminate.
+      rm -rf "$pdir"; cp -r "$store_snap" "$pdir"
       local t0 t1 rc
       t0=$(date +%s%N)
       timeout 600 "$bin" "${args[@]}" -enable-incremental-persist -persist-dir="$pdir" "$bc" >/dev/null 2>&1; rc=$?
@@ -61,7 +68,7 @@ run_branch_project() {  # binary branch project
       fi
     done
   done
-  rm -rf "$pdir"
+  rm -rf "$pdir" "$store_snap"
 }
 
 PROJECTS="${PROJECTS:-c-ares libuv libssh2 mbedtls nghttp2 memcached libevent curl libjpeg-turbo wolfssl openssh darknet zstd redis openssl git}"
