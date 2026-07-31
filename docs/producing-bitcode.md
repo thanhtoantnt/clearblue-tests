@@ -152,6 +152,16 @@ ninja -C build-gllvm
 get-bc -o mbedtls.bc build-gllvm/library/libmbedtls.so.4.2.0   # soname may vary
 ```
 
+### libexpat (autotools, 2.6.3 tarball)
+
+```bash
+./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  --disable-shared --enable-static --without-docbook --without-xmlwf \
+  --disable-dependency-tracking
+make -j$(nproc)
+llvm-link -o libexpat.bc lib/.xmlparse.o.bc lib/.xmltok.o.bc lib/.xmlrole.o.bc
+```
+
 ### libsodium (autotools, 1.0.20-stable tarball)
 
 ```bash
@@ -287,6 +297,7 @@ store / incremental flags and measured project sizes.
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |
 | libsodium | `libsodium` (linked TUs) | ~2.5 MB | ~1.1k fn |
+| libexpat | `xmlparse+xmltok+xmlrole` | ~0.9 MB | ~0.4k fn |
 | libevent | `libevent_core.so` | ~1 MB | ~0.7k fn / ~30k inst |
 | libuv | `libuv.so` | few MB | ~1k fn / ~50k inst |
 | curl | `libcurl` | ~7 MB | ~2.5k fn / ~220k inst |

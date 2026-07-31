@@ -41,7 +41,7 @@ incremental-persist-bench/
 │   ├── curl/{old.bc, pr-22328.bc, ...}
 │   ├── libuv/{old.bc, pr-5193.bc, ...}
 │   ├── darknet/{old.bc, pr-2657.bc, ...}
-│   ├── libjpeg-turbo/, nghttp2/, libsodium/, ...
+│   ├── libjpeg-turbo/, nghttp2/, libsodium/, libexpat/, ...
 │   └── (no git / redis / openssl — too slow for routine runs)
 └── results/                  # recorded runs (committed)
     ├── curl/summary.tsv
