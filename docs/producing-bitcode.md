@@ -152,6 +152,17 @@ ninja -C build-gllvm
 get-bc -o mbedtls.bc build-gllvm/library/libmbedtls.so.4.2.0   # soname may vary
 ```
 
+### libyaml (autotools, 0.2.5 tarball)
+
+```bash
+./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  --disable-shared --enable-static --disable-dependency-tracking
+make -j$(nproc)
+llvm-link -o libyaml.bc src/.api.o.bc src/.dumper.o.bc src/.emitter.o.bc \
+  src/.loader.o.bc src/.parser.o.bc src/.reader.o.bc src/.scanner.o.bc \
+  src/.writer.o.bc
+```
+
 ### libexpat (autotools, 2.6.3 tarball)
 
 ```bash
@@ -298,6 +309,7 @@ store / incremental flags and measured project sizes.
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |
 | libsodium | `libsodium` (linked TUs) | ~2.5 MB | ~1.1k fn |
 | libexpat | `xmlparse+xmltok+xmlrole` | ~0.9 MB | ~0.4k fn |
+| libyaml | `libyaml` TUs | ~0.7 MB | ~0.2k fn |
 | libevent | `libevent_core.so` | ~1 MB | ~0.7k fn / ~30k inst |
 | libuv | `libuv.so` | few MB | ~1k fn / ~50k inst |
 | curl | `libcurl` | ~7 MB | ~2.5k fn / ~220k inst |
