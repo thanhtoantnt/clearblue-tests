@@ -152,6 +152,16 @@ ninja -C build-gllvm
 get-bc -o mbedtls.bc build-gllvm/library/libmbedtls.so.4.2.0   # soname may vary
 ```
 
+### libsodium (autotools, 1.0.20-stable tarball)
+
+```bash
+# get-bc on libsodium.a may fail; llvm-link gllvm per-TU .bc instead
+./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  --disable-shared --enable-static --disable-dependency-tracking
+make -j$(nproc)
+find src/libsodium -name '*.bc' | sort | xargs llvm-link -o libsodium.bc
+```
+
 ### openssh-portable (autotools)
 
 ```bash
@@ -276,6 +286,7 @@ store / incremental flags and measured project sizes.
 | openssh | `sshd` | ~3 MB | ~1.8k fn / ~75k inst |
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |
+| libsodium | `libsodium` (linked TUs) | ~2.5 MB | ~1.1k fn |
 | libevent | `libevent_core.so` | ~1 MB | ~0.7k fn / ~30k inst |
 | libuv | `libuv.so` | few MB | ~1k fn / ~50k inst |
 | curl | `libcurl` | ~7 MB | ~2.5k fn / ~220k inst |
