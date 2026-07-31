@@ -70,15 +70,6 @@ ninja -C build-gllvm
 get-bc -o old.bc build-gllvm/lib/libcurl-d.so.4.8.0   # name may vary
 ```
 
-**git (make, lean config):**
-
-```bash
-make -j$(nproc) CC=gclang \
-  CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
-  NO_OPENSSL=1 NO_CURL=1 NO_EXPAT=1 NO_GETTEXT=1 git
-get-bc -o old.bc git
-```
-
 **darknet (Makefile):**
 
 ```bash
@@ -304,8 +295,8 @@ in `old.bc` and `new.bc` to share a key when IR is unchanged.
    callers with loaded SEGs whose cross-edges into dirty callees are dropped
    (null-safe) rather than fully rebuilt.
 7. **Scale**: medium programs often see large wall-time wins after one store.
-   Very large modules (OpenSSL libcrypto, full `git` binary ~1M instructions)
-   may be neutral or slower—fixed IR prep + dirty expansion can dominate.
+   Very large modules may be neutral or slower—fixed IR prep + dirty expansion
+   can dominate (those projects were dropped from this bench suite).
 8. **Static `cb-check`**: stdout may be fully buffered when redirected; use
    `script -q -c '…' logfile` (or a TTY) if logs look empty while the process
    runs.
@@ -322,16 +313,11 @@ Internal multi-PR runs on one machine (`-enable-build-seg-only`,
 | libuv | ~3s | ~0.8k | ~50k | 10–20 PRs | ~1s | ~2s | ~50% wall; SEG phase much cheaper |
 | **curl** | **~13s** | **~2.3k** | **~218k** | **10 PRs** | **~4.6s** | **~10s** | **10/10**, med ~53% |
 | darknet | ~140s | ~1.0k | ~122k | 10–20 | ~42s | ~78s | ~45% wall |
-| redis | ~120s | ~6–7k | ~540k | 10–20 | ~47s | ~84s | ~45% wall |
-| **git** | **~97s** | **~14k** | **~977k** | **20 PRs** | **~54s** | **~57s** | **13/20**, med ~6% |
-| openssl (libcrypto) | ~99s | ~16k | ~900k | 10–20 | ~59s | ~54s | often **slower** |
 
 **Interpretation used in practice:**
 
-- **curl / darknet / redis / libuv**: good fit for CI incremental after one store.
-- **git / openssl scale**: feature is usable, but wall speedup is small or
-  negative when dirty sets explode (thousands of functions) or when IR prep
-  dominates.
+- **curl / darknet / libuv** (and the other medium projects in `bc/`): good fit
+  for CI incremental after one store.
 - Prefer comparing **SEG-Building** time and SPEG function count in logs, not
   only wall clock, when debugging.
 
@@ -351,12 +337,6 @@ $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
   -enable-incremental-persist -persist-dir=./persist_bench new.bc
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only new.bc   # scratch
 ```
-
-### End-to-end recipe used for git (20 PRs)
-
-Same cb-check flags; bitcode from the `git` binary (`get-bc -o old.bc git`).
-Many GitHub PRs do not compile when only some files are copied onto current
-`master`—skip build failures and keep going until N successful pairs.
 
 ## Minimal check
 

@@ -88,7 +88,7 @@ perf     darknet   inc    pr-5193  34200
 ```
 
 Resumable: re-running skips combos already in the TSV. Filter projects with
-`PROJECTS="darknet openssl"`.
+`PROJECTS="darknet curl"`.
 
 ### 3. Summarize
 
@@ -106,10 +106,11 @@ Single run per branch (store once + all PRs):
 |------|----------|------:|
 | small | c-ares, libuv, libssh2, mbedtls, nghttp2, memcached, libevent | ~1 min |
 | medium | curl, libjpeg-turbo, wolfssl, openssh | ~10 min |
-| large | darknet, zstd, redis, openssl, git | ~15 min each |
+| large | darknet, zstd | ~15 min each |
 
-Full A/B (16 projects, both branches): **~1 hour**. The store-once rule is what
-keeps it there — a naive re-store-per-run harness takes ~3.5 hours.
+Full A/B (13 projects, both branches): under **~1 hour** for SEG-only. The
+store-once rule is what keeps it there. (`git` / `redis` / `openssl` removed
+from `bc/`.)
 
 ## Sanity rules
 

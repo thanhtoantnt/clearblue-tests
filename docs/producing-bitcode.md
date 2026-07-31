@@ -98,17 +98,6 @@ get-bc -o curl.bc build-gllvm/lib/libcurl-d.so.4.8.0
 Note: Debug builds often name the library `libcurl-d.so*`. Extracting only
 **libcurl** means tool (`src/`) PRs show as IR-clean (`body-dirty: 0`).
 
-### git (make)
-
-```bash
-make -j$(nproc) CC=gclang \
-  CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
-  NO_OPENSSL=1 NO_CURL=1 NO_EXPAT=1 NO_GETTEXT=1 git
-get-bc -o git.bc git
-```
-
-`make all` may fail on optional subdirs (e.g. `git-gui` / `po` without msgfmt).
-Building the `git` target is enough for bitcode.
 
 ### libuv (cmake)
 
@@ -217,29 +206,7 @@ make -j$(nproc) CC=gclang CPP=gclang++ DEBUG=1 GPU=0 \
 get-bc -o darknet.bc darknet
 ```
 
-### redis (make)
 
-```bash
-# typical lean build; adjust if your tree needs other flags
-make -j$(nproc) MALLOC=libc CC=gclang \
-  CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' redis-server
-get-bc -o redis.bc src/redis-server
-```
-
-### openssl (Configure + make)
-
-```bash
-# example: shared libcrypto only; paths vary by Configure
-./Configure linux-x86_64 no-asm shared \
-  -O0 -g -fPIC -Xclang -no-opaque-pointers \
-  CC=gclang
-make -j$(nproc) build_libs
-# then extract the shared crypto library, e.g.:
-get-bc -o libcrypto.bc $(find . -name 'libcrypto.so*' -type f | head -1)
-```
-
-OpenSSL is large (~1M instructions). Incremental persist often shows little
-wall-time win; store still works.
 
 ### CMake projects (generic)
 
@@ -295,7 +262,6 @@ If cb-check errors about opaque pointers, rebuild with
 2. Apply PR changes (or merge), rebuild with **identical** gllvm flags.
 3. `get-bc -o new.bc …` from the **same kind** of artifact (same `.so` or
    binary).
-4. Do not mix “whole `git` binary” store with a tiny unit-test `.bc` load.
 
 See [cb-check-incremental-persist.md](./cb-check-incremental-persist.md) for
 store / incremental flags and measured project sizes.
@@ -314,9 +280,6 @@ store / incremental flags and measured project sizes.
 | libuv | `libuv.so` | few MB | ~1k fn / ~50k inst |
 | curl | `libcurl` | ~7 MB | ~2.5k fn / ~220k inst |
 | darknet | `darknet` | tens of MB | ~1k fn / ~120k inst |
-| redis | `redis-server` | tens of MB | ~7k fn / ~540k inst |
-| git | `git` | ~30 MB | ~14k fn / ~1M inst |
-| openssl | `libcrypto` | large | ~16k fn / ~900k inst |
 
 ## See also
 
