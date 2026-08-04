@@ -1,0 +1,3 @@
+sample	store_s	inc_s	scratch_s	body_dirty	callers	total_dirty	inc_seg	scr_seg	status
+pr-syn0	22	3	19	0	0	0	0s 84ms	16s 344ms	ok
+pr-syn1	22	3	17	0	0	0	0s 77ms	14s 489ms	ok

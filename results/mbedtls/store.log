@@ -1,4 +1,4 @@
-Script started on 2026-07-19 23:54:02-04:00 [<not executed on terminal>]
+Script started on 2026-08-04 08:33:37+00:00 [<not executed on terminal>]
 cb-check static analyzer . ===enterprise version===
 [Warning] You are running a licence free version of cb-check. Don't distribute it.
 Module Statistical Results: 
@@ -16,1974 +16,13 @@ Processing unreachable code ........Done!
 Unrolling and breaking loops ........Done!
 Indexing ........Done!
 [SPEG] Start ... 807functions to run!
-[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 17%[K[SPEG Computation]: 18%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 34%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 52%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%DEBUG Func:mbedtls_ssl_ticket_rotate, sz1=1, sz2=8
-Callee:local_err_translation.270, sz1=0, sz2=1
-Callee:psa_set_key_usage_flags.271, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.272, sz1=0, sz2=0
-Callee:psa_set_key_type.273, sz1=0, sz2=0
-Callee:psa_set_key_bits.274, sz1=0, sz2=0
-Callee:psa_import_key, sz1=0, sz2=0
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:time, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_ticket_setup, sz1=1, sz2=1
-Callee:ssl_ticket_gen_key, sz1=1, sz2=9
-DEBUG Func:ssl_ticket_gen_key, sz1=1, sz2=9
-Callee:local_err_translation.270, sz1=0, sz2=1
-Callee:psa_set_key_usage_flags.271, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.272, sz1=0, sz2=0
-Callee:psa_set_key_type.273, sz1=0, sz2=0
-Callee:psa_set_key_bits.274, sz1=0, sz2=0
-Callee:psa_import_key, sz1=0, sz2=0
-Callee:time, sz1=0, sz2=0
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:psa_generate_random, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_ticket_write, sz1=2, sz2=6
-Callee:local_err_translation.270, sz1=0, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.276, sz1=0, sz2=0
-Callee:ssl_ticket_update_keys, sz1=2, sz2=4
-Callee:mbedtls_ssl_session_save, sz1=0, sz2=1
-Callee:psa_aead_encrypt, sz1=0, sz2=0
-Callee:psa_generate_random, sz1=0, sz2=0
-DEBUG Func:ssl_ticket_update_keys, sz1=2, sz2=4
-Callee:local_err_translation.270, sz1=0, sz2=1
-Callee:ssl_ticket_gen_key, sz1=1, sz2=9
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:time, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_ticket_parse, sz1=2, sz2=7
-Callee:local_err_translation.270, sz1=0, sz2=1
-Callee:ssl_ticket_update_keys, sz1=2, sz2=4
-Callee:ssl_ticket_select_key, sz1=0, sz2=1
-Callee:mbedtls_ssl_session_get_ticket_creation_time, sz1=0, sz2=0
-Callee:mbedtls_ssl_session_load, sz1=0, sz2=2
-Callee:psa_aead_decrypt, sz1=0, sz2=0
-Callee:mbedtls_ms_time, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_set_cid, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_print_extension, sz1=0, sz2=3
-DEBUG Func:ssl_parse_client_key_exchange, sz1=6, sz2=10
-Callee:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:mbedtls_ssl_hs_hdr_len.715, sz1=0, sz2=0
-Callee:local_err_translation.730, sz1=0, sz2=1
-Callee:ssl_parse_client_psk_identity, sz1=2, sz2=5
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_derive_keys, sz1=3, sz2=6
-Callee:psa_raw_key_agreement, sz1=0, sz2=0
-DEBUG Func:ssl_parse_certificate_verify, sz1=4, sz2=14
-Callee:mbedtls_ssl_ciphersuite_cert_req_allowed.710, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:mbedtls_ssl_hs_hdr_len.715, sz1=0, sz2=0
-Callee:mbedtls_md_psa_alg_from_type.717, sz1=0, sz2=0
-Callee:mbedtls_psa_alg_from_pk_sigalg.718, sz1=0, sz2=0
-Callee:mbedtls_ssl_set_calc_verify_md, sz1=0, sz2=0
-Callee:mbedtls_pk_can_do_psa, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_update_handshake_status, sz1=1, sz2=3
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_pk_sig_alg_from_sig, sz1=0, sz2=0
-Callee:mbedtls_ssl_md_alg_from_hash, sz1=0, sz2=0
-Callee:mbedtls_pk_verify_ext, sz1=0, sz2=0
-DEBUG Func:ssl_write_new_session_ticket, sz1=2, sz2=4
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ms_time, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.702, sz1=0, sz2=2
-DEBUG Func:ssl_parse_client_psk_identity, sz1=2, sz2=5
-Callee:ssl_conf_has_psk_or_cb, sz1=0, sz2=1
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_setup, sz1=2, sz2=7
-Callee:ssl_conf_check, sz1=1, sz2=1
-Callee:ssl_handshake_init, sz1=2, sz2=12
-Callee:mbedtls_ssl_reset_in_pointers, sz1=0, sz2=1
-Callee:mbedtls_ssl_reset_out_pointers, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-DEBUG Func:ssl_conf_check, sz1=1, sz2=1
-Callee:ssl_conf_version_check, sz1=0, sz2=4
-DEBUG Func:ssl_handshake_init, sz1=2, sz2=12
-Callee:mbedtls_ssl_session_free, sz1=0, sz2=3
-Callee:mbedtls_ssl_transform_init, sz1=0, sz2=0
-Callee:mbedtls_ssl_session_init, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_free, sz1=0, sz2=9
-Callee:ssl_handshake_params_init, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_set_timer, sz1=0, sz2=1
-Callee:mbedtls_ssl_reset_checksum, sz1=1, sz2=3
-Callee:mbedtls_ssl_transform_free, sz1=0, sz2=2
-DEBUG Func:ssl_update_checksum_start, sz1=1, sz2=2
-Callee:psa_hash_update, sz1=0, sz2=0
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_session_reset_int, sz1=2, sz2=5
-Callee:mbedtls_ssl_session_free, sz1=0, sz2=3
-Callee:ssl_handshake_init, sz1=2, sz2=12
-Callee:mbedtls_ssl_session_reset_msg_layer, sz1=0, sz2=6
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-Callee:free, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_session_reset, sz1=1, sz2=1
-Callee:mbedtls_ssl_session_reset_int, sz1=2, sz2=5
-DEBUG Func:mbedtls_ssl_set_session, sz1=1, sz2=4
-Callee:mbedtls_ssl_session_copy, sz1=0, sz2=6
-Callee:mbedtls_ssl_validate_ciphersuite, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_write_cookie_ext, sz1=1, sz2=4
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_set_hs_sent_ext_mask.1139, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_tls13_write_key_share_ext.1146, sz1=3, sz2=8
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1155, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1156, sz1=0, sz2=0
-Callee:ssl_tls13_get_default_group_id, sz1=1, sz2=3
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_set_hs_sent_ext_mask.1139, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_generate_and_write_xxdh_key_exchange, sz1=3, sz2=12
-DEBUG Func:ssl_tls13_get_default_group_id, sz1=1, sz2=3
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1155, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1156, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_psa_curve_info_from_tls_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_handshake_client_step, sz1=15, sz2=16
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:ssl_tls13_process_server_hello, sz1=7, sz2=10
-Callee:ssl_tls13_process_encrypted_extensions, sz1=3, sz2=6
-Callee:ssl_tls13_process_certificate_request, sz1=4, sz2=6
-Callee:ssl_tls13_process_server_certificate, sz1=2, sz2=2
-Callee:ssl_tls13_process_certificate_verify, sz1=2, sz2=2
-Callee:ssl_tls13_process_server_finished, sz1=3, sz2=4
-Callee:ssl_tls13_write_client_certificate, sz1=2, sz2=5
-Callee:ssl_tls13_write_client_certificate_verify, sz1=2, sz2=2
-Callee:ssl_tls13_write_client_finished, sz1=4, sz2=4
-Callee:ssl_tls13_flush_buffers, sz1=1, sz2=2
-Callee:ssl_tls13_handshake_wrapup.1171, sz1=2, sz2=2
-Callee:ssl_tls13_process_new_session_ticket, sz1=4, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_write_client_hello, sz1=10, sz2=14
-Callee:mbedtls_ssl_tls13_write_change_cipher_spec, sz1=1, sz2=3
-DEBUG Func:ssl_tls13_process_server_hello, sz1=7, sz2=10
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:ssl_tls13_preprocess_server_hello, sz1=3, sz2=8
-Callee:ssl_tls13_parse_server_hello, sz1=11, sz2=20
-Callee:ssl_tls13_postprocess_hrr, sz1=1, sz2=2
-Callee:ssl_tls13_postprocess_server_hello, sz1=3, sz2=8
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_reset_transcript_for_hrr, sz1=4, sz2=5
-DEBUG Func:ssl_tls13_process_encrypted_extensions, sz1=3, sz2=6
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:ssl_tls13_parse_encrypted_extensions, sz1=4, sz2=8
-Callee:mbedtls_ssl_tls13_key_exchange_mode_with_psk.1210, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-DEBUG Func:ssl_tls13_process_certificate_request, sz1=4, sz2=6
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:ssl_tls13_certificate_request_coordinate.1199, sz1=2, sz2=3
-Callee:ssl_tls13_parse_certificate_request, sz1=5, sz2=9
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-DEBUG Func:ssl_tls13_process_server_certificate, sz1=2, sz2=2
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_process_certificate, sz1=3, sz2=5
-DEBUG Func:ssl_tls13_process_certificate_verify, sz1=2, sz2=2
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_process_certificate_verify, sz1=6, sz2=9
-DEBUG Func:ssl_tls13_process_server_finished, sz1=3, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_compute_application_transform, sz1=4, sz2=7
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_process_finished_message, sz1=3, sz2=5
-DEBUG Func:ssl_tls13_write_client_certificate, sz1=2, sz2=5
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_ssl_own_cert.1195, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_set_outbound_transform, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_write_certificate, sz1=2, sz2=5
-DEBUG Func:ssl_tls13_write_client_certificate_verify, sz1=2, sz2=2
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_write_certificate_verify, sz1=2, sz2=5
-DEBUG Func:ssl_tls13_write_client_finished, sz1=4, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_compute_resumption_master_secret, sz1=3, sz2=6
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_write_finished_message, sz1=2, sz2=6
-DEBUG Func:ssl_tls13_flush_buffers, sz1=1, sz2=2
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_handshake_wrapup.1171, sz1=2, sz2=2
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_handshake_wrapup, sz1=0, sz2=5
-DEBUG Func:ssl_tls13_process_new_session_ticket, sz1=4, sz2=5
-Callee:mbedtls_ssl_handshake_set_state.1170, sz1=0, sz2=2
-Callee:ssl_tls13_parse_new_session_ticket, sz1=3, sz2=9
-Callee:ssl_tls13_postprocess_new_session_ticket, sz1=4, sz2=9
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_parse_new_session_ticket, sz1=3, sz2=9
-Callee:mbedtls_ssl_tls13_session_clear_ticket_flags.1188, sz1=0, sz2=0
-Callee:ssl_tls13_parse_new_session_ticket_exts, sz1=3, sz2=6
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_postprocess_new_session_ticket, sz1=4, sz2=9
-Callee:mbedtls_ssl_tls13_session_set_ticket_flags.1180, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_hkdf_expand_label, sz1=2, sz2=7
-Callee:mbedtls_md_psa_alg_from_type.1131, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_print_ticket_flags, sz1=0, sz2=1
-Callee:mbedtls_ms_time, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_new_session_ticket_exts, sz1=3, sz2=6
-Callee:mbedtls_ssl_print_extension, sz1=0, sz2=3
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_received_extension, sz1=1, sz2=3
-DEBUG Func:ssl_tls13_certificate_request_coordinate.1199, sz1=2, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-DEBUG Func:ssl_tls13_parse_certificate_request, sz1=5, sz2=9
-Callee:mbedtls_ssl_print_extension, sz1=0, sz2=3
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:calloc, sz1=0, sz2=0
-Callee:mbedtls_ssl_parse_sig_alg_ext, sz1=0, sz2=6
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_received_extension, sz1=1, sz2=3
-DEBUG Func:ssl_tls13_parse_encrypted_extensions, sz1=4, sz2=8
-Callee:mbedtls_ssl_print_extension, sz1=0, sz2=3
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:ssl_tls13_parse_alpn_ext, sz1=0, sz2=5
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_received_extension, sz1=1, sz2=3
-DEBUG Func:ssl_tls13_preprocess_server_hello, sz1=3, sz2=8
-Callee:mbedtls_ssl_conf_tls13_is_some_ephemeral_enabled.1145, sz1=0, sz2=1
-Callee:ssl_tls13_reset_key_share, sz1=2, sz2=5
-Callee:ssl_tls13_is_supported_versions_ext_present, sz1=0, sz2=4
-Callee:ssl_tls13_is_downgrade_negotiation, sz1=0, sz2=4
-Callee:ssl_server_hello_is_hrr, sz1=0, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_server_hello, sz1=11, sz2=20
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_validate_ciphersuite, sz1=0, sz2=2
-Callee:mbedtls_ssl_conf_tls13_is_some_ephemeral_enabled.1145, sz1=0, sz2=1
-Callee:ssl_tls13_check_server_hello_session_id_echo, sz1=1, sz2=5
-Callee:mbedtls_ssl_tls13_cipher_suite_is_offered.1238, sz1=0, sz2=0
-Callee:ssl_tls13_parse_cookie_ext, sz1=1, sz2=6
-Callee:ssl_tls13_parse_supported_versions_ext.1244, sz1=0, sz2=4
-Callee:ssl_tls13_parse_server_pre_shared_key_ext, sz1=3, sz2=11
-Callee:ssl_tls13_parse_hrr_key_share_ext, sz1=2, sz2=7
-Callee:ssl_tls13_parse_key_share_ext, sz1=1, sz2=7
-Callee:mbedtls_ssl_read_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:time, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_optimize_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_received_extension, sz1=1, sz2=3
-DEBUG Func:ssl_tls13_postprocess_hrr, sz1=1, sz2=2
-Callee:mbedtls_ssl_session_reset_msg_layer, sz1=0, sz2=6
-Callee:ssl_tls13_reset_key_share, sz1=2, sz2=5
-DEBUG Func:ssl_tls13_postprocess_server_hello, sz1=3, sz2=8
-Callee:ssl_tls13_get_kex_mode_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_key_schedule_stage_early, sz1=4, sz2=8
-Callee:mbedtls_ssl_tls13_compute_handshake_transform, sz1=4, sz2=7
-Callee:mbedtls_ssl_conf_tls13_is_kex_mode_enabled.1132, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_set_inbound_transform, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_reset_key_share, sz1=2, sz2=5
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1155, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1156, sz1=0, sz2=0
-Callee:local_err_translation.1232, sz1=0, sz2=1
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_check_server_hello_session_id_echo, sz1=1, sz2=5
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:memcmp, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_cookie_ext, sz1=1, sz2=6
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_server_pre_shared_key_ext, sz1=3, sz2=11
-Callee:mbedtls_ssl_conf_has_static_psk, sz1=0, sz2=1
-Callee:mbedtls_ssl_set_hs_psk, sz1=0, sz2=7
-Callee:ssl_tls13_get_configured_psk_count, sz1=0, sz2=3
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:ssl_tls13_has_configured_ticket, sz1=0, sz2=2
-Callee:mbedtls_md_psa_alg_from_type.1131, sz1=0, sz2=0
-Callee:ssl_tls13_ticket_get_psk, sz1=1, sz2=2
-Callee:ssl_tls13_psk_get_psk, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_hrr_key_share_ext, sz1=2, sz2=7
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1155, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1156, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_psa_curve_info_from_tls_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_key_share_ext, sz1=1, sz2=7
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1155, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1156, sz1=0, sz2=0
-Callee:mbedtls_ssl_named_group_to_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_read_public_xxdhe_share, sz1=0, sz2=3
-DEBUG Func:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_ssl_get_hs_msg_name, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_process_certificate_verify, sz1=6, sz2=9
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:ssl_tls13_create_verify_structure, sz1=0, sz2=0
-Callee:ssl_tls13_parse_certificate_verify, sz1=2, sz2=12
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_certificate_verify, sz1=2, sz2=12
-Callee:mbedtls_ssl_chk_buf_ptr.1281, sz1=0, sz2=0
-Callee:mbedtls_ssl_sig_alg_is_offered.1289, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_pk_sigalg_and_md_alg_from_sig_alg.1291, sz1=0, sz2=2
-Callee:mbedtls_md_psa_alg_from_type.1292, sz1=0, sz2=0
-Callee:mbedtls_pk_can_do_psa, sz1=0, sz2=0
-Callee:psa_hash_compute, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_pk_verify_ext, sz1=0, sz2=0
-Callee:mbedtls_psa_alg_from_pk_sigalg.1294, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_get_ciphersuite, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_ciphersuite_name, sz1=1, sz2=1
-DEBUG Func:mbedtls_ssl_get_max_out_record_payload, sz1=1, sz2=4
-Callee:mbedtls_ssl_get_output_max_frag_len, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_current_mtu, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_record_expansion, sz1=0, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_handshake_step, sz1=8, sz2=10
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_handshake_client_step, sz1=15, sz2=16
-Callee:ssl_prepare_handshake_step, sz1=2, sz2=2
-Callee:mbedtls_ssl_tls13_handshake_server_step, sz1=16, sz2=18
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_write_client_hello, sz1=10, sz2=14
-Callee:mbedtls_ssl_states_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_handle_pending_alert, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_client_step, sz1=16, sz2=17
-Callee:mbedtls_ssl_handshake_server_step, sz1=16, sz2=17
-DEBUG Func:ssl_prepare_handshake_step, sz1=2, sz2=2
-Callee:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_ssl_flush_output, sz1=1, sz2=4
-DEBUG Func:mbedtls_ssl_handshake, sz1=1, sz2=2
-Callee:mbedtls_ssl_handshake_step, sz1=8, sz2=10
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_start_renegotiation, sz1=4, sz2=5
-Callee:ssl_handshake_init, sz1=2, sz2=12
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-Callee:mbedtls_ssl_handshake, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_renegotiate, sz1=5, sz2=6
-Callee:mbedtls_ssl_is_handshake_over.298, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake, sz1=1, sz2=2
-Callee:mbedtls_ssl_start_renegotiation, sz1=4, sz2=5
-Callee:ssl_write_hello_request, sz1=2, sz2=3
-Callee:mbedtls_ssl_flush_output, sz1=1, sz2=4
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_write_hello_request, sz1=2, sz2=3
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_context_save, sz1=2, sz2=8
-Callee:mbedtls_ssl_is_handshake_over.298, sz1=0, sz2=0
-Callee:mbedtls_ssl_session_reset_int, sz1=2, sz2=5
-Callee:ssl_session_save, sz1=0, sz2=2
-Callee:mbedtls_ssl_transform_uses_aead, sz1=0, sz2=0
-Callee:mbedtls_ssl_check_pending, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:strlen, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_context_load, sz1=2, sz2=2
-Callee:ssl_context_load, sz1=4, sz2=11
-Callee:mbedtls_ssl_free, sz1=0, sz2=8
-DEBUG Func:ssl_context_load, sz1=4, sz2=11
-Callee:mbedtls_ssl_session_free, sz1=0, sz2=3
-Callee:mbedtls_ssl_handshake_free, sz1=0, sz2=9
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-Callee:ssl_session_load, sz1=0, sz2=3
-Callee:ssl_tls12prf_from_cs, sz1=1, sz2=1
-Callee:ssl_tls12_populate_transform, sz1=5, sz2=15
-Callee:mbedtls_ssl_update_out_pointers, sz1=0, sz2=1
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:memcmp, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-DEBUG Func:ssl_tls12prf_from_cs, sz1=1, sz2=1
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-DEBUG Func:ssl_tls12_populate_transform, sz1=5, sz2=15
-Callee:psa_import_key, sz1=0, sz2=0
-Callee:psa_set_key_usage_flags.301, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.302, sz1=0, sz2=0
-Callee:psa_set_key_type.303, sz1=0, sz2=0
-Callee:mbedtls_md_psa_alg_from_type.435, sz1=0, sz2=0
-Callee:tls_prf_get_type, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_mode_from_ciphersuite, sz1=0, sz2=3
-Callee:mbedtls_ssl_cipher_to_psa, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_ciphersuite_name, sz1=1, sz2=1
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_config_defaults, sz1=1, sz2=7
-Callee:mbedtls_ssl_conf_is_tls12_only, sz1=0, sz2=0
-Callee:mbedtls_ssl_conf_endpoint, sz1=0, sz2=0
-Callee:mbedtls_ssl_conf_transport, sz1=0, sz2=0
-Callee:mbedtls_ssl_conf_new_session_tickets, sz1=0, sz2=0
-Callee:ssl_check_no_sig_alg_duplication, sz1=0, sz2=1
-Callee:mbedtls_ssl_list_ciphersuites, sz1=1, sz2=2
-Callee:printf, sz1=0, sz2=0
-DEBUG Func:ssl_calc_finished_tls_generic, sz1=2, sz2=7
-Callee:psa_hash_clone, sz1=0, sz2=0
-Callee:psa_hash_finish, sz1=0, sz2=0
-Callee:psa_hash_abort, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:ssl_calc_verify_tls_psa, sz1=2, sz2=7
-Callee:psa_hash_operation_init, sz1=0, sz2=0
-Callee:psa_hash_clone, sz1=0, sz2=0
-Callee:psa_hash_finish, sz1=0, sz2=0
-Callee:psa_hash_abort, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_resend_hello_request, sz1=1, sz2=2
-Callee:ssl_write_hello_request, sz1=2, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_write_certificate, sz1=4, sz2=7
-Callee:mbedtls_ssl_ciphersuite_uses_srv_cert, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.491, sz1=1, sz2=1
-Callee:mbedtls_ssl_own_cert, sz1=0, sz2=0
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_crt, sz1=1, sz2=5
-DEBUG Func:mbedtls_ssl_handshake_increment_state.491, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_parse_certificate, sz1=6, sz2=14
-Callee:mbedtls_x509_crt_init, sz1=0, sz2=0
-Callee:ssl_clear_peer_cert, sz1=0, sz2=2
-Callee:mbedtls_x509_crt_free, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.491, sz1=1, sz2=1
-Callee:ssl_parse_certificate_coordinate, sz1=0, sz2=1
-Callee:ssl_srv_check_client_no_crt_notification, sz1=0, sz2=3
-Callee:ssl_parse_certificate_chain, sz1=3, sz2=8
-Callee:mbedtls_ssl_verify_certificate, sz1=4, sz2=9
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_certificate_chain, sz1=3, sz2=8
-Callee:mbedtls_x509_crt_parse_der, sz1=0, sz2=0
-Callee:ssl_clear_peer_cert, sz1=0, sz2=2
-Callee:mbedtls_ssl_hs_hdr_len.515, sz1=0, sz2=0
-Callee:ssl_check_peer_crt_unchanged, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_crt, sz1=1, sz2=5
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_verify_certificate, sz1=4, sz2=9
-Callee:get_hostname_for_verification, sz1=0, sz2=3
-Callee:mbedtls_x509_crt_verify_restartable, sz1=0, sz2=0
-Callee:mbedtls_pk_get_type, sz1=0, sz2=0
-Callee:mbedtls_pk_get_ec_group_id, sz1=0, sz2=6
-Callee:mbedtls_ssl_check_cert_usage, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_check_curve, sz1=1, sz2=2
-DEBUG Func:mbedtls_ssl_handshake_wrapup, sz1=2, sz2=6
-Callee:mbedtls_ssl_session_free, sz1=0, sz2=3
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-Callee:mbedtls_ssl_handshake_wrapup_free_hs_transform, sz1=0, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_set_timer, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_write_finished, sz1=6, sz2=8
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-Callee:mbedtls_ssl_handshake_increment_state.491, sz1=1, sz2=1
-Callee:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_ssl_update_out_pointers, sz1=0, sz2=1
-Callee:mbedtls_ssl_send_flight_completed, sz1=1, sz2=2
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_parse_finished, sz1=5, sz2=10
-Callee:mbedtls_ssl_handshake_set_state.377, sz1=0, sz2=2
-Callee:mbedtls_ssl_handshake_increment_state.491, sz1=1, sz2=1
-Callee:mbedtls_ssl_hs_hdr_len.515, sz1=0, sz2=0
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:mbedtls_ssl_recv_flight_completed, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_get_key_exchange_md_tls1_2, sz1=2, sz2=7
-Callee:mbedtls_md_psa_alg_from_type.435, sz1=0, sz2=0
-Callee:psa_hash_setup, sz1=0, sz2=0
-Callee:psa_hash_update, sz1=0, sz2=0
-Callee:psa_hash_finish, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_parse_server_name_ext, sz1=1, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_chk_buf_ptr.458, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_write_hello_verify_request, sz1=5, sz2=7
-Callee:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_ssl_write_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.702, sz1=0, sz2=2
-DEBUG Func:ssl_write_encrypt_then_mac_ext.793, sz1=1, sz2=3
-Callee:mbedtls_ssl_get_mode_from_ciphersuite, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-DEBUG Func:ssl_parse_renegotiation_info.829, sz1=1, sz2=3
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_supported_groups_ext, sz1=2, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_get_ecp_group_id_from_tls_id, sz1=0, sz2=0
-DEBUG Func:ssl_parse_supported_point_formats, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_max_fragment_length_ext.834, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_cid_ext.836, sz1=2, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_encrypt_then_mac_ext.838, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_extended_ms_ext.840, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_session_ticket_ext.842, sz1=1, sz2=5
-Callee:mbedtls_ssl_session_free, sz1=0, sz2=3
-Callee:mbedtls_ssl_session_init, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:ssl_ciphersuite_match, sz1=2, sz2=9
-Callee:ssl_conf_has_psk_or_cb, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls12_get_preferred_hash_for_sig_alg, sz1=0, sz2=3
-Callee:ssl_pick_cert, sz1=2, sz2=7
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_get_ciphersuite_sig_alg, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_uses_ec, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_uses_psk, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_sig_from_pk_alg, sz1=0, sz2=0
-DEBUG Func:ssl_pick_cert, sz1=2, sz2=7
-Callee:mbedtls_ssl_check_cert_usage, sz1=0, sz2=2
-Callee:mbedtls_pk_can_do_psa, sz1=0, sz2=0
-Callee:ssl_check_key_curve, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_crt, sz1=1, sz2=5
-Callee:mbedtls_ssl_get_ciphersuite_sig_pk_psa_usage, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_ciphersuite_sig_pk_psa_alg, sz1=0, sz2=1
-DEBUG Func:ssl_check_key_curve, sz1=1, sz2=2
-Callee:mbedtls_pk_get_ec_group_id.871, sz1=0, sz2=6
-Callee:mbedtls_ssl_get_ecp_group_id_from_tls_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_hkdf_expand_label, sz1=2, sz2=7
-Callee:psa_key_derivation_abort, sz1=0, sz2=0
-Callee:psa_key_derivation_output_bytes, sz1=0, sz2=0
-Callee:psa_key_derivation_setup, sz1=0, sz2=0
-Callee:psa_key_derivation_input_bytes, sz1=0, sz2=0
-Callee:ssl_tls13_hkdf_encode_label, sz1=0, sz2=0
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_make_traffic_keys, sz1=1, sz2=1
-Callee:ssl_tls13_make_traffic_key, sz1=1, sz2=1
-DEBUG Func:ssl_tls13_make_traffic_key, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_hkdf_expand_label, sz1=2, sz2=7
-DEBUG Func:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-Callee:mbedtls_ssl_tls13_hkdf_expand_label, sz1=2, sz2=7
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:psa_hash_compute, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_evolve_secret, sz1=2, sz2=7
-Callee:psa_key_derivation_abort, sz1=0, sz2=0
-Callee:psa_key_derivation_output_bytes, sz1=0, sz2=0
-Callee:psa_key_derivation_setup, sz1=0, sz2=0
-Callee:psa_key_derivation_input_bytes, sz1=0, sz2=0
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_derive_early_secrets, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-DEBUG Func:mbedtls_ssl_tls13_derive_handshake_secrets, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-DEBUG Func:mbedtls_ssl_tls13_derive_application_secrets, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-DEBUG Func:mbedtls_ssl_tls13_derive_resumption_master_secret, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-DEBUG Func:mbedtls_ssl_tls13_calculate_verify_data, sz1=4, sz2=7
-Callee:mbedtls_md_psa_alg_from_type.889, sz1=0, sz2=0
-Callee:ssl_tls13_calc_finished_core, sz1=2, sz2=9
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-DEBUG Func:mbedtls_ssl_handshake_increment_state, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.269, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_parse_change_cipher_spec, sz1=4, sz2=7
-Callee:mbedtls_ssl_handshake_increment_state, sz1=1, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_update_in_pointers, sz1=0, sz2=0
-Callee:mbedtls_ssl_dtls_replay_reset, sz1=0, sz2=0
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_read, sz1=8, sz2=12
-Callee:mbedtls_ssl_handshake, sz1=1, sz2=2
-Callee:mbedtls_ssl_resend_hello_request, sz1=1, sz2=2
-Callee:ssl_check_ctr_renegotiate, sz1=1, sz2=5
-Callee:ssl_handle_hs_message_post_handshake, sz1=2, sz2=2
-Callee:ssl_read_application_data, sz1=0, sz2=1
-Callee:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_ssl_flush_output, sz1=1, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_set_timer, sz1=0, sz2=1
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-DEBUG Func:ssl_check_ctr_renegotiate, sz1=1, sz2=5
-Callee:mbedtls_ssl_renegotiate, sz1=5, sz2=6
-Callee:mbedtls_ssl_ep_len, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:memcmp, sz1=0, sz2=0
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-DEBUG Func:ssl_handle_hs_message_post_handshake, sz1=2, sz2=2
-Callee:ssl_tls13_handle_hs_message_post_handshake, sz1=1, sz2=3
-Callee:ssl_tls12_handle_hs_message_post_handshake, sz1=3, sz2=5
-DEBUG Func:ssl_tls13_handle_hs_message_post_handshake, sz1=1, sz2=3
-Callee:mbedtls_ssl_handshake_set_state.269, sz1=0, sz2=2
-Callee:ssl_tls13_is_new_session_ticket, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:ssl_tls12_handle_hs_message_post_handshake, sz1=3, sz2=5
-Callee:mbedtls_ssl_start_renegotiation, sz1=4, sz2=5
-Callee:mbedtls_ssl_hs_hdr_len, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_write, sz1=4, sz2=5
-Callee:mbedtls_ssl_handshake, sz1=1, sz2=2
-Callee:ssl_check_ctr_renegotiate, sz1=1, sz2=5
-Callee:ssl_write_real, sz1=4, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_write_real, sz1=4, sz2=5
-Callee:mbedtls_ssl_get_max_out_record_payload, sz1=1, sz2=4
-Callee:mbedtls_ssl_flush_output, sz1=1, sz2=4
-Callee:mbedtls_ssl_write_record, sz1=5, sz2=11
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_parse_record_header, sz1=1, sz2=5
-Callee:ssl_check_record_type, sz1=0, sz2=0
-Callee:mbedtls_ssl_read_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_dtls_record_replay_check, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:mbedtls_ssl_decrypt_buf, sz1=4, sz2=28
-Callee:mbedtls_ct_compiler_opaque, sz1=0, sz2=0
-Callee:ssl_transform_aead_dynamic_iv_is_explicit, sz1=0, sz2=0
-Callee:ssl_build_record_nonce, sz1=0, sz2=0
-Callee:ssl_extract_add_data_from_record, sz1=0, sz2=0
-Callee:psa_aead_decrypt, sz1=0, sz2=0
-Callee:local_err_translation.191, sz1=0, sz2=1
-Callee:psa_cipher_decrypt_setup, sz1=0, sz2=0
-Callee:psa_cipher_set_iv, sz1=0, sz2=0
-Callee:psa_cipher_update, sz1=0, sz2=0
-Callee:psa_cipher_finish, sz1=0, sz2=0
-Callee:mbedtls_ct_uint_ge, sz1=0, sz2=1
-Callee:mbedtls_ct_bool_and, sz1=0, sz2=0
-Callee:mbedtls_ct_size_if_else_0, sz1=0, sz2=0
-Callee:mbedtls_ct_uint_eq, sz1=0, sz2=1
-Callee:mbedtls_ct_hmac, sz1=1, sz2=10
-Callee:mbedtls_ct_memcpy_offset, sz1=0, sz2=0
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:ssl_parse_inner_plaintext, sz1=0, sz2=0
-Callee:psa_mac_update, sz1=0, sz2=0
-Callee:psa_mac_abort, sz1=0, sz2=0
-Callee:psa_mac_verify_setup, sz1=0, sz2=0
-Callee:psa_mac_verify_finish, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_mode_from_transform, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:memcmp, sz1=0, sz2=0
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ct_hmac, sz1=1, sz2=10
-Callee:local_err_translation.191, sz1=0, sz2=1
-Callee:mbedtls_ct_uint_eq, sz1=0, sz2=1
-Callee:psa_export_key, sz1=0, sz2=0
-Callee:psa_hash_setup, sz1=0, sz2=0
-Callee:psa_hash_update, sz1=0, sz2=0
-Callee:psa_hash_clone, sz1=0, sz2=0
-Callee:psa_hash_finish, sz1=0, sz2=0
-Callee:mbedtls_ct_memcpy_if, sz1=0, sz2=0
-Callee:psa_hash_abort, sz1=0, sz2=0
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_cookie_setup, sz1=1, sz2=7
-Callee:mbedtls_md_psa_alg_from_type.99, sz1=0, sz2=0
-Callee:psa_set_key_usage_flags, sz1=0, sz2=1
-Callee:psa_set_key_algorithm, sz1=0, sz2=0
-Callee:psa_set_key_type, sz1=0, sz2=0
-Callee:psa_set_key_bits, sz1=0, sz2=0
-Callee:psa_generate_key, sz1=0, sz2=0
-Callee:local_err_translation, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_cookie_write, sz1=1, sz2=7
-Callee:local_err_translation, sz1=0, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.100, sz1=0, sz2=0
-Callee:psa_mac_sign_setup, sz1=0, sz2=0
-Callee:psa_mac_update, sz1=0, sz2=0
-Callee:psa_mac_sign_finish, sz1=0, sz2=0
-Callee:psa_mac_abort, sz1=0, sz2=0
-Callee:time, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_cookie_check, sz1=1, sz2=6
-Callee:local_err_translation, sz1=0, sz2=1
-Callee:psa_mac_update, sz1=0, sz2=0
-Callee:psa_mac_abort, sz1=0, sz2=0
-Callee:psa_mac_verify_setup, sz1=0, sz2=0
-Callee:psa_mac_verify_finish, sz1=0, sz2=0
-Callee:time, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_encrypt_buf, sz1=3, sz2=21
-Callee:ssl_transform_aead_dynamic_iv_is_explicit, sz1=0, sz2=0
-Callee:ssl_build_record_nonce, sz1=0, sz2=0
-Callee:ssl_extract_add_data_from_record, sz1=0, sz2=0
-Callee:local_err_translation.191, sz1=0, sz2=1
-Callee:psa_cipher_set_iv, sz1=0, sz2=0
-Callee:psa_cipher_update, sz1=0, sz2=0
-Callee:psa_cipher_finish, sz1=0, sz2=0
-Callee:psa_mac_sign_setup, sz1=0, sz2=0
-Callee:psa_mac_update, sz1=0, sz2=0
-Callee:psa_mac_sign_finish, sz1=0, sz2=0
-Callee:psa_mac_abort, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_mode_from_transform, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:ssl_compute_padding_length, sz1=0, sz2=0
-Callee:ssl_build_inner_plaintext, sz1=0, sz2=0
-Callee:psa_aead_encrypt, sz1=0, sz2=0
-Callee:psa_cipher_encrypt_setup, sz1=0, sz2=0
-Callee:psa_generate_random, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_ssl_get_hs_msg_name, sz1=0, sz2=0
-Callee:ssl_swap_epochs, sz1=0, sz2=2
-Callee:ssl_get_remaining_payload_in_datagram, sz1=1, sz2=3
-Callee:mbedtls_ssl_flush_output, sz1=1, sz2=4
-Callee:mbedtls_ssl_write_record, sz1=5, sz2=11
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_set_timer, sz1=0, sz2=1
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-DEBUG Func:ssl_get_remaining_payload_in_datagram, sz1=1, sz2=3
-Callee:mbedtls_ssl_get_output_max_frag_len, sz1=0, sz2=1
-Callee:ssl_get_remaining_space_in_datagram, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_record_expansion, sz1=0, sz2=4
-DEBUG Func:mbedtls_ssl_flush_output, sz1=1, sz2=4
-Callee:mbedtls_ssl_out_hdr_len, sz1=0, sz2=0
-Callee:mbedtls_ssl_update_out_pointers, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_write_record, sz1=5, sz2=11
-Callee:mbedtls_ssl_encrypt_buf, sz1=3, sz2=21
-Callee:ssl_get_remaining_payload_in_datagram, sz1=1, sz2=3
-Callee:mbedtls_ssl_flush_output, sz1=1, sz2=4
-Callee:mbedtls_ssl_write_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_out_hdr_len, sz1=0, sz2=0
-Callee:ssl_get_remaining_space_in_datagram, sz1=0, sz2=1
-Callee:mbedtls_ssl_update_out_pointers, sz1=0, sz2=1
-Callee:mbedtls_ssl_ep_len, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:mbedtls_ssl_send_flight_completed, sz1=1, sz2=2
-Callee:ssl_reset_retransmit_timeout, sz1=0, sz2=1
-Callee:mbedtls_ssl_set_timer, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_ssl_write_record, sz1=5, sz2=11
-Callee:ssl_flight_append, sz1=1, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_flight_append, sz1=1, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_prepare_handshake_record, sz1=3, sz2=12
-Callee:mbedtls_ssl_hs_hdr_len, sz1=0, sz2=0
-Callee:ssl_get_hs_total_len, sz1=0, sz2=0
-Callee:ssl_check_hs_header, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-Callee:mbedtls_ssl_resend, sz1=1, sz2=2
-Callee:ssl_buffering_shift_slots, sz1=0, sz2=1
-Callee:ssl_hs_is_proper_fragment, sz1=0, sz2=1
-Callee:mbedtls_ssl_in_hdr_len, sz1=0, sz2=0
-Callee:mbedtls_ssl_update_in_pointers, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_calc_finished_core, sz1=2, sz2=9
-Callee:psa_import_key, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_hkdf_expand_label, sz1=2, sz2=7
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:psa_set_key_usage_flags.896, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.897, sz1=0, sz2=0
-Callee:psa_set_key_type.898, sz1=0, sz2=0
-Callee:psa_mac_compute, sz1=0, sz2=0
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_create_psk_binder, sz1=5, sz2=7
-Callee:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-Callee:mbedtls_ssl_tls13_evolve_secret, sz1=2, sz2=7
-Callee:ssl_tls13_calc_finished_core, sz1=2, sz2=9
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_populate_transform, sz1=3, sz2=9
-Callee:psa_import_key, sz1=0, sz2=0
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:mbedtls_ssl_cipher_to_psa, sz1=0, sz2=0
-Callee:psa_set_key_usage_flags.896, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.897, sz1=0, sz2=0
-Callee:psa_set_key_type.898, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_key_schedule_stage_early, sz1=4, sz2=8
-Callee:mbedtls_ssl_tls13_evolve_secret, sz1=2, sz2=7
-Callee:mbedtls_md_psa_alg_from_type.889, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_key_exchange_mode_with_psk, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_export_handshake_psk, sz1=1, sz2=7
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:free, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_export_handshake_psk, sz1=1, sz2=7
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:psa_export_key, sz1=0, sz2=0
-Callee:psa_get_key_attributes, sz1=0, sz2=0
-Callee:mbedtls_svc_key_id_is_null.912, sz1=0, sz2=0
-Callee:psa_get_key_bits.913, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_compute_handshake_transform, sz1=4, sz2=7
-Callee:mbedtls_ssl_tls13_populate_transform, sz1=3, sz2=9
-Callee:ssl_tls13_key_schedule_stage_handshake, sz1=4, sz2=15
-Callee:ssl_tls13_generate_handshake_keys, sz1=6, sz2=8
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_key_schedule_stage_handshake, sz1=4, sz2=15
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_evolve_secret, sz1=2, sz2=7
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:psa_get_key_attributes, sz1=0, sz2=0
-Callee:mbedtls_md_psa_alg_from_type.889, sz1=0, sz2=0
-Callee:psa_get_key_bits.913, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_key_exchange_mode_with_ephemeral, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.928, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.929, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:calloc, sz1=0, sz2=0
-Callee:mbedtls_zeroize_and_free, sz1=0, sz2=0
-Callee:psa_raw_key_agreement, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_generate_handshake_keys, sz1=6, sz2=8
-Callee:mbedtls_ssl_tls13_make_traffic_keys, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_derive_handshake_secrets, sz1=1, sz2=1
-Callee:mbedtls_md_psa_alg_from_type.889, sz1=0, sz2=0
-Callee:ssl_tls13_get_cipher_key_info, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-DEBUG Func:ssl_tls13_get_cipher_key_info, sz1=1, sz2=2
-Callee:local_err_translation.888, sz1=0, sz2=1
-Callee:mbedtls_ssl_cipher_to_psa, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_compute_resumption_master_secret, sz1=3, sz2=6
-Callee:mbedtls_ssl_tls13_derive_resumption_master_secret, sz1=1, sz2=1
-Callee:mbedtls_md_psa_alg_from_type.889, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-DEBUG Func:mbedtls_ssl_tls13_compute_application_transform, sz1=4, sz2=7
-Callee:mbedtls_ssl_tls13_populate_transform, sz1=3, sz2=9
-Callee:ssl_tls13_key_schedule_stage_application, sz1=3, sz2=4
-Callee:ssl_tls13_generate_application_keys, sz1=6, sz2=9
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_key_schedule_stage_application, sz1=3, sz2=4
-Callee:mbedtls_ssl_tls13_evolve_secret, sz1=2, sz2=7
-Callee:mbedtls_md_psa_alg_from_type.889, sz1=0, sz2=0
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_tls13_generate_application_keys, sz1=6, sz2=9
-Callee:mbedtls_ssl_tls13_make_traffic_keys, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_derive_application_secrets, sz1=1, sz2=1
-Callee:mbedtls_md_psa_alg_from_type.889, sz1=0, sz2=0
-Callee:ssl_tls13_get_cipher_key_info, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-DEBUG Func:mbedtls_ssl_tls13_exporter, sz1=1, sz2=2
-Callee:mbedtls_ssl_tls13_derive_secret, sz1=2, sz2=3
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_handshake_server_step, sz1=16, sz2=18
-Callee:mbedtls_ssl_tls13_process_certificate_verify, sz1=6, sz2=9
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_process_client_hello, sz1=4, sz2=7
-Callee:ssl_tls13_write_hello_retry_request, sz1=4, sz2=7
-Callee:ssl_tls13_write_server_hello, sz1=5, sz2=8
-Callee:ssl_tls13_write_encrypted_extensions, sz1=3, sz2=8
-Callee:ssl_tls13_write_certificate_request, sz1=3, sz2=7
-Callee:ssl_tls13_write_server_certificate, sz1=3, sz2=6
-Callee:ssl_tls13_write_certificate_verify, sz1=2, sz2=2
-Callee:ssl_tls13_write_server_finished, sz1=3, sz2=6
-Callee:ssl_tls13_process_client_finished, sz1=4, sz2=4
-Callee:ssl_tls13_handshake_wrapup, sz1=2, sz2=4
-Callee:ssl_tls13_write_new_session_ticket, sz1=5, sz2=6
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_states_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_write_change_cipher_spec, sz1=1, sz2=3
-Callee:mbedtls_ssl_tls13_process_certificate, sz1=3, sz2=5
-DEBUG Func:ssl_tls13_process_client_hello, sz1=4, sz2=7
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_parse_client_hello, sz1=12, sz2=22
-Callee:mbedtls_ssl_conf_is_tls12_enabled, sz1=0, sz2=0
-Callee:ssl_tls13_postprocess_client_hello, sz1=2, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_write_hello_retry_request, sz1=4, sz2=7
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_write_server_hello_body, sz1=6, sz2=12
-Callee:ssl_tls13_prepare_hello_retry_request, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-DEBUG Func:ssl_tls13_write_server_hello, sz1=5, sz2=8
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_prepare_server_hello, sz1=2, sz2=4
-Callee:ssl_tls13_write_server_hello_body, sz1=6, sz2=12
-Callee:ssl_tls13_finalize_server_hello, sz1=2, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-DEBUG Func:ssl_tls13_write_encrypted_extensions, sz1=3, sz2=8
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_write_encrypted_extensions_body, sz1=2, sz2=4
-Callee:mbedtls_ssl_tls13_key_exchange_mode_with_psk.1004, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_set_outbound_transform, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_write_certificate_request, sz1=3, sz2=7
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_certificate_request_coordinate, sz1=0, sz2=0
-Callee:ssl_tls13_write_certificate_request_body, sz1=2, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-DEBUG Func:ssl_tls13_write_server_certificate, sz1=3, sz2=6
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_pick_key_cert, sz1=1, sz2=10
-Callee:mbedtls_ssl_own_cert.985, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_write_certificate, sz1=2, sz2=5
-DEBUG Func:ssl_tls13_write_certificate_verify, sz1=2, sz2=2
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_write_certificate_verify, sz1=2, sz2=5
-DEBUG Func:ssl_tls13_write_server_finished, sz1=3, sz2=6
-Callee:mbedtls_ssl_tls13_compute_application_transform, sz1=4, sz2=7
-Callee:ssl_tls13_prepare_for_handshake_second_flight, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_set_inbound_transform, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_write_finished_message, sz1=2, sz2=6
-DEBUG Func:ssl_tls13_process_client_finished, sz1=4, sz2=4
-Callee:mbedtls_ssl_tls13_compute_resumption_master_secret, sz1=3, sz2=6
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_process_finished_message, sz1=3, sz2=5
-DEBUG Func:ssl_tls13_handshake_wrapup, sz1=2, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_is_some_psk_supported, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_handshake_wrapup, sz1=0, sz2=5
-DEBUG Func:ssl_tls13_write_new_session_ticket, sz1=5, sz2=6
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:ssl_tls13_write_new_session_ticket_coordinate, sz1=0, sz2=1
-Callee:ssl_tls13_prepare_new_session_ticket, sz1=3, sz2=9
-Callee:ssl_tls13_write_new_session_ticket_body, sz1=3, sz2=6
-DEBUG Func:ssl_tls13_prepare_new_session_ticket, sz1=3, sz2=9
-Callee:mbedtls_ssl_tls13_hkdf_expand_label, sz1=2, sz2=7
-Callee:mbedtls_ssl_tls13_session_clear_ticket_flags, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_session_set_ticket_flags, sz1=0, sz2=0
-Callee:mbedtls_md_psa_alg_from_type.974, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_print_ticket_flags, sz1=0, sz2=1
-Callee:psa_generate_random, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_write_new_session_ticket_body, sz1=3, sz2=6
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ms_time, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_prepare_for_handshake_second_flight, sz1=1, sz2=2
-Callee:mbedtls_ssl_handshake_set_state.955, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_pick_key_cert, sz1=1, sz2=10
-Callee:mbedtls_x509_crt_check_key_usage, sz1=0, sz2=0
-Callee:mbedtls_x509_crt_check_extended_key_usage, sz1=0, sz2=0
-Callee:mbedtls_pk_can_do_psa, sz1=0, sz2=0
-Callee:mbedtls_ssl_sig_alg_is_offered.988, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_sig_alg_for_cert_verify_is_supported.989, sz1=0, sz2=0
-Callee:ssl_tls13_iana_sig_alg_to_psa_alg, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_crt, sz1=1, sz2=5
-Callee:mbedtls_ssl_sig_alg_to_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_sig_alg_cert_key_match, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_write_certificate_request_body, sz1=2, sz2=3
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_write_sig_alg_ext, sz1=0, sz2=6
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_write_encrypted_extensions_body, sz1=2, sz2=4
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_write_alpn_ext, sz1=0, sz2=4
-DEBUG Func:ssl_tls13_prepare_server_hello, sz1=2, sz2=4
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:time, sz1=0, sz2=0
-Callee:psa_generate_random, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_write_server_hello_body, sz1=6, sz2=12
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_key_exchange_mode_with_psk.1004, sz1=0, sz2=1
-Callee:ssl_tls13_write_server_hello_supported_versions_ext, sz1=0, sz2=4
-Callee:mbedtls_ssl_tls13_key_exchange_mode_with_ephemeral.1015, sz1=0, sz2=1
-Callee:ssl_tls13_write_hrr_key_share_ext, sz1=0, sz2=5
-Callee:ssl_tls13_write_key_share_ext, sz1=1, sz2=5
-Callee:ssl_tls13_write_server_pre_shared_key_ext, sz1=0, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_ciphersuite_name, sz1=1, sz2=1
-DEBUG Func:ssl_tls13_finalize_server_hello, sz1=2, sz2=2
-Callee:mbedtls_ssl_tls13_compute_handshake_transform, sz1=4, sz2=7
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_write_key_share_ext, sz1=1, sz2=5
-Callee:mbedtls_ssl_named_group_to_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_set_hs_sent_ext_mask.1022, sz1=0, sz2=1
-Callee:ssl_tls13_generate_and_write_key_share, sz1=2, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_generate_and_write_key_share, sz1=2, sz2=4
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1025, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1026, sz1=0, sz2=0
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_generate_and_write_xxdh_key_exchange, sz1=3, sz2=12
-DEBUG Func:ssl_tls13_prepare_hello_retry_request, sz1=2, sz2=5
-Callee:mbedtls_ssl_session_reset_msg_layer, sz1=0, sz2=6
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_reset_transcript_for_hrr, sz1=4, sz2=5
-DEBUG Func:ssl_tls13_parse_client_hello, sz1=12, sz2=22
-Callee:mbedtls_ssl_print_extension, sz1=0, sz2=3
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_is_supported_versions_ext_present_in_exts, sz1=0, sz2=3
-Callee:mbedtls_ssl_parse_server_name_ext, sz1=1, sz2=4
-Callee:mbedtls_ssl_parse_alpn_ext, sz1=0, sz2=5
-Callee:mbedtls_ssl_read_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:ssl_tls13_parse_supported_versions_ext, sz1=0, sz2=5
-Callee:ssl_tls13_select_ciphersuite, sz1=1, sz2=3
-Callee:ssl_tls13_parse_supported_groups_ext, sz1=2, sz2=7
-Callee:ssl_tls13_parse_key_shares_ext, sz1=2, sz2=9
-Callee:ssl_tls13_parse_key_exchange_modes_ext, sz1=0, sz2=3
-Callee:ssl_tls13_parse_pre_shared_key_ext, sz1=5, sz2=14
-Callee:ssl_tls13_key_exchange_is_ephemeral_available, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_optimize_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_add_hs_hdr_to_checksum, sz1=0, sz2=0
-Callee:mbedtls_ssl_parse_sig_alg_ext, sz1=0, sz2=6
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_received_extension, sz1=1, sz2=3
-DEBUG Func:ssl_tls13_postprocess_client_hello, sz1=2, sz2=2
-Callee:mbedtls_ssl_tls13_key_schedule_stage_early, sz1=4, sz2=8
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_select_ciphersuite, sz1=1, sz2=3
-Callee:mbedtls_md_psa_alg_from_type.974, sz1=0, sz2=0
-Callee:ssl_tls13_validate_peer_ciphersuite, sz1=1, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_parse_supported_groups_ext, sz1=2, sz2=7
-Callee:mbedtls_ssl_named_group_to_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:mbedtls_ssl_named_group_is_offered, sz1=0, sz2=0
-Callee:mbedtls_ssl_named_group_is_supported, sz1=1, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_parse_key_shares_ext, sz1=2, sz2=9
-Callee:mbedtls_ssl_named_group_to_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1025, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1026, sz1=0, sz2=0
-Callee:mbedtls_ssl_named_group_is_offered, sz1=0, sz2=0
-Callee:mbedtls_ssl_named_group_is_supported, sz1=1, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_read_public_xxdhe_share, sz1=0, sz2=3
-DEBUG Func:ssl_tls13_parse_pre_shared_key_ext, sz1=5, sz2=14
-Callee:mbedtls_ssl_session_free, sz1=0, sz2=3
-Callee:mbedtls_ssl_session_init, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.963, sz1=0, sz2=0
-Callee:mbedtls_md_psa_alg_from_type.974, sz1=0, sz2=0
-Callee:ssl_tls13_select_ciphersuite, sz1=1, sz2=3
-Callee:ssl_tls13_offered_psks_check_identity_match, sz1=3, sz2=6
-Callee:ssl_tls13_key_exchange_is_psk_ephemeral_available, sz1=0, sz2=3
-Callee:ssl_tls13_key_exchange_is_psk_available, sz1=0, sz2=3
-Callee:ssl_tls13_offered_psks_check_binder_match, sz1=4, sz2=9
-Callee:ssl_tls13_session_copy_ticket, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_offered_psks_check_identity_match, sz1=3, sz2=6
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:mbedtls_ssl_set_hs_psk, sz1=0, sz2=7
-Callee:ssl_tls13_offered_psks_check_identity_match_ticket, sz1=1, sz2=6
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_tls13_offered_psks_check_binder_match, sz1=4, sz2=9
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_create_psk_binder, sz1=5, sz2=7
-Callee:mbedtls_ssl_tls13_export_handshake_psk, sz1=1, sz2=7
-Callee:mbedtls_md_type_from_psa_alg, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-DEBUG Func:ssl_tls13_offered_psks_check_identity_match_ticket, sz1=1, sz2=6
-Callee:mbedtls_ssl_session_free, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ms_time, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_named_group_is_supported, sz1=1, sz2=3
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe.1025, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh.1026, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_ecp_group_id_from_tls_id, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_validate_peer_ciphersuite, sz1=1, sz2=3
-Callee:mbedtls_ssl_validate_ciphersuite, sz1=0, sz2=2
-Callee:mbedtls_ssl_tls13_cipher_suite_is_offered, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_write_identities_of_pre_shared_key_ext, sz1=4, sz2=8
-Callee:ssl_tls13_get_configured_psk_count, sz1=0, sz2=3
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:ssl_tls13_ticket_get_identity, sz1=1, sz2=2
-Callee:ssl_tls13_write_identity, sz1=1, sz2=2
-Callee:ssl_tls13_psk_get_identity, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ms_time, sz1=0, sz2=0
-DEBUG Func:ssl_tls13_ticket_get_identity, sz1=1, sz2=2
-Callee:ssl_tls13_has_configured_ticket, sz1=0, sz2=2
-Callee:ssl_tls13_get_ciphersuite_hash_alg, sz1=1, sz2=2
-DEBUG Func:ssl_tls13_write_identity, sz1=1, sz2=2
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_tls13_get_ciphersuite_hash_alg, sz1=1, sz2=2
-Callee:mbedtls_md_psa_alg_from_type.1131, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_write_binders_of_pre_shared_key_ext, sz1=3, sz2=7
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:ssl_tls13_ticket_get_psk, sz1=1, sz2=2
-Callee:ssl_tls13_write_binder, sz1=4, sz2=6
-Callee:ssl_tls13_psk_get_psk, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_set_hs_sent_ext_mask.1139, sz1=0, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_tls13_ticket_get_psk, sz1=1, sz2=2
-Callee:ssl_tls13_has_configured_ticket, sz1=0, sz2=2
-Callee:ssl_tls13_get_ciphersuite_hash_alg, sz1=1, sz2=2
-DEBUG Func:ssl_tls13_write_binder, sz1=4, sz2=6
-Callee:mbedtls_ssl_tls13_create_psk_binder, sz1=5, sz2=7
-Callee:mbedtls_ssl_chk_buf_ptr.1127, sz1=0, sz2=0
-Callee:mbedtls_md_type_from_psa_alg.1140, sz1=0, sz2=0
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-DEBUG Func:mbedtls_ssl_tls13_write_client_hello_exts, sz1=4, sz2=5
-Callee:ssl_tls13_write_cookie_ext, sz1=1, sz2=4
-Callee:mbedtls_ssl_conf_tls13_is_some_ephemeral_enabled.1145, sz1=0, sz2=1
-Callee:ssl_tls13_write_key_share_ext.1146, sz1=3, sz2=8
-Callee:ssl_tls13_write_psk_key_exchange_modes_ext, sz1=0, sz2=6
-Callee:ssl_tls13_write_supported_versions_ext, sz1=0, sz2=4
-DEBUG Func:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_debug_print_buf_ext, sz1=0, sz2=3
-DEBUG Func:mbedtls_debug_print_crt, sz1=1, sz2=5
-Callee:debug_send_line, sz1=0, sz2=0
-Callee:snprintf, sz1=0, sz2=0
-Callee:mbedtls_x509_crt_info, sz1=0, sz2=0
-Callee:debug_print_line_by_line, sz1=0, sz2=1
-Callee:debug_print_pk, sz1=1, sz2=3
-DEBUG Func:debug_print_pk, sz1=1, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf_ext, sz1=0, sz2=3
-Callee:mbedtls_pk_write_pubkey_psa, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_write_client_hello, sz1=10, sz2=14
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_finalize_client_hello, sz1=0, sz2=0
-Callee:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_ssl_send_flight_completed, sz1=1, sz2=2
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_ssl_tls13_write_binders_of_pre_shared_key_ext, sz1=3, sz2=7
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:ssl_prepare_client_hello, sz1=2, sz2=7
-Callee:ssl_write_client_hello_body, sz1=9, sz2=15
-Callee:mbedtls_ssl_handshake_set_state, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_hdr_to_checksum, sz1=0, sz2=0
-DEBUG Func:ssl_prepare_client_hello, sz1=2, sz2=7
-Callee:mbedtls_ssl_session_set_hostname, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:strcmp, sz1=0, sz2=0
-Callee:mbedtls_ms_time, sz1=0, sz2=0
-Callee:ssl_generate_random, sz1=0, sz2=3
-Callee:psa_generate_random, sz1=0, sz2=0
-DEBUG Func:ssl_write_client_hello_body, sz1=9, sz2=15
-Callee:mbedtls_ssl_write_sig_alg_ext, sz1=0, sz2=6
-Callee:mbedtls_ssl_write_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_write_identities_of_pre_shared_key_ext, sz1=4, sz2=8
-Callee:mbedtls_ssl_tls13_write_client_hello_exts, sz1=4, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr, sz1=0, sz2=0
-Callee:ssl_write_client_hello_cipher_suites, sz1=1, sz2=5
-Callee:ssl_write_hostname_ext, sz1=0, sz2=4
-Callee:ssl_write_alpn_ext, sz1=0, sz2=4
-Callee:mbedtls_ssl_conf_tls13_is_some_ephemeral_enabled, sz1=0, sz2=1
-Callee:ssl_write_supported_groups_ext, sz1=3, sz2=10
-Callee:mbedtls_ssl_conf_tls13_is_ephemeral_enabled, sz1=0, sz2=1
-Callee:mbedtls_ssl_conf_tls13_is_some_psk_enabled, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls12_write_client_hello_exts, sz1=8, sz2=8
-DEBUG Func:mbedtls_ssl_check_record, sz1=4, sz2=6
-Callee:ssl_parse_record_header, sz1=1, sz2=5
-Callee:mbedtls_ssl_decrypt_buf, sz1=4, sz2=28
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_list_ciphersuites, sz1=1, sz2=2
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:ciphersuite_is_removed, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_get_ciphersuite_name, sz1=1, sz2=1
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_get_ciphersuite_id, sz1=1, sz2=1
-Callee:mbedtls_ssl_ciphersuite_from_string, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_fetch_input, sz1=5, sz2=8
-Callee:mbedtls_ssl_resend_hello_request, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_set_timer, sz1=0, sz2=1
-Callee:mbedtls_ssl_check_timer, sz1=0, sz2=1
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-Callee:ssl_double_retransmit_timeout, sz1=0, sz2=1
-Callee:mbedtls_ssl_resend, sz1=1, sz2=2
-DEBUG Func:ssl_update_checksum_sha384, sz1=1, sz2=2
-Callee:psa_hash_update, sz1=0, sz2=0
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:ssl_update_checksum_sha256, sz1=1, sz2=2
-Callee:psa_hash_update, sz1=0, sz2=0
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_reset_checksum, sz1=1, sz2=3
-Callee:psa_hash_setup, sz1=0, sz2=0
-Callee:psa_hash_abort, sz1=0, sz2=0
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_resend, sz1=1, sz2=2
-Callee:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-DEBUG Func:ssl_write_client_hello_cipher_suites, sz1=1, sz2=5
-Callee:mbedtls_ssl_validate_ciphersuite, sz1=0, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_ciphersuite_uses_ec, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr, sz1=0, sz2=0
-DEBUG Func:ssl_write_supported_groups_ext, sz1=3, sz2=10
-Callee:mbedtls_ssl_named_group_to_str, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ecdhe, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_named_group_is_ffdh, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls12_named_group_is_ecdhe, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_set_hs_sent_ext_mask, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_psa_curve_info_from_tls_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_ecp_group_id_from_tls_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_update_handshake_status, sz1=1, sz2=3
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-Callee:ssl_buffering_shift_slots, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_update_handshake_status, sz1=1, sz2=3
-Callee:ssl_consume_current_message, sz1=1, sz2=2
-Callee:ssl_record_is_in_progress, sz1=0, sz2=0
-Callee:ssl_next_record_is_in_datagram, sz1=0, sz2=0
-Callee:ssl_load_buffered_message, sz1=1, sz2=3
-Callee:ssl_get_next_record, sz1=8, sz2=11
-Callee:mbedtls_ssl_handle_message_type, sz1=2, sz2=4
-Callee:ssl_buffer_message, sz1=1, sz2=10
-DEBUG Func:ssl_consume_current_message, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_load_buffered_message, sz1=1, sz2=3
-Callee:mbedtls_ssl_get_hs_msg_name, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_get_next_record, sz1=8, sz2=11
-Callee:ssl_parse_record_header, sz1=1, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_fetch_input, sz1=5, sz2=8
-Callee:mbedtls_ssl_in_hdr_len, sz1=0, sz2=0
-Callee:mbedtls_ssl_update_in_pointers, sz1=0, sz2=0
-Callee:ssl_load_buffered_record, sz1=0, sz2=3
-Callee:ssl_buffer_future_record, sz1=1, sz2=3
-Callee:ssl_check_client_reconnect, sz1=1, sz2=3
-Callee:ssl_prepare_record_content, sz1=3, sz2=7
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_handle_message_type, sz1=2, sz2=4
-Callee:mbedtls_ssl_handshake_wrapup_free_hs_transform, sz1=0, sz2=4
-Callee:mbedtls_ssl_prepare_handshake_record, sz1=3, sz2=12
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-DEBUG Func:ssl_buffer_message, sz1=1, sz2=10
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:memcmp, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:ssl_hs_is_proper_fragment, sz1=0, sz2=1
-Callee:ssl_get_hs_frag_off, sz1=0, sz2=0
-Callee:ssl_get_hs_frag_len, sz1=0, sz2=0
-Callee:ssl_get_reassembly_buffer_size, sz1=0, sz2=0
-Callee:ssl_buffer_make_space, sz1=0, sz2=3
-Callee:ssl_bitmask_set, sz1=0, sz2=0
-Callee:ssl_bitmask_check, sz1=0, sz2=0
-DEBUG Func:ssl_buffer_future_record, sz1=1, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:calloc, sz1=0, sz2=0
-DEBUG Func:ssl_check_client_reconnect, sz1=1, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-Callee:ssl_handle_possible_reconnect, sz1=4, sz2=5
-DEBUG Func:ssl_prepare_record_content, sz1=3, sz2=7
-Callee:mbedtls_ssl_decrypt_buf, sz1=4, sz2=28
-Callee:ssl_check_record_type, sz1=0, sz2=0
-Callee:mbedtls_ssl_ep_len, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_dtls_replay_update, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_flush_output, sz1=1, sz2=4
-Callee:mbedtls_ssl_write_record, sz1=5, sz2=11
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_handle_possible_reconnect, sz1=4, sz2=5
-Callee:mbedtls_ssl_session_reset_int, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_check_dtls_clihlo_cookie, sz1=1, sz2=2
-DEBUG Func:mbedtls_ssl_check_dtls_clihlo_cookie, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:mbedtls_ssl_send_fatal_handshake_failure, sz1=1, sz2=1
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_write_change_cipher_spec, sz1=3, sz2=4
-Callee:mbedtls_ssl_handshake_increment_state, sz1=1, sz2=1
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_check_curve, sz1=1, sz2=2
-Callee:mbedtls_ssl_check_curve_tls_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_tls_id_from_ecp_group_id, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-Callee:psa_hash_operation_init, sz1=0, sz2=0
-Callee:psa_hash_clone, sz1=0, sz2=0
-Callee:psa_hash_finish, sz1=0, sz2=0
-Callee:local_err_translation.363, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_derive_keys, sz1=3, sz2=6
-Callee:ssl_tls12_populate_transform, sz1=5, sz2=15
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:ssl_set_handshake_prfs, sz1=0, sz2=0
-Callee:ssl_compute_master, sz1=2, sz2=10
-DEBUG Func:ssl_compute_master, sz1=2, sz2=10
-Callee:setup_psa_key_derivation, sz1=0, sz2=5
-Callee:psa_key_derivation_abort, sz1=0, sz2=0
-Callee:psa_key_derivation_output_bytes, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_ciphersuite_uses_psk, sz1=0, sz2=0
-Callee:mbedtls_platform_zeroize, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_opaque_psk, sz1=0, sz2=1
-DEBUG Func:ssl_calc_verify_tls_sha384, sz1=1, sz2=1
-Callee:ssl_calc_verify_tls_psa, sz1=2, sz2=7
-DEBUG Func:ssl_calc_finished_tls_sha384, sz1=1, sz2=1
-Callee:ssl_calc_finished_tls_generic, sz1=2, sz2=7
-DEBUG Func:ssl_calc_verify_tls_sha256, sz1=1, sz2=1
-Callee:ssl_calc_verify_tls_psa, sz1=2, sz2=7
-DEBUG Func:ssl_calc_finished_tls_sha256, sz1=1, sz2=1
-Callee:ssl_calc_finished_tls_generic, sz1=2, sz2=7
-DEBUG Func:mbedtls_ssl_close_notify, sz1=2, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_is_handshake_over, sz1=0, sz2=0
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_handle_pending_alert, sz1=1, sz2=1
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_tls13_parse_certificate, sz1=5, sz2=13
-Callee:mbedtls_x509_crt_init, sz1=0, sz2=0
-Callee:mbedtls_x509_crt_parse_der, sz1=0, sz2=0
-Callee:mbedtls_x509_crt_free, sz1=0, sz2=0
-Callee:mbedtls_ssl_print_extension, sz1=0, sz2=3
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.1281, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_crt, sz1=1, sz2=5
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_received_extension, sz1=1, sz2=3
-DEBUG Func:ssl_tls13_validate_certificate, sz1=1, sz2=3
-Callee:mbedtls_ssl_verify_certificate, sz1=4, sz2=9
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_check_received_extension, sz1=1, sz2=3
-Callee:mbedtls_ssl_get_extension_mask, sz1=0, sz2=1
-Callee:mbedtls_ssl_print_extension, sz1=0, sz2=3
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_write_certificate, sz1=2, sz2=5
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:ssl_tls13_write_certificate_body, sz1=2, sz2=4
-DEBUG Func:ssl_tls13_write_certificate_body, sz1=2, sz2=4
-Callee:mbedtls_ssl_print_extensions, sz1=1, sz2=1
-Callee:mbedtls_ssl_chk_buf_ptr.1281, sz1=0, sz2=0
-Callee:mbedtls_debug_print_crt, sz1=1, sz2=5
-Callee:mbedtls_ssl_own_cert.1320, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_write_certificate_verify, sz1=2, sz2=5
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:ssl_tls13_write_certificate_verify_body, sz1=5, sz2=17
-DEBUG Func:ssl_tls13_write_certificate_verify_body, sz1=5, sz2=17
-Callee:mbedtls_ssl_chk_buf_ptr.1281, sz1=0, sz2=0
-Callee:ssl_tls13_create_verify_structure, sz1=0, sz2=0
-Callee:mbedtls_ssl_sig_alg_is_offered.1289, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_pk_sigalg_and_md_alg_from_sig_alg.1291, sz1=0, sz2=2
-Callee:mbedtls_md_psa_alg_from_type.1292, sz1=0, sz2=0
-Callee:mbedtls_pk_sign_ext, sz1=0, sz2=0
-Callee:psa_hash_compute, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_sig_alg_to_str, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_check_sig_alg_cert_key_match, sz1=0, sz2=2
-Callee:mbedtls_ssl_own_key.1328, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_sig_alg_for_cert_verify_is_supported.1330, sz1=0, sz2=0
-Callee:local_err_translation.1331, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_tls13_process_finished_message, sz1=3, sz2=5
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:ssl_tls13_preprocess_finished_message, sz1=2, sz2=2
-Callee:ssl_tls13_parse_finished_message, sz1=1, sz2=4
-DEBUG Func:ssl_tls13_preprocess_finished_message, sz1=2, sz2=2
-Callee:mbedtls_ssl_tls13_calculate_verify_data, sz1=4, sz2=7
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_tls13_parse_finished_message, sz1=1, sz2=4
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_write_finished_message, sz1=2, sz2=6
-Callee:mbedtls_ssl_start_handshake_msg, sz1=0, sz2=0
-Callee:mbedtls_ssl_finish_handshake_msg, sz1=1, sz2=1
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:ssl_tls13_prepare_finished_message, sz1=2, sz2=2
-Callee:ssl_tls13_write_finished_message_body, sz1=0, sz2=1
-DEBUG Func:ssl_tls13_prepare_finished_message, sz1=2, sz2=2
-Callee:mbedtls_ssl_tls13_calculate_verify_data, sz1=4, sz2=7
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_tls13_write_change_cipher_spec, sz1=1, sz2=3
-Callee:mbedtls_ssl_write_record, sz1=5, sz2=11
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:ssl_tls13_write_change_cipher_spec_body, sz1=0, sz2=1
-DEBUG Func:mbedtls_ssl_reset_transcript_for_hrr, sz1=4, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_reset_checksum, sz1=1, sz2=3
-Callee:mbedtls_ssl_get_handshake_transcript, sz1=1, sz2=4
-DEBUG Func:mbedtls_ssl_tls13_generate_and_write_xxdh_key_exchange, sz1=3, sz2=12
-Callee:psa_generate_key, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_get_psa_curve_info_from_tls_id, sz1=0, sz2=0
-Callee:local_err_translation.1331, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_psa_ffdh_info_from_tls_id, sz1=0, sz2=0
-Callee:psa_key_attributes_init.1372, sz1=0, sz2=0
-Callee:psa_set_key_usage_flags.1373, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.1374, sz1=0, sz2=0
-Callee:psa_set_key_type.1375, sz1=0, sz2=0
-Callee:psa_set_key_bits.1376, sz1=0, sz2=0
-Callee:psa_export_public_key, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_export_keying_material, sz1=2, sz2=6
-Callee:mbedtls_ssl_is_handshake_over.298, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_ciphersuite_id_from_ssl, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_version_number, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls12_export_keying_material, sz1=0, sz2=3
-Callee:mbedtls_ssl_tls13_export_keying_material, sz1=1, sz2=2
-DEBUG Func:mbedtls_ssl_tls13_export_keying_material, sz1=1, sz2=2
-Callee:mbedtls_md_psa_alg_from_type.435, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls13_exporter, sz1=1, sz2=2
-DEBUG Func:mbedtls_ssl_tls12_write_client_hello_exts, sz1=8, sz2=8
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:ssl_write_renegotiation_ext, sz1=0, sz2=2
-Callee:ssl_write_supported_point_formats_ext, sz1=0, sz2=2
-Callee:ssl_write_cid_ext, sz1=0, sz2=2
-Callee:ssl_write_max_fragment_length_ext, sz1=0, sz2=2
-Callee:ssl_write_encrypt_then_mac_ext, sz1=0, sz2=2
-Callee:ssl_write_extended_ms_ext, sz1=0, sz2=2
-Callee:ssl_write_session_ticket_ext, sz1=0, sz2=2
-DEBUG Func:mbedtls_ssl_handshake_client_step, sz1=16, sz2=17
-Callee:mbedtls_ssl_write_certificate, sz1=4, sz2=7
-Callee:mbedtls_ssl_parse_certificate, sz1=6, sz2=14
-Callee:mbedtls_ssl_handshake_wrapup, sz1=2, sz2=6
-Callee:mbedtls_ssl_write_finished, sz1=6, sz2=8
-Callee:mbedtls_ssl_parse_finished, sz1=5, sz2=10
-Callee:mbedtls_ssl_parse_change_cipher_spec, sz1=4, sz2=7
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_write_client_hello, sz1=10, sz2=14
-Callee:mbedtls_ssl_write_change_cipher_spec, sz1=3, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.574, sz1=0, sz2=2
-Callee:ssl_parse_server_hello, sz1=17, sz2=25
-Callee:ssl_parse_server_key_exchange, sz1=9, sz2=19
-Callee:ssl_parse_certificate_request, sz1=4, sz2=11
-Callee:ssl_parse_server_hello_done, sz1=4, sz2=7
-Callee:ssl_write_client_key_exchange, sz1=4, sz2=16
-Callee:ssl_write_certificate_verify, sz1=4, sz2=10
-Callee:ssl_parse_new_session_ticket, sz1=4, sz2=8
-DEBUG Func:ssl_parse_server_hello, sz1=17, sz2=25
-Callee:mbedtls_ssl_validate_ciphersuite, sz1=0, sz2=2
-Callee:mbedtls_ssl_read_version, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:time, sz1=0, sz2=0
-Callee:memcmp, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_optimize_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_derive_keys, sz1=3, sz2=6
-Callee:mbedtls_ssl_handshake_set_state.574, sz1=0, sz2=2
-Callee:mbedtls_ssl_hs_hdr_len.580, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.588, sz1=1, sz2=1
-Callee:ssl_parse_hello_verify_request, sz1=5, sz2=10
-Callee:ssl_parse_renegotiation_info, sz1=1, sz2=3
-Callee:ssl_parse_max_fragment_length_ext, sz1=1, sz2=2
-Callee:ssl_parse_cid_ext, sz1=2, sz2=3
-Callee:ssl_parse_encrypt_then_mac_ext, sz1=1, sz2=2
-Callee:ssl_parse_extended_ms_ext, sz1=1, sz2=2
-Callee:ssl_parse_session_ticket_ext, sz1=1, sz2=2
-Callee:ssl_parse_supported_point_formats_ext, sz1=1, sz2=2
-Callee:ssl_parse_alpn_ext, sz1=1, sz2=4
-DEBUG Func:ssl_parse_server_key_exchange, sz1=9, sz2=19
-Callee:mbedtls_ssl_get_key_exchange_md_tls1_2, sz1=2, sz2=7
-Callee:mbedtls_pk_can_do_psa, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_pend_fatal_alert, sz1=0, sz2=0
-Callee:mbedtls_ssl_chk_buf_ptr.564, sz1=0, sz2=0
-Callee:mbedtls_ssl_hs_hdr_len.580, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.588, sz1=1, sz2=1
-Callee:ssl_parse_server_psk_hint, sz1=0, sz2=1
-Callee:ssl_parse_server_ecdh_params, sz1=1, sz2=3
-Callee:mbedtls_ssl_ciphersuite_uses_server_signature, sz1=0, sz2=0
-Callee:ssl_parse_signature_algorithm, sz1=0, sz2=5
-Callee:mbedtls_md_psa_alg_from_type.624, sz1=0, sz2=0
-Callee:mbedtls_psa_alg_from_pk_sigalg, sz1=0, sz2=0
-Callee:mbedtls_pk_verify_ext, sz1=0, sz2=0
-Callee:mbedtls_pk_verify_restartable, sz1=0, sz2=0
-DEBUG Func:ssl_parse_certificate_request, sz1=4, sz2=11
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_hs_hdr_len.580, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_cert_req_allowed, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.588, sz1=1, sz2=1
-Callee:mbedtls_asn1_get_tag, sz1=0, sz2=0
-Callee:mbedtls_x509_get_name, sz1=0, sz2=0
-Callee:mbedtls_x509_dn_gets, sz1=0, sz2=0
-Callee:mbedtls_asn1_free_named_data_list_shallow, sz1=0, sz2=0
-DEBUG Func:ssl_parse_server_hello_done, sz1=4, sz2=7
-Callee:mbedtls_ssl_recv_flight_completed, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_hs_hdr_len.580, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.588, sz1=1, sz2=1
-DEBUG Func:ssl_write_client_key_exchange, sz1=4, sz2=16
-Callee:mbedtls_ssl_conf_has_static_psk, sz1=0, sz2=1
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:psa_generate_key, sz1=0, sz2=0
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_ciphersuite_uses_psk, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.588, sz1=1, sz2=1
-Callee:psa_key_attributes_init.597, sz1=0, sz2=0
-Callee:psa_set_key_usage_flags.598, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.599, sz1=0, sz2=0
-Callee:psa_set_key_type.600, sz1=0, sz2=0
-Callee:psa_set_key_bits.601, sz1=0, sz2=0
-Callee:psa_export_public_key, sz1=0, sz2=0
-Callee:psa_raw_key_agreement, sz1=0, sz2=0
-Callee:local_err_translation.603, sz1=0, sz2=1
-DEBUG Func:ssl_write_certificate_verify, sz1=4, sz2=10
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_ssl_sig_from_pk, sz1=0, sz2=1
-Callee:mbedtls_ssl_derive_keys, sz1=3, sz2=6
-Callee:mbedtls_ssl_ciphersuite_cert_req_allowed, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.588, sz1=1, sz2=1
-Callee:mbedtls_ssl_own_cert.589, sz1=0, sz2=0
-Callee:mbedtls_ssl_own_key, sz1=0, sz2=0
-Callee:mbedtls_pk_sign_restartable, sz1=0, sz2=0
-DEBUG Func:ssl_parse_new_session_ticket, sz1=4, sz2=8
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:calloc, sz1=0, sz2=0
-Callee:mbedtls_zeroize_and_free, sz1=0, sz2=0
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.574, sz1=0, sz2=2
-Callee:mbedtls_ssl_hs_hdr_len.580, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_handshake_increment_state.588, sz1=1, sz2=1
-Callee:mbedtls_ssl_handshake_set_state.574, sz1=0, sz2=2
-DEBUG Func:ssl_parse_server_ecdh_params, sz1=1, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_check_curve_tls_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_psa_curve_info_from_tls_id, sz1=0, sz2=0
-DEBUG Func:ssl_parse_hello_verify_request, sz1=5, sz2=10
-Callee:mbedtls_ssl_recv_flight_completed, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:calloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:mbedtls_ssl_reset_checksum, sz1=1, sz2=3
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.574, sz1=0, sz2=2
-Callee:mbedtls_ssl_hs_hdr_len.580, sz1=0, sz2=0
-DEBUG Func:ssl_parse_renegotiation_info, sz1=1, sz2=3
-Callee:mbedtls_ct_memcmp, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_max_fragment_length_ext, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_cid_ext, sz1=2, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_encrypt_then_mac_ext, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_extended_ms_ext, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_session_ticket_ext, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_supported_point_formats_ext, sz1=1, sz2=2
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:ssl_parse_alpn_ext, sz1=1, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:memcmp, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-DEBUG Func:mbedtls_ssl_handshake_server_step, sz1=16, sz2=17
-Callee:ssl_parse_client_key_exchange, sz1=6, sz2=10
-Callee:ssl_parse_certificate_verify, sz1=4, sz2=14
-Callee:ssl_write_new_session_ticket, sz1=2, sz2=4
-Callee:mbedtls_ssl_write_certificate, sz1=4, sz2=7
-Callee:mbedtls_ssl_parse_certificate, sz1=6, sz2=14
-Callee:mbedtls_ssl_handshake_wrapup, sz1=2, sz2=6
-Callee:mbedtls_ssl_write_finished, sz1=6, sz2=8
-Callee:mbedtls_ssl_parse_finished, sz1=5, sz2=10
-Callee:mbedtls_ssl_parse_change_cipher_spec, sz1=4, sz2=7
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_write_change_cipher_spec, sz1=3, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.702, sz1=0, sz2=2
-Callee:ssl_parse_client_hello, sz1=17, sz2=25
-Callee:ssl_write_server_hello, sz1=11, sz2=24
-Callee:ssl_write_server_key_exchange, sz1=5, sz2=7
-Callee:ssl_write_certificate_request, sz1=3, sz2=8
-Callee:ssl_write_server_hello_done, sz1=5, sz2=6
-DEBUG Func:ssl_parse_client_hello, sz1=17, sz2=25
-Callee:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:mbedtls_ssl_hs_hdr_len.715, sz1=0, sz2=0
-Callee:mbedtls_ssl_tls12_get_preferred_hash_for_sig_alg, sz1=0, sz2=3
-Callee:mbedtls_ssl_parse_server_name_ext, sz1=1, sz2=4
-Callee:mbedtls_ssl_parse_alpn_ext, sz1=0, sz2=5
-Callee:ssl_parse_renegotiation_info.829, sz1=1, sz2=3
-Callee:ssl_parse_supported_groups_ext, sz1=2, sz2=4
-Callee:ssl_parse_supported_point_formats, sz1=1, sz2=2
-Callee:ssl_parse_max_fragment_length_ext.834, sz1=1, sz2=2
-Callee:ssl_parse_cid_ext.836, sz1=2, sz2=3
-Callee:ssl_parse_encrypt_then_mac_ext.838, sz1=1, sz2=2
-Callee:ssl_parse_extended_ms_ext.840, sz1=1, sz2=2
-Callee:ssl_parse_session_ticket_ext.842, sz1=1, sz2=5
-Callee:ssl_ciphersuite_match, sz1=2, sz2=9
-Callee:mbedtls_ssl_read_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_recv_flight_completed, sz1=0, sz2=3
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_ciphersuite_sig_alg, sz1=0, sz2=0
-Callee:mbedtls_ssl_update_handshake_status, sz1=1, sz2=3
-Callee:mbedtls_ssl_read_record, sz1=7, sz2=10
-Callee:mbedtls_ssl_send_alert_message, sz1=3, sz2=4
-Callee:mbedtls_ssl_sig_from_pk_alg, sz1=0, sz2=0
-Callee:mbedtls_ssl_parse_sig_alg_ext, sz1=0, sz2=6
-DEBUG Func:ssl_write_server_hello, sz1=11, sz2=24
-Callee:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:ssl_write_hello_verify_request, sz1=5, sz2=7
-Callee:mbedtls_ssl_conf_is_tls13_enabled, sz1=0, sz2=0
-Callee:ssl_handle_id_based_session_resumption, sz1=0, sz2=3
-Callee:ssl_write_renegotiation_ext.790, sz1=0, sz2=1
-Callee:ssl_write_max_fragment_length_ext.791, sz1=0, sz2=1
-Callee:ssl_write_cid_ext.792, sz1=0, sz2=1
-Callee:ssl_write_encrypt_then_mac_ext.793, sz1=1, sz2=3
-Callee:ssl_write_extended_ms_ext.794, sz1=0, sz2=1
-Callee:ssl_write_session_ticket_ext.795, sz1=0, sz2=1
-Callee:ssl_write_supported_point_formats_ext.796, sz1=0, sz2=1
-Callee:mbedtls_ssl_write_version, sz1=0, sz2=0
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_ciphersuite_uses_ec, sz1=0, sz2=0
-Callee:time, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_from_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_ciphersuite_name, sz1=1, sz2=1
-Callee:psa_generate_random, sz1=0, sz2=0
-Callee:mbedtls_ssl_derive_keys, sz1=3, sz2=6
-Callee:mbedtls_ssl_write_alpn_ext, sz1=0, sz2=4
-Callee:mbedtls_ssl_handshake_set_state.702, sz1=0, sz2=2
-DEBUG Func:ssl_write_server_key_exchange, sz1=5, sz2=7
-Callee:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_ciphersuite_no_pfs, sz1=0, sz2=0
-Callee:ssl_prepare_server_key_exchange, sz1=5, sz2=24
-DEBUG Func:ssl_write_certificate_request, sz1=3, sz2=8
-Callee:mbedtls_ssl_ciphersuite_cert_req_allowed.710, sz1=0, sz2=0
-Callee:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_sig_algs.746, sz1=0, sz2=0
-Callee:mbedtls_ssl_sig_alg_is_supported.747, sz1=0, sz2=2
-Callee:mbedtls_ssl_set_calc_verify_md, sz1=0, sz2=0
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-DEBUG Func:ssl_write_server_hello_done, sz1=5, sz2=6
-Callee:mbedtls_ssl_handshake_increment_state.712, sz1=1, sz2=1
-Callee:mbedtls_ssl_flight_transmit, sz1=5, sz2=10
-Callee:mbedtls_ssl_send_flight_completed, sz1=1, sz2=2
-Callee:mbedtls_ssl_write_handshake_msg_ext, sz1=3, sz2=4
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-DEBUG Func:ssl_prepare_server_key_exchange, sz1=5, sz2=24
-Callee:local_err_translation.730, sz1=0, sz2=1
-Callee:mbedtls_ssl_get_key_exchange_md_tls1_2, sz1=2, sz2=7
-Callee:mbedtls_ssl_tls12_get_preferred_hash_for_sig_alg, sz1=0, sz2=3
-Callee:mbedtls_ssl_ciphersuite_uses_ecdhe, sz1=0, sz2=0
-Callee:psa_key_attributes_init.763, sz1=0, sz2=0
-Callee:psa_set_key_usage_flags.764, sz1=0, sz2=1
-Callee:psa_set_key_algorithm.765, sz1=0, sz2=0
-Callee:psa_set_key_type.766, sz1=0, sz2=0
-Callee:psa_set_key_bits.767, sz1=0, sz2=0
-Callee:mbedtls_ssl_ciphersuite_uses_server_signature.770, sz1=0, sz2=0
-Callee:mbedtls_ssl_own_key.773, sz1=0, sz2=0
-Callee:mbedtls_pk_sign_ext, sz1=0, sz2=0
-Callee:psa_destroy_key, sz1=0, sz2=0
-Callee:psa_generate_key, sz1=0, sz2=0
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_debug_print_ret, sz1=0, sz2=2
-Callee:mbedtls_debug_print_buf, sz1=1, sz2=1
-Callee:mbedtls_ssl_get_ciphersuite_sig_pk_alg, sz1=0, sz2=0
-Callee:mbedtls_ssl_sig_from_pk_alg, sz1=0, sz2=0
-Callee:mbedtls_ssl_md_alg_from_hash, sz1=0, sz2=0
-Callee:mbedtls_ssl_hash_from_md_alg, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_psa_curve_info_from_tls_id, sz1=0, sz2=0
-Callee:mbedtls_ssl_get_curve_name_from_tls_id, sz1=0, sz2=0
-Callee:psa_export_public_key, sz1=0, sz2=0
-DEBUG Func:mbedtls_ssl_tls13_process_certificate, sz1=3, sz2=5
-Callee:mbedtls_ssl_tls13_fetch_handshake_msg, sz1=2, sz2=5
-Callee:mbedtls_debug_print_msg, sz1=0, sz2=2
-Callee:mbedtls_ssl_add_hs_msg_to_checksum, sz1=0, sz2=1
-Callee:mbedtls_ssl_tls13_parse_certificate, sz1=5, sz2=13
-Callee:ssl_tls13_validate_certificate, sz1=1, sz2=3
-[K[SPEG Computation]: 100%
-[Dumping SEG] spends time ***1s 181ms***
-SEG-Building spends time ***2s 313ms***
-SEG-Building uses memory ***1G 146M 288KB***
+[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 17%[K[SPEG Computation]: 18%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 34%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 52%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 59%[K[SPEG Computation]: 60%[K[SPEG Computation]: 61%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 68%[K[SPEG Computation]: 69%[K[SPEG Computation]: 70%[K[SPEG Computation]: 71%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 78%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 81%[K[SPEG Computation]: 82%[K[SPEG Computation]: 83%[K[SPEG Computation]: 84%[K[SPEG Computation]: 85%[K[SPEG Computation]: 86%[K[SPEG Computation]: 88%[K[SPEG Computation]: 89%[K[SPEG Computation]: 90%[K[SPEG Computation]: 91%[K[SPEG Computation]: 92%[K[SPEG Computation]: 93%[K[SPEG Computation]: 94%[K[SPEG Computation]: 95%[K[SPEG Computation]: 97%[K[SPEG Computation]: 98%[K[SPEG Computation]: 99%[K[SPEG Computation]: 100%
+[Dumping SEG] spends time ***1s 391ms***
+SEG-Building spends time ***4s 979ms***
+SEG-Building uses memory ***1G 45M 584KB***
 
 
-Total Time: 	0min3s
-Total Memory:  ***1G 323M 644KB***
+Total Time: 	0min6s
+Total Memory:  ***1G 437M 36KB***
 
-Script done on 2026-07-19 23:54:05-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-08-04 08:33:43+00:00 [COMMAND_EXIT_CODE="0"]

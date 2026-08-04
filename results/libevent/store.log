@@ -1,4 +1,4 @@
-Script started on 2026-07-19 23:39:34-04:00 [<not executed on terminal>]
+Script started on 2026-08-04 08:00:23+00:00 [<not executed on terminal>]
 cb-check static analyzer . ===enterprise version===
 [Warning] You are running a licence free version of cb-check. Don't distribute it.
 Module Statistical Results: 
@@ -16,1634 +16,13 @@ Processing unreachable code ........Done!
 Unrolling and breaking loops ........Done!
 Indexing ........Done!
 [SPEG] Start ... 708functions to run!
-[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 44%DEBUG Func:bufferevent_decrement_read_buckets_, sz1=3, sz2=6
-Callee:bev_group_suspend_reading_, sz1=0, sz2=2
-Callee:bev_group_unsuspend_reading_, sz1=1, sz2=3
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:bev_group_unsuspend_reading_, sz1=1, sz2=3
-Callee:bev_group_random_element_, sz1=1, sz2=2
-Callee:EVLOCK_TRY_LOCK_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-DEBUG Func:bev_group_random_element_, sz1=1, sz2=2
-Callee:evutil_weakrand_range_, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_decrement_write_buckets_, sz1=3, sz2=6
-Callee:bev_group_suspend_writing_, sz1=0, sz2=2
-Callee:bev_group_unsuspend_writing_, sz1=1, sz2=3
-Callee:bufferevent_suspend_write_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_write_, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:bev_group_unsuspend_writing_, sz1=1, sz2=3
-Callee:bev_group_random_element_, sz1=1, sz2=2
-Callee:EVLOCK_TRY_LOCK_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_write_, sz1=0, sz2=0
-DEBUG Func:evbuffer_chain_unpin_, sz1=2, sz2=2
-Callee:evbuffer_chain_free, sz1=2, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_chain_pin_, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_chain_free, sz1=2, sz2=3
-Callee:evbuffer_file_segment_free, sz1=2, sz2=6
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_file_segment_free, sz1=2, sz2=6
-Callee:get_page_size, sz1=0, sz2=1
-Callee:munmap, sz1=0, sz2=0
-Callee:close, sz1=0, sz2=0
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_decref_and_unlock_, sz1=3, sz2=6
-Callee:evbuffer_chain_free, sz1=2, sz2=3
-Callee:evbuffer_remove_all_callbacks, sz1=0, sz2=1
-Callee:event_deferred_cb_cancel_, sz1=1, sz2=1
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_incref_and_lock_, sz1=0, sz2=0
-Callee:evbuffer_run_callbacks, sz1=1, sz2=2
-Callee:event_deferred_cb_schedule_, sz1=2, sz2=2
-Callee:bufferevent_incref, sz1=0, sz2=0
-DEBUG Func:evbuffer_deferred_callback, sz1=3, sz2=3
-Callee:evbuffer_decref_and_unlock_, sz1=3, sz2=6
-Callee:evbuffer_run_callbacks, sz1=1, sz2=2
-Callee:bufferevent_decref, sz1=1, sz2=1
-DEBUG Func:evbuffer_run_callbacks, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_free, sz1=1, sz2=1
-Callee:evbuffer_decref_and_unlock_, sz1=3, sz2=6
-DEBUG Func:evbuffer_add_iovec, sz1=2, sz2=2
-Callee:evbuffer_expand_fast_, sz1=4, sz2=6
-Callee:evbuffer_add, sz1=5, sz2=7
-DEBUG Func:evbuffer_expand_fast_, sz1=4, sz2=6
-Callee:evbuffer_chain_free, sz1=2, sz2=3
-Callee:evbuffer_chain_insert_new, sz1=1, sz2=2
-Callee:evbuffer_chain_new_membuf, sz1=0, sz2=1
-Callee:ZERO_CHAIN, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_add, sz1=5, sz2=7
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_chain_insert_new, sz1=1, sz2=2
-Callee:evbuffer_chain_should_realign, sz1=0, sz2=0
-Callee:evbuffer_chain_align, sz1=1, sz2=1
-Callee:evbuffer_chain_new_membuf, sz1=0, sz2=1
-Callee:evbuffer_chain_insert, sz1=2, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_chain_insert_new, sz1=1, sz2=2
-Callee:evbuffer_chain_new_membuf, sz1=0, sz2=1
-Callee:evbuffer_chain_insert, sz1=2, sz2=3
-DEBUG Func:bufferevent_setfd, sz1=1, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:bufferevent_replacefd, sz1=1, sz2=2
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:bufferevent_getfd, sz1=1, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:bufferevent_init_generic_timeout_cbs_, sz1=1, sz2=1
-Callee:event_assign, sz1=4, sz2=5
-DEBUG Func:bufferevent_generic_read_timeout_cb, sz1=3, sz2=4
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:bufferevent_disable, sz1=1, sz2=1
-DEBUG Func:bufferevent_generic_write_timeout_cb, sz1=3, sz2=4
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:bufferevent_disable, sz1=1, sz2=1
-DEBUG Func:bufferevent_generic_adj_timeouts_, sz1=2, sz2=3
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:bufferevent_generic_adj_existing_timeouts_, sz1=3, sz2=3
-Callee:bufferevent_add_event_, sz1=1, sz2=1
-Callee:event_pending, sz1=2, sz2=2
-Callee:event_remove_timer, sz1=2, sz2=2
-DEBUG Func:bufferevent_add_event_, sz1=1, sz2=1
-Callee:event_add, sz1=2, sz2=2
-DEBUG Func:bufferevent_unlock, sz1=1, sz2=1
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-DEBUG Func:be_filter_enable, sz1=2, sz2=3
-Callee:upcast, sz1=1, sz2=1
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-DEBUG Func:be_filter_disable, sz1=2, sz2=3
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:upcast, sz1=1, sz2=1
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:be_filter_unlink, sz1=3, sz2=5
-Callee:upcast, sz1=1, sz2=1
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-Callee:bufferevent_setcb, sz1=0, sz2=0
-Callee:bufferevent_free, sz1=1, sz2=3
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:be_filter_destruct, sz1=1, sz2=2
-Callee:evbuffer_remove_cb_entry, sz1=0, sz2=1
-Callee:upcast, sz1=1, sz2=1
-DEBUG Func:be_filter_flush, sz1=4, sz2=6
-Callee:upcast, sz1=1, sz2=1
-Callee:be_filter_process_input, sz1=1, sz2=3
-Callee:be_filter_process_output, sz1=2, sz2=6
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_flush, sz1=0, sz2=0
-DEBUG Func:be_filter_ctrl, sz1=1, sz2=1
-Callee:upcast, sz1=1, sz2=1
-DEBUG Func:upcast, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:be_filter_process_input, sz1=1, sz2=3
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:be_readbuf_full, sz1=0, sz2=1
-Callee:event_add, sz1=2, sz2=2
-DEBUG Func:be_filter_process_output, sz1=2, sz2=6
-Callee:evbuffer_cb_set_flags, sz1=0, sz2=0
-Callee:evbuffer_cb_clear_flags, sz1=0, sz2=0
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:be_underlying_writebuf_full, sz1=0, sz2=1
-Callee:bufferevent_trigger_nolock_.57, sz1=2, sz2=3
-Callee:event_add, sz1=2, sz2=2
-DEBUG Func:bufferevent_trigger_nolock_.57, sz1=2, sz2=3
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:bufferevent_run_readcb_, sz1=2, sz2=3
-Callee:bufferevent_run_writecb_, sz1=1, sz2=2
-DEBUG Func:be_filter_eventcb, sz1=2, sz2=2
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_filter_new, sz1=3, sz2=11
-Callee:evbuffer_cb_clear_flags, sz1=0, sz2=0
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:bufferevent_init_generic_timeout_cbs_, sz1=1, sz2=1
-Callee:bufferevent_incref, sz1=0, sz2=0
-Callee:evbuffer_add_cb, sz1=0, sz2=1
-Callee:bufferevent_init_common_, sz1=2, sz2=8
-Callee:bufferevent_enable_locking_, sz1=0, sz2=2
-Callee:bufferevent_setcb, sz1=0, sz2=0
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:bufferevent_enable, sz1=2, sz2=3
-Callee:event_mm_calloc_, sz1=0, sz2=2
-DEBUG Func:event_priority_init, sz1=1, sz2=1
-Callee:event_base_priority_init, sz1=1, sz2=3
-DEBUG Func:event_base_init_common_timeout, sz1=5, sz2=8
-Callee:event_mm_realloc_, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-Callee:event_priority_set, sz1=1, sz2=1
-Callee:is_common_timeout, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:common_timeout_callback, sz1=5, sz2=5
-Callee:event_active_nolock_, sz1=3, sz2=5
-Callee:gettime, sz1=1, sz2=4
-Callee:event_queue_remove_timeout, sz1=1, sz2=5
-Callee:common_timeout_schedule, sz1=1, sz2=1
-Callee:event_del_nolock_, sz1=9, sz2=14
-DEBUG Func:event_active_nolock_, sz1=3, sz2=5
-Callee:event_callback_activate_nolock_, sz1=4, sz2=4
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_to_event_callback, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_callback_activate_nolock_, sz1=4, sz2=4
-Callee:event_queue_insert_active, sz1=1, sz2=2
-Callee:evthread_notify_base, sz1=1, sz2=2
-Callee:event_queue_remove_active_later, sz1=1, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_queue_insert_active, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_dispatch, sz1=1, sz2=1
-Callee:event_loop, sz1=1, sz2=1
-DEBUG Func:event_loop, sz1=1, sz2=1
-Callee:event_base_loop, sz1=7, sz2=10
-DEBUG Func:event_base_loop, sz1=7, sz2=10
-Callee:clear_time_cache, sz1=0, sz2=0
-Callee:timeout_next, sz1=3, sz2=4
-Callee:event_queue_make_later_events_active, sz1=1, sz2=2
-Callee:timeout_process, sz1=5, sz2=7
-Callee:event_process_active, sz1=3, sz2=3
-Callee:update_time_cache, sz1=1, sz2=1
-Callee:event_haveevents, sz1=0, sz2=0
-Callee:event_warnx, sz1=1, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-Callee:evsig_set_base_, sz1=0, sz2=0
-DEBUG Func:timeout_next, sz1=3, sz2=4
-Callee:gettime, sz1=1, sz2=4
-Callee:min_heap_top_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_queue_make_later_events_active, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:timeout_process, sz1=5, sz2=7
-Callee:event_active_nolock_, sz1=3, sz2=5
-Callee:gettime, sz1=1, sz2=4
-Callee:event_queue_remove_timeout, sz1=1, sz2=5
-Callee:min_heap_top_, sz1=0, sz2=0
-Callee:min_heap_empty_, sz1=0, sz2=0
-Callee:event_del_nolock_, sz1=9, sz2=14
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_process_active, sz1=3, sz2=3
-Callee:event_process_active_single_queue, sz1=8, sz2=11
-Callee:update_time_cache, sz1=1, sz2=1
-Callee:gettime, sz1=1, sz2=4
-DEBUG Func:event_process_active_single_queue, sz1=8, sz2=11
-Callee:event_signal_closure, sz1=0, sz2=0
-Callee:event_persist_closure, sz1=3, sz2=5
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:update_time_cache, sz1=1, sz2=1
-Callee:gettime, sz1=1, sz2=4
-Callee:event_queue_remove_active, sz1=1, sz2=2
-Callee:event_callback_to_event, sz1=1, sz2=1
-Callee:event_del_nolock_, sz1=9, sz2=14
-Callee:event_debug_note_teardown_, sz1=0, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_persist_closure, sz1=3, sz2=5
-Callee:gettime, sz1=1, sz2=4
-Callee:event_add_nolock_, sz1=11, sz2=20
-Callee:is_common_timeout, sz1=0, sz2=0
-Callee:is_same_common_timeout, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_base_dispatch, sz1=1, sz2=1
-Callee:event_base_loop, sz1=7, sz2=10
-DEBUG Func:event_base_get_method, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_base_get_signal_method, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_loopexit, sz1=1, sz2=1
-Callee:event_once, sz1=1, sz2=1
-DEBUG Func:event_once, sz1=1, sz2=1
-Callee:event_base_once, sz1=3, sz2=5
-DEBUG Func:bufferevent_pair_new, sz1=2, sz2=4
-Callee:evbuffer_freeze, sz1=0, sz2=0
-Callee:bufferevent_pair_elt_new, sz1=3, sz2=6
-Callee:bufferevent_enable_locking_, sz1=0, sz2=2
-Callee:bufferevent_free, sz1=1, sz2=3
-DEBUG Func:bufferevent_pair_elt_new, sz1=3, sz2=6
-Callee:bufferevent_init_generic_timeout_cbs_, sz1=1, sz2=1
-Callee:evbuffer_add_cb, sz1=0, sz2=1
-Callee:bufferevent_init_common_, sz1=2, sz2=8
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:bufferevent_free, sz1=1, sz2=3
-Callee:event_mm_calloc_, sz1=0, sz2=2
-DEBUG Func:be_pair_outbuf_cb, sz1=3, sz2=4
-Callee:incref_and_lock, sz1=1, sz2=2
-Callee:be_pair_transfer, sz1=5, sz2=8
-Callee:decref_and_unlock, sz1=2, sz2=2
-Callee:be_pair_wants_to_talk, sz1=0, sz2=1
-DEBUG Func:bufferevent_pair_get_partner, sz1=3, sz2=3
-Callee:upcast.61, sz1=1, sz2=1
-Callee:incref_and_lock, sz1=1, sz2=2
-Callee:decref_and_unlock, sz1=2, sz2=2
-DEBUG Func:bufferevent_set_rate_limit, sz1=4, sz2=13
-Callee:ev_token_bucket_get_tick_, sz1=0, sz2=0
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:ev_token_bucket_init_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-Callee:bufferevent_suspend_write_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_write_, sz1=0, sz2=0
-Callee:event_initialized, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_base_gettimeofday_cached, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-Callee:event_del, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bev_refill_callback_, sz1=1, sz2=6
-Callee:ev_token_bucket_update_, sz1=0, sz2=0
-Callee:ev_token_bucket_get_tick_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_write_, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_base_gettimeofday_cached, sz1=0, sz2=1
-DEBUG Func:bufferevent_rate_limit_group_new, sz1=2, sz2=8
-Callee:ev_token_bucket_get_tick_, sz1=0, sz2=0
-Callee:ev_token_bucket_init_, sz1=0, sz2=0
-Callee:bufferevent_rate_limit_group_set_min_share, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_base_gettimeofday_cached, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-Callee:evutil_weakrand_seed_, sz1=0, sz2=2
-DEBUG Func:bev_group_refill_callback_, sz1=3, sz2=6
-Callee:ev_token_bucket_update_, sz1=0, sz2=0
-Callee:ev_token_bucket_get_tick_, sz1=0, sz2=0
-Callee:bev_group_unsuspend_reading_, sz1=1, sz2=3
-Callee:bev_group_unsuspend_writing_, sz1=1, sz2=3
-Callee:event_get_base, sz1=1, sz2=1
-Callee:event_base_gettimeofday_cached, sz1=0, sz2=1
-DEBUG Func:bufferevent_rate_limit_group_set_cfg, sz1=1, sz2=2
-Callee:bufferevent_rate_limit_group_set_min_share, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-DEBUG Func:bufferevent_rate_limit_group_free, sz1=2, sz2=3
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_del, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_add_to_rate_limit_group, sz1=1, sz2=5
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:bufferevent_remove_from_rate_limit_group, sz1=0, sz2=1
-Callee:bufferevent_suspend_write_, sz1=0, sz2=0
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-DEBUG Func:event_del_noblock, sz1=1, sz2=1
-Callee:event_del_, sz1=2, sz2=2
-DEBUG Func:event_active, sz1=3, sz2=3
-Callee:event_active_nolock_, sz1=3, sz2=5
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:event_active_later_, sz1=1, sz2=1
-Callee:event_active_later_nolock_, sz1=2, sz2=4
-DEBUG Func:event_active_later_nolock_, sz1=2, sz2=4
-Callee:event_callback_activate_later_nolock_, sz1=2, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_to_event_callback, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_callback_activate_later_nolock_, sz1=2, sz2=2
-Callee:event_queue_insert_active_later, sz1=1, sz2=2
-Callee:evthread_notify_base, sz1=1, sz2=2
-DEBUG Func:event_queue_insert_active_later, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_callback_activate_, sz1=1, sz2=1
-Callee:event_callback_activate_nolock_, sz1=4, sz2=4
-DEBUG Func:event_callback_cancel_, sz1=1, sz2=1
-Callee:event_callback_cancel_nolock_, sz1=5, sz2=5
-DEBUG Func:event_deferred_cb_cancel_, sz1=1, sz2=1
-Callee:event_callback_cancel_, sz1=1, sz2=1
-DEBUG Func:event_deferred_cb_schedule_, sz1=2, sz2=2
-Callee:event_callback_activate_nolock_, sz1=4, sz2=4
-Callee:event_callback_activate_later_nolock_, sz1=2, sz2=2
-DEBUG Func:event_base_foreach_event_nolock_, sz1=1, sz2=2
-Callee:evmap_foreach_event_, sz1=0, sz2=2
-Callee:event_callback_to_event, sz1=1, sz2=1
-DEBUG Func:event_base_foreach_event, sz1=1, sz2=1
-Callee:event_base_foreach_event_nolock_, sz1=1, sz2=2
-DEBUG Func:event_base_dump_events, sz1=1, sz2=2
-Callee:event_base_foreach_event_nolock_, sz1=1, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-DEBUG Func:event_base_active_by_fd, sz1=2, sz2=2
-Callee:event_active_nolock_, sz1=3, sz2=5
-Callee:evmap_io_active_, sz1=1, sz2=1
-DEBUG Func:event_base_active_by_signal, sz1=1, sz2=1
-Callee:evmap_signal_active_, sz1=1, sz2=1
-DEBUG Func:event_base_del_virtual_, sz1=2, sz2=2
-Callee:evthread_notify_base, sz1=1, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_global_setup_locks_, sz1=4, sz2=5
-Callee:evthread_setup_global_lock_, sz1=1, sz2=4
-Callee:evutil_global_setup_locks_, sz1=0, sz2=0
-Callee:evutil_secure_rng_global_setup_locks_, sz1=2, sz2=2
-Callee:event_warn, sz1=1, sz2=3
-Callee:evsig_global_setup_locks_, sz1=2, sz2=2
-DEBUG Func:event_base_assert_ok_, sz1=1, sz2=1
-Callee:event_base_assert_ok_nolock_, sz1=2, sz2=3
-DEBUG Func:event_base_assert_ok_nolock_, sz1=2, sz2=3
-Callee:evmap_check_integrity_, sz1=1, sz2=3
-Callee:is_common_timeout, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evmap_io_add_, sz1=2, sz2=5
-Callee:evmap_make_space, sz1=0, sz2=1
-Callee:evmap_io_init, sz1=0, sz2=0
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:evmap_io_del_, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evmap_io_active_, sz1=1, sz2=1
-Callee:event_active_nolock_, sz1=3, sz2=5
-DEBUG Func:evmap_signal_active_, sz1=1, sz2=1
-Callee:event_active_nolock_, sz1=3, sz2=5
-DEBUG Func:evmap_io_reinit_iter_fn, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evmap_signal_delete_all_iter_fn, sz1=1, sz2=1
-Callee:delete_all_in_dlist, sz1=1, sz2=1
-DEBUG Func:evmap_io_delete_all_iter_fn, sz1=1, sz2=1
-Callee:delete_all_in_dlist, sz1=1, sz2=1
-DEBUG Func:delete_all_in_dlist, sz1=1, sz2=1
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:event_changelist_remove_all_, sz1=1, sz2=2
-Callee:event_change_get_fdinfo, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evutil_inet_pton_scope, sz1=1, sz2=6
-Callee:event_mm_strdup_, sz1=0, sz2=3
-Callee:evutil_inet_pton, sz1=0, sz2=7
-Callee:strchr, sz1=0, sz2=0
-Callee:if_nametoindex, sz1=0, sz2=0
-Callee:strtoul, sz1=0, sz2=0
-Callee:event_mm_free_, sz1=0, sz2=1
-DEBUG Func:evutil_adjust_hints_for_addrconfig_, sz1=1, sz2=1
-Callee:evutil_check_interfaces, sz1=4, sz2=9
-DEBUG Func:evutil_check_interfaces, sz1=4, sz2=9
-Callee:htons, sz1=0, sz2=0
-Callee:evutil_inet_pton, sz1=0, sz2=7
-Callee:evutil_check_ifaddrs, sz1=2, sz2=4
-Callee:getsockname, sz1=0, sz2=0
-Callee:evutil_found_ifaddr, sz1=1, sz2=3
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:socket, sz1=0, sz2=0
-Callee:connect, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evutil_check_ifaddrs, sz1=2, sz2=4
-Callee:evutil_found_ifaddr, sz1=1, sz2=3
-Callee:getifaddrs, sz1=0, sz2=0
-Callee:freeifaddrs, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evutil_found_ifaddr, sz1=1, sz2=3
-Callee:evutil_v4addr_is_local_, sz1=0, sz2=4
-Callee:evutil_v6addr_is_local_, sz1=0, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:evutil_getaddrinfo, sz1=3, sz2=9
-Callee:parse_numeric_servname, sz1=0, sz2=1
-Callee:need_numeric_port_hack, sz1=1, sz2=1
-Callee:need_socktype_protocol_hack, sz1=1, sz2=1
-Callee:getaddrinfo, sz1=0, sz2=0
-Callee:apply_numeric_port_hack, sz1=0, sz2=2
-Callee:apply_socktype_protocol_hack, sz1=0, sz2=4
-Callee:evutil_freeaddrinfo, sz1=0, sz2=2
-Callee:evutil_getaddrinfo_common_, sz1=3, sz2=10
-Callee:evutil_getaddrinfo_infer_protocols, sz1=0, sz2=0
-DEBUG Func:need_numeric_port_hack, sz1=1, sz2=1
-Callee:test_for_getaddrinfo_hacks, sz1=0, sz2=3
-DEBUG Func:need_socktype_protocol_hack, sz1=1, sz2=1
-Callee:test_for_getaddrinfo_hacks, sz1=0, sz2=3
-DEBUG Func:evutil_getaddrinfo_async_, sz1=1, sz2=1
-Callee:evutil_getaddrinfo, sz1=3, sz2=9
-DEBUG Func:evbuffer_chain_align, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_chain_insert, sz1=2, sz2=3
-Callee:evbuffer_free_trailing_empty_chains, sz1=2, sz2=3
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_free_trailing_empty_chains, sz1=2, sz2=3
-Callee:evbuffer_chains_all_empty, sz1=0, sz2=0
-Callee:evbuffer_free_all_chains, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_free_all_chains, sz1=1, sz2=1
-Callee:evbuffer_chain_free, sz1=2, sz2=3
-DEBUG Func:ZERO_CHAIN, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_reserve_space, sz1=4, sz2=4
-Callee:evbuffer_expand_fast_, sz1=4, sz2=6
-Callee:evbuffer_expand_singlechain, sz1=4, sz2=7
-Callee:evbuffer_read_setup_vecs_, sz1=1, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_expand_singlechain, sz1=4, sz2=7
-Callee:evbuffer_chain_free, sz1=2, sz2=3
-Callee:evbuffer_chain_insert_new, sz1=1, sz2=2
-Callee:evbuffer_chain_should_realign, sz1=0, sz2=0
-Callee:evbuffer_chain_align, sz1=1, sz2=1
-Callee:evbuffer_chain_new_membuf, sz1=0, sz2=1
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_write, sz1=1, sz2=1
-Callee:evbuffer_write_atmost, sz1=3, sz2=3
-DEBUG Func:evbuffer_find, sz1=2, sz2=2
-Callee:evbuffer_pullup, sz1=3, sz2=4
-Callee:evbuffer_search, sz1=1, sz2=1
-DEBUG Func:evbuffer_add_vprintf, sz1=3, sz2=4
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_expand_singlechain, sz1=4, sz2=7
-Callee:advance_last_with_data, sz1=1, sz2=2
-Callee:evutil_vsnprintf, sz1=0, sz2=1
-DEBUG Func:evbuffer_add_printf, sz1=1, sz2=1
-Callee:evbuffer_add_vprintf, sz1=3, sz2=4
-DEBUG Func:evbuffer_read_setup_vecs_, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_commit_space, sz1=2, sz2=2
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:advance_last_with_data, sz1=1, sz2=2
-DEBUG Func:advance_last_with_data, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_add_buffer, sz1=6, sz2=6
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_free_all_chains, sz1=1, sz2=1
-Callee:PRESERVE_PINNED, sz1=1, sz2=4
-Callee:COPY_CHAIN, sz1=1, sz2=2
-Callee:APPEND_CHAIN, sz1=2, sz2=3
-Callee:RESTORE_PINNED, sz1=2, sz2=3
-DEBUG Func:PRESERVE_PINNED, sz1=1, sz2=4
-Callee:evbuffer_chain_new_membuf, sz1=0, sz2=1
-Callee:HAS_PINNED_R, sz1=0, sz2=0
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:COPY_CHAIN, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:APPEND_CHAIN, sz1=2, sz2=3
-Callee:evbuffer_free_trailing_empty_chains, sz1=2, sz2=3
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:RESTORE_PINNED, sz1=2, sz2=3
-Callee:ZERO_CHAIN, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_run_readcb_, sz1=2, sz2=3
-Callee:event_deferred_cb_schedule_, sz1=2, sz2=2
-Callee:bufferevent_incref, sz1=0, sz2=0
-Callee:bufferevent_inbuf_wm_check, sz1=1, sz2=2
-DEBUG Func:bufferevent_inbuf_wm_check, sz1=1, sz2=2
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:bufferevent_trigger, sz1=1, sz2=2
-DEBUG Func:bufferevent_trigger, sz1=1, sz2=2
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-DEBUG Func:evbuffer_add_buffer_reference, sz1=3, sz2=3
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_free_all_chains, sz1=1, sz2=1
-Callee:APPEND_CHAIN_MULTICAST, sz1=3, sz2=7
-DEBUG Func:APPEND_CHAIN_MULTICAST, sz1=3, sz2=7
-Callee:evbuffer_incref_, sz1=0, sz2=0
-Callee:evbuffer_chain_insert, sz1=2, sz2=3
-Callee:evbuffer_chain_new, sz1=0, sz2=1
-Callee:evbuffer_chain_incref, sz1=0, sz2=0
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_prepend_buffer, sz1=6, sz2=6
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_free_all_chains, sz1=1, sz2=1
-Callee:PRESERVE_PINNED, sz1=1, sz2=4
-Callee:COPY_CHAIN, sz1=1, sz2=2
-Callee:RESTORE_PINNED, sz1=2, sz2=3
-Callee:PREPEND_CHAIN, sz1=1, sz2=2
-DEBUG Func:PREPEND_CHAIN, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_drain, sz1=4, sz2=5
-Callee:evbuffer_chain_free, sz1=2, sz2=3
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:ZERO_CHAIN, sz1=1, sz2=2
-Callee:HAS_PINNED_R, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_remove, sz1=2, sz2=2
-Callee:evbuffer_drain, sz1=4, sz2=5
-Callee:evbuffer_copyout_from, sz1=1, sz2=1
-DEBUG Func:evbuffer_copyout_from, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_copyout, sz1=1, sz2=1
-Callee:evbuffer_copyout_from, sz1=1, sz2=1
-DEBUG Func:evbuffer_remove_buffer, sz1=6, sz2=6
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_add, sz1=5, sz2=7
-Callee:evbuffer_free_trailing_empty_chains, sz1=2, sz2=3
-Callee:advance_last_with_data, sz1=1, sz2=2
-Callee:evbuffer_add_buffer, sz1=6, sz2=6
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_pullup, sz1=3, sz2=4
-Callee:evbuffer_chain_free, sz1=2, sz2=3
-Callee:evbuffer_chain_new_membuf, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_readline, sz1=1, sz2=1
-Callee:evbuffer_readln, sz1=4, sz2=5
-DEBUG Func:evbuffer_readln, sz1=4, sz2=5
-Callee:evbuffer_drain, sz1=4, sz2=5
-Callee:evbuffer_remove, sz1=2, sz2=2
-Callee:evbuffer_search_eol, sz1=2, sz2=6
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evbuffer_search_eol, sz1=2, sz2=6
-Callee:evbuffer_find_eol_char, sz1=0, sz2=1
-Callee:evbuffer_strspn, sz1=0, sz2=0
-Callee:evbuffer_search, sz1=1, sz2=1
-Callee:evbuffer_strchr, sz1=0, sz2=1
-Callee:evbuffer_ptr_subtract, sz1=1, sz2=1
-Callee:evbuffer_getchr, sz1=0, sz2=0
-DEBUG Func:evbuffer_search, sz1=1, sz2=1
-Callee:evbuffer_search_range, sz1=1, sz2=2
-DEBUG Func:evbuffer_ptr_subtract, sz1=1, sz2=1
-Callee:evbuffer_ptr_set, sz1=1, sz2=1
-DEBUG Func:evbuffer_ptr_set, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_search_range, sz1=1, sz2=2
-Callee:memchr, sz1=0, sz2=0
-Callee:evbuffer_ptr_memcmp, sz1=1, sz2=3
-DEBUG Func:evbuffer_ptr_memcmp, sz1=1, sz2=3
-Callee:memcmp, sz1=0, sz2=0
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_prepend, sz1=3, sz2=4
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_chain_insert_new, sz1=1, sz2=2
-Callee:evbuffer_chain_new_membuf, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_expand, sz1=1, sz2=1
-Callee:evbuffer_expand_singlechain, sz1=4, sz2=7
-DEBUG Func:evbuffer_read, sz1=3, sz2=6
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_expand_fast_, sz1=4, sz2=6
-Callee:evbuffer_read_setup_vecs_, sz1=1, sz2=2
-Callee:get_n_bytes_readable_on_socket, sz1=0, sz2=1
-Callee:read, sz1=0, sz2=0
-Callee:readv, sz1=0, sz2=0
-DEBUG Func:evbuffer_write_atmost, sz1=3, sz2=3
-Callee:evbuffer_drain, sz1=4, sz2=5
-Callee:evbuffer_write_sendfile, sz1=1, sz2=4
-Callee:evbuffer_write_iovec, sz1=1, sz2=4
-DEBUG Func:evbuffer_write_sendfile, sz1=1, sz2=4
-Callee:__errno_location, sz1=0, sz2=0
-Callee:sendfile, sz1=0, sz2=0
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_write_iovec, sz1=1, sz2=4
-Callee:write, sz1=0, sz2=0
-Callee:writev, sz1=0, sz2=0
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:be_null_filter, sz1=1, sz2=1
-Callee:evbuffer_remove_buffer, sz1=6, sz2=6
-DEBUG Func:be_filter_readcb, sz1=1, sz2=1
-Callee:be_filter_read_nolock_, sz1=3, sz2=6
-DEBUG Func:be_filter_writecb, sz1=2, sz2=2
-Callee:be_filter_process_output, sz1=2, sz2=6
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_filtered_inbuf_cb, sz1=1, sz2=4
-Callee:evbuffer_cb_clear_flags, sz1=0, sz2=0
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:be_readbuf_full, sz1=0, sz2=1
-Callee:be_filter_read_nolock_, sz1=3, sz2=6
-DEBUG Func:bufferevent_filtered_outbuf_cb, sz1=2, sz2=3
-Callee:be_filter_process_output, sz1=2, sz2=6
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-DEBUG Func:be_filter_read_nolock_, sz1=3, sz2=6
-Callee:evbuffer_cb_set_flags, sz1=0, sz2=0
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:be_filter_process_input, sz1=1, sz2=3
-Callee:bufferevent_trigger_nolock_.57, sz1=2, sz2=3
-Callee:be_readbuf_full, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:be_pair_enable, sz1=5, sz2=7
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:upcast.61, sz1=1, sz2=1
-Callee:incref_and_lock, sz1=1, sz2=2
-Callee:be_pair_transfer, sz1=5, sz2=8
-Callee:decref_and_unlock, sz1=2, sz2=2
-Callee:be_pair_wants_to_talk, sz1=0, sz2=1
-Callee:event_add, sz1=2, sz2=2
-DEBUG Func:be_pair_disable, sz1=1, sz2=1
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:be_pair_unlink, sz1=1, sz2=1
-Callee:upcast.61, sz1=1, sz2=1
-DEBUG Func:be_pair_destruct, sz1=1, sz2=1
-Callee:upcast.61, sz1=1, sz2=1
-DEBUG Func:be_pair_flush, sz1=5, sz2=5
-Callee:upcast.61, sz1=1, sz2=1
-Callee:incref_and_lock, sz1=1, sz2=2
-Callee:be_pair_transfer, sz1=5, sz2=8
-Callee:decref_and_unlock, sz1=2, sz2=2
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-DEBUG Func:upcast.61, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:incref_and_lock, sz1=1, sz2=2
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:upcast.61, sz1=1, sz2=1
-DEBUG Func:be_pair_transfer, sz1=5, sz2=8
-Callee:evbuffer_freeze, sz1=0, sz2=0
-Callee:evbuffer_unfreeze, sz1=0, sz2=0
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:evbuffer_add_buffer, sz1=6, sz2=6
-Callee:evbuffer_remove_buffer, sz1=6, sz2=6
-Callee:bufferevent_trigger_nolock_.62, sz1=2, sz2=3
-Callee:event_add, sz1=2, sz2=2
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:decref_and_unlock, sz1=2, sz2=2
-Callee:upcast.61, sz1=1, sz2=1
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-DEBUG Func:bufferevent_trigger_nolock_.62, sz1=2, sz2=3
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:bufferevent_run_readcb_, sz1=2, sz2=3
-Callee:bufferevent_run_writecb_, sz1=1, sz2=2
-DEBUG Func:evbuffer_add_reference, sz1=1, sz2=1
-Callee:evbuffer_add_reference_with_offset, sz1=2, sz2=4
-DEBUG Func:evbuffer_add_reference_with_offset, sz1=2, sz2=4
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_chain_insert, sz1=2, sz2=3
-Callee:evbuffer_chain_new, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-DEBUG Func:evbuffer_file_segment_new, sz1=1, sz2=4
-Callee:evbuffer_file_segment_materialize, sz1=1, sz2=6
-Callee:evutil_fd_filesize, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-DEBUG Func:evbuffer_file_segment_materialize, sz1=1, sz2=6
-Callee:get_page_size, sz1=0, sz2=1
-Callee:mmap64, sz1=0, sz2=0
-Callee:pread, sz1=0, sz2=0
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evbuffer_file_segment_add_cleanup_cb, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evbuffer_add_file_segment, sz1=4, sz2=5
-Callee:evbuffer_file_segment_free, sz1=2, sz2=6
-Callee:evbuffer_invoke_callbacks_, sz1=2, sz2=4
-Callee:evbuffer_chain_insert, sz1=2, sz2=3
-Callee:evbuffer_chain_new, sz1=0, sz2=1
-Callee:evbuffer_file_segment_materialize, sz1=1, sz2=6
-DEBUG Func:evbuffer_add_file, sz1=3, sz2=3
-Callee:evbuffer_file_segment_free, sz1=2, sz2=6
-Callee:evbuffer_file_segment_new, sz1=1, sz2=4
-Callee:evbuffer_add_file_segment, sz1=4, sz2=5
-DEBUG Func:event_changelist_add_, sz1=1, sz2=1
-Callee:event_changelist_get_or_construct, sz1=1, sz2=2
-DEBUG Func:event_changelist_get_or_construct, sz1=1, sz2=2
-Callee:event_changelist_grow, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_changelist_del_, sz1=1, sz2=1
-Callee:event_changelist_get_or_construct, sz1=1, sz2=2
-DEBUG Func:evmap_check_integrity_, sz1=1, sz2=3
-Callee:evmap_io_foreach_fd, sz1=0, sz2=0
-Callee:evmap_signal_foreach_signal, sz1=0, sz2=0
-Callee:event_changelist_assert_ok, sz1=1, sz2=3
-DEBUG Func:evmap_io_check_integrity_fn, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evmap_signal_check_integrity_fn, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_changelist_assert_ok, sz1=1, sz2=3
-Callee:evmap_io_foreach_fd, sz1=0, sz2=0
-Callee:event_change_get_fdinfo, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_changelist_assert_ok_foreach_iter_fn, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evthread_set_lock_callbacks, sz1=3, sz2=4
-Callee:event_global_setup_locks_, sz1=4, sz2=5
-Callee:evthread_get_lock_callbacks, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:evthread_set_condition_callbacks, sz1=2, sz2=3
-Callee:evthread_get_condition_callbacks, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:evthread_enable_lock_debuging, sz1=1, sz2=1
-Callee:evthread_enable_lock_debugging, sz1=1, sz2=1
-DEBUG Func:evthread_enable_lock_debugging, sz1=1, sz2=1
-Callee:event_global_setup_locks_, sz1=4, sz2=5
-DEBUG Func:debug_cond_wait, sz1=3, sz2=4
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:evthread_debug_lock_mark_unlocked, sz1=1, sz2=1
-Callee:evthread_debug_lock_mark_locked, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evthread_debug_lock_mark_unlocked, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evthread_debug_lock_mark_locked, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:debug_lock_free, sz1=1, sz2=2
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:debug_lock_lock, sz1=2, sz2=2
-Callee:evthread_debug_lock_mark_locked, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:debug_lock_unlock, sz1=1, sz2=1
-Callee:evthread_debug_lock_mark_unlocked, sz1=1, sz2=1
-DEBUG Func:evthread_setup_global_lock_, sz1=1, sz2=4
-Callee:debug_lock_alloc, sz1=0, sz2=2
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evutil_read_file_, sz1=1, sz2=7
-Callee:close, sz1=0, sz2=0
-Callee:read, sz1=0, sz2=0
-Callee:evutil_open_closeonexec_, sz1=0, sz2=4
-Callee:evutil_fd_filesize, sz1=0, sz2=1
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evutil_make_socket_nonblocking, sz1=1, sz2=2
-Callee:fcntl, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evutil_make_socket_closeonexec, sz1=1, sz2=2
-Callee:fcntl, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:bufferevent_trigger_nolock_, sz1=2, sz2=3
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:bufferevent_run_readcb_, sz1=2, sz2=3
-Callee:bufferevent_run_writecb_, sz1=1, sz2=2
-DEBUG Func:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:evbuffer_get_callbacks_, sz1=0, sz2=0
-Callee:event_callback_finalize_many_, sz1=3, sz2=3
-Callee:event_initialized, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_finalize_cb_, sz1=2, sz2=5
-Callee:evbuffer_free, sz1=1, sz2=1
-Callee:bufferevent_remove_from_rate_limit_group_internal_, sz1=0, sz2=2
-Callee:bufferevent_get_underlying, sz1=0, sz2=0
-Callee:bufferevent_decref, sz1=1, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-DEBUG Func:bufferevent_decref, sz1=1, sz2=1
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-DEBUG Func:bufferevent_run_writecb_, sz1=1, sz2=2
-Callee:event_deferred_cb_schedule_, sz1=2, sz2=2
-Callee:bufferevent_incref, sz1=0, sz2=0
-DEBUG Func:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:event_deferred_cb_schedule_, sz1=2, sz2=2
-Callee:__errno_location, sz1=0, sz2=0
-Callee:bufferevent_incref, sz1=0, sz2=0
-DEBUG Func:bufferevent_trigger_event, sz1=2, sz2=3
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-DEBUG Func:bufferevent_init_common_, sz1=2, sz2=8
-Callee:evbuffer_new, sz1=0, sz2=1
-Callee:evbuffer_set_parent_, sz1=0, sz2=0
-Callee:evbuffer_free, sz1=1, sz2=1
-Callee:event_base_get_npriorities, sz1=0, sz2=0
-Callee:event_deferred_cb_init_, sz1=0, sz2=0
-Callee:bufferevent_enable_locking_, sz1=0, sz2=2
-Callee:bufferevent_ratelim_init_, sz1=0, sz2=1
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:bufferevent_run_deferred_callbacks_unlocked, sz1=2, sz2=3
-Callee:__errno_location, sz1=0, sz2=0
-Callee:bufferevent_inbuf_wm_check, sz1=1, sz2=2
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-DEBUG Func:bufferevent_run_deferred_callbacks_locked, sz1=2, sz2=3
-Callee:__errno_location, sz1=0, sz2=0
-Callee:bufferevent_inbuf_wm_check, sz1=1, sz2=2
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-DEBUG Func:bufferevent_get_priority, sz1=1, sz2=3
-Callee:event_base_get_npriorities, sz1=0, sz2=0
-Callee:event_initialized, sz1=0, sz2=0
-Callee:event_get_priority, sz1=1, sz2=1
-DEBUG Func:bufferevent_write, sz1=1, sz2=1
-Callee:evbuffer_add, sz1=5, sz2=7
-DEBUG Func:bufferevent_base_set, sz1=1, sz2=1
-Callee:event_base_set, sz1=1, sz2=1
-DEBUG Func:bufferevent_write_buffer, sz1=1, sz2=1
-Callee:evbuffer_add_buffer, sz1=6, sz2=6
-DEBUG Func:bufferevent_read, sz1=1, sz2=1
-Callee:evbuffer_remove, sz1=2, sz2=2
-DEBUG Func:bufferevent_read_buffer, sz1=1, sz2=1
-Callee:evbuffer_add_buffer, sz1=6, sz2=6
-DEBUG Func:bufferevent_enable, sz1=2, sz2=3
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:bufferevent_disable, sz1=1, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:bufferevent_free, sz1=1, sz2=3
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_setcb, sz1=0, sz2=0
-Callee:bufferevent_cancel_all_, sz1=0, sz2=0
-DEBUG Func:event_once_cb, sz1=1, sz2=2
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_debug_unassign, sz1=1, sz2=2
-DEBUG Func:event_base_loopexit, sz1=1, sz2=1
-Callee:event_base_once, sz1=3, sz2=5
-DEBUG Func:event_loopbreak, sz1=1, sz2=1
-Callee:event_base_loopbreak, sz1=1, sz2=1
-DEBUG Func:event_base_loopbreak, sz1=1, sz2=1
-Callee:evthread_notify_base, sz1=1, sz2=2
-DEBUG Func:event_base_loopcontinue, sz1=1, sz2=1
-Callee:evthread_notify_base, sz1=1, sz2=2
-DEBUG Func:event_base_set, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_set, sz1=2, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_base_get_running_event, sz1=1, sz2=1
-Callee:event_callback_to_event, sz1=1, sz2=1
-DEBUG Func:event_new, sz1=1, sz2=3
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_assign, sz1=4, sz2=5
-DEBUG Func:event_free, sz1=1, sz2=3
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_del, sz1=1, sz2=1
-Callee:event_debug_note_teardown_, sz1=0, sz2=3
-DEBUG Func:event_finalize, sz1=1, sz2=1
-Callee:event_finalize_impl_, sz1=2, sz2=2
-DEBUG Func:event_finalize_impl_, sz1=2, sz2=2
-Callee:event_finalize_nolock_, sz1=2, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:event_finalize_nolock_, sz1=2, sz2=2
-Callee:event_active_nolock_, sz1=3, sz2=5
-Callee:event_del_nolock_, sz1=9, sz2=14
-DEBUG Func:event_free_finalize, sz1=1, sz2=1
-Callee:event_finalize_impl_, sz1=2, sz2=2
-DEBUG Func:event_callback_finalize_nolock_, sz1=4, sz2=4
-Callee:event_callback_activate_nolock_, sz1=4, sz2=4
-Callee:event_callback_to_event, sz1=1, sz2=1
-Callee:event_callback_cancel_nolock_, sz1=5, sz2=5
-Callee:event_del_nolock_, sz1=9, sz2=14
-DEBUG Func:event_callback_finalize_, sz1=1, sz2=1
-Callee:event_callback_finalize_nolock_, sz1=4, sz2=4
-DEBUG Func:event_callback_finalize_many_, sz1=3, sz2=3
-Callee:event_callback_finalize_nolock_, sz1=4, sz2=4
-Callee:event_callback_cancel_nolock_, sz1=5, sz2=5
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_pending, sz1=2, sz2=2
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:event_get_assignment, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_get_fd, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_get_base, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_get_events, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_get_callback, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_get_callback_arg, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_get_priority, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_add, sz1=2, sz2=2
-Callee:event_add_nolock_, sz1=11, sz2=20
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:event_remove_timer_nolock_, sz1=4, sz2=5
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-Callee:event_queue_remove_timeout, sz1=1, sz2=5
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_remove_timer, sz1=2, sz2=2
-Callee:event_remove_timer_nolock_, sz1=4, sz2=5
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:event_del_block, sz1=1, sz2=1
-Callee:event_del_, sz1=2, sz2=2
-DEBUG Func:bufferevent_decrement_read_limit, sz1=3, sz2=5
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_del, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_decrement_write_limit, sz1=3, sz2=5
-Callee:bufferevent_suspend_write_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_write_, sz1=0, sz2=0
-Callee:event_add, sz1=2, sz2=2
-Callee:event_del, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_rate_limit_group_decrement_read, sz1=1, sz2=2
-Callee:bev_group_suspend_reading_, sz1=0, sz2=2
-Callee:bev_group_unsuspend_reading_, sz1=1, sz2=3
-DEBUG Func:bufferevent_rate_limit_group_decrement_write, sz1=1, sz2=2
-Callee:bev_group_suspend_writing_, sz1=0, sz2=2
-Callee:bev_group_unsuspend_writing_, sz1=1, sz2=3
-DEBUG Func:bufferevent_rate_limit_group_get_totals, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:be_socket_enable, sz1=1, sz2=1
-Callee:bufferevent_add_event_, sz1=1, sz2=1
-DEBUG Func:be_socket_disable, sz1=1, sz2=1
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:be_socket_destruct, sz1=2, sz2=4
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:event_get_fd, sz1=1, sz2=1
-Callee:evutil_getaddrinfo_cancel_async_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:be_socket_ctrl, sz1=2, sz2=2
-Callee:event_get_fd, sz1=1, sz2=1
-Callee:be_socket_setfd, sz1=4, sz2=6
-DEBUG Func:be_socket_setfd, sz1=4, sz2=6
-Callee:evbuffer_unfreeze, sz1=0, sz2=0
-Callee:bufferevent_enable, sz1=2, sz2=3
-Callee:event_assign, sz1=4, sz2=5
-Callee:event_del, sz1=1, sz2=1
-Callee:evutil_getaddrinfo_cancel_async_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:bufferevent_readcb, sz1=6, sz2=13
-Callee:bufferevent_get_read_max_, sz1=0, sz2=1
-Callee:bufferevent_decrement_read_buckets_, sz1=3, sz2=6
-Callee:evbuffer_freeze, sz1=0, sz2=0
-Callee:evbuffer_unfreeze, sz1=0, sz2=0
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:evbuffer_read, sz1=3, sz2=6
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:bufferevent_disable, sz1=1, sz2=1
-Callee:bufferevent_trigger_nolock_.82, sz1=2, sz2=3
-DEBUG Func:bufferevent_writecb, sz1=7, sz2=15
-Callee:bufferevent_get_write_max_, sz1=0, sz2=1
-Callee:bufferevent_decrement_write_buckets_, sz1=3, sz2=6
-Callee:evbuffer_freeze, sz1=0, sz2=0
-Callee:evbuffer_unfreeze, sz1=0, sz2=0
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:evbuffer_write_atmost, sz1=3, sz2=3
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:bufferevent_disable, sz1=1, sz2=1
-Callee:bufferevent_socket_set_conn_address_fd_, sz1=0, sz2=1
-Callee:bufferevent_trigger_nolock_.82, sz1=2, sz2=3
-Callee:evutil_socket_finished_connecting_, sz1=0, sz2=2
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:bufferevent_trigger_nolock_.82, sz1=2, sz2=3
-Callee:evbuffer_get_length, sz1=0, sz2=0
-Callee:bufferevent_run_readcb_, sz1=2, sz2=3
-Callee:bufferevent_run_writecb_, sz1=1, sz2=2
-DEBUG Func:bufferevent_socket_new, sz1=2, sz2=7
-Callee:evbuffer_freeze, sz1=0, sz2=0
-Callee:evbuffer_set_flags, sz1=0, sz2=0
-Callee:evbuffer_add_cb, sz1=0, sz2=1
-Callee:bufferevent_init_common_, sz1=2, sz2=8
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-DEBUG Func:bufferevent_socket_outbuf_cb, sz1=2, sz2=2
-Callee:bufferevent_add_event_, sz1=1, sz2=1
-Callee:event_pending, sz1=2, sz2=2
-DEBUG Func:bufferevent_socket_connect, sz1=9, sz2=11
-Callee:bufferevent_setfd, sz1=1, sz2=1
-Callee:bufferevent_getfd, sz1=1, sz2=1
-Callee:bufferevent_incref_and_lock_, sz1=0, sz2=0
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:bufferevent_disable, sz1=1, sz2=1
-Callee:be_socket_enable, sz1=1, sz2=1
-Callee:bufferevent_trigger_nolock_.82, sz1=2, sz2=3
-Callee:evutil_socket_connect_, sz1=1, sz2=5
-Callee:evutil_socket_, sz1=2, sz2=4
-DEBUG Func:bufferevent_socket_connect_hostname, sz1=1, sz2=1
-Callee:bufferevent_socket_connect_hostname_hints, sz1=1, sz2=5
-DEBUG Func:bufferevent_socket_connect_hostname_hints, sz1=1, sz2=5
-Callee:bufferevent_suspend_read_, sz1=0, sz2=0
-Callee:evutil_getaddrinfo_async_, sz1=1, sz2=1
-Callee:bufferevent_suspend_write_, sz1=0, sz2=0
-Callee:bufferevent_incref, sz1=0, sz2=0
-Callee:evutil_snprintf, sz1=0, sz2=1
-DEBUG Func:bufferevent_connect_getaddrinfo_cb, sz1=3, sz2=7
-Callee:bufferevent_unsuspend_read_, sz1=0, sz2=0
-Callee:bufferevent_unsuspend_write_, sz1=0, sz2=0
-Callee:bufferevent_decref_and_unlock_, sz1=2, sz2=4
-Callee:bufferevent_run_eventcb_, sz1=1, sz2=3
-Callee:bufferevent_socket_set_conn_address_, sz1=0, sz2=0
-Callee:bufferevent_socket_connect, sz1=9, sz2=11
-Callee:evutil_freeaddrinfo, sz1=0, sz2=2
-DEBUG Func:bufferevent_new, sz1=1, sz2=2
-Callee:bufferevent_setcb, sz1=0, sz2=0
-Callee:bufferevent_socket_new, sz1=2, sz2=7
-DEBUG Func:bufferevent_priority_set, sz1=1, sz2=2
-Callee:event_deferred_cb_set_priority_, sz1=0, sz2=0
-Callee:event_priority_set, sz1=1, sz2=1
-DEBUG Func:evutil_socket_connect_, sz1=1, sz2=5
-Callee:__errno_location, sz1=0, sz2=0
-Callee:evutil_make_socket_nonblocking, sz1=1, sz2=2
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:socket, sz1=0, sz2=0
-Callee:connect, sz1=0, sz2=0
-DEBUG Func:evutil_new_addrinfo_, sz1=1, sz2=3
-Callee:evutil_freeaddrinfo, sz1=0, sz2=2
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:evutil_getaddrinfo_common_, sz1=3, sz2=10
-Callee:evutil_unparse_protoname, sz1=0, sz2=1
-Callee:evutil_parse_servname, sz1=0, sz2=3
-Callee:htons, sz1=0, sz2=0
-Callee:htonl, sz1=0, sz2=0
-Callee:evutil_inet_pton_scope, sz1=1, sz2=6
-Callee:evutil_inet_pton, sz1=0, sz2=7
-Callee:evutil_new_addrinfo_, sz1=1, sz2=3
-Callee:evutil_freeaddrinfo, sz1=0, sz2=2
-Callee:evutil_addrinfo_append_, sz1=0, sz2=0
-Callee:evutil_getaddrinfo_infer_protocols, sz1=0, sz2=0
-DEBUG Func:event_base_update_cache_time, sz1=1, sz2=1
-Callee:update_time_cache, sz1=1, sz2=1
-DEBUG Func:update_time_cache, sz1=1, sz2=1
-Callee:gettime, sz1=1, sz2=4
-DEBUG Func:gettime, sz1=1, sz2=4
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:gettimeofday, sz1=0, sz2=0
-Callee:evutil_gettime_monotonic_, sz1=0, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_init, sz1=2, sz2=2
-Callee:event_base_new_with_config, sz1=8, sz2=16
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_base_new_with_config, sz1=8, sz2=16
-Callee:evmap_io_initmap_, sz1=0, sz2=1
-Callee:evmap_signal_initmap_, sz1=0, sz2=0
-Callee:event_changelist_init_, sz1=0, sz2=0
-Callee:gettime, sz1=1, sz2=4
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:min_heap_ctor_, sz1=0, sz2=0
-Callee:event_config_is_avoided_method, sz1=0, sz2=1
-Callee:event_is_method_disabled, sz1=0, sz2=3
-Callee:event_base_free, sz1=1, sz2=1
-Callee:event_base_priority_init, sz1=1, sz2=3
-Callee:evthread_make_base_notifiable, sz1=1, sz2=1
-Callee:evutil_getenv_, sz1=0, sz2=2
-Callee:evutil_configure_monotonic_time_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_warnx, sz1=1, sz2=1
-Callee:event_msgx, sz1=1, sz2=1
-DEBUG Func:event_base_free, sz1=1, sz2=1
-Callee:event_base_free_, sz1=6, sz2=15
-DEBUG Func:event_base_priority_init, sz1=1, sz2=3
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evthread_make_base_notifiable, sz1=1, sz2=1
-Callee:evthread_make_base_notifiable_nolock_, sz1=5, sz2=5
-DEBUG Func:evthread_make_base_notifiable_nolock_, sz1=5, sz2=5
-Callee:event_assign, sz1=4, sz2=5
-Callee:event_priority_set, sz1=1, sz2=1
-Callee:event_add_nolock_, sz1=11, sz2=20
-Callee:evutil_make_internal_pipe_, sz1=3, sz2=7
-Callee:evutil_eventfd_, sz1=2, sz2=4
-DEBUG Func:event_assign, sz1=4, sz2=5
-Callee:event_debug_assert_socket_nonblocking_, sz1=1, sz2=2
-Callee:event_debug_assert_not_added_, sz1=1, sz2=2
-Callee:min_heap_elem_init_, sz1=0, sz2=0
-Callee:event_debug_note_setup_, sz1=1, sz2=5
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:event_priority_set, sz1=1, sz2=1
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-DEBUG Func:event_add_nolock_, sz1=11, sz2=20
-Callee:evmap_io_add_, sz1=2, sz2=5
-Callee:evmap_signal_add_, sz1=0, sz2=3
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:gettime, sz1=1, sz2=4
-Callee:event_debug_assert_is_setup_, sz1=1, sz2=2
-Callee:min_heap_size_, sz1=0, sz2=0
-Callee:min_heap_reserve_, sz1=0, sz2=1
-Callee:event_to_event_callback, sz1=0, sz2=0
-Callee:event_queue_insert_inserted, sz1=1, sz2=2
-Callee:event_queue_remove_timeout, sz1=1, sz2=5
-Callee:event_queue_remove_active, sz1=1, sz2=2
-Callee:is_common_timeout, sz1=0, sz2=0
-Callee:event_queue_insert_timeout, sz1=2, sz2=6
-Callee:get_common_timeout_list, sz1=0, sz2=0
-Callee:min_heap_elt_is_top_, sz1=0, sz2=0
-Callee:min_heap_top_, sz1=0, sz2=0
-Callee:evthread_notify_base, sz1=1, sz2=2
-Callee:event_debug_note_add_, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_debug_assert_is_setup_, sz1=1, sz2=2
-Callee:event_debug_map_HT_FIND, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_queue_insert_inserted, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_queue_remove_timeout, sz1=1, sz2=5
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:is_common_timeout, sz1=0, sz2=0
-Callee:get_common_timeout_list, sz1=0, sz2=0
-Callee:min_heap_erase_, sz1=0, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_queue_remove_active, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_queue_insert_timeout, sz1=2, sz2=6
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:is_common_timeout, sz1=0, sz2=0
-Callee:get_common_timeout_list, sz1=0, sz2=0
-Callee:insert_common_timeout_inorder, sz1=1, sz2=2
-Callee:min_heap_push_, sz1=0, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:common_timeout_schedule, sz1=1, sz2=1
-Callee:event_add_nolock_, sz1=11, sz2=20
-DEBUG Func:evthread_notify_base, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_debug_note_add_, sz1=1, sz2=3
-Callee:event_debug_map_HT_FIND, sz1=0, sz2=1
-Callee:event_debug_mode_too_late_set, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:insert_common_timeout_inorder, sz1=1, sz2=2
-Callee:is_same_common_timeout, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_debug_assert_socket_nonblocking_, sz1=1, sz2=2
-Callee:fcntl, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_debug_assert_not_added_, sz1=1, sz2=2
-Callee:event_debug_map_HT_FIND, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_debug_note_setup_, sz1=1, sz2=5
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_debug_map_HT_FIND, sz1=0, sz2=1
-Callee:event_debug_mode_too_late_set, sz1=0, sz2=0
-Callee:event_debug_map_HT_INSERT, sz1=0, sz2=2
-Callee:event_err, sz1=1, sz2=4
-DEBUG Func:event_base_free_, sz1=6, sz2=15
-Callee:evmap_io_clear_, sz1=0, sz2=1
-Callee:evmap_signal_clear_, sz1=0, sz2=1
-Callee:evmap_delete_all_, sz1=0, sz2=2
-Callee:event_changelist_freemem_, sz1=0, sz2=2
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:min_heap_top_, sz1=0, sz2=0
-Callee:event_del, sz1=1, sz2=1
-Callee:event_debug_unassign, sz1=1, sz2=2
-Callee:event_base_free_queues_, sz1=1, sz2=1
-Callee:min_heap_empty_, sz1=0, sz2=0
-Callee:min_heap_dtor_, sz1=0, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_del, sz1=1, sz2=1
-Callee:event_del_, sz1=2, sz2=2
-DEBUG Func:event_debug_unassign, sz1=1, sz2=2
-Callee:event_debug_assert_not_added_, sz1=1, sz2=2
-Callee:event_debug_note_teardown_, sz1=0, sz2=3
-DEBUG Func:event_base_free_queues_, sz1=1, sz2=1
-Callee:event_base_cancel_single_callback_, sz1=3, sz2=4
-DEBUG Func:event_base_cancel_single_callback_, sz1=3, sz2=4
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_callback_to_event, sz1=1, sz2=1
-Callee:event_del_, sz1=2, sz2=2
-Callee:event_callback_cancel_nolock_, sz1=5, sz2=5
-DEBUG Func:event_callback_to_event, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_del_, sz1=2, sz2=2
-Callee:event_del_nolock_, sz1=9, sz2=14
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:event_callback_cancel_nolock_, sz1=5, sz2=5
-Callee:event_queue_remove_active, sz1=1, sz2=2
-Callee:event_callback_to_event, sz1=1, sz2=1
-Callee:event_del_nolock_, sz1=9, sz2=14
-Callee:event_queue_remove_active_later, sz1=1, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_del_nolock_, sz1=9, sz2=14
-Callee:evmap_io_del_, sz1=1, sz2=1
-Callee:evmap_signal_del_, sz1=0, sz2=0
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_to_event_callback, sz1=0, sz2=0
-Callee:event_queue_remove_timeout, sz1=1, sz2=5
-Callee:event_queue_remove_active, sz1=1, sz2=2
-Callee:min_heap_top_, sz1=0, sz2=0
-Callee:evthread_notify_base, sz1=1, sz2=2
-Callee:event_queue_remove_active_later, sz1=1, sz2=2
-Callee:event_queue_remove_inserted, sz1=1, sz2=2
-Callee:event_haveevents, sz1=0, sz2=0
-Callee:event_debug_note_del_, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:event_queue_remove_active_later, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_queue_remove_inserted, sz1=1, sz2=2
-Callee:evthread_is_debug_lock_held_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_debug_note_del_, sz1=1, sz2=3
-Callee:event_debug_map_HT_FIND, sz1=0, sz2=1
-Callee:event_debug_mode_too_late_set, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_base_new, sz1=1, sz2=3
-Callee:event_base_new_with_config, sz1=8, sz2=16
-Callee:event_config_new, sz1=0, sz2=1
-Callee:event_config_free, sz1=0, sz2=2
-DEBUG Func:event_enable_debug_mode, sz1=1, sz2=2
-Callee:event_debug_map_HT_INIT, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_base_free_nofinalize, sz1=1, sz2=1
-Callee:event_base_free_, sz1=6, sz2=15
-DEBUG Func:event_reinit, sz1=6, sz2=9
-Callee:evmap_reinit_, sz1=0, sz2=2
-Callee:event_changelist_freemem_, sz1=0, sz2=2
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:evthread_make_base_notifiable_nolock_, sz1=5, sz2=5
-Callee:event_add_nolock_, sz1=11, sz2=20
-Callee:event_debug_unassign, sz1=1, sz2=2
-Callee:event_del_nolock_, sz1=9, sz2=14
-Callee:event_errx, sz1=1, sz2=2
-Callee:evsig_init_, sz1=4, sz2=5
-DEBUG Func:select_del, sz1=1, sz2=1
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:select_dispatch, sz1=3, sz2=7
-Callee:evmap_io_active_, sz1=1, sz2=1
-Callee:__errno_location, sz1=0, sz2=0
-Callee:event_mm_realloc_, sz1=0, sz2=1
-Callee:select, sz1=0, sz2=0
-Callee:evutil_weakrand_range_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:select_dealloc, sz1=1, sz2=2
-Callee:select_free_selectop, sz1=0, sz2=1
-Callee:evsig_dealloc_, sz1=3, sz2=5
-DEBUG Func:select_resize, sz1=1, sz2=2
-Callee:event_mm_realloc_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:poll_init, sz1=2, sz2=4
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:sigfd_init_, sz1=1, sz2=2
-Callee:evutil_weakrand_seed_, sz1=0, sz2=2
-Callee:evsig_init_, sz1=4, sz2=5
-DEBUG Func:poll_add, sz1=2, sz2=3
-Callee:event_mm_realloc_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:poll_del, sz1=1, sz2=2
-Callee:evmap_io_get_fdinfo_, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:poll_dispatch, sz1=3, sz2=8
-Callee:evmap_io_active_, sz1=1, sz2=1
-Callee:__errno_location, sz1=0, sz2=0
-Callee:event_mm_realloc_, sz1=0, sz2=1
-Callee:poll, sz1=0, sz2=0
-Callee:evutil_weakrand_range_, sz1=0, sz2=1
-Callee:evutil_tv_to_msec_, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:poll_dealloc, sz1=1, sz2=2
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:evsig_dealloc_, sz1=3, sz2=5
-DEBUG Func:epoll_init, sz1=4, sz2=11
-Callee:__errno_location, sz1=0, sz2=0
-Callee:evutil_make_socket_closeonexec, sz1=1, sz2=2
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:close_epoll_handle, sz1=0, sz2=1
-Callee:epoll_create1, sz1=0, sz2=0
-Callee:epoll_create, sz1=0, sz2=0
-Callee:sigfd_init_, sz1=1, sz2=2
-Callee:evutil_getenv_, sz1=0, sz2=2
-Callee:event_warn, sz1=1, sz2=3
-Callee:evsig_init_, sz1=4, sz2=5
-DEBUG Func:epoll_nochangelist_add, sz1=1, sz2=1
-Callee:epoll_apply_one_change, sz1=3, sz2=8
-DEBUG Func:epoll_nochangelist_del, sz1=1, sz2=1
-Callee:epoll_apply_one_change, sz1=3, sz2=8
-DEBUG Func:epoll_dispatch, sz1=6, sz2=9
-Callee:evmap_io_active_, sz1=1, sz2=1
-Callee:event_changelist_remove_all_, sz1=1, sz2=2
-Callee:__errno_location, sz1=0, sz2=0
-Callee:event_mm_realloc_, sz1=0, sz2=1
-Callee:epoll_apply_changes, sz1=1, sz2=1
-Callee:epoll_pwait2, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:epoll_dealloc, sz1=1, sz2=3
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:close_epoll_handle, sz1=0, sz2=1
-Callee:evsig_dealloc_, sz1=3, sz2=5
-DEBUG Func:epoll_apply_changes, sz1=1, sz2=1
-Callee:epoll_apply_one_change, sz1=3, sz2=8
-DEBUG Func:epoll_apply_one_change, sz1=3, sz2=8
-Callee:__errno_location, sz1=0, sz2=0
-Callee:epoll_ctl, sz1=0, sz2=0
-Callee:epoll_op_to_string, sz1=0, sz2=0
-Callee:change_to_string, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:sigfd_init_, sz1=1, sz2=2
-Callee:getenv, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:sigfd_add, sz1=7, sz2=15
-Callee:close, sz1=0, sz2=0
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_new, sz1=1, sz2=3
-Callee:event_priority_set, sz1=1, sz2=1
-Callee:event_add_nolock_, sz1=11, sz2=20
-Callee:sigemptyset, sz1=0, sz2=0
-Callee:sigaddset, sz1=0, sz2=0
-Callee:sigprocmask, sz1=0, sz2=0
-Callee:sigfd_free_sigevent, sz1=2, sz2=4
-Callee:signalfd, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:sigaction, sz1=0, sz2=0
-Callee:evsig_ensure_saved_, sz1=2, sz2=3
-DEBUG Func:sigfd_del, sz1=3, sz2=8
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:sigemptyset, sz1=0, sz2=0
-Callee:sigaddset, sz1=0, sz2=0
-Callee:sigprocmask, sz1=0, sz2=0
-Callee:sigfd_free_sigevent, sz1=2, sz2=4
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:sigaction, sz1=0, sz2=0
-DEBUG Func:sigfd_free_sigevent, sz1=2, sz2=4
-Callee:close, sz1=0, sz2=0
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_del_nolock_, sz1=9, sz2=14
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:sigfd_cb, sz1=2, sz2=3
-Callee:evmap_signal_active_, sz1=1, sz2=1
-Callee:read, sz1=0, sz2=0
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_base_once, sz1=3, sz2=5
-Callee:event_active_nolock_, sz1=3, sz2=5
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-Callee:event_add_nolock_, sz1=11, sz2=20
-DEBUG Func:evutil_parse_sockaddr_port, sz1=2, sz2=5
-Callee:htons, sz1=0, sz2=0
-Callee:evutil_inet_pton_scope, sz1=1, sz2=6
-Callee:evutil_inet_pton, sz1=0, sz2=7
-Callee:strchr, sz1=0, sz2=0
-Callee:atoi, sz1=0, sz2=0
-DEBUG Func:evutil_format_sockaddr_port_, sz1=1, sz2=3
-Callee:ntohs, sz1=0, sz2=0
-Callee:evutil_snprintf, sz1=0, sz2=1
-Callee:evutil_inet_ntop, sz1=0, sz2=4
-DEBUG Func:evutil_socket_, sz1=2, sz2=4
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:socket, sz1=0, sz2=0
-Callee:evutil_fast_socket_nonblocking, sz1=1, sz2=2
-Callee:evutil_fast_socket_closeonexec, sz1=1, sz2=2
-DEBUG Func:evutil_fast_socket_nonblocking, sz1=1, sz2=2
-Callee:fcntl, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evutil_fast_socket_closeonexec, sz1=1, sz2=2
-Callee:fcntl, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evutil_accept4_, sz1=2, sz2=6
-Callee:__errno_location, sz1=0, sz2=0
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:evutil_fast_socket_nonblocking, sz1=1, sz2=2
-Callee:evutil_fast_socket_closeonexec, sz1=1, sz2=2
-Callee:accept, sz1=0, sz2=0
-Callee:accept4, sz1=0, sz2=0
-DEBUG Func:evutil_make_internal_pipe_, sz1=3, sz2=7
-Callee:close, sz1=0, sz2=0
-Callee:evutil_fast_socket_nonblocking, sz1=1, sz2=2
-Callee:evutil_fast_socket_closeonexec, sz1=1, sz2=2
-Callee:evutil_socketpair, sz1=0, sz2=1
-Callee:pipe2, sz1=0, sz2=0
-Callee:pipe, sz1=0, sz2=0
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evutil_eventfd_, sz1=2, sz2=4
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:evutil_fast_socket_nonblocking, sz1=1, sz2=2
-Callee:evutil_fast_socket_closeonexec, sz1=1, sz2=2
-Callee:eventfd, sz1=0, sz2=0
-DEBUG Func:evutil_secure_rng_global_setup_locks_, sz1=2, sz2=2
-Callee:evthread_setup_global_lock_, sz1=1, sz2=4
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:evutil_secure_rng_init, sz1=1, sz2=1
-Callee:arc4_stir, sz1=1, sz2=4
-DEBUG Func:arc4_stir, sz1=1, sz2=4
-Callee:arc4_init, sz1=0, sz2=0
-Callee:arc4_seed, sz1=1, sz2=3
-Callee:arc4_getbyte, sz1=0, sz2=0
-Callee:arc4_getword, sz1=0, sz2=1
-DEBUG Func:arc4_seed, sz1=1, sz2=3
-Callee:arc4_seed_getrandom, sz1=0, sz2=3
-Callee:arc4_seed_urandom, sz1=0, sz2=1
-Callee:arc4_seed_proc_sys_kernel_random_uuid, sz1=0, sz2=7
-DEBUG Func:evutil_secure_rng_get_bytes, sz1=1, sz2=1
-Callee:ev_arc4random_buf, sz1=1, sz2=1
-DEBUG Func:ev_arc4random_buf, sz1=1, sz2=1
-Callee:arc4random_buf, sz1=2, sz2=3
-DEBUG Func:arc4random_buf, sz1=2, sz2=3
-Callee:arc4_stir, sz1=1, sz2=4
-Callee:arc4_getbyte, sz1=0, sz2=0
-Callee:arc4_stir_if_needed, sz1=1, sz2=2
-DEBUG Func:arc4_stir_if_needed, sz1=1, sz2=2
-Callee:getpid, sz1=0, sz2=0
-Callee:arc4_stir, sz1=1, sz2=4
-DEBUG Func:evutil_secure_rng_add_bytes, sz1=1, sz2=1
-Callee:arc4random_addrandom, sz1=1, sz2=2
-DEBUG Func:arc4random_addrandom, sz1=1, sz2=2
-Callee:arc4_stir, sz1=1, sz2=4
-Callee:arc4_addrandom, sz1=0, sz2=0
-DEBUG Func:evconnlistener_new, sz1=1, sz2=4
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:event_assign, sz1=4, sz2=5
-Callee:listen, sz1=0, sz2=0
-Callee:evconnlistener_enable, sz1=0, sz2=0
-DEBUG Func:listener_read_cb, sz1=3, sz2=6
-Callee:__errno_location, sz1=0, sz2=0
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:evutil_accept4_, sz1=2, sz2=6
-Callee:listener_decref_and_unlock, sz1=0, sz2=1
-Callee:event_sock_warn, sz1=1, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-DEBUG Func:event_listener_enable, sz1=1, sz2=1
-Callee:event_add, sz1=2, sz2=2
-DEBUG Func:event_listener_disable, sz1=1, sz2=1
-Callee:event_del, sz1=1, sz2=1
-DEBUG Func:event_listener_destroy, sz1=3, sz2=4
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:event_get_fd, sz1=1, sz2=1
-Callee:event_del, sz1=1, sz2=1
-Callee:event_debug_unassign, sz1=1, sz2=2
-DEBUG Func:event_listener_getfd, sz1=1, sz2=1
-Callee:event_get_fd, sz1=1, sz2=1
-DEBUG Func:event_listener_getbase, sz1=1, sz2=1
-Callee:event_get_base, sz1=1, sz2=1
-DEBUG Func:evconnlistener_new_bind, sz1=2, sz2=11
-Callee:__errno_location, sz1=0, sz2=0
-Callee:evutil_make_listen_socket_reuseable, sz1=0, sz2=1
-Callee:evutil_make_listen_socket_reuseable_port, sz1=0, sz2=1
-Callee:evutil_make_listen_socket_ipv6only, sz1=0, sz2=1
-Callee:evutil_make_listen_socket_not_ipv6only, sz1=0, sz2=1
-Callee:evutil_make_tcp_listen_socket_deferred, sz1=0, sz2=1
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:evutil_socket_, sz1=2, sz2=4
-Callee:bind, sz1=0, sz2=0
-Callee:evutil_set_tcp_keepalive, sz1=0, sz2=1
-Callee:evconnlistener_new, sz1=1, sz2=4
-DEBUG Func:event_err, sz1=1, sz2=4
-Callee:__errno_location, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:event_logv_, sz1=1, sz2=4
-Callee:event_exit, sz1=0, sz2=2
-DEBUG Func:event_logv_, sz1=1, sz2=4
-Callee:strlen, sz1=0, sz2=0
-Callee:evutil_snprintf, sz1=0, sz2=1
-Callee:evutil_vsnprintf, sz1=0, sz2=1
-Callee:event_log, sz1=0, sz2=1
-DEBUG Func:event_warn, sz1=1, sz2=3
-Callee:__errno_location, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:event_logv_, sz1=1, sz2=4
-DEBUG Func:event_sock_err, sz1=1, sz2=4
-Callee:__errno_location, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:event_logv_, sz1=1, sz2=4
-Callee:event_exit, sz1=0, sz2=2
-DEBUG Func:event_sock_warn, sz1=1, sz2=3
-Callee:__errno_location, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:event_logv_, sz1=1, sz2=4
-DEBUG Func:event_errx, sz1=1, sz2=2
-Callee:event_logv_, sz1=1, sz2=4
-Callee:event_exit, sz1=0, sz2=2
-DEBUG Func:event_warnx, sz1=1, sz2=1
-Callee:event_logv_, sz1=1, sz2=4
-DEBUG Func:event_msgx, sz1=1, sz2=1
-Callee:event_logv_, sz1=1, sz2=4
-DEBUG Func:event_debugx_, sz1=1, sz2=1
-Callee:event_logv_, sz1=1, sz2=4
-DEBUG Func:evsig_init_, sz1=4, sz2=5
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_assign, sz1=4, sz2=5
-Callee:event_priority_set, sz1=1, sz2=1
-Callee:evutil_make_internal_pipe_, sz1=3, sz2=7
-Callee:event_sock_err, sz1=1, sz2=4
-DEBUG Func:evsig_cb, sz1=2, sz2=4
-Callee:evmap_signal_active_, sz1=1, sz2=1
-Callee:__errno_location, sz1=0, sz2=0
-Callee:read, sz1=0, sz2=0
-Callee:event_sock_err, sz1=1, sz2=4
-DEBUG Func:evsig_add, sz1=5, sz2=5
-Callee:event_add_nolock_, sz1=11, sz2=20
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_warnx, sz1=1, sz2=1
-Callee:event_debugx_, sz1=1, sz2=1
-Callee:evsig_set_handler_, sz1=2, sz2=6
-DEBUG Func:evsig_del, sz1=3, sz2=3
-Callee:event_errx, sz1=1, sz2=2
-Callee:event_debugx_, sz1=1, sz2=1
-Callee:evsig_restore_handler_, sz1=1, sz2=3
-DEBUG Func:evsig_restore_handler_, sz1=1, sz2=3
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:sigaction, sz1=0, sz2=0
-DEBUG Func:evsig_handler, sz1=1, sz2=4
-Callee:__errno_location, sz1=0, sz2=0
-Callee:write, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:event_warnx, sz1=1, sz2=1
-DEBUG Func:evsig_set_handler_, sz1=2, sz2=6
-Callee:event_mm_malloc_, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:sigaction, sz1=0, sz2=0
-Callee:evsig_ensure_saved_, sz1=2, sz2=3
-Callee:sigfillset, sz1=0, sz2=0
-DEBUG Func:evsig_ensure_saved_, sz1=2, sz2=3
-Callee:event_mm_realloc_, sz1=0, sz2=1
-Callee:event_warn, sz1=1, sz2=3
-Callee:event_debugx_, sz1=1, sz2=1
-DEBUG Func:evsig_dealloc_, sz1=3, sz2=5
-Callee:evutil_closesocket, sz1=0, sz2=1
-Callee:event_mm_free_, sz1=0, sz2=1
-Callee:event_del, sz1=1, sz2=1
-Callee:event_debug_unassign, sz1=1, sz2=2
-Callee:evsig_restore_handler_, sz1=1, sz2=3
-DEBUG Func:evsig_global_setup_locks_, sz1=2, sz2=2
-Callee:evthread_setup_global_lock_, sz1=1, sz2=4
-Callee:event_warn, sz1=1, sz2=3
-DEBUG Func:select_init, sz1=3, sz2=6
-Callee:event_mm_calloc_, sz1=0, sz2=2
-Callee:select_free_selectop, sz1=0, sz2=1
-Callee:select_resize, sz1=1, sz2=2
-Callee:sigfd_init_, sz1=1, sz2=2
-Callee:evutil_weakrand_seed_, sz1=0, sz2=2
-Callee:evsig_init_, sz1=4, sz2=5
-DEBUG Func:select_add, sz1=2, sz2=2
-Callee:select_resize, sz1=1, sz2=2
-Callee:event_errx, sz1=1, sz2=2
-[K[SPEG Computation]: 100%
-[Dumping SEG] spends time ***1s 9ms***
-SEG-Building spends time ***2s 58ms***
-SEG-Building uses memory ***1G 145M 988KB***
+[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%[K[SPEG Computation]: 61%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 67%[K[SPEG Computation]: 68%[K[SPEG Computation]: 70%[K[SPEG Computation]: 71%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 77%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 81%[K[SPEG Computation]: 82%[K[SPEG Computation]: 83%[K[SPEG Computation]: 84%[K[SPEG Computation]: 85%[K[SPEG Computation]: 87%[K[SPEG Computation]: 88%[K[SPEG Computation]: 89%[K[SPEG Computation]: 90%[K[SPEG Computation]: 91%[K[SPEG Computation]: 92%[K[SPEG Computation]: 93%[K[SPEG Computation]: 94%[K[SPEG Computation]: 96%[K[SPEG Computation]: 97%[K[SPEG Computation]: 98%[K[SPEG Computation]: 99%[K[SPEG Computation]: 100%
+[Dumping SEG] spends time ***0s 474ms***
+SEG-Building spends time ***2s 799ms***
+SEG-Building uses memory ***1G 140M 520KB***
 
 
-Total Time: 	0min3s
-Total Memory:  ***1G 363M 784KB***
+Total Time: 	0min4s
+Total Memory:  ***1G 618M 268KB***
 
-Script done on 2026-07-19 23:39:37-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-08-04 08:00:27+00:00 [COMMAND_EXIT_CODE="0"]

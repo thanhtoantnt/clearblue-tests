@@ -1,4 +1,4 @@
-Script started on 2026-07-20 22:36:37-04:00 [<not executed on terminal>]
+Script started on 2026-08-04 08:34:46+00:00 [<not executed on terminal>]
 cb-check static analyzer . ===enterprise version===
 [Warning] You are running a licence free version of cb-check. Don't distribute it.
 Module Statistical Results: 
@@ -16,1548 +16,13 @@ Processing unreachable code ........Done!
 Unrolling and breaking loops ........Done!
 Indexing ........Done!
 [SPEG] Start ... 620functions to run!
-[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%DEBUG Func:do_item_alloc_pull, sz1=1, sz2=6
-Callee:lru_pull_tail, sz1=1, sz2=16
-Callee:slabs_alloc, sz1=0, sz2=5
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:lru_pull_tail, sz1=1, sz2=16
-Callee:item_is_flushed, sz1=0, sz2=0
-Callee:do_item_unlink_nolock, sz1=0, sz2=6
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_unlink_q, sz1=0, sz2=0
-Callee:do_item_link_q, sz1=0, sz2=0
-Callee:item_link_q, sz1=0, sz2=5
-Callee:slabs_reassign, sz1=0, sz2=4
-Callee:item_trylock, sz1=0, sz2=1
-Callee:item_trylock_unlock, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:logger_log, sz1=0, sz2=9
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:do_item_alloc_chunk, sz1=1, sz2=4
-Callee:slabs_mlock, sz1=0, sz2=2
-Callee:slabs_munlock, sz1=0, sz2=2
-Callee:do_item_alloc_pull, sz1=1, sz2=6
-Callee:slabs_clsid, sz1=0, sz2=0
-DEBUG Func:do_item_alloc, sz1=1, sz2=7
-Callee:do_item_alloc_pull, sz1=1, sz2=6
-Callee:item_make_header, sz1=0, sz2=0
-Callee:slabs_clsid, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:lru_crawler_start, sz1=1, sz2=10
-Callee:lru_crawler_set_client, sz1=0, sz2=1
-Callee:do_lru_crawler_start, sz1=0, sz2=7
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_cond_signal, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadNotify, sz1=0, sz2=0
-DEBUG Func:lru_crawler_crawl, sz1=1, sz2=4
-Callee:lru_crawler_start, sz1=1, sz2=10
-Callee:safe_strtoul, sz1=0, sz2=4
-Callee:strcmp, sz1=0, sz2=0
-Callee:strtok_r, sz1=0, sz2=0
-DEBUG Func:itoa_u32, sz1=1, sz2=2
-Callee:digits, sz1=0, sz2=1
-Callee:itoa, sz1=1, sz2=1
-DEBUG Func:itoa, sz1=1, sz2=1
-Callee:out2, sz1=0, sz2=0
-DEBUG Func:itoa_32, sz1=1, sz2=1
-Callee:itoa_u32, sz1=1, sz2=2
-DEBUG Func:itoa_u64, sz1=2, sz2=3
-Callee:itoa_u32, sz1=1, sz2=2
-Callee:itoa, sz1=1, sz2=1
-Callee:out1, sz1=0, sz2=0
-DEBUG Func:itoa_64, sz1=1, sz2=1
-Callee:itoa_u64, sz1=2, sz2=3
-DEBUG Func:start_slab_maintenance_thread, sz1=1, sz2=8
-Callee:slab_rebalance_thread, sz1=3, sz2=14
-Callee:pthread_mutex_init, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:pthread_cond_init, sz1=0, sz2=0
-Callee:thread_setname, sz1=0, sz2=1
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:slab_rebalance_thread, sz1=3, sz2=14
-Callee:slab_rebalance_start, sz1=0, sz2=5
-Callee:slab_rebalance_finish, sz1=0, sz2=5
-Callee:slab_rebalance_prep, sz1=1, sz2=3
-Callee:slab_rebalance_move, sz1=1, sz2=10
-Callee:slab_rebalance_check_automove, sz1=1, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:mc_timespec_add, sz1=0, sz2=0
-Callee:pthread_cond_timedwait, sz1=0, sz2=0
-Callee:clock_gettime, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:logger_create, sz1=0, sz2=6
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:slab_rebalance_prep, sz1=1, sz2=3
-Callee:lru_pull_tail, sz1=1, sz2=16
-Callee:global_page_pool_size, sz1=0, sz2=4
-Callee:slab_rebalance_alloc, sz1=0, sz2=1
-DEBUG Func:slab_rebalance_move, sz1=1, sz2=10
-Callee:slabs_locked_callback, sz1=0, sz2=4
-Callee:item_is_flushed, sz1=0, sz2=0
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_unlink, sz1=0, sz2=6
-Callee:slab_rebalance_rescue, sz1=0, sz2=1
-Callee:slab_rebalance_active_rescue, sz1=1, sz2=5
-Callee:item_trylock_unlock, sz1=0, sz2=2
-Callee:storage_delete, sz1=0, sz2=1
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-DEBUG Func:slab_rebalance_check_automove, sz1=1, sz2=3
-Callee:do_slabs_reassign, sz1=0, sz2=5
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:logger_log, sz1=0, sz2=9
-DEBUG Func:slab_rebalance_active_rescue, sz1=1, sz2=5
-Callee:do_item_unlink, sz1=0, sz2=6
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:storage_delete, sz1=0, sz2=1
-Callee:do_item_replace, sz1=0, sz2=2
-Callee:logger_log, sz1=0, sz2=9
-DEBUG Func:start_lru_maintainer_thread, sz1=1, sz2=9
-Callee:lru_maintainer_thread, sz1=2, sz2=16
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:thread_setname, sz1=0, sz2=1
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:lru_maintainer_thread, sz1=2, sz2=16
-Callee:pthread_mutex_init, sz1=0, sz2=0
-Callee:lru_maintainer_juggle, sz1=1, sz2=6
-Callee:lru_maintainer_bumps, sz1=0, sz2=10
-Callee:lru_maintainer_crawler_check, sz1=2, sz2=7
-Callee:abort, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:logger_create, sz1=0, sz2=6
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:lru_maintainer_juggle, sz1=1, sz2=6
-Callee:lru_pull_tail, sz1=1, sz2=16
-Callee:slabs_available_chunks, sz1=0, sz2=4
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:lru_maintainer_crawler_check, sz1=2, sz2=7
-Callee:lru_crawler_start, sz1=1, sz2=10
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:logger_log, sz1=0, sz2=9
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:start_assoc_maintenance_thread, sz1=1, sz2=7
-Callee:assoc_maintenance_thread, sz1=2, sz2=15
-Callee:fprintf, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:atoi, sz1=0, sz2=0
-Callee:getenv, sz1=0, sz2=0
-Callee:thread_setname, sz1=0, sz2=1
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:assoc_maintenance_thread, sz1=2, sz2=15
-Callee:pthread_cond_wait, sz1=0, sz2=0
-Callee:assoc_expand, sz1=0, sz2=4
-Callee:item_trylock, sz1=0, sz2=1
-Callee:item_trylock_unlock, sz1=0, sz2=2
-Callee:pause_threads, sz1=0, sz2=17
-Callee:free, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadWait, sz1=0, sz2=0
-DEBUG Func:transmit_udp, sz1=1, sz2=14
-Callee:resp_finish, sz1=0, sz2=4
-Callee:build_udp_header, sz1=0, sz2=0
-Callee:_transmit_pre, sz1=0, sz2=0
-Callee:sendmsg, sz1=0, sz2=0
-Callee:_transmit_post, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:__errno_location, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:update_event, sz1=0, sz2=4
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:conn_cleanup, sz1=2, sz2=2
-Callee:conn_release_items, sz1=0, sz2=4
-Callee:conn_set_state, sz1=1, sz2=2
-DEBUG Func:conn_close, sz1=3, sz2=14
-Callee:conn_cleanup, sz1=2, sz2=2
-Callee:event_del, sz1=0, sz2=0
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:close, sz1=0, sz2=0
-Callee:rbuf_release, sz1=0, sz2=2
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:logger_log, sz1=0, sz2=9
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:write_and_free, sz1=2, sz2=3
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:resp_add_iov, sz1=0, sz2=0
-DEBUG Func:server_stats, sz1=1, sz2=9
-Callee:append_stat, sz1=0, sz2=2
-Callee:getpid, sz1=0, sz2=0
-Callee:getrusage, sz1=0, sz2=0
-Callee:event_get_version, sz1=0, sz2=0
-Callee:storage_stats, sz1=0, sz2=4
-Callee:threadlocal_stats_aggregate, sz1=0, sz2=4
-Callee:slab_stats_aggregate, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-DEBUG Func:out_string, sz1=1, sz2=5
-Callee:resp_reset, sz1=0, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:strlen, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-DEBUG Func:item_alloc, sz1=1, sz2=1
-Callee:do_item_alloc, sz1=1, sz2=7
-DEBUG Func:item_get, sz1=1, sz2=3
-Callee:item_lock, sz1=0, sz2=2
-Callee:item_unlock, sz1=0, sz2=2
-Callee:do_item_get, sz1=1, sz2=13
-DEBUG Func:item_get_locked, sz1=1, sz2=2
-Callee:item_lock, sz1=0, sz2=2
-Callee:do_item_get, sz1=1, sz2=13
-DEBUG Func:item_touch, sz1=1, sz2=3
-Callee:item_lock, sz1=0, sz2=2
-Callee:item_unlock, sz1=0, sz2=2
-Callee:do_item_touch, sz1=1, sz2=1
-DEBUG Func:slabs_init, sz1=2, sz2=5
-Callee:alloc_large_chunk, sz1=0, sz2=9
-Callee:slabs_preallocate, sz1=0, sz2=3
-Callee:fprintf, sz1=0, sz2=0
-Callee:safe_strtoll, sz1=0, sz2=3
-Callee:getenv, sz1=0, sz2=0
-DEBUG Func:slabs_stats, sz1=1, sz2=5
-Callee:do_slabs_stats, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:storage_get_item, sz1=3, sz2=16
-Callee:do_item_alloc_pull, sz1=1, sz2=6
-Callee:do_item_alloc_chunk, sz1=1, sz2=4
-Callee:free, sz1=0, sz2=0
-Callee:item_alloc, sz1=1, sz2=1
-Callee:item_remove, sz1=0, sz2=3
-Callee:slabs_clsid, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:malloc, sz1=0, sz2=0
-Callee:do_cache_alloc, sz1=0, sz2=2
-Callee:do_cache_free, sz1=0, sz2=1
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:thread_io_queue_get, sz1=0, sz2=0
-Callee:resp_add_chunked_iov, sz1=0, sz2=1
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:storage_return_cb, sz1=1, sz2=1
-Callee:conn_worker_readd, sz1=3, sz2=5
-DEBUG Func:start_storage_write_thread, sz1=1, sz2=3
-Callee:pthread_mutex_init, sz1=0, sz2=0
-Callee:storage_write_thread, sz1=1, sz2=14
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:storage_write_thread, sz1=1, sz2=14
-Callee:abort, sz1=0, sz2=0
-Callee:slabs_clsid, sz1=0, sz2=0
-Callee:global_page_pool_size, sz1=0, sz2=4
-Callee:slabs_available_chunks, sz1=0, sz2=4
-Callee:storage_write, sz1=3, sz2=10
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_cond_signal, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:logger_create, sz1=0, sz2=6
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadNotify, sz1=0, sz2=0
-DEBUG Func:storage_write, sz1=3, sz2=10
-Callee:lru_pull_tail, sz1=1, sz2=16
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_alloc, sz1=1, sz2=7
-Callee:item_unlock, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_replace, sz1=0, sz2=1
-Callee:slabs_free, sz1=0, sz2=5
-Callee:extstore_write_request, sz1=0, sz2=8
-Callee:extstore_write, sz1=0, sz2=4
-Callee:logger_log, sz1=0, sz2=9
-DEBUG Func:start_storage_compact_thread, sz1=1, sz2=4
-Callee:pthread_mutex_init, sz1=0, sz2=0
-Callee:storage_compact_thread, sz1=3, sz2=18
-Callee:pthread_cond_init, sz1=0, sz2=0
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:storage_compact_thread, sz1=3, sz2=18
-Callee:pthread_mutex_init, sz1=0, sz2=0
-Callee:pthread_cond_wait, sz1=0, sz2=0
-Callee:abort, sz1=0, sz2=0
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:extstore_submit_bg, sz1=0, sz2=1
-Callee:extstore_close_page, sz1=0, sz2=5
-Callee:storage_compact_check, sz1=1, sz2=7
-Callee:storage_compact_readback, sz1=2, sz2=15
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:malloc, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:logger_create, sz1=0, sz2=6
-Callee:logger_log, sz1=0, sz2=9
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadWait, sz1=0, sz2=0
-DEBUG Func:storage_compact_check, sz1=1, sz2=7
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:extstore_evict_page, sz1=0, sz2=5
-Callee:calloc, sz1=0, sz2=0
-Callee:logger_log, sz1=0, sz2=9
-Callee:extstore_get_stats, sz1=0, sz2=4
-Callee:extstore_get_page_data, sz1=0, sz2=5
-DEBUG Func:storage_compact_readback, sz1=2, sz2=15
-Callee:item_is_flushed, sz1=0, sz2=0
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_alloc, sz1=1, sz2=7
-Callee:assoc_find, sz1=0, sz2=1
-Callee:item_lock, sz1=0, sz2=2
-Callee:item_unlock, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_replace, sz1=0, sz2=1
-Callee:extstore_write_request, sz1=0, sz2=8
-Callee:extstore_write, sz1=0, sz2=4
-Callee:extstore_delete, sz1=0, sz2=5
-Callee:usleep, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:logger_log, sz1=0, sz2=9
-DEBUG Func:conn_close_idle, sz1=2, sz2=7
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:drive_machine, sz1=12, sz2=36
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:conn_set_state, sz1=1, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-Callee:state_text, sz1=0, sz2=0
-DEBUG Func:drive_machine, sz1=12, sz2=36
-Callee:transmit_udp, sz1=1, sz2=14
-Callee:conn_release_items, sz1=0, sz2=4
-Callee:conn_cleanup, sz1=2, sz2=2
-Callee:conn_close, sz1=3, sz2=14
-Callee:abort, sz1=0, sz2=0
-Callee:event_del, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:accept4, sz1=0, sz2=0
-Callee:accept, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:fcntl, sz1=0, sz2=0
-Callee:close, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:write, sz1=0, sz2=0
-Callee:rbuf_release, sz1=0, sz2=2
-Callee:update_event, sz1=0, sz2=4
-Callee:transmit, sz1=1, sz2=11
-Callee:rbuf_alloc, sz1=0, sz2=5
-Callee:try_read_network, sz1=1, sz2=11
-Callee:try_read_udp, sz1=0, sz2=5
-Callee:reset_cmd_handler, sz1=1, sz2=3
-Callee:complete_nread, sz1=2, sz2=2
-Callee:read_into_chunked_item, sz1=1, sz2=5
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:strerror, sz1=0, sz2=0
-Callee:thread_io_queue_submit, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:accept_new_conns, sz1=0, sz2=5
-Callee:dispatch_conn_new, sz1=0, sz2=6
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:transmit, sz1=1, sz2=11
-Callee:_transmit_pre, sz1=0, sz2=0
-Callee:_transmit_post, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:__errno_location, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:update_event, sz1=0, sz2=4
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:try_read_network, sz1=1, sz2=11
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:realloc, sz1=0, sz2=0
-Callee:resp_start, sz1=0, sz2=5
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:reset_cmd_handler, sz1=1, sz2=3
-Callee:free, sz1=0, sz2=0
-Callee:item_remove, sz1=0, sz2=3
-Callee:conn_set_state, sz1=1, sz2=2
-DEBUG Func:complete_nread, sz1=2, sz2=2
-Callee:complete_nread_ascii, sz1=3, sz2=6
-Callee:complete_nread_binary, sz1=2, sz2=4
-DEBUG Func:read_into_chunked_item, sz1=1, sz2=5
-Callee:do_item_alloc_chunk, sz1=1, sz2=4
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:out_of_memory, sz1=2, sz2=3
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:write_bin_error, sz1=2, sz2=5
-DEBUG Func:logger_init, sz1=1, sz2=3
-Callee:abort, sz1=0, sz2=0
-Callee:pthread_key_create, sz1=0, sz2=0
-Callee:start_logger_thread, sz1=1, sz2=5
-DEBUG Func:event_handler, sz1=2, sz2=3
-Callee:conn_close, sz1=3, sz2=14
-Callee:fprintf, sz1=0, sz2=0
-Callee:drive_machine, sz1=12, sz2=36
-DEBUG Func:conn_worker_readd, sz1=3, sz2=5
-Callee:event_del, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:drive_machine, sz1=12, sz2=36
-Callee:_conn_event_readd, sz1=0, sz2=4
-Callee:event_active, sz1=0, sz2=0
-DEBUG Func:conn_new, sz1=1, sz2=14
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:malloc, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:event_set, sz1=0, sz2=0
-Callee:event_base_set, sz1=0, sz2=0
-Callee:event_add, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:conn_free, sz1=0, sz2=1
-Callee:getpeername, sz1=0, sz2=0
-Callee:prot_text, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:logger_log, sz1=0, sz2=9
-DEBUG Func:try_read_command_udp, sz1=2, sz2=2
-Callee:try_read_command_ascii, sz1=2, sz2=5
-Callee:try_read_command_binary, sz1=2, sz2=7
-DEBUG Func:conn_close_all, sz1=1, sz2=1
-Callee:conn_close, sz1=3, sz2=14
-DEBUG Func:out_errstring, sz1=1, sz2=1
-Callee:out_string, sz1=1, sz2=5
-DEBUG Func:append_stats, sz1=1, sz2=3
-Callee:grow_stats_buf, sz1=0, sz2=3
-Callee:append_bin_stats, sz1=0, sz2=2
-Callee:append_ascii_stats, sz1=0, sz2=1
-DEBUG Func:do_store_item, sz1=4, sz2=15
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_alloc, sz1=1, sz2=7
-Callee:do_item_link, sz1=0, sz2=5
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_replace, sz1=0, sz2=1
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:_store_item_copy_data, sz1=1, sz2=1
-Callee:do_item_update, sz1=0, sz2=3
-Callee:do_item_get, sz1=1, sz2=13
-Callee:logger_log, sz1=0, sz2=9
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:_store_item_copy_data, sz1=1, sz2=1
-Callee:_store_item_copy_chunks, sz1=1, sz2=1
-DEBUG Func:_store_item_copy_chunks, sz1=1, sz2=1
-Callee:do_item_alloc_chunk, sz1=1, sz2=4
-DEBUG Func:XXH3_hash, sz1=1, sz2=1
-Callee:XXH_INLINE_XXH3_64bits, sz1=0, sz2=1
-DEBUG Func:XXH3_hashLong_64b_default, sz1=1, sz2=1
-Callee:XXH3_hashLong_64b_internal, sz1=0, sz2=2
-DEBUG Func:get_stats, sz1=4, sz2=9
-Callee:append_stat, sz1=0, sz2=2
-Callee:global_page_pool_size, sz1=0, sz2=4
-Callee:slabs_stats, sz1=1, sz2=5
-Callee:nz_strcmp, sz1=0, sz2=2
-Callee:item_stats_totals, sz1=0, sz2=6
-Callee:item_stats, sz1=0, sz2=6
-Callee:item_stats_sizes, sz1=0, sz2=2
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-DEBUG Func:process_stats_conns, sz1=2, sz2=3
-Callee:state_text, sz1=0, sz2=0
-Callee:snprintf, sz1=0, sz2=0
-Callee:conn_to_str, sz1=1, sz2=2
-DEBUG Func:conn_to_str, sz1=1, sz2=2
-Callee:getsockname, sz1=0, sz2=0
-Callee:get_conn_text, sz1=0, sz2=6
-DEBUG Func:limited_get, sz1=2, sz2=3
-Callee:item_get, sz1=1, sz2=3
-Callee:item_touch, sz1=1, sz2=3
-Callee:item_remove, sz1=0, sz2=3
-DEBUG Func:limited_get_locked, sz1=1, sz2=3
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:item_unlock, sz1=0, sz2=2
-Callee:item_get_locked, sz1=1, sz2=2
-DEBUG Func:do_add_delta, sz1=3, sz2=16
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:item_stats_sizes_remove, sz1=0, sz2=0
-Callee:do_item_alloc, sz1=1, sz2=7
-Callee:item_stats_sizes_add, sz1=0, sz2=0
-Callee:itoa_u64, sz1=2, sz2=3
-Callee:item_replace, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:safe_strtoull, sz1=0, sz2=4
-Callee:do_item_update, sz1=0, sz2=3
-Callee:do_item_get, sz1=1, sz2=13
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:main, sz1=28, sz2=88
-Callee:init_lru_crawler, sz1=0, sz2=0
-Callee:start_slab_maintenance_thread, sz1=1, sz2=8
-Callee:start_lru_maintainer_thread, sz1=1, sz2=9
-Callee:assoc_init, sz1=0, sz2=5
-Callee:start_assoc_maintenance_thread, sz1=1, sz2=7
-Callee:free, sz1=0, sz2=0
-Callee:slabs_init, sz1=2, sz2=5
-Callee:slabs_prefill_global, sz1=0, sz2=2
-Callee:start_storage_write_thread, sz1=1, sz2=3
-Callee:start_storage_compact_thread, sz1=1, sz2=4
-Callee:malloc, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:uriencode_init, sz1=0, sz2=2
-Callee:safe_strtoul, sz1=0, sz2=4
-Callee:safe_strtol, sz1=0, sz2=3
-Callee:vperror, sz1=0, sz2=3
-Callee:logger_init, sz1=1, sz2=3
-Callee:snprintf, sz1=0, sz2=0
-Callee:hash_init, sz1=0, sz2=0
-Callee:verify_default, sz1=0, sz2=2
-Callee:printf, sz1=0, sz2=0
-Callee:exit, sz1=0, sz2=0
-Callee:sanitycheck, sz1=0, sz2=3
-Callee:signal, sz1=0, sz2=0
-Callee:settings_init, sz1=0, sz2=0
-Callee:setbuf, sz1=0, sz2=0
-Callee:getopt_long, sz1=0, sz2=0
-Callee:__ctype_b_loc, sz1=0, sz2=0
-Callee:strtol, sz1=0, sz2=0
-Callee:atoi, sz1=0, sz2=0
-Callee:usage, sz1=0, sz2=4
-Callee:usage_license, sz1=0, sz2=1
-Callee:strstr, sz1=0, sz2=0
-Callee:strdup, sz1=0, sz2=0
-Callee:atof, sz1=0, sz2=0
-Callee:enable_large_pages, sz1=0, sz2=5
-Callee:strcmp, sz1=0, sz2=0
-Callee:getsubopt, sz1=0, sz2=0
-Callee:_parse_slab_sizes, sz1=0, sz2=4
-Callee:strchr, sz1=0, sz2=0
-Callee:getrlimit, sz1=0, sz2=0
-Callee:setrlimit, sz1=0, sz2=0
-Callee:getuid, sz1=0, sz2=0
-Callee:geteuid, sz1=0, sz2=0
-Callee:getpwnam, sz1=0, sz2=0
-Callee:setgroups, sz1=0, sz2=0
-Callee:setgid, sz1=0, sz2=0
-Callee:setuid, sz1=0, sz2=0
-Callee:mlockall, sz1=0, sz2=0
-Callee:event_config_new, sz1=0, sz2=0
-Callee:event_config_set_flag, sz1=0, sz2=0
-Callee:event_base_new_with_config, sz1=0, sz2=0
-Callee:event_config_free, sz1=0, sz2=0
-Callee:stats_init, sz1=0, sz2=2
-Callee:conn_init, sz1=0, sz2=7
-Callee:start_conn_timeout_thread, sz1=1, sz2=5
-Callee:clock_gettime, sz1=0, sz2=0
-Callee:clock_handler, sz1=1, sz2=8
-Callee:server_socket_unix, sz1=1, sz2=13
-Callee:getenv, sz1=0, sz2=0
-Callee:fopen, sz1=0, sz2=0
-Callee:server_sockets, sz1=1, sz2=11
-Callee:fclose, sz1=0, sz2=0
-Callee:rename, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:save_pid, sz1=0, sz2=11
-Callee:event_base_loop, sz1=0, sz2=0
-Callee:remove_pidfile, sz1=0, sz2=2
-Callee:event_base_free, sz1=0, sz2=0
-Callee:item_stats_sizes_init, sz1=0, sz2=1
-Callee:memcached_thread_init, sz1=2, sz2=14
-Callee:daemonize, sz1=0, sz2=8
-Callee:stop_threads, sz1=3, sz2=16
-Callee:storage_init_config, sz1=0, sz2=1
-Callee:storage_read_config, sz1=1, sz2=5
-Callee:storage_check_config, sz1=0, sz2=1
-Callee:storage_init, sz1=1, sz2=5
-Callee:logger_create, sz1=0, sz2=6
-Callee:start_item_crawler_thread, sz1=1, sz2=11
-Callee:authfile_load, sz1=0, sz2=12
-Callee:restart_register, sz1=0, sz2=4
-Callee:restart_mmap_open, sz1=1, sz2=9
-Callee:restart_mmap_close, sz1=1, sz2=7
-Callee:restart_fixup, sz1=0, sz2=5
-DEBUG Func:_mc_meta_save_cb, sz1=1, sz2=4
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:logger_get_gid, sz1=0, sz2=0
-Callee:gettimeofday, sz1=0, sz2=0
-Callee:restart_set_kv, sz1=0, sz2=3
-DEBUG Func:start_conn_timeout_thread, sz1=1, sz2=5
-Callee:fprintf, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:conn_timeout_thread, sz1=0, sz2=9
-Callee:thread_setname, sz1=0, sz2=1
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:clock_handler, sz1=1, sz2=8
-Callee:assoc_start_expand, sz1=0, sz2=5
-Callee:event_del, sz1=0, sz2=0
-Callee:event_set, sz1=0, sz2=0
-Callee:event_base_set, sz1=0, sz2=0
-Callee:event_add, sz1=0, sz2=0
-Callee:gettimeofday, sz1=0, sz2=0
-Callee:clock_gettime, sz1=0, sz2=0
-Callee:authfile_load, sz1=0, sz2=12
-DEBUG Func:server_socket_unix, sz1=1, sz2=13
-Callee:fprintf, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:close, sz1=0, sz2=0
-Callee:conn_new, sz1=1, sz2=14
-Callee:setsockopt, sz1=0, sz2=0
-Callee:bind, sz1=0, sz2=0
-Callee:new_socket_unix, sz1=0, sz2=4
-Callee:lstat, sz1=0, sz2=0
-Callee:umask, sz1=0, sz2=0
-Callee:strncpy, sz1=0, sz2=0
-Callee:listen, sz1=0, sz2=0
-Callee:exit, sz1=0, sz2=0
-Callee:unlink, sz1=0, sz2=0
-DEBUG Func:server_sockets, sz1=1, sz2=11
-Callee:free, sz1=0, sz2=0
-Callee:strncmp, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:safe_strtol, sz1=0, sz2=3
-Callee:strdup, sz1=0, sz2=0
-Callee:strcmp, sz1=0, sz2=0
-Callee:strchr, sz1=0, sz2=0
-Callee:server_socket, sz1=3, sz2=20
-Callee:strtok_r, sz1=0, sz2=0
-DEBUG Func:server_socket, sz1=3, sz2=20
-Callee:fprintf, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:close, sz1=0, sz2=0
-Callee:conn_new, sz1=1, sz2=14
-Callee:getsockopt, sz1=0, sz2=0
-Callee:setsockopt, sz1=0, sz2=0
-Callee:maximize_sndbuf, sz1=0, sz2=4
-Callee:bind, sz1=0, sz2=0
-Callee:freeaddrinfo, sz1=0, sz2=0
-Callee:dup, sz1=0, sz2=0
-Callee:snprintf, sz1=0, sz2=0
-Callee:getsockname, sz1=0, sz2=0
-Callee:ntohs, sz1=0, sz2=0
-Callee:listen, sz1=0, sz2=0
-Callee:exit, sz1=0, sz2=0
-Callee:getaddrinfo, sz1=0, sz2=0
-Callee:gai_strerror, sz1=0, sz2=0
-Callee:new_socket, sz1=0, sz2=4
-Callee:dispatch_conn_new, sz1=0, sz2=6
-DEBUG Func:do_item_get, sz1=1, sz2=13
-Callee:item_is_flushed, sz1=0, sz2=0
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_unlink, sz1=0, sz2=6
-Callee:assoc_find, sz1=0, sz2=1
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:do_item_bump, sz1=0, sz2=2
-Callee:logger_log, sz1=0, sz2=9
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:do_item_touch, sz1=1, sz2=1
-Callee:do_item_get, sz1=1, sz2=13
-DEBUG Func:add_delta, sz1=1, sz2=3
-Callee:item_lock, sz1=0, sz2=2
-Callee:item_unlock, sz1=0, sz2=2
-Callee:do_add_delta, sz1=3, sz2=16
-DEBUG Func:store_item, sz1=1, sz2=3
-Callee:item_lock, sz1=0, sz2=2
-Callee:item_unlock, sz1=0, sz2=2
-Callee:do_store_item, sz1=4, sz2=15
-DEBUG Func:memcached_thread_init, sz1=2, sz2=14
-Callee:pthread_mutex_init, sz1=0, sz2=0
-Callee:wait_for_thread_registration, sz1=0, sz2=2
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:exit, sz1=0, sz2=0
-Callee:pthread_cond_init, sz1=0, sz2=0
-Callee:memcached_thread_notify_init, sz1=0, sz2=3
-Callee:setup_thread, sz1=2, sz2=14
-Callee:create_worker, sz1=0, sz2=6
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:setup_thread, sz1=2, sz2=14
-Callee:pthread_mutex_init, sz1=0, sz2=0
-Callee:malloc, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:cache_create, sz1=0, sz2=4
-Callee:cache_set_limit, sz1=0, sz2=4
-Callee:thread_io_queue_add, sz1=0, sz2=0
-Callee:exit, sz1=0, sz2=0
-Callee:event_config_new, sz1=0, sz2=0
-Callee:event_config_set_flag, sz1=0, sz2=0
-Callee:event_base_new_with_config, sz1=0, sz2=0
-Callee:event_config_free, sz1=0, sz2=0
-Callee:setup_thread_notify, sz1=0, sz2=5
-Callee:cq_init, sz1=0, sz2=4
-DEBUG Func:thread_libevent_process, sz1=3, sz2=11
-Callee:conn_close_idle, sz1=2, sz2=7
-Callee:fprintf, sz1=0, sz2=0
-Callee:close, sz1=0, sz2=0
-Callee:conn_worker_readd, sz1=3, sz2=5
-Callee:conn_new, sz1=1, sz2=14
-Callee:read, sz1=0, sz2=0
-Callee:exit, sz1=0, sz2=0
-Callee:register_thread_initialized, sz1=0, sz2=6
-Callee:cq_pop, sz1=0, sz2=4
-Callee:event_base_loopexit, sz1=0, sz2=0
-Callee:cqi_free, sz1=0, sz2=1
-DEBUG Func:stats_prefix_record_get, sz1=1, sz2=3
-Callee:stats_prefix_find, sz1=0, sz2=6
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-DEBUG Func:stats_prefix_record_delete, sz1=1, sz2=3
-Callee:stats_prefix_find, sz1=0, sz2=6
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-DEBUG Func:stats_prefix_record_set, sz1=1, sz2=3
-Callee:stats_prefix_find, sz1=0, sz2=6
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-DEBUG Func:stop_threads, sz1=3, sz2=16
-Callee:stop_lru_maintainer_thread, sz1=0, sz2=8
-Callee:stop_assoc_maintenance_thread, sz1=0, sz2=8
-Callee:notify_worker_fd, sz1=0, sz2=2
-Callee:wait_for_thread_registration, sz1=0, sz2=2
-Callee:stop_conn_timeout_thread, sz1=0, sz2=8
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:pthread_join, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_close_all, sz1=1, sz2=1
-Callee:logger_stop, sz1=0, sz2=1
-Callee:stop_item_crawler_thread, sz1=0, sz2=10
-Callee:stop_slab_maintenance_thread, sz1=0, sz2=11
-Callee:CB.ThreadJoin, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:storage_read_config, sz1=1, sz2=5
-Callee:storage_conf_parse, sz1=0, sz2=9
-Callee:fprintf, sz1=0, sz2=0
-Callee:safe_strtoul, sz1=0, sz2=4
-Callee:safe_strtod, sz1=0, sz2=3
-Callee:getsubopt, sz1=0, sz2=0
-DEBUG Func:storage_init, sz1=1, sz2=5
-Callee:crc32c_init, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:extstore_err, sz1=0, sz2=0
-Callee:extstore_init, sz1=0, sz2=11
-DEBUG Func:start_logger_thread, sz1=1, sz2=5
-Callee:fprintf, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:thread_setname, sz1=0, sz2=1
-Callee:logger_thread, sz1=2, sz2=10
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:logger_thread, sz1=2, sz2=10
-Callee:pthread_cond_wait, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:logger_thread_read, sz1=1, sz2=9
-Callee:logger_thread_poll_watchers, sz1=1, sz2=7
-Callee:logger_thread_flush_stats, sz1=0, sz2=2
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadWait, sz1=0, sz2=0
-DEBUG Func:logger_thread_read, sz1=1, sz2=9
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:bipbuf_peek_all, sz1=0, sz2=1
-Callee:bipbuf_poll, sz1=0, sz2=2
-Callee:logger_thread_parse_entry, sz1=0, sz2=0
-Callee:logger_thread_write_entry, sz1=1, sz2=5
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:logger_thread_poll_watchers, sz1=1, sz2=7
-Callee:__errno_location, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:bipbuf_peek_all, sz1=0, sz2=1
-Callee:bipbuf_poll, sz1=0, sz2=2
-Callee:poll, sz1=0, sz2=0
-Callee:logger_thread_close_watcher, sz1=1, sz2=4
-Callee:fwrite, sz1=0, sz2=0
-DEBUG Func:logger_thread_close_watcher, sz1=1, sz2=4
-Callee:free, sz1=0, sz2=0
-Callee:sidethread_conn_close, sz1=0, sz2=2
-Callee:bipbuf_free, sz1=0, sz2=1
-Callee:logger_set_flags, sz1=0, sz2=4
-DEBUG Func:logger_thread_write_entry, sz1=1, sz2=5
-Callee:bipbuf_request, sz1=0, sz2=1
-Callee:bipbuf_push, sz1=0, sz2=2
-Callee:bipbuf_offer, sz1=0, sz2=2
-Callee:snprintf, sz1=0, sz2=0
-Callee:logger_thread_poll_watchers, sz1=1, sz2=7
-DEBUG Func:_logger_parse_cne, sz1=1, sz2=2
-Callee:snprintf, sz1=0, sz2=0
-Callee:_logger_util_addr_endpoint, sz1=0, sz2=3
-DEBUG Func:_logger_parse_cce, sz1=1, sz2=2
-Callee:snprintf, sz1=0, sz2=0
-Callee:_logger_util_addr_endpoint, sz1=0, sz2=3
-DEBUG Func:crawler_metadump_eval, sz1=3, sz2=6
-Callee:item_is_flushed, sz1=0, sz2=0
-Callee:itoa_u32, sz1=1, sz2=2
-Callee:itoa_u64, sz1=2, sz2=3
-Callee:itoa_64, sz1=1, sz2=1
-Callee:storage_validate_item, sz1=0, sz2=1
-Callee:uriencode_p, sz1=0, sz2=0
-DEBUG Func:crawler_metadump_finalize, sz1=1, sz2=2
-Callee:strlen, sz1=0, sz2=0
-Callee:lru_crawler_write, sz1=1, sz2=3
-DEBUG Func:lru_crawler_write, sz1=1, sz2=3
-Callee:__errno_location, sz1=0, sz2=0
-Callee:poll, sz1=0, sz2=0
-Callee:lru_crawler_close_client, sz1=1, sz2=2
-DEBUG Func:lru_crawler_close_client, sz1=1, sz2=2
-Callee:free, sz1=0, sz2=0
-Callee:sidethread_conn_close, sz1=0, sz2=2
-DEBUG Func:crawler_mgdump_eval, sz1=1, sz2=2
-Callee:item_is_flushed, sz1=0, sz2=0
-Callee:base64_encode, sz1=0, sz2=0
-DEBUG Func:crawler_mgdump_finalize, sz1=1, sz2=2
-Callee:strlen, sz1=0, sz2=0
-Callee:lru_crawler_write, sz1=1, sz2=3
-DEBUG Func:start_item_crawler_thread, sz1=1, sz2=11
-Callee:pthread_cond_wait, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:strerror, sz1=0, sz2=0
-Callee:thread_setname, sz1=0, sz2=1
-Callee:item_crawler_thread, sz1=2, sz2=19
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadWait, sz1=0, sz2=0
-Callee:CB.ThreadCreate, sz1=0, sz2=0
-DEBUG Func:item_crawler_thread, sz1=2, sz2=19
-Callee:do_item_crawl_q, sz1=0, sz2=0
-Callee:pthread_cond_wait, sz1=0, sz2=0
-Callee:item_trylock, sz1=0, sz2=1
-Callee:item_trylock_unlock, sz1=0, sz2=2
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_cond_signal, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:STATS_LOCK, sz1=0, sz2=2
-Callee:STATS_UNLOCK, sz1=0, sz2=2
-Callee:lru_crawler_write, sz1=1, sz2=3
-Callee:item_crawl_hash, sz1=1, sz2=10
-Callee:lru_crawler_class_done, sz1=0, sz2=4
-Callee:lru_crawler_release_client, sz1=0, sz2=2
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadWait, sz1=0, sz2=0
-Callee:CB.ThreadNotify, sz1=0, sz2=0
-DEBUG Func:item_crawl_hash, sz1=1, sz2=10
-Callee:lru_crawler_expand_buf, sz1=0, sz2=1
-Callee:assoc_get_iterator, sz1=0, sz2=3
-Callee:assoc_iterate, sz1=0, sz2=2
-Callee:assoc_iterate_final, sz1=0, sz2=4
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:usleep, sz1=0, sz2=0
-Callee:lru_crawler_write, sz1=1, sz2=3
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:restart_mmap_open, sz1=1, sz2=9
-Callee:abort, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:open, sz1=0, sz2=0
-Callee:strdup, sz1=0, sz2=0
-Callee:_find_pagesize, sz1=0, sz2=1
-Callee:ftruncate, sz1=0, sz2=0
-Callee:mmap, sz1=0, sz2=0
-Callee:restart_check, sz1=0, sz2=9
-DEBUG Func:restart_mmap_close, sz1=1, sz2=7
-Callee:free, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:perror, sz1=0, sz2=0
-Callee:close, sz1=0, sz2=0
-Callee:msync, sz1=0, sz2=0
-Callee:restart_save, sz1=0, sz2=8
-Callee:munmap, sz1=0, sz2=0
-DEBUG Func:complete_nread_ascii, sz1=3, sz2=6
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:item_remove, sz1=0, sz2=3
-Callee:store_item, sz1=1, sz2=3
-Callee:_finalize_mset, sz1=5, sz2=6
-DEBUG Func:_finalize_mset, sz1=5, sz2=6
-Callee:itoa_u32, sz1=1, sz2=2
-Callee:itoa_u64, sz1=2, sz2=3
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:base64_encode, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:out_errstring, sz1=1, sz2=1
-DEBUG Func:try_read_command_asciiauth, sz1=2, sz2=12
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:memchr, sz1=0, sz2=0
-Callee:resp_start, sz1=0, sz2=5
-Callee:mcmc_token_get_u32, sz1=0, sz2=2
-Callee:authfile_check, sz1=0, sz2=5
-Callee:mcmc_tokenize, sz1=0, sz2=1
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:try_read_command_ascii, sz1=2, sz2=5
-Callee:strncmp, sz1=0, sz2=0
-Callee:rbuf_switch_to_malloc, sz1=0, sz2=2
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:memchr, sz1=0, sz2=0
-Callee:process_command_ascii, sz1=17, sz2=22
-DEBUG Func:process_command_ascii, sz1=17, sz2=22
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:strlen, sz1=0, sz2=0
-Callee:resp_start, sz1=0, sz2=5
-Callee:process_mset_command, sz1=3, sz2=5
-Callee:process_meta_command, sz1=5, sz2=13
-Callee:process_get_command, sz1=4, sz2=10
-Callee:process_update_command, sz1=2, sz2=2
-Callee:process_quit_command, sz1=1, sz2=1
-Callee:process_version_command, sz1=1, sz2=1
-Callee:process_stat, sz1=11, sz2=15
-Callee:process_watch_command, sz1=3, sz2=7
-Callee:process_request, sz1=3, sz2=9
-Callee:process_arithmetic_cmd, sz1=2, sz2=7
-Callee:process_delete_cmd, sz1=4, sz2=13
-Callee:process_touch_cmd, sz1=2, sz2=9
-Callee:process_mget_cmd, sz1=8, sz2=22
-Callee:process_mdelete_cmd, sz1=7, sz2=19
-Callee:process_marithmetic_cmd, sz1=8, sz2=19
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_mset_command, sz1=3, sz2=5
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:out_errstring, sz1=1, sz2=1
-Callee:_process_token_len, sz1=0, sz2=0
-Callee:process_mset_cmd_start, sz1=6, sz2=16
-DEBUG Func:process_meta_command, sz1=5, sz2=13
-Callee:out_string, sz1=1, sz2=5
-Callee:item_remove, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:base64_encode, sz1=0, sz2=0
-Callee:base64_decode, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:snprintf, sz1=0, sz2=0
-Callee:limited_get, sz1=2, sz2=3
-Callee:mcmc_token_get, sz1=0, sz2=1
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_get_command, sz1=4, sz2=10
-Callee:realtime, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:memchr, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:resp_start, sz1=0, sz2=5
-Callee:process_get_command_err, sz1=3, sz2=5
-Callee:mc_tokto32, sz1=0, sz2=1
-Callee:process_get_cmd, sz1=5, sz2=13
-DEBUG Func:process_update_command, sz1=2, sz2=2
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:process_update_cmd_start, sz1=5, sz2=18
-DEBUG Func:process_quit_command, sz1=1, sz2=1
-Callee:conn_set_state, sz1=1, sz2=2
-DEBUG Func:process_version_command, sz1=1, sz2=1
-Callee:out_string, sz1=1, sz2=5
-DEBUG Func:process_stat, sz1=11, sz2=15
-Callee:stats_reset, sz1=0, sz2=5
-Callee:write_and_free, sz1=2, sz2=3
-Callee:server_stats, sz1=1, sz2=9
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:process_extstore_stats, sz1=0, sz2=5
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:append_stats, sz1=1, sz2=3
-Callee:process_stat_settings, sz1=0, sz2=3
-Callee:get_stats, sz1=4, sz2=9
-Callee:process_stats_conns, sz1=2, sz2=3
-Callee:item_cachedump, sz1=0, sz2=7
-Callee:mcmc_token_get_u32, sz1=0, sz2=2
-Callee:process_stats_detail, sz1=3, sz2=5
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_watch_command, sz1=3, sz2=7
-Callee:event_del, sz1=0, sz2=0
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:resp_has_stack, sz1=0, sz2=0
-Callee:logger_add_watcher, sz1=0, sz2=12
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_shutdown_command, sz1=2, sz2=4
-Callee:out_string, sz1=1, sz2=5
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:raise, sz1=0, sz2=0
-Callee:mc_prcmp, sz1=0, sz2=2
-DEBUG Func:process_slabs_command, sz1=2, sz2=6
-Callee:slabs_reassign, sz1=0, sz2=4
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:process_slabs_automove_command, sz1=1, sz2=5
-Callee:mc_tokto32, sz1=0, sz2=1
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_memlimit_command, sz1=1, sz2=4
-Callee:out_string, sz1=1, sz2=5
-Callee:slabs_adjust_mem_limit, sz1=0, sz2=5
-Callee:fprintf, sz1=0, sz2=0
-Callee:mcmc_token_get_u32, sz1=0, sz2=2
-DEBUG Func:process_flush_all_command, sz1=1, sz2=8
-Callee:realtime, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:item_flush_expired, sz1=0, sz2=8
-Callee:mc_tokto32, sz1=0, sz2=1
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_lru_crawler_command, sz1=5, sz2=10
-Callee:lru_crawler_crawl, sz1=1, sz2=4
-Callee:event_del, sz1=0, sz2=0
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:resp_has_stack, sz1=0, sz2=0
-Callee:stop_item_crawler_thread, sz1=0, sz2=10
-Callee:start_item_crawler_thread, sz1=1, sz2=11
-Callee:mc_toktou32, sz1=0, sz2=1
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_verbosity_command, sz1=1, sz2=2
-Callee:out_string, sz1=1, sz2=5
-Callee:mcmc_token_get_u32, sz1=0, sz2=2
-DEBUG Func:process_lru_command, sz1=1, sz2=7
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:mc_prcmp, sz1=0, sz2=2
-Callee:mc_toktou32, sz1=0, sz2=1
-Callee:mc_tokto32, sz1=0, sz2=1
-Callee:mc_toktod, sz1=0, sz2=2
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_extstore_command, sz1=1, sz2=5
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:mc_toktou32, sz1=0, sz2=1
-Callee:mc_toktod, sz1=0, sz2=2
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_slabs_automove_command, sz1=1, sz2=5
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:mcmc_token_get_u32, sz1=0, sz2=2
-Callee:mc_toktod, sz1=0, sz2=2
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_stats_detail, sz1=3, sz2=5
-Callee:write_and_free, sz1=2, sz2=3
-Callee:strncmp, sz1=0, sz2=0
-Callee:out_string, sz1=1, sz2=5
-Callee:stats_prefix_dump, sz1=0, sz2=6
-Callee:mcmc_token_get, sz1=0, sz2=1
-DEBUG Func:process_get_command_err, sz1=3, sz2=5
-Callee:conn_release_items, sz1=0, sz2=4
-Callee:out_string, sz1=1, sz2=5
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:strlen, sz1=0, sz2=0
-Callee:resp_start, sz1=0, sz2=5
-DEBUG Func:complete_nread_binary, sz1=2, sz2=4
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:fprintf, sz1=0, sz2=0
-Callee:complete_update_bin, sz1=3, sz2=9
-Callee:process_bin_complete_sasl_auth, sz1=5, sz2=11
-DEBUG Func:complete_update_bin, sz1=3, sz2=9
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:item_remove, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:store_item, sz1=1, sz2=3
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:write_bin_response, sz1=2, sz2=3
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_bin_complete_sasl_auth, sz1=5, sz2=11
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:init_sasl_conn, sz1=0, sz2=1
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:write_bin_response, sz1=2, sz2=3
-Callee:add_bin_header, sz1=0, sz2=6
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:write_bin_error, sz1=2, sz2=5
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:strlen, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:add_bin_header, sz1=0, sz2=6
-DEBUG Func:write_bin_response, sz1=2, sz2=3
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:add_bin_header, sz1=0, sz2=6
-DEBUG Func:try_read_command_binary, sz1=2, sz2=7
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:ntohll, sz1=0, sz2=1
-Callee:resp_start, sz1=0, sz2=5
-Callee:ntohs, sz1=0, sz2=0
-Callee:ntohl, sz1=0, sz2=0
-Callee:dispatch_bin_command, sz1=14, sz2=14
-DEBUG Func:dispatch_bin_command, sz1=14, sz2=14
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:write_bin_response, sz1=2, sz2=3
-Callee:authenticated, sz1=0, sz2=1
-Callee:handle_binary_protocol_error, sz1=1, sz2=2
-Callee:process_bin_flush, sz1=2, sz2=9
-Callee:process_bin_update, sz1=7, sz2=16
-Callee:process_bin_get_or_touch, sz1=6, sz2=21
-Callee:process_bin_delete, sz1=4, sz2=14
-Callee:complete_incr_bin, sz1=6, sz2=21
-Callee:process_bin_append_prepend, sz1=5, sz2=8
-Callee:process_bin_stat, sz1=8, sz2=13
-Callee:bin_list_sasl_mechs, sz1=3, sz2=4
-Callee:process_bin_sasl_auth, sz1=3, sz2=5
-DEBUG Func:handle_binary_protocol_error, sz1=1, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-Callee:write_bin_error, sz1=2, sz2=5
-DEBUG Func:process_bin_flush, sz1=2, sz2=9
-Callee:realtime, sz1=0, sz2=0
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:item_flush_expired, sz1=0, sz2=8
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:write_bin_response, sz1=2, sz2=3
-Callee:ntohl, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_bin_update, sz1=7, sz2=16
-Callee:realtime, sz1=0, sz2=0
-Callee:item_size_ok, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_alloc, sz1=1, sz2=1
-Callee:item_get, sz1=1, sz2=3
-Callee:item_remove, sz1=0, sz2=3
-Callee:item_unlink, sz1=0, sz2=3
-Callee:storage_delete, sz1=0, sz2=1
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:stats_prefix_record_set, sz1=1, sz2=3
-Callee:logger_log, sz1=0, sz2=9
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:ntohl, sz1=0, sz2=0
-Callee:binary_get_key, sz1=0, sz2=0
-DEBUG Func:process_bin_get_or_touch, sz1=6, sz2=21
-Callee:realtime, sz1=0, sz2=0
-Callee:item_remove, sz1=0, sz2=3
-Callee:storage_get_item, sz1=3, sz2=16
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:htonll, sz1=0, sz2=1
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:resp_add_chunked_iov, sz1=0, sz2=1
-Callee:htonl, sz1=0, sz2=0
-Callee:limited_get, sz1=2, sz2=3
-Callee:stats_prefix_record_get, sz1=1, sz2=3
-Callee:fwrite, sz1=0, sz2=0
-Callee:add_bin_header, sz1=0, sz2=6
-Callee:ntohl, sz1=0, sz2=0
-Callee:binary_get_key, sz1=0, sz2=0
-Callee:fputc, sz1=0, sz2=0
-Callee:write_bin_miss_response, sz1=3, sz2=4
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_bin_delete, sz1=4, sz2=14
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_unlink, sz1=0, sz2=6
-Callee:item_unlock, sz1=0, sz2=2
-Callee:item_get_locked, sz1=1, sz2=2
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:stats_prefix_record_delete, sz1=1, sz2=3
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:write_bin_response, sz1=2, sz2=3
-Callee:binary_get_key, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:complete_incr_bin, sz1=6, sz2=21
-Callee:realtime, sz1=0, sz2=0
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:item_alloc, sz1=1, sz2=1
-Callee:item_remove, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:strtoull, sz1=0, sz2=0
-Callee:ntohll, sz1=0, sz2=1
-Callee:htonll, sz1=0, sz2=1
-Callee:snprintf, sz1=0, sz2=0
-Callee:add_delta, sz1=1, sz2=3
-Callee:store_item, sz1=1, sz2=3
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:write_bin_response, sz1=2, sz2=3
-Callee:ntohl, sz1=0, sz2=0
-Callee:binary_get_key, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_bin_append_prepend, sz1=5, sz2=8
-Callee:item_size_ok, sz1=0, sz2=2
-Callee:item_alloc, sz1=1, sz2=1
-Callee:fprintf, sz1=0, sz2=0
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:stats_prefix_record_set, sz1=1, sz2=3
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:binary_get_key, sz1=0, sz2=0
-DEBUG Func:process_bin_stat, sz1=8, sz2=13
-Callee:stats_reset, sz1=0, sz2=5
-Callee:free, sz1=0, sz2=0
-Callee:write_and_free, sz1=2, sz2=3
-Callee:server_stats, sz1=1, sz2=9
-Callee:strncmp, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:out_of_memory, sz1=2, sz2=3
-Callee:stats_prefix_dump, sz1=0, sz2=6
-Callee:append_stats, sz1=1, sz2=3
-Callee:process_stat_settings, sz1=0, sz2=3
-Callee:get_stats, sz1=4, sz2=9
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:binary_get_key, sz1=0, sz2=0
-DEBUG Func:bin_list_sasl_mechs, sz1=3, sz2=4
-Callee:fprintf, sz1=0, sz2=0
-Callee:init_sasl_conn, sz1=0, sz2=1
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:write_bin_response, sz1=2, sz2=3
-DEBUG Func:process_bin_sasl_auth, sz1=3, sz2=5
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:item_alloc, sz1=1, sz2=1
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:binary_get_key, sz1=0, sz2=0
-DEBUG Func:write_bin_miss_response, sz1=3, sz2=4
-Callee:conn_set_state, sz1=1, sz2=2
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:write_bin_error, sz1=2, sz2=5
-Callee:add_bin_header, sz1=0, sz2=6
-DEBUG Func:process_request, sz1=3, sz2=9
-Callee:strncmp, sz1=0, sz2=0
-Callee:memchr, sz1=0, sz2=0
-Callee:_process_request_meta, sz1=0, sz2=2
-Callee:_process_request_mset, sz1=0, sz2=3
-Callee:_process_request_simple, sz1=1, sz2=3
-Callee:_process_request_gat, sz1=0, sz2=2
-Callee:_process_request_storage, sz1=1, sz2=4
-Callee:_process_request_unknown, sz1=1, sz2=2
-Callee:mcmc_tokenize, sz1=0, sz2=1
-DEBUG Func:_process_request_simple, sz1=1, sz2=3
-Callee:_process_request_noreply, sz1=0, sz2=2
-Callee:_process_request_key, sz1=0, sz2=1
-Callee:mcmc_tokenize, sz1=0, sz2=1
-DEBUG Func:_process_request_storage, sz1=1, sz2=4
-Callee:mcmc_token_get_32, sz1=0, sz2=2
-Callee:_process_request_noreply, sz1=0, sz2=2
-Callee:_process_request_key, sz1=0, sz2=1
-Callee:mcmc_tokenize, sz1=0, sz2=1
-DEBUG Func:_process_request_unknown, sz1=1, sz2=2
-Callee:_process_request_noreply, sz1=0, sz2=2
-Callee:mcmc_tokenize, sz1=0, sz2=1
-DEBUG Func:mc_parse_exptime, sz1=1, sz2=3
-Callee:realtime, sz1=0, sz2=0
-Callee:mcmc_token_get_32, sz1=0, sz2=2
-Callee:pout_string, sz1=0, sz2=3
-DEBUG Func:process_get_cmd, sz1=5, sz2=13
-Callee:item_remove, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:resp_add_chunked_iov, sz1=0, sz2=1
-Callee:limited_get, sz1=2, sz2=3
-Callee:stats_prefix_record_get, sz1=1, sz2=3
-Callee:pout_string, sz1=0, sz2=3
-Callee:make_ascii_get_suffix, sz1=2, sz2=2
-Callee:pout_errstring, sz1=1, sz2=1
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:make_ascii_get_suffix, sz1=2, sz2=2
-Callee:itoa_u32, sz1=1, sz2=2
-Callee:itoa_u64, sz1=2, sz2=3
-DEBUG Func:pout_errstring, sz1=1, sz2=1
-Callee:pout_string, sz1=0, sz2=3
-DEBUG Func:process_update_cmd_start, sz1=5, sz2=18
-Callee:realtime, sz1=0, sz2=0
-Callee:item_size_ok, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_alloc, sz1=1, sz2=1
-Callee:item_get, sz1=1, sz2=3
-Callee:item_remove, sz1=0, sz2=3
-Callee:item_unlink, sz1=0, sz2=3
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:safe_strtoul, sz1=0, sz2=4
-Callee:safe_strtol, sz1=0, sz2=3
-Callee:stats_prefix_record_set, sz1=1, sz2=3
-Callee:mcmc_token_get_u64, sz1=0, sz2=2
-Callee:logger_log, sz1=0, sz2=9
-Callee:pout_string, sz1=0, sz2=3
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_update_cmd, sz1=4, sz2=6
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:item_remove, sz1=0, sz2=3
-Callee:store_item, sz1=1, sz2=3
-Callee:pout_string, sz1=0, sz2=3
-Callee:process_update_cmd_start, sz1=5, sz2=18
-Callee:_store_item_copy_from_buf, sz1=1, sz2=1
-DEBUG Func:_store_item_copy_from_buf, sz1=1, sz2=1
-Callee:do_item_alloc_chunk, sz1=1, sz2=4
-DEBUG Func:process_arithmetic_cmd, sz1=2, sz2=7
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:add_delta, sz1=1, sz2=3
-Callee:mcmc_token_get_u64, sz1=0, sz2=2
-Callee:pout_string, sz1=0, sz2=3
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_delete_cmd, sz1=4, sz2=13
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_unlink, sz1=0, sz2=6
-Callee:item_unlock, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_get_locked, sz1=1, sz2=2
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:stats_prefix_record_delete, sz1=1, sz2=3
-Callee:logger_log, sz1=0, sz2=9
-Callee:pout_string, sz1=0, sz2=3
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_touch_cmd, sz1=2, sz2=9
-Callee:realtime, sz1=0, sz2=0
-Callee:item_touch, sz1=1, sz2=3
-Callee:item_remove, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:mcmc_token_get_32, sz1=0, sz2=2
-Callee:pout_string, sz1=0, sz2=3
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_mget_cmd, sz1=8, sz2=22
-Callee:realtime, sz1=0, sz2=0
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_link, sz1=0, sz2=5
-Callee:itoa_u32, sz1=1, sz2=2
-Callee:itoa_u64, sz1=2, sz2=3
-Callee:item_unlock, sz1=0, sz2=2
-Callee:item_alloc, sz1=1, sz2=1
-Callee:item_remove, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:base64_encode, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:resp_add_chunked_iov, sz1=0, sz2=1
-Callee:limited_get, sz1=2, sz2=3
-Callee:limited_get_locked, sz1=1, sz2=3
-Callee:do_item_bump, sz1=0, sz2=2
-Callee:pout_errstring, sz1=1, sz2=1
-Callee:_meta_flag_preparse, sz1=1, sz2=5
-Callee:_process_token_len.1276, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:_meta_flag_preparse, sz1=1, sz2=5
-Callee:realtime, sz1=0, sz2=0
-Callee:base64_decode, sz1=0, sz2=0
-Callee:mcmc_token_get_flag_arg_u32, sz1=0, sz2=2
-Callee:mcmc_token_get_flag_arg_u64, sz1=0, sz2=2
-Callee:mcmc_token_get_flag_arg_32, sz1=0, sz2=2
-DEBUG Func:process_mset_cmd_start, sz1=6, sz2=16
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:item_size_ok, sz1=0, sz2=2
-Callee:do_item_unlink, sz1=0, sz2=6
-Callee:item_unlock, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_alloc, sz1=1, sz2=1
-Callee:item_get_locked, sz1=1, sz2=2
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:logger_log, sz1=0, sz2=9
-Callee:pout_string, sz1=0, sz2=3
-Callee:pout_errstring, sz1=1, sz2=1
-Callee:_meta_flag_preparse, sz1=1, sz2=5
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_mset_cmd, sz1=8, sz2=12
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:itoa_u32, sz1=1, sz2=2
-Callee:itoa_u64, sz1=2, sz2=3
-Callee:item_remove, sz1=0, sz2=3
-Callee:base64_encode, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:store_item, sz1=1, sz2=3
-Callee:pout_string, sz1=0, sz2=3
-Callee:pout_errstring, sz1=1, sz2=1
-Callee:_store_item_copy_from_buf, sz1=1, sz2=1
-Callee:_process_token_len.1276, sz1=0, sz2=0
-Callee:process_mset_cmd_start, sz1=6, sz2=16
-DEBUG Func:process_mdelete_cmd, sz1=7, sz2=19
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:do_item_unlink, sz1=0, sz2=6
-Callee:item_unlock, sz1=0, sz2=2
-Callee:pthread_getspecific, sz1=0, sz2=0
-Callee:item_alloc, sz1=1, sz2=1
-Callee:item_get_locked, sz1=1, sz2=2
-Callee:storage_delete, sz1=0, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:base64_encode, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:do_store_item, sz1=4, sz2=15
-Callee:logger_log, sz1=0, sz2=9
-Callee:pout_errstring, sz1=1, sz2=1
-Callee:_meta_flag_preparse, sz1=1, sz2=5
-Callee:_process_token_len.1276, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:process_marithmetic_cmd, sz1=8, sz2=19
-Callee:get_cas_id, sz1=0, sz2=4
-Callee:do_item_remove, sz1=0, sz2=1
-Callee:itoa_u32, sz1=1, sz2=2
-Callee:itoa_u64, sz1=2, sz2=3
-Callee:item_lock, sz1=0, sz2=2
-Callee:item_unlock, sz1=0, sz2=2
-Callee:item_alloc, sz1=1, sz2=1
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:strlen, sz1=0, sz2=0
-Callee:base64_encode, sz1=0, sz2=0
-Callee:resp_add_iov, sz1=0, sz2=0
-Callee:do_store_item, sz1=4, sz2=15
-Callee:do_add_delta, sz1=3, sz2=16
-Callee:pout_errstring, sz1=1, sz2=1
-Callee:_meta_flag_preparse, sz1=1, sz2=5
-Callee:_process_token_len.1276, sz1=0, sz2=0
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-DEBUG Func:mcmc_parse_buf, sz1=1, sz2=2
-Callee:memchr, sz1=0, sz2=0
-Callee:_mcmc_parse_response, sz1=0, sz2=5
-[K[SPEG Computation]: 100%
-[Dumping SEG] spends time ***2s 272ms***
-SEG-Building spends time ***6s 106ms***
-SEG-Building uses memory ***1G 632M 332KB***
+[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%[K[SPEG Computation]: 60%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 67%[K[SPEG Computation]: 68%[K[SPEG Computation]: 70%[K[SPEG Computation]: 71%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 77%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 81%[K[SPEG Computation]: 82%[K[SPEG Computation]: 83%[K[SPEG Computation]: 84%[K[SPEG Computation]: 85%[K[SPEG Computation]: 86%[K[SPEG Computation]: 88%[K[SPEG Computation]: 89%[K[SPEG Computation]: 90%[K[SPEG Computation]: 91%[K[SPEG Computation]: 92%[K[SPEG Computation]: 93%[K[SPEG Computation]: 94%[K[SPEG Computation]: 95%[K[SPEG Computation]: 97%[K[SPEG Computation]: 98%[K[SPEG Computation]: 99%[K[SPEG Computation]: 100%
+[Dumping SEG] spends time ***2s 389ms***
+SEG-Building spends time ***7s 911ms***
+SEG-Building uses memory ***1G 648M 564KB***
 
 
-Total Time: 	0min8s
-Total Memory:  ***1G 967M 528KB***
+Total Time: 	0min10s
+Total Memory:  ***2G 375M 352KB***
 
-Script done on 2026-07-20 22:36:45-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-08-04 08:34:56+00:00 [COMMAND_EXIT_CODE="0"]

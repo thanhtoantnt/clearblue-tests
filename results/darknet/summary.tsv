@@ -1,19 +1,19 @@
 sample	store_s	inc_s	scratch_s	body_dirty	callers	total_dirty	inc_seg	scr_seg	status
-pr-1996	144	36	88	7	8	15	1s 616ms	52s 383ms	ok
-pr-2413	144	38	89	8	9	17	1s 241ms	52s 648ms	ok
-pr-2543	144	35	89	1	1	2	0s 677ms	51s 350ms	ok
-pr-2545	144	36	85	0	0	0	0s 680ms	49s 661ms	ok
-pr-2614	144	36	102	0	0	0	0s 663ms	1m 0s 669ms	ok
-pr-2619	144	43	90	0	0	0	0s 664ms	54s 308ms	ok
-pr-2620	144	37	84	0	0	0	0s 669ms	46s 534ms	ok
-pr-2633	144	38	88	1	1	2	0s 734ms	51s 930ms	ok
-pr-2657	144	36	87	1	1	2	0s 740ms	49s 364ms	ok
-pr-syn0	144	36	82	0	0	0	0s 679ms	45s 346ms	ok
-pr-syn1	144	37	93	0	0	0	0s 673ms	52s 47ms	ok
-pr-syn2	144	37	88	0	0	0	0s 675ms	48s 701ms	ok
-pr-syn3	144	37	86	0	0	0	1s 29ms	49s 762ms	ok
-pr-syn4	144	37	88	1	2	3	1s 539ms	51s 379ms	ok
-pr-syn5	144	37	88	1	2	3	1s 499ms	51s 281ms	ok
-pr-syn6	144	39	89	0	0	0	0s 671ms	53s 351ms	ok
-pr-syn7	144	40	84	0	0	0	0s 693ms	47s 642ms	ok
-pr-syn8	144	37	89	0	0	0	0s 668ms	46s 408ms	ok
+pr-1996	158	40	108	7	8	15	0s 897ms	1m 10s 413ms	ok
+pr-2413	158	46	98	8	9	17	0s 841ms	1m 0s 999ms	ok
+pr-2543	158	49	105	1	1	2	0s 536ms	1m 6s 859ms	ok
+pr-2545	158	44	122	0	0	0	0s 618ms	1m 22s 509ms	ok
+pr-2614	158	55	102	0	0	0	0s 545ms	1m 3s 200ms	ok
+pr-2619	158	42	97	0	0	0	0s 570ms	56s 619ms	ok
+pr-2620	158	43	100	0	0	0	0s 612ms	56s 242ms	ok
+pr-2633	158	44	99	1	1	2	0s 590ms	58s 365ms	ok
+pr-2657	158	48	104	1	1	2	0s 641ms	1m 7s 340ms	ok
+pr-syn0	158	41	99	0	0	0	0s 554ms	59s 794ms	ok
+pr-syn1	158	43	97	0	0	0	0s 563ms	56s 938ms	ok
+pr-syn2	158	46	108	0	0	0	0s 611ms	1m 8s 682ms	ok
+pr-syn3	158	48	111	0	0	0	0s 552ms	1m 7s 379ms	ok
+pr-syn4	158	48	99	1	2	3	1s 729ms	59s 240ms	ok
+pr-syn5	158	37	102	1	2	3	1s 849ms	1m 0s 863ms	ok
+pr-syn6	158	48	115	0	0	0	0s 628ms	1m 15s 183ms	ok
+pr-syn7	158	39	96	0	0	0	0s 555ms	58s 80ms	ok
+pr-syn8	158	36	108	0	0	0	0s 624ms	1m 7s 841ms	ok

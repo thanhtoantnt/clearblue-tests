@@ -1,4 +1,4 @@
-Script started on 2026-07-20 00:39:32-04:00 [<not executed on terminal>]
+Script started on 2026-08-04 08:46:13+00:00 [<not executed on terminal>]
 cb-check static analyzer . ===enterprise version===
 [Warning] You are running a licence free version of cb-check. Don't distribute it.
 Module Statistical Results: 
@@ -16,916 +16,13 @@ Processing unreachable code ........Done!
 Unrolling and breaking loops ........Done!
 Indexing ........Done!
 [SPEG] Start ... 1508functions to run!
-[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%[K[SPEG Computation]: 60%[K[SPEG Computation]: 61%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 67%[K[SPEG Computation]: 68%[K[SPEG Computation]: 70%[K[SPEG Computation]: 71%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 77%[K[SPEG Computation]: 78%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 81%[K[SPEG Computation]: 82%[K[SPEG Computation]: 83%[K[SPEG Computation]: 84%[K[SPEG Computation]: 85%[K[SPEG Computation]: 87%[K[SPEG Computation]: 88%[K[SPEG Computation]: 89%DEBUG Func:ZSTD_compressBegin_usingCDict_deprecated, sz1=1, sz2=1
-Callee:ZSTD_compressBegin_usingCDict_internal, sz1=1, sz2=5
-DEBUG Func:ZSTD_compressBegin_usingCDict, sz1=1, sz2=1
-Callee:ZSTD_compressBegin_usingCDict_deprecated, sz1=1, sz2=1
-DEBUG Func:ZSTD_compress_usingCDict_advanced, sz1=1, sz2=1
-Callee:ZSTD_compress_usingCDict_internal, sz1=2, sz2=3
-DEBUG Func:ZSTD_compress_usingCDict_internal, sz1=2, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_compressBegin_usingCDict_internal, sz1=1, sz2=5
-Callee:ZSTD_compressEnd_public, sz1=1, sz2=4
-DEBUG Func:ZSTD_compress_usingCDict, sz1=1, sz2=1
-Callee:ZSTD_compress_usingCDict_internal, sz1=2, sz2=3
-DEBUG Func:ZSTD_decodeLiteralsBlock, sz1=1, sz2=11
-Callee:ZSTD_blockSizeMax, sz1=0, sz2=0
-Callee:MEM_readLE32.506, sz1=0, sz2=3
-Callee:ZSTD_DCtx_get_bmi2, sz1=0, sz2=0
-Callee:ZSTD_allocateLiteralsBuffer, sz1=0, sz2=1
-Callee:ERR_isError.507, sz1=0, sz2=0
-Callee:MEM_readLE24, sz1=0, sz2=1
-Callee:MEM_readLE16.503, sz1=0, sz2=2
-Callee:HUF_decompress1X1_DCtx_wksp, sz1=0, sz2=3
-Callee:HUF_decompress1X_usingDTable, sz1=0, sz2=3
-Callee:HUF_decompress4X_usingDTable, sz1=0, sz2=3
-Callee:HUF_decompress4X_hufOnly_wksp, sz1=1, sz2=3
-DEBUG Func:ZSTD_decompressBlock_internal, sz1=1, sz2=13
-Callee:ZSTD_decodeLiteralsBlock, sz1=1, sz2=11
-Callee:ZSTD_blockSizeMax, sz1=0, sz2=0
-Callee:ERR_isError.507, sz1=0, sz2=0
-Callee:ZSTD_decodeSeqHeaders, sz1=0, sz2=4
-Callee:ZSTD_maybeNullPtrAdd.523, sz1=0, sz2=0
-Callee:ZSTD_totalHistorySize, sz1=0, sz2=0
-Callee:MEM_32bits.524, sz1=0, sz2=0
-Callee:ZSTD_maxShortOffset, sz1=0, sz2=2
-Callee:MEM_64bits.525, sz1=0, sz2=0
-Callee:ZSTD_getOffsetInfo, sz1=0, sz2=0
-Callee:ZSTD_decompressSequencesLong, sz1=0, sz2=3
-Callee:ZSTD_decompressSequencesSplitLitBuffer, sz1=0, sz2=3
-Callee:ZSTD_decompressSequences, sz1=0, sz2=3
-DEBUG Func:ZSTD_decompressBlock_deprecated, sz1=1, sz2=3
-Callee:ERR_isError.507, sz1=0, sz2=0
-Callee:ZSTD_decompressBlock_internal, sz1=1, sz2=13
-Callee:ZSTD_checkContinuity, sz1=0, sz2=0
-DEBUG Func:ZSTD_decompressBlock, sz1=1, sz2=1
-Callee:ZSTD_decompressBlock_deprecated, sz1=1, sz2=3
-DEBUG Func:ZDICT_trainFromBuffer_cover, sz1=4, sz2=11
-Callee:COVER_warnOnSmallCorpus, sz1=0, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:COVER_checkParameters, sz1=0, sz2=0
-Callee:COVER_ctx_init, sz1=0, sz2=7
-Callee:ERR_isError.544, sz1=0, sz2=0
-Callee:COVER_map_init, sz1=0, sz2=3
-Callee:COVER_ctx_destroy, sz1=0, sz2=1
-Callee:COVER_buildDictionary, sz1=0, sz2=5
-Callee:COVER_map_destroy, sz1=0, sz2=1
-Callee:ZDICT_finalizeDictionary, sz1=1, sz2=7
-DEBUG Func:COVER_checkTotalCompressedSize, sz1=2, sz2=9
-Callee:ZSTD_compressBound, sz1=0, sz2=0
-Callee:ZSTD_createCCtx, sz1=0, sz2=1
-Callee:ZSTD_freeCDict, sz1=0, sz2=3
-Callee:ZSTD_freeCCtx, sz1=0, sz2=3
-Callee:ZSTD_compress_usingCDict, sz1=1, sz2=1
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:ERR_isError.544, sz1=0, sz2=0
-Callee:ZSTD_createCDict, sz1=1, sz2=2
-DEBUG Func:ZSTD_createCDict_advanced2, sz1=1, sz2=9
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_resolveRowMatchFinderMode, sz1=0, sz2=1
-Callee:ZSTD_freeCDict, sz1=0, sz2=3
-Callee:ZSTD_dedicatedDictSearch_getCParams, sz1=0, sz2=1
-Callee:ZSTD_dedicatedDictSearch_isSupported, sz1=0, sz2=0
-Callee:ZSTD_createCDict_advanced_internal, sz1=0, sz2=8
-Callee:ZSTD_initCDict_internal, sz1=1, sz2=6
-Callee:ZSTD_getCParamsFromCCtxParams, sz1=0, sz2=3
-Callee:ZSTD_overrideCParams, sz1=0, sz2=0
-DEBUG Func:ZSTD_initCDict_internal, sz1=1, sz2=6
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_cwksp_reserve_object, sz1=0, sz2=2
-Callee:ZSTD_cwksp_align, sz1=0, sz2=0
-Callee:ZSTD_reset_compressedBlockState, sz1=0, sz2=0
-Callee:ZSTD_reset_matchState, sz1=0, sz2=12
-Callee:ZSTD_compress_insertDictionary, sz1=2, sz2=4
-DEBUG Func:ZSTD_compressContinue, sz1=1, sz2=1
-Callee:ZSTD_compressContinue_public, sz1=1, sz2=1
-DEBUG Func:ZSTD_compressBlock_deprecated, sz1=1, sz2=2
-Callee:ZSTD_getBlockSize_deprecated, sz1=0, sz2=0
-Callee:ZSTD_compressContinue_internal, sz1=2, sz2=6
-DEBUG Func:ZSTD_compressBlock, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_deprecated, sz1=1, sz2=2
-DEBUG Func:ZSTD_compressBegin_advanced_internal, sz1=1, sz2=3
-Callee:ZSTD_checkCParams, sz1=0, sz2=1
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_compressBegin_internal, sz1=1, sz2=5
-DEBUG Func:ZSTD_compressBegin_advanced, sz1=1, sz2=2
-Callee:ZSTD_CCtxParams_init_internal, sz1=0, sz2=6
-Callee:ZSTD_compressBegin_advanced_internal, sz1=1, sz2=3
-DEBUG Func:ZSTD_compressBegin_usingDict, sz1=1, sz2=1
-Callee:ZSTD_compressBegin_usingDict_deprecated, sz1=1, sz2=3
-DEBUG Func:ZSTD_compressBegin_usingDict_deprecated, sz1=1, sz2=3
-Callee:ZSTD_CCtxParams_init_internal, sz1=0, sz2=6
-Callee:ZSTD_getParams_internal, sz1=0, sz2=1
-Callee:ZSTD_compressBegin_internal, sz1=1, sz2=5
-DEBUG Func:ZSTD_compressBegin, sz1=1, sz2=1
-Callee:ZSTD_compressBegin_usingDict_deprecated, sz1=1, sz2=3
-DEBUG Func:ZSTD_compressEnd, sz1=1, sz2=1
-Callee:ZSTD_compressEnd_public, sz1=1, sz2=4
-DEBUG Func:ZSTD_compress_advanced, sz1=1, sz2=4
-Callee:ZSTD_checkCParams, sz1=0, sz2=1
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_CCtxParams_init_internal, sz1=0, sz2=6
-Callee:ZSTD_compress_advanced_internal, sz1=2, sz2=3
-DEBUG Func:ZSTD_compress_advanced_internal, sz1=2, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_compressEnd_public, sz1=1, sz2=4
-Callee:ZSTD_compressBegin_internal, sz1=1, sz2=5
-DEBUG Func:ZSTD_compress_usingDict, sz1=1, sz2=3
-Callee:ZSTD_CCtxParams_init_internal, sz1=0, sz2=6
-Callee:ZSTD_getParams_internal, sz1=0, sz2=1
-Callee:ZSTD_compress_advanced_internal, sz1=2, sz2=3
-DEBUG Func:ZSTD_compressCCtx, sz1=1, sz2=1
-Callee:ZSTD_compress_usingDict, sz1=1, sz2=3
-DEBUG Func:ZSTD_compress, sz1=1, sz2=3
-Callee:ZSTD_initCCtx, sz1=0, sz2=2
-Callee:ZSTD_freeCCtxContent, sz1=0, sz2=3
-Callee:ZSTD_compressCCtx, sz1=1, sz2=1
-DEBUG Func:ZSTD_createCDict_advanced, sz1=1, sz2=2
-Callee:ZSTD_CCtxParams_init, sz1=0, sz2=0
-Callee:ZSTD_createCDict_advanced2, sz1=1, sz2=9
-DEBUG Func:ZSTD_createCDict, sz1=1, sz2=2
-Callee:ZSTD_createCDict_advanced, sz1=1, sz2=2
-Callee:ZSTD_getCParams_internal, sz1=0, sz2=3
-DEBUG Func:ZSTD_createCDict_byReference, sz1=1, sz2=2
-Callee:ZSTD_createCDict_advanced, sz1=1, sz2=2
-Callee:ZSTD_getCParams_internal, sz1=0, sz2=3
-DEBUG Func:ZSTD_initStaticCDict, sz1=1, sz2=10
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_resolveRowMatchFinderMode, sz1=0, sz2=1
-Callee:ZSTD_CCtxParams_init, sz1=0, sz2=0
-Callee:ZSTD_cwksp_init, sz1=0, sz2=3
-Callee:ZSTD_cwksp_reserve_object, sz1=0, sz2=2
-Callee:ZSTD_cwksp_move, sz1=0, sz2=0
-Callee:ZSTD_cwksp_align, sz1=0, sz2=0
-Callee:ZSTD_initCDict_internal, sz1=1, sz2=6
-Callee:ZSTD_cwksp_alloc_size, sz1=0, sz2=0
-Callee:ZSTD_sizeof_matchState, sz1=0, sz2=4
-DEBUG Func:ZSTD_compressBegin_usingCDict_advanced, sz1=1, sz2=1
-Callee:ZSTD_compressBegin_usingCDict_internal, sz1=1, sz2=5
-DEBUG Func:ZSTD_compressBegin_usingCDict_internal, sz1=1, sz2=5
-Callee:ZSTD_CCtxParams_init_internal, sz1=0, sz2=6
-Callee:ZSTD_getCParamsFromCDict, sz1=0, sz2=0
-Callee:ZSTD_getCParams, sz1=0, sz2=1
-Callee:ZSTD_highbit32.67, sz1=0, sz2=1
-Callee:ZSTD_compressBegin_internal, sz1=1, sz2=5
-DEBUG Func:ZSTDMT_initCStream_internal, sz1=2, sz2=16
-Callee:ZSTD_compressBound, sz1=0, sz2=0
-Callee:ZSTD_freeCDict, sz1=0, sz2=3
-Callee:ZSTD_createCDict_advanced, sz1=1, sz2=2
-Callee:ZSTDMT_releaseAllJobResources, sz1=0, sz2=1
-Callee:ZSTD_customFree.416, sz1=0, sz2=1
-Callee:ZSTDMT_setBufferSize, sz1=0, sz2=4
-Callee:ZSTD_highbit32.417, sz1=0, sz2=1
-Callee:ERR_isError.425, sz1=0, sz2=0
-Callee:ZSTDMT_resize, sz1=0, sz2=7
-Callee:MEM_32bits.430, sz1=0, sz2=0
-Callee:ZSTDMT_waitForAllJobsCompleted, sz1=0, sz2=6
-Callee:ZSTDMT_computeOverlapSize, sz1=0, sz2=2
-Callee:ZSTDMT_computeTargetJobLog, sz1=0, sz2=2
-Callee:ZSTD_rollingHash_primePower, sz1=0, sz2=1
-Callee:ZSTD_customMalloc.431, sz1=0, sz2=1
-Callee:ZSTDMT_serialState_reset, sz1=1, sz2=9
-DEBUG Func:ZSTDMT_serialState_reset, sz1=1, sz2=9
-Callee:ZSTD_XXH64_reset, sz1=0, sz2=0
-Callee:ZSTD_customFree.416, sz1=0, sz2=1
-Callee:ZSTDMT_setNbSeq, sz1=0, sz2=1
-Callee:ZSTD_customMalloc.431, sz1=0, sz2=1
-Callee:ZSTD_window_init.432, sz1=0, sz2=0
-Callee:ZSTD_window_update.433, sz1=0, sz2=0
-Callee:ZSTD_ldm_adjustParameters, sz1=0, sz2=0
-Callee:ZSTD_ldm_getMaxNbSeq, sz1=0, sz2=0
-Callee:ZSTD_ldm_fillHashTable, sz1=1, sz2=4
-DEBUG Func:ZSTD_compressStream, sz1=1, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_nextInputSizeHint_MTorST, sz1=0, sz2=2
-Callee:ZSTD_compressStream2, sz1=2, sz2=9
-DEBUG Func:ZSTD_compressSequences, sz1=2, sz2=7
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_XXH64_update, sz1=0, sz2=3
-Callee:ZSTD_XXH64_digest, sz1=0, sz2=2
-Callee:ZSTD_compressSequences_internal, sz1=1, sz2=12
-Callee:ZSTD_CCtx_init_compressStream2, sz1=3, sz2=15
-Callee:ZSTD_writeFrameHeader, sz1=0, sz2=3
-Callee:MEM_writeLE32.76, sz1=0, sz2=3
-DEBUG Func:ZSTD_compressSequences_internal, sz1=1, sz2=12
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_selectSequenceCopier, sz1=0, sz2=0
-Callee:determine_blockSize, sz1=0, sz2=2
-Callee:ZSTD_resetSeqStore, sz1=0, sz2=0
-Callee:ZSTD_blockState_confirmRepcodesAndEntropyTables, sz1=0, sz2=0
-Callee:ZSTD_entropyCompressSeqStore, sz1=1, sz2=1
-Callee:ZSTD_isRLE, sz1=0, sz2=2
-Callee:ZSTD_noCompressBlock, sz1=0, sz2=1
-Callee:MEM_writeLE24, sz1=0, sz2=1
-Callee:ZSTD_rleCompressBlock, sz1=0, sz2=1
-Callee:ZSTD_maybeRLE, sz1=0, sz2=0
-Callee:MEM_writeLE32.76, sz1=0, sz2=3
-DEBUG Func:ZSTD_compressSequencesAndLiterals, sz1=2, sz2=4
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_compressSequencesAndLiterals_internal, sz1=1, sz2=7
-Callee:ZSTD_CCtx_init_compressStream2, sz1=3, sz2=15
-Callee:ZSTD_writeFrameHeader, sz1=0, sz2=3
-DEBUG Func:ZSTD_compressSequencesAndLiterals_internal, sz1=1, sz2=7
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_convertBlockSequences, sz1=0, sz2=3
-Callee:ZSTD_get1BlockSummary, sz1=0, sz2=2
-Callee:ZSTD_resetSeqStore, sz1=0, sz2=0
-Callee:ZSTD_blockState_confirmRepcodesAndEntropyTables, sz1=0, sz2=0
-Callee:ZSTD_entropyCompressSeqStore_internal, sz1=1, sz2=6
-Callee:MEM_writeLE24, sz1=0, sz2=1
-DEBUG Func:ZSTD_flushStream, sz1=1, sz2=2
-Callee:inBuffer_forEndFlush, sz1=0, sz2=0
-Callee:ZSTD_compressStream2, sz1=2, sz2=9
-DEBUG Func:ZSTD_endStream, sz1=1, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:inBuffer_forEndFlush, sz1=0, sz2=0
-Callee:ZSTD_compressStream2, sz1=2, sz2=9
-DEBUG Func:ZSTD_generateSequences, sz1=1, sz2=6
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_compressBound, sz1=0, sz2=0
-Callee:ZSTD_customMalloc, sz1=0, sz2=1
-Callee:ZSTD_customFree.63, sz1=0, sz2=1
-Callee:ZSTD_CCtx_getParameter, sz1=0, sz2=1
-Callee:ZSTD_compress2, sz1=1, sz2=3
-DEBUG Func:ZSTD_compress2, sz1=1, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_CCtx_reset, sz1=0, sz2=2
-Callee:ZSTD_compressStream2_simpleArgs, sz1=1, sz2=1
-DEBUG Func:ZSTD_compressStream2_simpleArgs, sz1=1, sz2=1
-Callee:ZSTD_compressStream2, sz1=2, sz2=9
-DEBUG Func:ZSTD_compressStream2, sz1=2, sz2=9
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_CCtx_reset, sz1=0, sz2=2
-Callee:ZSTDMT_updateCParams_whileCompressing, sz1=0, sz2=1
-Callee:ZSTD_CCtx_init_compressStream2, sz1=3, sz2=15
-Callee:ZSTD_setBufferExpectations, sz1=0, sz2=0
-Callee:ZSTD_checkBufferStability, sz1=0, sz2=0
-Callee:ZSTD_CCtx_trace, sz1=0, sz2=1
-Callee:ZSTD_compressStream_generic, sz1=2, sz2=7
-Callee:ZSTDMT_compressStream_generic, sz1=0, sz2=5
-DEBUG Func:ZSTD_CCtx_init_compressStream2, sz1=3, sz2=15
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_resolveRowMatchFinderMode, sz1=0, sz2=1
-Callee:ZSTD_resolveBlockSplitterMode, sz1=0, sz2=0
-Callee:ZSTD_resolveEnableLdm, sz1=0, sz2=0
-Callee:ZSTD_resolveExternalSequenceValidation, sz1=0, sz2=0
-Callee:ZSTD_resolveMaxBlockSize, sz1=0, sz2=0
-Callee:ZSTD_resolveExternalRepcodeSearch, sz1=0, sz2=0
-Callee:ZSTDMT_initCStream_internal, sz1=2, sz2=16
-Callee:ZSTD_getCParamsFromCCtxParams, sz1=0, sz2=3
-Callee:ZSTD_hasExtSeqProd, sz1=0, sz2=0
-Callee:ZSTD_initLocalDict, sz1=1, sz2=1
-Callee:ZSTD_getCParamMode, sz1=0, sz2=1
-Callee:ZSTD_trace_compress_begin, sz1=0, sz2=0
-Callee:ZSTD_compressBegin_internal, sz1=1, sz2=5
-Callee:ZSTDMT_createCCtx_advanced, sz1=0, sz2=1
-DEBUG Func:ZSTD_compressStream_generic, sz1=2, sz2=7
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_compressBound, sz1=0, sz2=0
-Callee:ZSTD_CCtx_reset, sz1=0, sz2=2
-Callee:ZSTD_compressEnd_public, sz1=1, sz2=4
-Callee:ZSTD_limitCopy, sz1=0, sz2=0
-Callee:ZSTD_compressContinue_public, sz1=1, sz2=1
-Callee:ZSTD_nextInputSizeHint, sz1=0, sz2=0
-DEBUG Func:ZSTD_compressEnd_public, sz1=1, sz2=4
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_CCtx_trace, sz1=0, sz2=1
-Callee:ZSTD_compressContinue_internal, sz1=2, sz2=6
-Callee:ZSTD_writeEpilogue, sz1=0, sz2=5
-DEBUG Func:ZSTD_compressContinue_public, sz1=1, sz2=1
-Callee:ZSTD_compressContinue_internal, sz1=2, sz2=6
-DEBUG Func:ZSTD_compressContinue_internal, sz1=2, sz2=6
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_writeFrameHeader, sz1=0, sz2=3
-Callee:ZSTD_window_update, sz1=0, sz2=0
-Callee:ZSTD_overflowCorrectIfNeeded, sz1=0, sz2=6
-Callee:ZSTD_compress_frameChunk, sz1=3, sz2=13
-Callee:ZSTD_compressBlock_internal, sz1=2, sz2=7
-DEBUG Func:ZSTD_compress_frameChunk, sz1=3, sz2=13
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_XXH64_update, sz1=0, sz2=3
-Callee:ZSTD_overflowCorrectIfNeeded, sz1=0, sz2=6
-Callee:ZSTD_compressBlock_internal, sz1=2, sz2=7
-Callee:ZSTD_optimalBlockSize, sz1=0, sz2=1
-Callee:ZSTD_checkDictValidity, sz1=0, sz2=0
-Callee:ZSTD_window_enforceMaxDist, sz1=0, sz2=0
-Callee:ZSTD_useTargetCBlockSize, sz1=0, sz2=0
-Callee:ZSTD_compressBlock_targetCBlockSize, sz1=2, sz2=3
-Callee:ZSTD_blockSplitterEnabled, sz1=0, sz2=0
-Callee:ZSTD_compressBlock_splitBlock, sz1=2, sz2=4
-Callee:ZSTD_noCompressBlock, sz1=0, sz2=1
-Callee:MEM_writeLE24, sz1=0, sz2=1
-DEBUG Func:ZSTD_compressBlock_internal, sz1=2, sz2=7
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_getSeqStore, sz1=0, sz2=0
-Callee:ZSTD_buildSeqStore, sz1=1, sz2=15
-Callee:ZSTD_copyBlockSequences, sz1=0, sz2=1
-Callee:ZSTD_blockState_confirmRepcodesAndEntropyTables, sz1=0, sz2=0
-Callee:ZSTD_entropyCompressSeqStore, sz1=1, sz2=1
-Callee:ZSTD_isRLE, sz1=0, sz2=2
-DEBUG Func:ZSTD_buildSeqStore, sz1=1, sz2=15
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_selectBlockCompressor, sz1=0, sz2=1
-Callee:ZSTD_resetSeqStore, sz1=0, sz2=0
-Callee:ZSTD_assertEqualCParams, sz1=0, sz2=0
-Callee:ZSTD_matchState_dictMode, sz1=0, sz2=1
-Callee:ZSTD_postProcessSequenceProducerResult, sz1=0, sz2=0
-Callee:ZSTD_fastSequenceLengthSum, sz1=0, sz2=0
-Callee:ZSTD_transferSequences_wBlockDelim, sz1=0, sz2=9
-Callee:ZSTD_storeLastLiterals, sz1=0, sz2=0
-Callee:ZSTD_validateSeqStore, sz1=0, sz2=0
-Callee:ZSTD_ldm_generateSequences, sz1=1, sz2=6
-Callee:ZSTD_ldm_skipSequences, sz1=0, sz2=0
-Callee:ZSTD_ldm_skipRawSeqStoreBytes, sz1=0, sz2=0
-Callee:ZSTD_ldm_blockCompress, sz1=0, sz2=9
-Callee:ZSTD_hasExtSeqProd, sz1=0, sz2=0
-DEBUG Func:ZSTD_entropyCompressSeqStore, sz1=1, sz2=1
-Callee:ZSTD_entropyCompressSeqStore_wExtLitBuffer, sz1=1, sz2=3
-DEBUG Func:ZSTD_entropyCompressSeqStore_wExtLitBuffer, sz1=1, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_entropyCompressSeqStore_internal, sz1=1, sz2=6
-Callee:ZSTD_minGain, sz1=0, sz2=0
-DEBUG Func:ZSTD_entropyCompressSeqStore_internal, sz1=1, sz2=6
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_compressLiterals, sz1=0, sz2=8
-Callee:ZSTD_encodeSequences, sz1=0, sz2=2
-Callee:ZSTD_literalsCompressionIsDisabled, sz1=0, sz2=0
-Callee:MEM_writeLE16.74, sz1=0, sz2=2
-Callee:ZSTD_buildSequencesStatistics, sz1=0, sz2=5
-DEBUG Func:ZSTD_compressBlock_fast_dictMatchState_7_0, sz1=1, sz2=14
-Callee:ZSTD_comparePackedTags.211, sz1=0, sz2=0
-Callee:ZSTD_index_overlap_check.212, sz1=0, sz2=0
-Callee:ZSTD_count_2segments.213, sz1=0, sz2=1
-Callee:ZSTD_hash4Ptr.175, sz1=0, sz2=2
-Callee:ZSTD_hash5Ptr.176, sz1=0, sz2=2
-Callee:ZSTD_hash6Ptr.177, sz1=0, sz2=2
-Callee:ZSTD_hash7Ptr.178, sz1=0, sz2=2
-Callee:ZSTD_hash8Ptr.179, sz1=0, sz2=2
-Callee:MEM_read32.190, sz1=0, sz2=0
-Callee:ZSTD_match4Found_cmov, sz1=0, sz2=2
-Callee:ZSTD_count.196, sz1=0, sz2=5
-Callee:ZSTD_copy16.197, sz1=0, sz2=0
-Callee:ZSTD_copy8.198, sz1=0, sz2=0
-Callee:ZSTD_safecopyLiterals.199, sz1=0, sz2=2
-DEBUG Func:ZSTD_ldm_fillHashTable, sz1=1, sz2=4
-Callee:ZSTD_XXH64, sz1=0, sz2=1
-Callee:ZSTD_ldm_gear_init, sz1=0, sz2=0
-Callee:ZSTD_ldm_gear_feed, sz1=0, sz2=0
-Callee:ZSTD_ldm_insertEntry, sz1=0, sz2=1
-DEBUG Func:ZSTD_ldm_generateSequences, sz1=1, sz2=6
-Callee:ZSTD_window_needOverflowCorrection.323, sz1=0, sz2=1
-Callee:ZSTD_window_correctOverflow.324, sz1=0, sz2=0
-Callee:ZSTD_ldm_reduceTable, sz1=0, sz2=0
-Callee:ZSTD_window_enforceMaxDist.325, sz1=0, sz2=0
-Callee:ZSTD_ldm_generateSequences_internal, sz1=2, sz2=11
-Callee:ERR_isError.326, sz1=0, sz2=0
-DEBUG Func:ZSTD_ldm_generateSequences_internal, sz1=2, sz2=11
-Callee:ZSTD_XXH64, sz1=0, sz2=1
-Callee:ZSTD_ldm_gear_init, sz1=0, sz2=0
-Callee:ZSTD_ldm_gear_feed, sz1=0, sz2=0
-Callee:ZSTD_ldm_insertEntry, sz1=0, sz2=1
-Callee:ZSTD_ldm_getBucket, sz1=0, sz2=0
-Callee:ZSTD_window_hasExtDict.327, sz1=0, sz2=0
-Callee:ZSTD_ldm_gear_reset, sz1=0, sz2=0
-Callee:ZSTD_count_2segments.328, sz1=0, sz2=1
-Callee:ZSTD_ldm_countBackwardsMatch_2segments, sz1=0, sz2=1
-Callee:ZSTD_count.329, sz1=0, sz2=5
-Callee:ZSTD_ldm_countBackwardsMatch, sz1=0, sz2=0
-DEBUG Func:ZSTD_compressBlock_targetCBlockSize, sz1=2, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_buildSeqStore, sz1=1, sz2=15
-Callee:ZSTD_compressBlock_targetCBlockSize_body, sz1=1, sz2=8
-DEBUG Func:ZSTD_compressBlock_splitBlock, sz1=2, sz2=4
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_buildSeqStore, sz1=1, sz2=15
-Callee:ZSTD_noCompressBlock, sz1=0, sz2=1
-Callee:ZSTD_compressBlock_splitBlock_internal, sz1=2, sz2=6
-DEBUG Func:ZSTD_compressBlock_splitBlock_internal, sz1=2, sz2=6
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_deriveBlockSplits, sz1=1, sz2=1
-Callee:ZSTD_compressSeqStore_singleBlock, sz1=1, sz2=9
-Callee:ZSTD_deriveSeqStoreChunk, sz1=0, sz2=1
-Callee:ZSTD_countSeqStoreLiteralsBytes, sz1=0, sz2=0
-Callee:ZSTD_countSeqStoreMatchBytes, sz1=0, sz2=0
-DEBUG Func:ZSTD_deriveBlockSplits, sz1=1, sz2=1
-Callee:ZSTD_deriveBlockSplitsHelper, sz1=1, sz2=3
-DEBUG Func:ZSTD_compressSeqStore_singleBlock, sz1=1, sz2=9
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_copyBlockSequences, sz1=0, sz2=1
-Callee:ZSTD_blockState_confirmRepcodesAndEntropyTables, sz1=0, sz2=0
-Callee:ZSTD_entropyCompressSeqStore, sz1=1, sz2=1
-Callee:ZSTD_isRLE, sz1=0, sz2=2
-Callee:ZSTD_noCompressBlock, sz1=0, sz2=1
-Callee:ZSTD_seqStore_resolveOffCodes, sz1=0, sz2=2
-Callee:ZSTD_rleCompressBlock, sz1=0, sz2=1
-Callee:writeBlockHeader, sz1=0, sz2=1
-DEBUG Func:ZSTD_deriveBlockSplitsHelper, sz1=1, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_deriveSeqStoreChunk, sz1=0, sz2=1
-Callee:ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize, sz1=2, sz2=3
-DEBUG Func:ZSTD_buildEntropyStatisticsAndEstimateSubBlockSize, sz1=2, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_buildBlockEntropyStats, sz1=1, sz2=4
-Callee:ZSTD_estimateBlockSize, sz1=1, sz2=2
-DEBUG Func:ZSTD_buildBlockEntropyStats, sz1=1, sz2=4
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_literalsCompressionIsDisabled, sz1=0, sz2=0
-Callee:ZSTD_buildBlockEntropyStats_literals, sz1=0, sz2=7
-Callee:ZSTD_buildBlockEntropyStats_sequences, sz1=1, sz2=3
-DEBUG Func:ZSTD_estimateBlockSize, sz1=1, sz2=2
-Callee:ZSTD_estimateBlockSize_literal, sz1=0, sz2=3
-Callee:ZSTD_estimateBlockSize_sequences, sz1=0, sz2=1
-DEBUG Func:ZSTD_buildBlockEntropyStats_sequences, sz1=1, sz2=3
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_buildSequencesStatistics, sz1=0, sz2=5
-Callee:ZSTD_buildDummySequencesStatistics, sz1=0, sz2=0
-DEBUG Func:ZSTD_compressBlock_targetCBlockSize_body, sz1=1, sz2=8
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_blockState_confirmRepcodesAndEntropyTables, sz1=0, sz2=0
-Callee:ZSTD_isRLE, sz1=0, sz2=2
-Callee:ZSTD_minGain, sz1=0, sz2=0
-Callee:ZSTD_noCompressBlock, sz1=0, sz2=1
-Callee:ZSTD_rleCompressBlock, sz1=0, sz2=1
-Callee:ZSTD_maybeRLE, sz1=0, sz2=0
-Callee:ZSTD_compressSuperBlock, sz1=2, sz2=3
-DEBUG Func:ZSTD_initLocalDict, sz1=1, sz2=1
-Callee:ZSTD_createCDict_advanced2, sz1=1, sz2=9
-DEBUG Func:ZSTD_compressBegin_internal, sz1=1, sz2=5
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_resetCCtx_internal, sz1=0, sz2=24
-Callee:ZSTD_trace_compress_begin, sz1=0, sz2=0
-Callee:ZSTD_resetCCtx_usingCDict, sz1=0, sz2=3
-Callee:ZSTD_compress_insertDictionary, sz1=2, sz2=4
-DEBUG Func:ZSTD_compress_insertDictionary, sz1=2, sz2=4
-Callee:ZSTD_reset_compressedBlockState, sz1=0, sz2=0
-Callee:ZSTD_loadDictionaryContent, sz1=1, sz2=12
-Callee:MEM_readLE32.82, sz1=0, sz2=3
-Callee:ZSTD_loadZstdDictionary, sz1=1, sz2=4
-DEBUG Func:ZSTD_loadDictionaryContent, sz1=1, sz2=12
-Callee:MEM_64bits, sz1=0, sz2=0
-Callee:ZSTD_window_update, sz1=0, sz2=0
-Callee:ZSTD_overflowCorrectIfNeeded, sz1=0, sz2=6
-Callee:ZSTD_assertEqualCParams, sz1=0, sz2=0
-Callee:ZSTD_ldm_fillHashTable, sz1=1, sz2=4
-Callee:ZSTD_updateTree, sz1=0, sz2=1
-Callee:ZSTD_CDictIndicesAreTagged, sz1=0, sz2=0
-Callee:ZSTD_dedicatedDictSearch_lazy_loadDictionary, sz1=0, sz2=5
-Callee:ZSTD_insertAndFindFirstIndex, sz1=0, sz2=5
-Callee:ZSTD_row_update, sz1=0, sz2=5
-Callee:ZSTD_fillDoubleHashTable, sz1=0, sz2=2
-Callee:ZSTD_fillHashTable, sz1=0, sz2=2
-DEBUG Func:ZSTD_loadZstdDictionary, sz1=1, sz2=4
-Callee:ERR_isError.65, sz1=0, sz2=0
-Callee:ZSTD_loadDictionaryContent, sz1=1, sz2=12
-Callee:MEM_readLE32.82, sz1=0, sz2=3
-Callee:ZSTD_loadCEntropy, sz1=0, sz2=7
-DEBUG Func:ZSTD_decompressDCtx, sz1=1, sz2=2
-Callee:ZSTD_getDDict, sz1=0, sz2=1
-Callee:ZSTD_decompress_usingDDict, sz1=1, sz2=1
-DEBUG Func:ZSTD_decompress_usingDDict, sz1=1, sz2=1
-Callee:ZSTD_decompressMultiFrame, sz1=1, sz2=11
-DEBUG Func:ZSTD_decompress, sz1=1, sz2=3
-Callee:ZSTD_decompressDCtx, sz1=1, sz2=2
-Callee:ZSTD_createDCtx_internal, sz1=0, sz2=2
-Callee:ZSTD_freeDCtx, sz1=0, sz2=3
-DEBUG Func:ZSTD_decompressContinue, sz1=1, sz2=13
-Callee:ZSTD_XXH64_update, sz1=0, sz2=3
-Callee:ZSTD_XXH64_digest, sz1=0, sz2=2
-Callee:ZSTD_decompressBlock_internal, sz1=1, sz2=13
-Callee:ZSTD_checkContinuity, sz1=0, sz2=0
-Callee:ZSTD_nextSrcSizeToDecompressWithInputSize, sz1=0, sz2=0
-Callee:ZSTD_getcBlockSize, sz1=0, sz2=1
-Callee:MEM_readLE32.480, sz1=0, sz2=3
-Callee:ZSTD_frameHeaderSize_internal, sz1=0, sz2=1
-Callee:ERR_isError.491, sz1=0, sz2=0
-Callee:ZSTD_decodeFrameHeader, sz1=0, sz2=4
-Callee:ZSTD_copyRawBlock, sz1=0, sz2=0
-Callee:ZSTD_setRleBlock, sz1=0, sz2=0
-Callee:ZSTD_DCtx_trace_end, sz1=0, sz2=3
-DEBUG Func:ZSTD_decompressStream, sz1=2, sz2=21
-Callee:ZSTD_getDDict, sz1=0, sz2=1
-Callee:ZSTD_decompress_usingDDict, sz1=1, sz2=1
-Callee:ZSTD_nextSrcSizeToDecompress, sz1=0, sz2=0
-Callee:ZSTD_nextInputType, sz1=0, sz2=0
-Callee:ZSTD_nextSrcSizeToDecompressWithInputSize, sz1=0, sz2=0
-Callee:ZSTD_decodingBufferSize_internal, sz1=0, sz2=0
-Callee:ZSTD_checkOutBuffer, sz1=0, sz2=0
-Callee:ZSTD_DCtx_updateOversizedDuration, sz1=0, sz2=1
-Callee:ZSTD_DCtx_isOversizedTooLong, sz1=0, sz2=0
-Callee:ZSTD_decompressContinueStream, sz1=1, sz2=3
-Callee:ZSTD_isSkipFrame, sz1=0, sz2=0
-Callee:ZSTD_limitCopy.500, sz1=0, sz2=0
-Callee:ZSTD_customMalloc.477, sz1=0, sz2=1
-Callee:ZSTD_customFree.479, sz1=0, sz2=1
-Callee:MEM_readLE32.480, sz1=0, sz2=3
-Callee:ZSTD_getFrameHeader_advanced, sz1=0, sz2=6
-Callee:ERR_isError.491, sz1=0, sz2=0
-Callee:ZSTD_findFrameCompressedSize_advanced, sz1=0, sz2=1
-Callee:ZSTD_decompressBegin_usingDDict, sz1=0, sz2=5
-Callee:ZSTD_decodeFrameHeader, sz1=0, sz2=4
-Callee:ZSTD_DCtx_selectFrameDDict, sz1=0, sz2=2
-DEBUG Func:ZSTD_decompressContinueStream, sz1=1, sz2=3
-Callee:ZSTD_decompressContinue, sz1=1, sz2=13
-Callee:ZSTD_isSkipFrame, sz1=0, sz2=0
-Callee:ERR_isError.491, sz1=0, sz2=0
-DEBUG Func:ZSTD_decompressStream_simpleArgs, sz1=1, sz2=1
-Callee:ZSTD_decompressStream, sz1=2, sz2=21
-DEBUG Func:ZSTD_decodeLiteralsBlock_wrapper, sz1=1, sz2=1
-Callee:ZSTD_decodeLiteralsBlock, sz1=1, sz2=11
-DEBUG Func:ZSTD_compressSuperBlock, sz1=2, sz2=3
-Callee:ZSTD_buildBlockEntropyStats, sz1=1, sz2=4
-Callee:ERR_isError.130, sz1=0, sz2=0
-Callee:ZSTD_compressSubBlock_multi, sz1=1, sz2=10
-DEBUG Func:ZSTD_compressSubBlock_multi, sz1=1, sz2=10
-Callee:ERR_isError.130, sz1=0, sz2=0
-Callee:ZSTD_estimateSubBlockSize, sz1=1, sz2=2
-Callee:sizeBlockSequences, sz1=0, sz2=0
-Callee:countLiterals, sz1=0, sz2=1
-Callee:ZSTD_seqDecompressedSize, sz1=0, sz2=1
-Callee:ZSTD_compressSubBlock, sz1=0, sz2=4
-Callee:ZSTD_needSequenceEntropyTables, sz1=0, sz2=0
-Callee:ZSTD_noCompressBlock.131, sz1=0, sz2=1
-Callee:ZSTD_getSequenceLength, sz1=0, sz2=0
-Callee:ZSTD_updateRep.132, sz1=0, sz2=0
-DEBUG Func:ZSTD_estimateSubBlockSize, sz1=1, sz2=2
-Callee:ZSTD_estimateSubBlockSize_literal, sz1=0, sz2=3
-Callee:ZSTD_estimateSubBlockSize_sequences, sz1=0, sz2=1
-DEBUG Func:ZSTD_compressBlock_doubleFast, sz1=4, sz2=4
-Callee:ZSTD_compressBlock_doubleFast_noDict_4, sz1=0, sz2=13
-Callee:ZSTD_compressBlock_doubleFast_noDict_5, sz1=0, sz2=13
-Callee:ZSTD_compressBlock_doubleFast_noDict_6, sz1=0, sz2=13
-Callee:ZSTD_compressBlock_doubleFast_noDict_7, sz1=0, sz2=13
-DEBUG Func:ZSTD_compressBlock_doubleFast_extDict, sz1=4, sz2=4
-Callee:ZSTD_compressBlock_doubleFast_extDict_4, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_doubleFast_extDict_5, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_doubleFast_extDict_6, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_doubleFast_extDict_7, sz1=1, sz2=1
-DEBUG Func:ZSTD_compressBlock_doubleFast_extDict_4, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_doubleFast_extDict_generic, sz1=1, sz2=14
-DEBUG Func:ZSTD_compressBlock_doubleFast_extDict_5, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_doubleFast_extDict_generic, sz1=1, sz2=14
-DEBUG Func:ZSTD_compressBlock_doubleFast_extDict_6, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_doubleFast_extDict_generic, sz1=1, sz2=14
-DEBUG Func:ZSTD_compressBlock_doubleFast_extDict_7, sz1=1, sz2=1
-Callee:ZSTD_compressBlock_doubleFast_extDict_generic, sz1=1, sz2=14
-DEBUG Func:ZSTD_compressBlock_doubleFast_extDict_generic, sz1=1, sz2=14
-Callee:ZSTD_hash4Ptr, sz1=0, sz2=2
-Callee:ZSTD_hash5Ptr, sz1=0, sz2=2
-Callee:ZSTD_hash6Ptr, sz1=0, sz2=2
-Callee:ZSTD_hash7Ptr, sz1=0, sz2=2
-Callee:ZSTD_hash8Ptr, sz1=0, sz2=2
-Callee:MEM_read64.150, sz1=0, sz2=0
-Callee:MEM_read32.153, sz1=0, sz2=0
-Callee:ZSTD_compressBlock_doubleFast, sz1=4, sz2=4
-Callee:ZSTD_copy16.158, sz1=0, sz2=0
-Callee:ZSTD_copy8.159, sz1=0, sz2=0
-Callee:ZSTD_safecopyLiterals.160, sz1=0, sz2=2
-Callee:ZSTD_index_overlap_check, sz1=0, sz2=0
-Callee:ZSTD_count_2segments, sz1=0, sz2=1
-Callee:ZSTD_getLowestMatchIndex, sz1=0, sz2=0
-DEBUG Func:ZSTD_compressBlock_fast_dictMatchState, sz1=4, sz2=4
-Callee:ZSTD_compressBlock_fast_dictMatchState_7_0, sz1=1, sz2=14
-Callee:ZSTD_compressBlock_fast_dictMatchState_4_0, sz1=1, sz2=14
-Callee:ZSTD_compressBlock_fast_dictMatchState_5_0, sz1=1, sz2=14
-Callee:ZSTD_compressBlock_fast_dictMatchState_6_0, sz1=1, sz2=14
-DEBUG Func:ZSTD_compressBlock_fast_dictMatchState_4_0, sz1=1, sz2=14
-Callee:ZSTD_comparePackedTags.211, sz1=0, sz2=0
-Callee:ZSTD_index_overlap_check.212, sz1=0, sz2=0
-Callee:ZSTD_count_2segments.213, sz1=0, sz2=1
-Callee:ZSTD_hash4Ptr.175, sz1=0, sz2=2
-Callee:ZSTD_hash5Ptr.176, sz1=0, sz2=2
-Callee:ZSTD_hash6Ptr.177, sz1=0, sz2=2
-Callee:ZSTD_hash7Ptr.178, sz1=0, sz2=2
-Callee:ZSTD_hash8Ptr.179, sz1=0, sz2=2
-Callee:MEM_read32.190, sz1=0, sz2=0
-Callee:ZSTD_match4Found_cmov, sz1=0, sz2=2
-Callee:ZSTD_count.196, sz1=0, sz2=5
-Callee:ZSTD_copy16.197, sz1=0, sz2=0
-Callee:ZSTD_copy8.198, sz1=0, sz2=0
-Callee:ZSTD_safecopyLiterals.199, sz1=0, sz2=2
-DEBUG Func:ZSTD_compressBlock_fast_dictMatchState_5_0, sz1=1, sz2=14
-Callee:ZSTD_comparePackedTags.211, sz1=0, sz2=0
-Callee:ZSTD_index_overlap_check.212, sz1=0, sz2=0
-Callee:ZSTD_count_2segments.213, sz1=0, sz2=1
-Callee:ZSTD_hash4Ptr.175, sz1=0, sz2=2
-Callee:ZSTD_hash5Ptr.176, sz1=0, sz2=2
-Callee:ZSTD_hash6Ptr.177, sz1=0, sz2=2
-Callee:ZSTD_hash7Ptr.178, sz1=0, sz2=2
-Callee:ZSTD_hash8Ptr.179, sz1=0, sz2=2
-Callee:MEM_read32.190, sz1=0, sz2=0
-Callee:ZSTD_match4Found_cmov, sz1=0, sz2=2
-Callee:ZSTD_count.196, sz1=0, sz2=5
-Callee:ZSTD_copy16.197, sz1=0, sz2=0
-Callee:ZSTD_copy8.198, sz1=0, sz2=0
-Callee:ZSTD_safecopyLiterals.199, sz1=0, sz2=2
-DEBUG Func:ZSTD_compressBlock_fast_dictMatchState_6_0, sz1=1, sz2=14
-Callee:ZSTD_comparePackedTags.211, sz1=0, sz2=0
-Callee:ZSTD_index_overlap_check.212, sz1=0, sz2=0
-Callee:ZSTD_count_2segments.213, sz1=0, sz2=1
-Callee:ZSTD_hash4Ptr.175, sz1=0, sz2=2
-Callee:ZSTD_hash5Ptr.176, sz1=0, sz2=2
-Callee:ZSTD_hash6Ptr.177, sz1=0, sz2=2
-Callee:ZSTD_hash7Ptr.178, sz1=0, sz2=2
-Callee:ZSTD_hash8Ptr.179, sz1=0, sz2=2
-Callee:MEM_read32.190, sz1=0, sz2=0
-Callee:ZSTD_match4Found_cmov, sz1=0, sz2=2
-Callee:ZSTD_count.196, sz1=0, sz2=5
-Callee:ZSTD_copy16.197, sz1=0, sz2=0
-Callee:ZSTD_copy8.198, sz1=0, sz2=0
-Callee:ZSTD_safecopyLiterals.199, sz1=0, sz2=2
-DEBUG Func:ZDICT_trainFromBuffer, sz1=1, sz2=1
-Callee:ZDICT_optimizeTrainFromBuffer_fastCover, sz1=3, sz2=20
-DEBUG Func:ZDICT_addEntropyTablesFromBuffer, sz1=1, sz2=1
-Callee:ZDICT_addEntropyTablesFromBuffer_advanced, sz1=1, sz2=6
-DEBUG Func:ZSTDMT_compressionJob, sz1=4, sz2=21
-Callee:ZSTD_CCtxParams_setParameter, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:pthread_cond_signal, sz1=0, sz2=0
-Callee:ZSTD_compressBegin_advanced_internal, sz1=1, sz2=3
-Callee:ERR_isError.425, sz1=0, sz2=0
-Callee:ZSTD_CCtx_trace, sz1=0, sz2=1
-Callee:ZSTD_compressEnd_public, sz1=1, sz2=4
-Callee:ZSTD_compressContinue_public, sz1=1, sz2=1
-Callee:ZSTD_invalidateRepCodes, sz1=0, sz2=0
-Callee:ZSTDMT_getCCtx, sz1=0, sz2=5
-Callee:ZSTDMT_getSeq, sz1=0, sz2=2
-Callee:ZSTDMT_getBuffer, sz1=0, sz2=6
-Callee:ZSTDMT_serialState_genSequences, sz1=1, sz2=12
-Callee:ZSTDMT_serialState_applySequences, sz1=0, sz2=1
-Callee:ZSTDMT_serialState_ensureFinished, sz1=0, sz2=8
-Callee:ZSTDMT_releaseSeq, sz1=0, sz2=2
-Callee:ZSTDMT_releaseCCtx, sz1=0, sz2=5
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadNotify, sz1=0, sz2=0
-DEBUG Func:ZSTDMT_serialState_genSequences, sz1=1, sz2=12
-Callee:ZSTD_XXH64_update, sz1=0, sz2=3
-Callee:pthread_mutex_lock, sz1=0, sz2=0
-Callee:pthread_mutex_unlock, sz1=0, sz2=0
-Callee:pthread_cond_wait, sz1=0, sz2=0
-Callee:pthread_cond_signal, sz1=0, sz2=0
-Callee:pthread_cond_broadcast, sz1=0, sz2=0
-Callee:ZSTD_window_update.433, sz1=0, sz2=0
-Callee:ZSTD_ldm_generateSequences, sz1=1, sz2=6
-Callee:CB.ThreadLock, sz1=0, sz2=0
-Callee:CB.ThreadUnlock, sz1=0, sz2=0
-Callee:CB.ThreadWait, sz1=0, sz2=0
-Callee:CB.ThreadNotify, sz1=0, sz2=0
-DEBUG Func:HUF_decompress1X_DCtx_wksp, sz1=1, sz2=3
-Callee:HUF_decompress1X2_DCtx_wksp, sz1=0, sz2=3
-Callee:HUF_selectDecoder, sz1=0, sz2=0
-Callee:HUF_decompress1X1_DCtx_wksp, sz1=0, sz2=3
-DEBUG Func:HUF_decompress4X_hufOnly_wksp, sz1=1, sz2=3
-Callee:HUF_selectDecoder, sz1=0, sz2=0
-Callee:HUF_decompress4X2_DCtx_wksp, sz1=0, sz2=3
-Callee:HUF_decompress4X1_DCtx_wksp, sz1=0, sz2=3
-DEBUG Func:ZSTD_decompress_usingDict, sz1=1, sz2=1
-Callee:ZSTD_decompressMultiFrame, sz1=1, sz2=11
-DEBUG Func:ZSTD_decompressMultiFrame, sz1=1, sz2=11
-Callee:ZSTD_getErrorCode, sz1=0, sz2=1
-Callee:ZSTD_checkContinuity, sz1=0, sz2=0
-Callee:ZSTD_DDict_dictContent, sz1=0, sz2=0
-Callee:ZSTD_DDict_dictSize, sz1=0, sz2=0
-Callee:MEM_readLE32.480, sz1=0, sz2=3
-Callee:ZSTD_startingInputLength, sz1=0, sz2=0
-Callee:readSkippableFrameSize, sz1=0, sz2=1
-Callee:ERR_isError.491, sz1=0, sz2=0
-Callee:ZSTD_decompressBegin_usingDDict, sz1=0, sz2=5
-Callee:ZSTD_decompressBegin_usingDict, sz1=0, sz2=3
-Callee:ZSTD_decompressFrame, sz1=1, sz2=11
-DEBUG Func:ZSTD_decompressFrame, sz1=1, sz2=11
-Callee:ZSTD_XXH64_update, sz1=0, sz2=3
-Callee:ZSTD_XXH64_digest, sz1=0, sz2=2
-Callee:ZSTD_decompressBlock_internal, sz1=1, sz2=13
-Callee:ZSTD_getcBlockSize, sz1=0, sz2=1
-Callee:MEM_readLE32.480, sz1=0, sz2=3
-Callee:ZSTD_frameHeaderSize_internal, sz1=0, sz2=1
-Callee:ERR_isError.491, sz1=0, sz2=0
-Callee:ZSTD_decodeFrameHeader, sz1=0, sz2=4
-Callee:ZSTD_copyRawBlock, sz1=0, sz2=0
-Callee:ZSTD_setRleBlock, sz1=0, sz2=0
-Callee:ZSTD_DCtx_trace_end, sz1=0, sz2=3
-DEBUG Func:COVER_selectDict, sz1=2, sz2=8
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:ERR_isError.544, sz1=0, sz2=0
-Callee:COVER_checkTotalCompressedSize, sz1=2, sz2=9
-Callee:COVER_dictSelectionError, sz1=0, sz2=1
-Callee:setDictSelection, sz1=0, sz2=0
-Callee:ZDICT_isError, sz1=0, sz2=1
-Callee:ZDICT_finalizeDictionary, sz1=1, sz2=7
-DEBUG Func:ZDICT_optimizeTrainFromBuffer_cover, sz1=3, sz2=18
-Callee:malloc, sz1=0, sz2=0
-Callee:POOL_create, sz1=0, sz2=1
-Callee:POOL_free, sz1=0, sz2=4
-Callee:free, sz1=0, sz2=0
-Callee:POOL_add, sz1=0, sz2=8
-Callee:COVER_warnOnSmallCorpus, sz1=0, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:COVER_checkParameters, sz1=0, sz2=0
-Callee:COVER_ctx_init, sz1=0, sz2=7
-Callee:ERR_isError.544, sz1=0, sz2=0
-Callee:COVER_ctx_destroy, sz1=0, sz2=1
-Callee:clock, sz1=0, sz2=0
-Callee:COVER_best_init, sz1=0, sz2=2
-Callee:COVER_best_wait, sz1=0, sz2=6
-Callee:COVER_best_destroy, sz1=0, sz2=4
-Callee:COVER_best_start, sz1=0, sz2=4
-Callee:COVER_tryParameters, sz1=2, sz2=12
-DEBUG Func:COVER_tryParameters, sz1=2, sz2=12
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:COVER_map_init, sz1=0, sz2=3
-Callee:COVER_buildDictionary, sz1=0, sz2=5
-Callee:COVER_map_destroy, sz1=0, sz2=1
-Callee:COVER_best_finish, sz1=0, sz2=9
-Callee:COVER_dictSelectionError, sz1=0, sz2=1
-Callee:COVER_dictSelectionIsError, sz1=0, sz2=1
-Callee:COVER_dictSelectionFree, sz1=0, sz2=1
-Callee:COVER_selectDict, sz1=2, sz2=8
-DEBUG Func:divsufsort, sz1=2, sz2=4
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:sort_typeBstar, sz1=2, sz2=2
-Callee:construct_SA, sz1=0, sz2=1
-DEBUG Func:sort_typeBstar, sz1=2, sz2=2
-Callee:sssort, sz1=3, sz2=6
-Callee:trsort, sz1=1, sz2=4
-DEBUG Func:sssort, sz1=3, sz2=6
-Callee:__assert_fail, sz1=0, sz2=0
-Callee:ss_isqrt, sz1=0, sz2=0
-Callee:ss_mintrosort, sz1=1, sz2=6
-Callee:ss_swapmerge, sz1=2, sz2=5
-Callee:ss_inplacemerge, sz1=1, sz2=3
-Callee:ss_compare, sz1=0, sz2=0
-DEBUG Func:trsort, sz1=1, sz2=4
-Callee:__assert_fail, sz1=0, sz2=0
-Callee:tr_ilg, sz1=0, sz2=0
-Callee:trbudget_init, sz1=0, sz2=0
-Callee:tr_introsort, sz1=4, sz2=9
-DEBUG Func:tr_introsort, sz1=4, sz2=9
-Callee:__assert_fail, sz1=0, sz2=0
-Callee:tr_ilg, sz1=0, sz2=0
-Callee:tr_partition, sz1=0, sz2=1
-Callee:tr_copy, sz1=0, sz2=1
-Callee:tr_partialcopy, sz1=0, sz2=1
-Callee:trbudget_check, sz1=0, sz2=0
-Callee:tr_insertionsort, sz1=0, sz2=0
-Callee:tr_heapsort, sz1=0, sz2=1
-Callee:tr_pivot, sz1=0, sz2=3
-DEBUG Func:ss_mintrosort, sz1=1, sz2=6
-Callee:__assert_fail, sz1=0, sz2=0
-Callee:ss_ilg, sz1=0, sz2=0
-Callee:ss_insertionsort, sz1=0, sz2=1
-Callee:ss_heapsort, sz1=0, sz2=1
-Callee:ss_partition, sz1=0, sz2=0
-Callee:ss_pivot, sz1=0, sz2=3
-DEBUG Func:ss_swapmerge, sz1=2, sz2=5
-Callee:__assert_fail, sz1=0, sz2=0
-Callee:ss_compare, sz1=0, sz2=0
-Callee:ss_blockswap, sz1=0, sz2=0
-Callee:ss_mergebackward, sz1=0, sz2=3
-Callee:ss_mergeforward, sz1=0, sz2=3
-DEBUG Func:ss_inplacemerge, sz1=1, sz2=3
-Callee:__assert_fail, sz1=0, sz2=0
-Callee:ss_compare, sz1=0, sz2=0
-Callee:ss_rotate, sz1=0, sz2=2
-DEBUG Func:divbwt, sz1=3, sz2=5
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:sort_typeBstar, sz1=2, sz2=2
-Callee:construct_BWT, sz1=0, sz2=1
-Callee:construct_BWT_indexes, sz1=0, sz2=1
-DEBUG Func:ZDICT_trainFromBuffer_fastCover, sz1=4, sz2=12
-Callee:free, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:COVER_warnOnSmallCorpus, sz1=0, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:FASTCOVER_convertToCoverParams, sz1=0, sz2=0
-Callee:FASTCOVER_checkParameters, sz1=0, sz2=0
-Callee:FASTCOVER_ctx_init, sz1=0, sz2=6
-Callee:ERR_isError.613, sz1=0, sz2=0
-Callee:FASTCOVER_buildDictionary, sz1=0, sz2=5
-Callee:FASTCOVER_ctx_destroy, sz1=0, sz2=1
-Callee:ZDICT_finalizeDictionary, sz1=1, sz2=7
-DEBUG Func:ZDICT_optimizeTrainFromBuffer_fastCover, sz1=3, sz2=20
-Callee:malloc, sz1=0, sz2=0
-Callee:POOL_create, sz1=0, sz2=1
-Callee:POOL_free, sz1=0, sz2=4
-Callee:free, sz1=0, sz2=0
-Callee:POOL_add, sz1=0, sz2=8
-Callee:COVER_warnOnSmallCorpus, sz1=0, sz2=2
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:clock, sz1=0, sz2=0
-Callee:COVER_best_init, sz1=0, sz2=2
-Callee:COVER_best_wait, sz1=0, sz2=6
-Callee:COVER_best_destroy, sz1=0, sz2=4
-Callee:COVER_best_start, sz1=0, sz2=4
-Callee:FASTCOVER_convertToCoverParams, sz1=0, sz2=0
-Callee:FASTCOVER_checkParameters, sz1=0, sz2=0
-Callee:FASTCOVER_ctx_init, sz1=0, sz2=6
-Callee:ERR_isError.613, sz1=0, sz2=0
-Callee:FASTCOVER_ctx_destroy, sz1=0, sz2=1
-Callee:FASTCOVER_tryParameters, sz1=2, sz2=11
-Callee:FASTCOVER_convertToFastCoverParams, sz1=0, sz2=0
-DEBUG Func:FASTCOVER_tryParameters, sz1=2, sz2=11
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:calloc, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:COVER_best_finish, sz1=0, sz2=9
-Callee:COVER_dictSelectionError, sz1=0, sz2=1
-Callee:COVER_dictSelectionIsError, sz1=0, sz2=1
-Callee:COVER_dictSelectionFree, sz1=0, sz2=1
-Callee:COVER_selectDict, sz1=2, sz2=8
-Callee:FASTCOVER_buildDictionary, sz1=0, sz2=5
-DEBUG Func:ZDICT_finalizeDictionary, sz1=1, sz2=7
-Callee:ZSTD_XXH64, sz1=0, sz2=1
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:ZDICT_isError, sz1=0, sz2=1
-Callee:ZDICT_maxRep, sz1=0, sz2=0
-Callee:MEM_writeLE32.658, sz1=0, sz2=3
-Callee:ZDICT_analyzeEntropy, sz1=2, sz2=20
-DEBUG Func:ZDICT_analyzeEntropy, sz1=2, sz2=20
-Callee:FSE_writeNCount, sz1=0, sz2=2
-Callee:FSE_normalizeCount, sz1=0, sz2=3
-Callee:HUF_writeCTable_wksp, sz1=0, sz2=4
-Callee:ZSTD_createCCtx, sz1=0, sz2=1
-Callee:ZSTD_freeCDict, sz1=0, sz2=3
-Callee:ZSTD_freeCCtx, sz1=0, sz2=3
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:HUF_buildCTable_wksp, sz1=0, sz2=5
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:ZSTD_createCDict_advanced, sz1=1, sz2=2
-Callee:ZSTD_getParams, sz1=0, sz2=1
-Callee:ERR_isError.648, sz1=0, sz2=0
-Callee:MEM_writeLE32.658, sz1=0, sz2=3
-Callee:ZSTD_highbit32.662, sz1=0, sz2=1
-Callee:ZDICT_totalSampleSize, sz1=0, sz2=0
-Callee:ZDICT_countEStats, sz1=2, sz2=7
-Callee:ZDICT_flatLit, sz1=0, sz2=0
-Callee:ZDICT_insertSortCount, sz1=0, sz2=0
-DEBUG Func:ZDICT_countEStats, sz1=2, sz2=7
-Callee:ZSTD_getSeqStore, sz1=0, sz2=0
-Callee:ZSTD_compressBegin_usingCDict_deprecated, sz1=1, sz2=1
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:ZSTD_compressBlock_deprecated, sz1=1, sz2=2
-Callee:ZSTD_seqToCodes, sz1=0, sz2=4
-Callee:ERR_isError.648, sz1=0, sz2=0
-DEBUG Func:ZDICT_trainFromBuffer_legacy, sz1=1, sz2=5
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:ZDICT_totalSampleSize, sz1=0, sz2=0
-Callee:ZDICT_fillNoise, sz1=0, sz2=0
-Callee:ZDICT_trainFromBuffer_unsafe_legacy, sz1=3, sz2=10
-DEBUG Func:ZDICT_trainFromBuffer_unsafe_legacy, sz1=3, sz2=10
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:ZDICT_totalSampleSize, sz1=0, sz2=0
-Callee:ZDICT_initDictItem, sz1=0, sz2=0
-Callee:ZDICT_trainBuffer_legacy, sz1=2, sz2=9
-Callee:ZDICT_dictSize, sz1=0, sz2=0
-Callee:ZDICT_printHex, sz1=0, sz2=2
-Callee:ZDICT_addEntropyTablesFromBuffer_advanced, sz1=1, sz2=6
-DEBUG Func:ZDICT_trainBuffer_legacy, sz1=2, sz2=9
-Callee:malloc, sz1=0, sz2=0
-Callee:free, sz1=0, sz2=0
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:clock, sz1=0, sz2=0
-Callee:divsufsort, sz1=2, sz2=4
-Callee:ZDICT_analyzePos, sz1=0, sz2=4
-Callee:ZDICT_insertDictItem, sz1=0, sz2=2
-Callee:ZDICT_clockSpan, sz1=0, sz2=1
-DEBUG Func:ZDICT_addEntropyTablesFromBuffer_advanced, sz1=1, sz2=6
-Callee:ZSTD_XXH64, sz1=0, sz2=1
-Callee:fprintf, sz1=0, sz2=0
-Callee:fflush, sz1=0, sz2=0
-Callee:ZDICT_isError, sz1=0, sz2=1
-Callee:MEM_writeLE32.658, sz1=0, sz2=3
-Callee:ZDICT_analyzeEntropy, sz1=2, sz2=20
-[K[SPEG Computation]: 100%
-[Dumping SEG] spends time ***1m 2s 553ms***
-SEG-Building spends time ***2m 44s 120ms***
-SEG-Building uses memory ***16G 118M 528KB***
+[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 35%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%[K[SPEG Computation]: 60%[K[SPEG Computation]: 61%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 67%[K[SPEG Computation]: 68%[K[SPEG Computation]: 70%[K[SPEG Computation]: 71%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 77%[K[SPEG Computation]: 78%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 81%[K[SPEG Computation]: 82%[K[SPEG Computation]: 83%[K[SPEG Computation]: 84%[K[SPEG Computation]: 85%[K[SPEG Computation]: 87%[K[SPEG Computation]: 88%[K[SPEG Computation]: 89%[K[SPEG Computation]: 90%[K[SPEG Computation]: 91%[K[SPEG Computation]: 92%[K[SPEG Computation]: 93%[K[SPEG Computation]: 94%[K[SPEG Computation]: 95%[K[SPEG Computation]: 96%[K[SPEG Computation]: 97%[K[SPEG Computation]: 98%[K[SPEG Computation]: 99%[K[SPEG Computation]: 100%
+[Dumping SEG] spends time ***1m 32s 221ms***
+SEG-Building spends time ***4m 38s 62ms***
+SEG-Building uses memory ***32G 165M 260KB***
 
 
-Total Time: 	3min24s
-Total Memory:  ***21G 460M 796KB***
+Total Time: 	5min16s
+Total Memory:  ***45G 537M 644KB***
 
-Script done on 2026-07-20 00:42:57-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-08-04 08:51:33+00:00 [COMMAND_EXIT_CODE="0"]

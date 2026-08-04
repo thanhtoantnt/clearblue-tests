@@ -1,4 +1,4 @@
-Script started on 2026-07-19 23:13:43-04:00 [<not executed on terminal>]
+Script started on 2026-08-04 07:07:11+00:00 [<not executed on terminal>]
 cb-check static analyzer . ===enterprise version===
 [Warning] You are running a licence free version of cb-check. Don't distribute it.
 Module Statistical Results: 
@@ -16,977 +16,13 @@ Processing unreachable code ........Done!
 Unrolling and breaking loops ........Done!
 Indexing ........Done!
 [SPEG] Start ... 972functions to run!
-[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 17%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 34%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 52%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%[K[SPEG Computation]: 60%[K[SPEG Computation]: 61%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 67%[K[SPEG Computation]: 68%[K[SPEG Computation]: 69%[K[SPEG Computation]: 70%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 77%[K[SPEG Computation]: 78%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 81%[K[SPEG Computation]: 82%DEBUG Func:ares_dns_pton, sz1=1, sz2=1
-Callee:ares_inet_pton, sz1=1, sz2=2
-DEBUG Func:ares_hosts_search_ipaddr, sz1=2, sz2=3
-Callee:ares_hosts_update, sz1=2, sz2=5
-Callee:ares_normalize_ipaddr, sz1=1, sz2=2
-Callee:ares_htable_strvp_get_direct, sz1=0, sz2=1
-DEBUG Func:ares_hosts_update, sz1=2, sz2=5
-Callee:ares_hosts_file_destroy, sz1=0, sz2=2
-Callee:ares_hosts_path, sz1=0, sz2=3
-Callee:ares_hosts_expired, sz1=0, sz2=3
-Callee:ares_parse_hosts, sz1=2, sz2=18
-Callee:ares_free, sz1=0, sz2=0
-DEBUG Func:ares_normalize_ipaddr, sz1=1, sz2=2
-Callee:ares_dns_pton, sz1=1, sz2=1
-Callee:ares_inet_ntop, sz1=0, sz2=3
-DEBUG Func:ares_create_query, sz1=1, sz2=1
-Callee:ares_create_query_int, sz1=1, sz2=3
-DEBUG Func:ares_create_query_int, sz1=1, sz2=3
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_dns_record_create_query, sz1=1, sz2=7
-Callee:ares_dns_write, sz1=0, sz2=4
-DEBUG Func:ares_mkquery, sz1=1, sz2=1
-Callee:ares_create_query_int, sz1=1, sz2=3
-DEBUG Func:ares_cookie_generate, sz1=1, sz2=1
-Callee:ares_rand_bytes, sz1=1, sz2=1
-DEBUG Func:ares_random_server, sz1=1, sz2=5
-Callee:count_highest_prio_servers, sz1=0, sz2=3
-Callee:ares_slist_node_first, sz1=0, sz2=0
-Callee:ares_slist_node_next, sz1=0, sz2=0
-Callee:ares_slist_node_val, sz1=0, sz2=0
-Callee:ares_rand_bytes, sz1=1, sz2=1
-DEBUG Func:ares_conn_query_write, sz1=1, sz2=3
-Callee:ares_conn_flush, sz1=0, sz2=8
-Callee:ares_cookie_apply, sz1=1, sz2=9
-Callee:ares_dns_write_buf_tcp, sz1=0, sz2=4
-DEBUG Func:handle_conn_error, sz1=1, sz2=2
-Callee:server_increment_failures, sz1=1, sz2=5
-Callee:ares_close_connection, sz1=0, sz2=9
-DEBUG Func:ares_calc_query_timeout, sz1=1, sz2=3
-Callee:ares_metrics_server_timeout, sz1=0, sz2=1
-Callee:ares_slist_len, sz1=0, sz2=0
-Callee:ares_rand_bytes, sz1=1, sz2=1
-DEBUG Func:ares_probe_failed_server, sz1=2, sz2=8
-Callee:ares_slist_node_first, sz1=0, sz2=0
-Callee:ares_slist_node_next, sz1=0, sz2=0
-Callee:ares_slist_node_val, sz1=0, sz2=0
-Callee:ares_slist_last_val, sz1=0, sz2=2
-Callee:ares_timedout, sz1=0, sz2=0
-Callee:ares_send_nolock, sz1=3, sz2=13
-Callee:ares_tvnow, sz1=0, sz2=2
-Callee:ares_rand_bytes, sz1=1, sz2=1
-DEBUG Func:invoke_server_state_cb, sz1=1, sz2=5
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_finish_str, sz1=0, sz2=1
-Callee:ares_get_server_addr, sz1=1, sz2=7
-DEBUG Func:read_conn_packets, sz1=1, sz2=7
-Callee:handle_conn_error, sz1=1, sz2=2
-Callee:ares_conn_read, sz1=0, sz2=3
-Callee:ares_buf_set_length, sz1=0, sz2=1
-Callee:ares_buf_append_be16, sz1=0, sz2=1
-Callee:ares_buf_append_start, sz1=0, sz2=1
-Callee:ares_buf_append_finish, sz1=0, sz2=0
-Callee:ares_buf_len, sz1=0, sz2=0
-DEBUG Func:read_answers, sz1=3, sz2=9
-Callee:handle_conn_error, sz1=1, sz2=2
-Callee:process_answer, sz1=3, sz2=17
-Callee:ares_flush_requeue, sz1=1, sz2=9
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ares_buf_tag_rollback, sz1=0, sz2=0
-Callee:ares_buf_tag_clear, sz1=0, sz2=0
-Callee:ares_buf_tag_fetch, sz1=0, sz2=0
-Callee:ares_buf_consume, sz1=0, sz2=1
-Callee:ares_buf_fetch_be16, sz1=0, sz2=2
-DEBUG Func:process_answer, sz1=3, sz2=17
-Callee:end_query, sz1=0, sz2=4
-Callee:ares_append_requeue, sz1=0, sz2=1
-Callee:same_questions, sz1=0, sz2=4
-Callee:issue_might_be_edns, sz1=0, sz2=3
-Callee:rewrite_without_edns, sz1=0, sz2=4
-Callee:server_set_good, sz1=1, sz2=3
-Callee:ares_cookie_validate, sz1=0, sz2=6
-Callee:ares_llist_node_destroy, sz1=0, sz2=1
-Callee:server_increment_failures, sz1=1, sz2=5
-Callee:ares_requeue_query, sz1=0, sz2=6
-Callee:ares_htable_szvp_get_direct, sz1=0, sz2=1
-Callee:ares_qcache_insert, sz1=1, sz2=3
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_dns_record_get_id, sz1=0, sz2=0
-Callee:ares_dns_record_get_flags, sz1=0, sz2=0
-Callee:ares_dns_record_get_rcode, sz1=0, sz2=0
-Callee:ares_dns_parse, sz1=0, sz2=3
-DEBUG Func:server_set_good, sz1=1, sz2=3
-Callee:invoke_server_state_cb, sz1=1, sz2=5
-Callee:ares_slist_node_reinsert, sz1=0, sz2=2
-Callee:ares_slist_node_find, sz1=0, sz2=0
-DEBUG Func:ares_process_fd, sz1=1, sz2=1
-Callee:ares_process_fds, sz1=1, sz2=3
-DEBUG Func:ares_init_by_options, sz1=1, sz2=5
-Callee:ares_init_options_servers, sz1=1, sz2=3
-Callee:ares_malloc, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_strdup, sz1=0, sz2=2
-Callee:ares_threadsafety, sz1=0, sz2=0
-DEBUG Func:ares_init_options_servers, sz1=1, sz2=3
-Callee:ares_llist_destroy, sz1=0, sz2=2
-Callee:ares_servers_update, sz1=1, sz2=13
-Callee:ares_in_addr_to_sconfig_llist, sz1=0, sz2=5
-DEBUG Func:ares_slist_insert, sz1=1, sz2=5
-Callee:ares_slist_calc_level, sz1=1, sz2=2
-Callee:ares_slist_node_push, sz1=0, sz2=0
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_realloc_zero, sz1=0, sz2=1
-DEBUG Func:ares_slist_calc_level, sz1=1, sz2=2
-Callee:ares_slist_max_level, sz1=0, sz2=2
-Callee:ares_slist_coin_flip, sz1=1, sz2=1
-DEBUG Func:ares_slist_coin_flip, sz1=1, sz2=1
-Callee:ares_rand_bytes, sz1=1, sz2=1
-DEBUG Func:ares_event_configchg_cb, sz1=1, sz2=4
-Callee:read, sz1=0, sz2=0
-Callee:ares_reinit, sz1=1, sz2=6
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strcaseeq, sz1=0, sz2=1
-DEBUG Func:ares_process_fds, sz1=1, sz2=3
-Callee:ares_process_fds_nolock, sz1=3, sz2=5
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_process_fds_nolock, sz1=3, sz2=5
-Callee:process_write, sz1=1, sz2=3
-Callee:process_read, sz1=3, sz2=4
-Callee:process_timeouts, sz1=2, sz2=6
-Callee:ares_check_cleanup_conns, sz1=0, sz2=8
-Callee:ares_tvnow, sz1=0, sz2=2
-DEBUG Func:process_write, sz1=1, sz2=3
-Callee:handle_conn_error, sz1=1, sz2=2
-Callee:ares_conn_flush, sz1=0, sz2=8
-Callee:ares_conn_from_fd, sz1=0, sz2=2
-DEBUG Func:process_read, sz1=3, sz2=4
-Callee:handle_conn_error, sz1=1, sz2=2
-Callee:read_conn_packets, sz1=1, sz2=7
-Callee:read_answers, sz1=3, sz2=9
-Callee:ares_conn_from_fd, sz1=0, sz2=2
-DEBUG Func:process_timeouts, sz1=2, sz2=6
-Callee:ares_slist_node_first, sz1=0, sz2=0
-Callee:ares_slist_node_val, sz1=0, sz2=0
-Callee:ares_timedout, sz1=0, sz2=0
-Callee:server_increment_failures, sz1=1, sz2=5
-Callee:ares_requeue_query, sz1=0, sz2=6
-Callee:ares_flush_requeue, sz1=1, sz2=9
-DEBUG Func:server_increment_failures, sz1=1, sz2=5
-Callee:invoke_server_state_cb, sz1=1, sz2=5
-Callee:ares_slist_node_reinsert, sz1=0, sz2=2
-Callee:ares_slist_node_find, sz1=0, sz2=0
-Callee:ares_timeval_add, sz1=0, sz2=0
-Callee:ares_tvnow, sz1=0, sz2=2
-DEBUG Func:ares_flush_requeue, sz1=1, sz2=9
-Callee:ares_detach_query, sz1=0, sz2=3
-Callee:ares_free_query, sz1=0, sz2=3
-Callee:ares_send_query_int, sz1=7, sz2=16
-Callee:ares_htable_szvp_get_direct, sz1=0, sz2=1
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_array_claim_at, sz1=0, sz2=2
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_queue_notify_empty, sz1=0, sz2=2
-DEBUG Func:ares_send_query_int, sz1=7, sz2=16
-Callee:ares_random_server, sz1=1, sz2=5
-Callee:end_query, sz1=0, sz2=4
-Callee:ares_fetch_connection, sz1=0, sz2=2
-Callee:ares_conn_query_write, sz1=1, sz2=3
-Callee:handle_conn_error, sz1=1, sz2=2
-Callee:ares_calc_query_timeout, sz1=1, sz2=3
-Callee:ares_probe_failed_server, sz1=2, sz2=8
-Callee:ares_llist_node_destroy, sz1=0, sz2=1
-Callee:ares_slist_insert, sz1=1, sz2=5
-Callee:ares_slist_first_val, sz1=0, sz2=2
-Callee:ares_slist_node_destroy, sz1=0, sz2=1
-Callee:server_increment_failures, sz1=1, sz2=5
-Callee:ares_requeue_query, sz1=0, sz2=6
-Callee:ares_open_connection, sz1=0, sz2=18
-Callee:ares_llist_insert_last, sz1=0, sz2=1
-Callee:ares_timeval_add, sz1=0, sz2=0
-DEBUG Func:ares_addrinfo_localhost, sz1=1, sz2=4
-Callee:ares_system_loopback_addrs, sz1=0, sz2=0
-Callee:ares_default_loopback_addrs, sz1=1, sz2=3
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:ares_default_loopback_addrs, sz1=1, sz2=3
-Callee:ares_append_ai_node, sz1=0, sz2=4
-Callee:ares_ai_has_family, sz1=0, sz2=0
-Callee:ares_inet_pton, sz1=1, sz2=2
-DEBUG Func:ares_cookie_apply, sz1=1, sz2=9
-Callee:timeval_is_set, sz1=0, sz2=0
-Callee:timeval_expired, sz1=0, sz2=1
-Callee:ares_cookie_clear, sz1=0, sz2=0
-Callee:ares_cookie_generate, sz1=1, sz2=1
-Callee:ares_addr_equal, sz1=0, sz2=1
-Callee:ares_cookie_clear_server, sz1=0, sz2=0
-Callee:ares_dns_rr_set_opt, sz1=0, sz2=3
-Callee:ares_dns_rr_del_opt_byid, sz1=0, sz2=5
-Callee:ares_dns_get_opt_rr, sz1=0, sz2=3
-DEBUG Func:ares_getaddrinfo, sz1=1, sz2=3
-Callee:ares_getaddrinfo_int, sz1=6, sz2=11
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_getaddrinfo_int, sz1=6, sz2=11
-Callee:ares_is_onion_domain, sz1=0, sz2=1
-Callee:ares_freeaddrinfo, sz1=0, sz2=3
-Callee:lookup_service, sz1=0, sz2=2
-Callee:ares_append_nulladdr, sz1=1, sz2=2
-Callee:fake_addrinfo, sz1=1, sz2=5
-Callee:hquery_free, sz1=0, sz2=3
-Callee:next_lookup, sz1=4, sz2=4
-Callee:ares_search_name_list, sz1=1, sz2=8
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_strdup, sz1=0, sz2=2
-Callee:ares_parse_port, sz1=0, sz2=1
-DEBUG Func:ares_append_nulladdr, sz1=1, sz2=2
-Callee:ares_append_ai_node, sz1=0, sz2=4
-Callee:ares_inet_pton, sz1=1, sz2=2
-DEBUG Func:fake_addrinfo, sz1=1, sz2=5
-Callee:ares_freeaddrinfo, sz1=0, sz2=3
-Callee:ares_append_addrinfo_cname, sz1=0, sz2=1
-Callee:ares_append_ai_node, sz1=0, sz2=4
-Callee:ares_inet_pton, sz1=1, sz2=2
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:next_lookup, sz1=4, sz2=4
-Callee:ares_is_localhost, sz1=0, sz2=2
-Callee:next_dns_lookup, sz1=1, sz2=1
-Callee:file_lookup, sz1=5, sz2=5
-Callee:end_hquery, sz1=1, sz2=3
-DEBUG Func:next_dns_lookup, sz1=1, sz2=1
-Callee:ares_query_nolock, sz1=2, sz2=4
-DEBUG Func:file_lookup, sz1=5, sz2=5
-Callee:ares_is_onion_domain, sz1=0, sz2=1
-Callee:ares_addrinfo_localhost, sz1=1, sz2=4
-Callee:ares_is_localhost, sz1=0, sz2=2
-Callee:ares_hosts_search_host, sz1=1, sz2=2
-Callee:ares_hosts_entry_to_addrinfo, sz1=1, sz2=12
-DEBUG Func:end_hquery, sz1=1, sz2=3
-Callee:ares_freeaddrinfo, sz1=0, sz2=3
-Callee:hquery_free, sz1=0, sz2=3
-Callee:ares_sortaddrinfo, sz1=0, sz2=5
-DEBUG Func:host_callback, sz1=2, sz2=7
-Callee:ares_parse_into_addrinfo, sz1=0, sz2=19
-Callee:next_lookup, sz1=4, sz2=4
-Callee:end_hquery, sz1=1, sz2=3
-Callee:ai_has_ipv4, sz1=0, sz2=0
-Callee:terminate_retries, sz1=0, sz2=1
-Callee:ares_name_label_cnt, sz1=0, sz2=0
-Callee:ares_dns_record_get_id, sz1=0, sz2=0
-DEBUG Func:ares_gethostbyaddr_nolock, sz1=1, sz2=4
-Callee:next_lookup.17, sz1=3, sz2=5
-Callee:ares_malloc, sz1=0, sz2=0
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:next_lookup.17, sz1=3, sz2=5
-Callee:end_aquery, sz1=0, sz2=2
-Callee:file_lookup.18, sz1=2, sz2=3
-Callee:ares_query_nolock, sz1=2, sz2=4
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_dns_addr_to_ptr, sz1=0, sz2=6
-DEBUG Func:addr_callback, sz1=1, sz2=3
-Callee:ares_parse_ptr_reply_dnsrec, sz1=0, sz2=10
-Callee:next_lookup.17, sz1=3, sz2=5
-Callee:end_aquery, sz1=0, sz2=2
-DEBUG Func:file_lookup.18, sz1=2, sz2=3
-Callee:ares_hosts_search_ipaddr, sz1=2, sz2=3
-Callee:ares_hosts_entry_to_hostent, sz1=1, sz2=5
-Callee:ares_inet_ntop, sz1=0, sz2=3
-DEBUG Func:ares_gethostbyaddr, sz1=1, sz2=3
-Callee:ares_gethostbyaddr_nolock, sz1=1, sz2=4
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_gethostbyname, sz1=1, sz2=2
-Callee:ares_getaddrinfo, sz1=1, sz2=3
-Callee:ares_malloc, sz1=0, sz2=0
-DEBUG Func:ares_gethostbyname_file, sz1=1, sz2=3
-Callee:ares_gethostbyname_file_int, sz1=5, sz2=5
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_gethostbyname_file_int, sz1=5, sz2=5
-Callee:ares_is_onion_domain, sz1=0, sz2=1
-Callee:ares_is_localhost, sz1=0, sz2=2
-Callee:ares_hostent_localhost, sz1=1, sz2=4
-Callee:ares_hosts_search_host, sz1=1, sz2=2
-Callee:ares_hosts_entry_to_hostent, sz1=1, sz2=5
-DEBUG Func:ares_hostent_localhost, sz1=1, sz2=4
-Callee:ares_addrinfo2hostent, sz1=0, sz2=8
-Callee:ares_freeaddrinfo, sz1=0, sz2=3
-Callee:ares_addrinfo_localhost, sz1=1, sz2=4
-Callee:ares_malloc_zero, sz1=0, sz2=1
-DEBUG Func:ares_getnameinfo, sz1=1, sz2=3
-Callee:ares_getnameinfo_int, sz1=2, sz2=5
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_getnameinfo_int, sz1=2, sz2=5
-Callee:ares_gethostbyaddr_nolock, sz1=1, sz2=4
-Callee:lookup_service.19, sz1=0, sz2=4
-Callee:append_scopeid, sz1=0, sz2=5
-Callee:ares_malloc, sz1=0, sz2=0
-Callee:ares_inet_ntop, sz1=0, sz2=3
-DEBUG Func:nameinfo_callback, sz1=1, sz2=7
-Callee:lookup_service.19, sz1=0, sz2=4
-Callee:append_scopeid, sz1=0, sz2=5
-Callee:gethostname, sz1=0, sz2=0
-Callee:strchr, sz1=0, sz2=0
-Callee:ares_striendstr, sz1=0, sz2=2
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_inet_ntop, sz1=0, sz2=3
-DEBUG Func:ares_process, sz1=1, sz2=6
-Callee:ares_process_fds_nolock, sz1=3, sz2=5
-Callee:channel_socket_list, sz1=0, sz2=10
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_process_pending_write, sz1=1, sz2=7
-Callee:handle_conn_error, sz1=1, sz2=2
-Callee:ares_slist_node_first, sz1=0, sz2=0
-Callee:ares_slist_node_next, sz1=0, sz2=0
-Callee:ares_slist_node_val, sz1=0, sz2=0
-Callee:ares_conn_flush, sz1=0, sz2=8
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_qcache_fetch, sz1=1, sz2=5
-Callee:ares_htable_strvp_get_direct, sz1=0, sz2=1
-Callee:ares_qcache_expire, sz1=0, sz2=4
-Callee:ares_qcache_calc_key, sz1=0, sz2=14
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_dns_record_ttl_decrement, sz1=0, sz2=0
-DEBUG Func:ares_qcache_insert, sz1=1, sz2=3
-Callee:ares_qcache_insert_int, sz1=2, sz2=10
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_dns_record_duplicate, sz1=0, sz2=1
-DEBUG Func:ares_qcache_insert_int, sz1=2, sz2=10
-Callee:ares_slist_insert, sz1=1, sz2=5
-Callee:ares_htable_strvp_insert, sz1=0, sz2=4
-Callee:ares_htable_strvp_remove, sz1=0, sz2=1
-Callee:ares_qcache_calc_key, sz1=0, sz2=14
-Callee:ares_qcache_soa_minimum, sz1=0, sz2=5
-Callee:ares_qcache_calc_minttl, sz1=0, sz2=4
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_dns_record_get_flags, sz1=0, sz2=0
-Callee:ares_dns_record_get_rcode, sz1=0, sz2=0
-DEBUG Func:ares_query_nolock, sz1=2, sz2=4
-Callee:ares_send_nolock, sz1=3, sz2=13
-Callee:ares_malloc, sz1=0, sz2=0
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_dns_record_create_query, sz1=1, sz2=7
-DEBUG Func:ares_parse_hosts, sz1=2, sz2=18
-Callee:ares_hosts_file_destroy, sz1=0, sz2=2
-Callee:ares_llist_destroy, sz1=0, sz2=2
-Callee:ares_htable_strvp_destroy, sz1=0, sz2=2
-Callee:ares_htable_strvp_create, sz1=0, sz2=4
-Callee:ares_hosts_entry_destroy, sz1=0, sz2=2
-Callee:ares_hosts_file_add, sz1=0, sz2=13
-Callee:ares_hosts_finalize, sz1=0, sz2=7
-Callee:ares_hosts_file_create, sz1=0, sz2=5
-Callee:ares_parse_hosts_ipaddr, sz1=1, sz2=10
-Callee:ares_parse_hosts_hostnames, sz1=0, sz2=13
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_llist_create, sz1=0, sz2=1
-Callee:ares_buf_len, sz1=0, sz2=0
-Callee:ares_buf_consume_whitespace, sz1=0, sz2=3
-Callee:ares_buf_consume_line, sz1=0, sz2=2
-Callee:ares_buf_begins_with, sz1=0, sz2=2
-Callee:ares_buf_load_file, sz1=0, sz2=9
-DEBUG Func:ares_parse_hosts_ipaddr, sz1=1, sz2=10
-Callee:ares_normalize_ipaddr, sz1=1, sz2=2
-Callee:ares_hosts_entry_destroy, sz1=0, sz2=2
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ares_llist_create, sz1=0, sz2=1
-Callee:ares_llist_insert_first, sz1=0, sz2=1
-Callee:ares_buf_tag_fetch_string, sz1=0, sz2=2
-Callee:ares_buf_consume_nonwhitespace, sz1=0, sz2=3
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:ares_query_dnsrec, sz1=1, sz2=3
-Callee:ares_query_nolock, sz1=2, sz2=4
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_query, sz1=1, sz2=2
-Callee:ares_query_dnsrec, sz1=1, sz2=3
-Callee:ares_dnsrec_convert_arg, sz1=0, sz2=1
-DEBUG Func:ares_search_name_list, sz1=1, sz2=8
-Callee:ares_name_label_cnt, sz1=0, sz2=0
-Callee:ares_lookup_hostaliases, sz1=1, sz2=17
-Callee:ares_search_eligible, sz1=0, sz2=1
-Callee:ares_cat_domain, sz1=0, sz2=3
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_strdup, sz1=0, sz2=2
-Callee:ares_strsplit_free, sz1=0, sz2=1
-DEBUG Func:ares_lookup_hostaliases, sz1=1, sz2=17
-Callee:strchr, sz1=0, sz2=0
-Callee:getenv, sz1=0, sz2=0
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_at, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_buf_tag_fetch_string, sz1=0, sz2=2
-Callee:ares_buf_consume_whitespace, sz1=0, sz2=3
-Callee:ares_buf_consume_nonwhitespace, sz1=0, sz2=3
-Callee:ares_buf_split, sz1=0, sz2=14
-Callee:ares_buf_load_file, sz1=0, sz2=9
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strdup, sz1=0, sz2=2
-Callee:ares_is_hostname, sz1=0, sz2=0
-Callee:ares_strcaseeq, sz1=0, sz2=1
-DEBUG Func:ares_search, sz1=2, sz2=7
-Callee:ares_dnsrec_convert_arg, sz1=0, sz2=1
-Callee:ares_search_int, sz1=3, sz2=8
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_dns_record_create_query, sz1=1, sz2=7
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_search_int, sz1=3, sz2=8
-Callee:ares_is_onion_domain, sz1=0, sz2=1
-Callee:ares_search_name_list, sz1=1, sz2=8
-Callee:ares_search_next, sz1=1, sz2=2
-Callee:squery_free, sz1=0, sz2=3
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_dns_record_query_cnt, sz1=0, sz2=1
-Callee:ares_dns_record_query_get, sz1=0, sz2=2
-Callee:ares_dns_record_duplicate, sz1=0, sz2=1
-DEBUG Func:ares_search_next, sz1=1, sz2=2
-Callee:ares_send_nolock, sz1=3, sz2=13
-Callee:ares_dns_record_query_set_name, sz1=0, sz2=4
-DEBUG Func:search_callback, sz1=1, sz2=6
-Callee:ares_name_label_cnt, sz1=0, sz2=0
-Callee:ares_search_next, sz1=1, sz2=2
-Callee:end_squery, sz1=0, sz2=1
-Callee:ares_dns_record_get_rcode, sz1=0, sz2=0
-Callee:ares_dns_record_rr_cnt, sz1=0, sz2=2
-Callee:ares_dns_query_reply_tostatus, sz1=0, sz2=0
-DEBUG Func:ares_search_dnsrec, sz1=1, sz2=3
-Callee:ares_search_int, sz1=3, sz2=8
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_send_nolock, sz1=3, sz2=13
-Callee:ares_free_query, sz1=0, sz2=3
-Callee:ares_send_query, sz1=0, sz2=1
-Callee:ares_slist_len, sz1=0, sz2=0
-Callee:ares_htable_szvp_insert, sz1=0, sz2=3
-Callee:ares_qcache_fetch, sz1=1, sz2=5
-Callee:ares_malloc, sz1=0, sz2=0
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_dns_record_set_id, sz1=0, sz2=0
-Callee:ares_dns_record_duplicate_ex, sz1=0, sz2=3
-Callee:ares_llist_insert_last, sz1=0, sz2=1
-Callee:generate_unique_qid, sz1=1, sz2=2
-Callee:ares_apply_dns0x20, sz1=1, sz2=4
-Callee:ares_tvnow, sz1=0, sz2=2
-DEBUG Func:ares_hosts_search_host, sz1=1, sz2=2
-Callee:ares_hosts_update, sz1=2, sz2=5
-Callee:ares_htable_strvp_get_direct, sz1=0, sz2=1
-DEBUG Func:ares_hosts_entry_to_addrinfo, sz1=1, sz2=12
-Callee:ares_dns_pton, sz1=1, sz2=1
-Callee:ares_freeaddrinfo_cnames, sz1=0, sz2=1
-Callee:ares_freeaddrinfo_nodes, sz1=0, sz2=1
-Callee:ares_llist_node_val, sz1=0, sz2=0
-Callee:ares_append_ai_node, sz1=0, sz2=4
-Callee:ares_addrinfo_cat_cnames, sz1=0, sz2=0
-Callee:ares_addrinfo_cat_nodes, sz1=0, sz2=0
-Callee:ares_hosts_ai_append_cnames, sz1=0, sz2=7
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_llist_node_first, sz1=0, sz2=0
-Callee:ares_llist_node_next, sz1=0, sz2=0
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:ares_hosts_entry_to_hostent, sz1=1, sz2=5
-Callee:ares_addrinfo2hostent, sz1=0, sz2=8
-Callee:ares_freeaddrinfo, sz1=0, sz2=3
-Callee:ares_free_hostent, sz1=0, sz2=1
-Callee:ares_hosts_entry_to_addrinfo, sz1=1, sz2=12
-Callee:ares_malloc_zero, sz1=0, sz2=1
-DEBUG Func:ares_init, sz1=1, sz2=1
-Callee:ares_init_options, sz1=5, sz2=16
-DEBUG Func:ares_init_options, sz1=5, sz2=16
-Callee:ares_destroy, sz1=0, sz2=25
-Callee:ares_init_by_options, sz1=1, sz2=5
-Callee:ares_slist_create, sz1=0, sz2=2
-Callee:ares_event_configchg_init, sz1=0, sz2=5
-Callee:ares_htable_szvp_create, sz1=0, sz2=4
-Callee:ares_qcache_create, sz1=0, sz2=4
-Callee:init_by_defaults, sz1=2, sz2=10
-Callee:ares_init_by_sysconfig, sz1=4, sz2=7
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_library_initialized, sz1=0, sz2=0
-Callee:ares_htable_asvp_create, sz1=0, sz2=4
-Callee:ares_llist_create, sz1=0, sz2=1
-Callee:ares_set_socket_functions_def, sz1=0, sz2=1
-Callee:ares_event_thread_init, sz1=0, sz2=10
-Callee:ares_channel_threading_init, sz1=0, sz2=4
-Callee:ares_init_rand_state, sz1=1, sz2=3
-DEBUG Func:init_by_defaults, sz1=2, sz2=10
-Callee:ares_llist_destroy, sz1=0, sz2=2
-Callee:ares_slist_len, sz1=0, sz2=0
-Callee:gethostname, sz1=0, sz2=0
-Callee:strchr, sz1=0, sz2=0
-Callee:htonl, sz1=0, sz2=0
-Callee:ares_malloc, sz1=0, sz2=0
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_sconfig_append, sz1=2, sz2=8
-Callee:ares_servers_update, sz1=1, sz2=13
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:ares_reinit, sz1=1, sz2=6
-Callee:ares_reinit_thread, sz1=1, sz2=4
-Callee:ares_thread_create, sz1=0, sz2=3
-Callee:ares_thread_join, sz1=0, sz2=3
-Callee:ares_threadsafety, sz1=0, sz2=0
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_reinit_thread, sz1=1, sz2=4
-Callee:ares_qcache_flush, sz1=0, sz2=1
-Callee:ares_init_by_sysconfig, sz1=4, sz2=7
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_dup, sz1=4, sz2=10
-Callee:ares_destroy, sz1=0, sz2=25
-Callee:ares_free_string, sz1=0, sz2=1
-Callee:ares_destroy_options, sz1=0, sz2=1
-Callee:ares_save_options, sz1=0, sz2=4
-Callee:ares_init_options, sz1=5, sz2=16
-Callee:ares_set_servers_ports_csv, sz1=1, sz2=1
-Callee:ares_get_servers_csv, sz1=1, sz2=11
-Callee:ares_strcpy, sz1=0, sz2=1
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_set_sortlist, sz1=1, sz2=4
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_parse_sortlist, sz1=1, sz2=10
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_sysconfig_domains_idna, sz1=1, sz2=4
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_str_isprint, sz1=0, sz2=0
-Callee:ares_idna_encode_domain, sz1=1, sz2=7
-DEBUG Func:ares_init_by_sysconfig, sz1=4, sz2=7
-Callee:ares_sysconfig_domains_idna, sz1=1, sz2=4
-Callee:ares_sysconfig_apply, sz1=1, sz2=6
-Callee:ares_sysconfig_free, sz1=0, sz2=3
-Callee:ares_init_by_environment, sz1=1, sz2=5
-Callee:ares_init_sysconfig_files, sz1=1, sz2=1
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_dns_record_create_query, sz1=1, sz2=7
-Callee:ares_is_onion_domain, sz1=0, sz2=1
-Callee:ares_dns_record_create, sz1=0, sz2=6
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_dns_record_query_add, sz1=0, sz2=6
-Callee:ares_dns_record_rr_add, sz1=0, sz2=7
-Callee:ares_dns_rr_set_u8, sz1=0, sz2=2
-Callee:ares_dns_rr_set_u16, sz1=0, sz2=2
-DEBUG Func:generate_unique_qid, sz1=1, sz2=2
-Callee:ares_htable_szvp_get, sz1=0, sz2=1
-Callee:ares_generate_new_id, sz1=1, sz2=1
-DEBUG Func:ares_apply_dns0x20, sz1=1, sz2=4
-Callee:ares_dns_record_query_set_name, sz1=0, sz2=4
-Callee:ares_dns_record_query_get, sz1=0, sz2=2
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_rand_bytes, sz1=1, sz2=1
-DEBUG Func:ares_send_dnsrec, sz1=1, sz2=3
-Callee:ares_send_nolock, sz1=3, sz2=13
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_send, sz1=1, sz2=4
-Callee:ares_dnsrec_convert_arg, sz1=0, sz2=1
-Callee:ares_dns_record_destroy, sz1=0, sz2=2
-Callee:ares_send_dnsrec, sz1=1, sz2=3
-Callee:ares_dns_parse, sz1=0, sz2=3
-DEBUG Func:ares_event_thread, sz1=2, sz2=7
-Callee:ares_event_thread_cleanup, sz1=0, sz2=6
-Callee:ares_process_fds, sz1=1, sz2=3
-Callee:ares_process_pending_write, sz1=1, sz2=7
-Callee:ares_event_process_updates, sz1=0, sz2=10
-Callee:ares_timeout, sz1=0, sz2=3
-Callee:ares_thread_mutex_lock, sz1=0, sz2=2
-Callee:ares_thread_mutex_unlock, sz1=0, sz2=2
-DEBUG Func:ares_event_thread_process_fd, sz1=1, sz2=1
-Callee:ares_process_fds, sz1=1, sz2=3
-DEBUG Func:ares_sysconfig_apply, sz1=1, sz2=6
-Callee:ares_malloc, sz1=0, sz2=0
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_servers_update, sz1=1, sz2=13
-Callee:ares_strdup, sz1=0, sz2=2
-Callee:ares_strsplit_free, sz1=0, sz2=1
-Callee:ares_strsplit_duplicate, sz1=0, sz2=3
-DEBUG Func:ares_parse_sortlist, sz1=1, sz2=10
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_buf_create_const, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:parse_sort, sz1=1, sz2=12
-Callee:sortlist_append, sz1=0, sz2=1
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_at, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_buf_split, sz1=0, sz2=14
-Callee:ares_strlen, sz1=0, sz2=1
-DEBUG Func:parse_sort, sz1=1, sz2=12
-Callee:ares_dns_pton, sz1=1, sz2=1
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ip_natural_mask, sz1=0, sz2=0
-Callee:ares_buf_tag_fetch_string, sz1=0, sz2=2
-Callee:ares_buf_consume, sz1=0, sz2=1
-Callee:ares_buf_len, sz1=0, sz2=0
-Callee:ares_buf_consume_whitespace, sz1=0, sz2=3
-Callee:ares_buf_consume_charset, sz1=0, sz2=2
-Callee:ares_buf_begins_with, sz1=0, sz2=2
-Callee:ares_str_isnum, sz1=0, sz2=0
-Callee:ares_str_parse_uint, sz1=0, sz2=2
-Callee:ares_count_bits_u8, sz1=0, sz2=0
-DEBUG Func:ares_sysconfig_set_options, sz1=1, sz2=8
-Callee:ares_buf_create_const, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:process_option, sz1=0, sz2=4
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_at, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_buf_split, sz1=0, sz2=14
-Callee:ares_strlen, sz1=0, sz2=1
-DEBUG Func:ares_init_by_environment, sz1=1, sz2=5
-Callee:getenv, sz1=0, sz2=0
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_sysconfig_set_options, sz1=1, sz2=8
-Callee:config_search, sz1=0, sz2=3
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:ares_sysconfig_parse_resolv_line, sz1=4, sz2=14
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ares_buf_tag_rollback, sz1=0, sz2=0
-Callee:ares_parse_sortlist, sz1=1, sz2=10
-Callee:ares_sysconfig_set_options, sz1=1, sz2=8
-Callee:config_search, sz1=0, sz2=3
-Callee:buf_fetch_string, sz1=0, sz2=4
-Callee:config_lookup, sz1=0, sz2=7
-Callee:ares_sconfig_append_fromstr, sz1=3, sz2=10
-Callee:ares_buf_tag_fetch_string, sz1=0, sz2=2
-Callee:ares_buf_consume_whitespace, sz1=0, sz2=3
-Callee:ares_buf_consume_nonwhitespace, sz1=0, sz2=3
-Callee:ares_buf_begins_with, sz1=0, sz2=2
-Callee:ares_str_trim, sz1=0, sz2=2
-Callee:ares_streq, sz1=0, sz2=1
-DEBUG Func:ares_init_sysconfig_files, sz1=1, sz2=1
-Callee:process_config_lines, sz1=1, sz2=4
-DEBUG Func:process_config_lines, sz1=1, sz2=4
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_sysconfig_process_buf, sz1=0, sz2=4
-Callee:ares_buf_load_file, sz1=0, sz2=9
-DEBUG Func:parse_nsswitch_line, sz1=1, sz2=8
-Callee:buf_fetch_string, sz1=0, sz2=4
-Callee:config_lookup, sz1=0, sz2=7
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_at, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_buf_split, sz1=0, sz2=14
-Callee:ares_buf_begins_with, sz1=0, sz2=2
-Callee:ares_streq, sz1=0, sz2=1
-DEBUG Func:parse_svcconf_line, sz1=1, sz2=8
-Callee:buf_fetch_string, sz1=0, sz2=4
-Callee:config_lookup, sz1=0, sz2=7
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_at, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_buf_split, sz1=0, sz2=14
-Callee:ares_buf_begins_with, sz1=0, sz2=2
-Callee:ares_streq, sz1=0, sz2=1
-DEBUG Func:ares_sconfig_append, sz1=2, sz2=8
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_llist_create, sz1=0, sz2=1
-Callee:ares_llist_insert_last, sz1=0, sz2=1
-Callee:ares_addr_is_linklocal, sz1=0, sz2=1
-Callee:ares_server_blacklisted, sz1=0, sz2=1
-Callee:ares_sconfig_linklocal, sz1=0, sz2=3
-Callee:ares_strlen, sz1=0, sz2=1
-DEBUG Func:ares_sconfig_append_fromstr, sz1=3, sz2=10
-Callee:ares_buf_create_const, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_sconfig_append, sz1=2, sz2=8
-Callee:parse_nameserver_uri, sz1=2, sz2=11
-Callee:parse_nameserver, sz1=1, sz2=11
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_at, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_buf_split, sz1=0, sz2=14
-Callee:ares_strlen, sz1=0, sz2=1
-DEBUG Func:parse_nameserver_uri, sz1=2, sz2=11
-Callee:ares_dns_pton, sz1=1, sz2=1
-Callee:strchr, sz1=0, sz2=0
-Callee:ares_strcpy, sz1=0, sz2=1
-Callee:ares_parse_port, sz1=0, sz2=1
-Callee:ares_streq, sz1=0, sz2=1
-Callee:ares_uri_destroy, sz1=0, sz2=2
-Callee:ares_uri_get_scheme, sz1=0, sz2=0
-Callee:ares_uri_get_host, sz1=0, sz2=0
-Callee:ares_uri_get_port, sz1=0, sz2=0
-Callee:ares_uri_get_query_key, sz1=0, sz2=3
-Callee:ares_uri_parse_buf, sz1=1, sz2=9
-DEBUG Func:parse_nameserver, sz1=1, sz2=11
-Callee:ares_dns_pton, sz1=1, sz2=1
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ares_buf_tag_rollback, sz1=0, sz2=0
-Callee:ares_buf_tag_fetch_string, sz1=0, sz2=2
-Callee:ares_buf_consume, sz1=0, sz2=1
-Callee:ares_buf_len, sz1=0, sz2=0
-Callee:ares_buf_consume_whitespace, sz1=0, sz2=3
-Callee:ares_buf_consume_until_charset, sz1=0, sz2=3
-Callee:ares_buf_consume_charset, sz1=0, sz2=2
-Callee:ares_buf_begins_with, sz1=0, sz2=2
-Callee:ares_parse_port, sz1=0, sz2=1
-DEBUG Func:ares_servers_update, sz1=1, sz2=13
-Callee:ares_llist_node_val, sz1=0, sz2=0
-Callee:ares_slist_node_reinsert, sz1=0, sz2=2
-Callee:ares_slist_node_val, sz1=0, sz2=0
-Callee:ares_qcache_flush, sz1=0, sz2=1
-Callee:ares_llist_node_first, sz1=0, sz2=0
-Callee:ares_llist_node_next, sz1=0, sz2=0
-Callee:ares_server_isdup, sz1=0, sz2=4
-Callee:ares_server_find, sz1=0, sz2=5
-Callee:ares_server_create, sz1=1, sz2=7
-Callee:ares_servers_remove_stale, sz1=0, sz2=5
-Callee:ares_servers_trim_single, sz1=0, sz2=3
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strcpy, sz1=0, sz2=1
-DEBUG Func:ares_server_create, sz1=1, sz2=7
-Callee:ares_destroy_server, sz1=0, sz2=3
-Callee:ares_slist_insert, sz1=1, sz2=5
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_llist_create, sz1=0, sz2=1
-Callee:ares_sconfig_get_port, sz1=0, sz2=0
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strcpy, sz1=0, sz2=1
-DEBUG Func:ares_get_server_addr, sz1=1, sz2=7
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_server_use_uri, sz1=0, sz2=0
-Callee:ares_get_server_addr_uri, sz1=2, sz2=10
-Callee:ares_inet_ntop, sz1=0, sz2=3
-Callee:ares_buf_append_num_dec, sz1=0, sz2=3
-Callee:ares_buf_append_str, sz1=0, sz2=2
-Callee:ares_strlen, sz1=0, sz2=1
-DEBUG Func:ares_get_server_addr_uri, sz1=2, sz2=10
-Callee:snprintf, sz1=0, sz2=0
-Callee:ares_inet_ntop, sz1=0, sz2=3
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_uri_create, sz1=0, sz2=3
-Callee:ares_uri_destroy, sz1=0, sz2=2
-Callee:ares_uri_set_scheme, sz1=0, sz2=3
-Callee:ares_uri_set_host, sz1=1, sz2=8
-Callee:ares_uri_set_port, sz1=0, sz2=0
-Callee:ares_uri_set_query_key, sz1=0, sz2=3
-Callee:ares_uri_write_buf, sz1=4, sz2=8
-DEBUG Func:ares_set_servers, sz1=1, sz2=5
-Callee:ares_llist_destroy, sz1=0, sz2=2
-Callee:ares_servers_update, sz1=1, sz2=13
-Callee:ares_addr_node_to_sconfig_llist, sz1=0, sz2=5
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_set_servers_ports, sz1=1, sz2=5
-Callee:ares_llist_destroy, sz1=0, sz2=2
-Callee:ares_servers_update, sz1=1, sz2=13
-Callee:ares_addrpnode_to_sconfig_llist, sz1=0, sz2=5
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_set_servers_csv, sz1=1, sz2=1
-Callee:set_servers_csv, sz1=2, sz2=6
-DEBUG Func:set_servers_csv, sz1=2, sz2=6
-Callee:ares_llist_destroy, sz1=0, sz2=2
-Callee:ares_sconfig_append_fromstr, sz1=3, sz2=10
-Callee:ares_servers_update, sz1=1, sz2=13
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_set_servers_ports_csv, sz1=1, sz2=1
-Callee:set_servers_csv, sz1=2, sz2=6
-DEBUG Func:ares_get_servers_csv, sz1=1, sz2=11
-Callee:ares_slist_node_first, sz1=0, sz2=0
-Callee:ares_slist_node_next, sz1=0, sz2=0
-Callee:ares_slist_node_val, sz1=0, sz2=0
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_buf_finish_str, sz1=0, sz2=1
-Callee:ares_get_server_addr, sz1=1, sz2=7
-Callee:ares_buf_len, sz1=0, sz2=0
-Callee:ares_channel_lock, sz1=0, sz2=1
-Callee:ares_channel_unlock, sz1=0, sz2=1
-DEBUG Func:ares_inet_net_pton, sz1=2, sz2=2
-Callee:ares_inet_net_pton_ipv4, sz1=0, sz2=3
-Callee:ares_inet_net_pton_ipv6, sz1=2, sz2=6
-DEBUG Func:ares_inet_net_pton_ipv6, sz1=2, sz2=6
-Callee:strchr, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:ares_inet_pton6, sz1=1, sz2=3
-Callee:getbits, sz1=0, sz2=1
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strcpy, sz1=0, sz2=1
-DEBUG Func:ares_inet_pton6, sz1=1, sz2=3
-Callee:strchr, sz1=0, sz2=0
-Callee:__errno_location, sz1=0, sz2=0
-Callee:ares_inet_net_pton_ipv4, sz1=0, sz2=3
-DEBUG Func:ares_inet_pton, sz1=1, sz2=2
-Callee:__errno_location, sz1=0, sz2=0
-Callee:ares_inet_net_pton, sz1=2, sz2=2
-DEBUG Func:ares_buf_hexdump, sz1=1, sz2=1
-Callee:ares_buf_hexdump_line, sz1=1, sz2=3
-DEBUG Func:ares_buf_hexdump_line, sz1=1, sz2=3
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_buf_append_num_hex, sz1=0, sz2=2
-Callee:ares_buf_append_str, sz1=0, sz2=2
-DEBUG Func:ares_punycode_encode_domain_buf, sz1=1, sz2=7
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_array_len, sz1=0, sz2=0
-Callee:ares_array_at, sz1=0, sz2=0
-Callee:ares_array_destroy, sz1=0, sz2=2
-Callee:ares_buf_len, sz1=0, sz2=0
-Callee:ares_buf_split, sz1=0, sz2=14
-Callee:punycode_encode, sz1=0, sz2=11
-DEBUG Func:ares_punycode_encode_domain, sz1=1, sz2=7
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_create_const, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_finish_str, sz1=0, sz2=1
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strdup, sz1=0, sz2=2
-Callee:ares_punycode_encode_domain_buf, sz1=1, sz2=7
-DEBUG Func:ares_idna_encode_domain_buf, sz1=2, sz2=4
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_punycode_encode_domain_buf, sz1=1, sz2=7
-Callee:ares_idna_map_buf, sz1=0, sz2=7
-DEBUG Func:ares_idna_encode_domain, sz1=1, sz2=7
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_create_const, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_finish_str, sz1=0, sz2=1
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strdup, sz1=0, sz2=2
-Callee:ares_idna_encode_domain_buf, sz1=2, sz2=4
-DEBUG Func:ares_iface_ips, sz1=1, sz2=3
-Callee:ares_iface_ips_destroy, sz1=0, sz2=2
-Callee:ares_iface_ips_alloc, sz1=0, sz2=3
-Callee:ares_iface_ips_enumerate, sz1=1, sz2=5
-DEBUG Func:ares_iface_ips_enumerate, sz1=1, sz2=5
-Callee:ares_strcaseeq, sz1=0, sz2=1
-Callee:getifaddrs, sz1=0, sz2=0
-Callee:count_addr_bits, sz1=0, sz2=1
-Callee:ares_iface_ips_add, sz1=1, sz2=4
-Callee:freeifaddrs, sz1=0, sz2=0
-DEBUG Func:ares_iface_ips_add, sz1=1, sz2=4
-Callee:ares_array_remove_last, sz1=0, sz2=2
-Callee:ares_addr_is_linklocal, sz1=0, sz2=1
-Callee:ares_array_insert_last, sz1=0, sz2=2
-Callee:ares_strdup, sz1=0, sz2=2
-DEBUG Func:ares_init_rand_state, sz1=1, sz2=3
-Callee:ares_free, sz1=0, sz2=0
-Callee:ares_malloc_zero, sz1=0, sz2=1
-Callee:ares_init_rand_engine, sz1=0, sz2=3
-DEBUG Func:ares_rand_bytes, sz1=1, sz2=1
-Callee:ares_rand_bytes_fetch, sz1=1, sz2=5
-DEBUG Func:ares_rand_bytes_fetch, sz1=1, sz2=5
-Callee:__errno_location, sz1=0, sz2=0
-Callee:fread, sz1=0, sz2=0
-Callee:getrandom, sz1=0, sz2=0
-Callee:ares_rc4_prng, sz1=0, sz2=0
-Callee:ares_reinit_rand, sz1=1, sz2=2
-DEBUG Func:ares_reinit_rand, sz1=1, sz2=2
-Callee:ares_init_rand_engine, sz1=0, sz2=3
-Callee:ares_clear_rand_state, sz1=0, sz2=1
-DEBUG Func:ares_generate_new_id, sz1=1, sz2=1
-Callee:ares_rand_bytes, sz1=1, sz2=1
-DEBUG Func:ares_uri_set_host, sz1=1, sz2=8
-Callee:ares_dns_pton, sz1=1, sz2=1
-Callee:strchr, sz1=0, sz2=0
-Callee:snprintf, sz1=0, sz2=0
-Callee:ares_inet_ntop, sz1=0, sz2=3
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_strcpy, sz1=0, sz2=1
-Callee:ares_str_isalnum, sz1=0, sz2=0
-Callee:ares_is_hostname, sz1=0, sz2=0
-DEBUG Func:ares_uri_write_buf, sz1=4, sz2=8
-Callee:ares_buf_set_length, sz1=0, sz2=1
-Callee:ares_buf_len, sz1=0, sz2=0
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_uri_write_scheme, sz1=0, sz2=1
-Callee:ares_uri_write_authority, sz1=2, sz2=7
-Callee:ares_uri_write_path, sz1=1, sz2=3
-Callee:ares_uri_write_query, sz1=1, sz2=6
-Callee:ares_uri_write_fragment, sz1=1, sz2=3
-DEBUG Func:ares_uri_write_authority, sz1=2, sz2=7
-Callee:ares_dns_pton, sz1=1, sz2=1
-Callee:strchr, sz1=0, sz2=0
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_buf_append_num_dec, sz1=0, sz2=3
-Callee:ares_buf_append_str, sz1=0, sz2=2
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_uri_encode_buf, sz1=1, sz2=2
-DEBUG Func:ares_uri_write_path, sz1=1, sz2=3
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_uri_encode_buf, sz1=1, sz2=2
-DEBUG Func:ares_uri_write_query, sz1=1, sz2=6
-Callee:ares_htable_dict_num_keys, sz1=0, sz2=1
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_free_array, sz1=0, sz2=1
-Callee:ares_uri_get_query_key, sz1=0, sz2=3
-Callee:ares_uri_get_query_keys, sz1=0, sz2=1
-Callee:ares_uri_encode_buf, sz1=1, sz2=2
-DEBUG Func:ares_uri_write_fragment, sz1=1, sz2=3
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_strlen, sz1=0, sz2=1
-Callee:ares_uri_encode_buf, sz1=1, sz2=2
-DEBUG Func:ares_uri_encode_buf, sz1=1, sz2=2
-Callee:ares_buf_append_byte, sz1=0, sz2=1
-Callee:ares_buf_append_num_hex, sz1=0, sz2=2
-DEBUG Func:ares_uri_write, sz1=1, sz2=4
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_finish_str, sz1=0, sz2=1
-Callee:ares_uri_write_buf, sz1=4, sz2=8
-DEBUG Func:ares_uri_parse_buf, sz1=1, sz2=9
-Callee:ares_buf_get_position, sz1=0, sz2=0
-Callee:ares_buf_set_position, sz1=0, sz2=0
-Callee:ares_uri_create, sz1=0, sz2=3
-Callee:ares_uri_destroy, sz1=0, sz2=2
-Callee:ares_uri_parse_scheme, sz1=0, sz2=5
-Callee:ares_uri_parse_authority, sz1=1, sz2=8
-Callee:ares_uri_parse_path, sz1=0, sz2=9
-Callee:ares_uri_parse_query, sz1=0, sz2=8
-Callee:ares_uri_parse_fragment, sz1=0, sz2=8
-DEBUG Func:ares_uri_parse_authority, sz1=1, sz2=8
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ares_buf_tag_fetch_constbuf, sz1=0, sz2=2
-Callee:ares_buf_consume_until_charset, sz1=0, sz2=3
-Callee:ares_buf_peek, sz1=0, sz2=1
-Callee:ares_uri_str_isvalid, sz1=0, sz2=0
-Callee:ares_uri_parse_userinfo, sz1=0, sz2=9
-Callee:ares_uri_parse_hostport, sz1=1, sz2=10
-DEBUG Func:ares_uri_parse_hostport, sz1=1, sz2=10
-Callee:ares_buf_tag, sz1=0, sz2=0
-Callee:ares_buf_tag_fetch_string, sz1=0, sz2=2
-Callee:ares_buf_consume, sz1=0, sz2=1
-Callee:ares_buf_len, sz1=0, sz2=0
-Callee:ares_buf_fetch_bytes, sz1=0, sz2=2
-Callee:ares_buf_consume_until_charset, sz1=0, sz2=3
-Callee:ares_buf_peek_byte, sz1=0, sz2=1
-Callee:ares_parse_port, sz1=0, sz2=1
-Callee:ares_uri_set_host, sz1=1, sz2=8
-Callee:ares_uri_set_port, sz1=0, sz2=0
-DEBUG Func:ares_uri_parse, sz1=1, sz2=4
-Callee:ares_buf_create, sz1=0, sz2=1
-Callee:ares_buf_destroy, sz1=0, sz2=1
-Callee:ares_buf_append_str, sz1=0, sz2=2
-Callee:ares_uri_parse_buf, sz1=1, sz2=9
-[K[SPEG Computation]: 100%
-[Dumping SEG] spends time ***1s 641ms***
-SEG-Building spends time ***4s 29ms***
-SEG-Building uses memory ***1G 174M 484KB***
+[K[SPEG Computation]: 1%[K[SPEG Computation]: 2%[K[SPEG Computation]: 3%[K[SPEG Computation]: 4%[K[SPEG Computation]: 5%[K[SPEG Computation]: 6%[K[SPEG Computation]: 7%[K[SPEG Computation]: 8%[K[SPEG Computation]: 9%[K[SPEG Computation]: 10%[K[SPEG Computation]: 11%[K[SPEG Computation]: 12%[K[SPEG Computation]: 13%[K[SPEG Computation]: 14%[K[SPEG Computation]: 15%[K[SPEG Computation]: 16%[K[SPEG Computation]: 17%[K[SPEG Computation]: 18%[K[SPEG Computation]: 19%[K[SPEG Computation]: 20%[K[SPEG Computation]: 21%[K[SPEG Computation]: 22%[K[SPEG Computation]: 23%[K[SPEG Computation]: 24%[K[SPEG Computation]: 25%[K[SPEG Computation]: 26%[K[SPEG Computation]: 27%[K[SPEG Computation]: 28%[K[SPEG Computation]: 29%[K[SPEG Computation]: 30%[K[SPEG Computation]: 31%[K[SPEG Computation]: 32%[K[SPEG Computation]: 33%[K[SPEG Computation]: 34%[K[SPEG Computation]: 36%[K[SPEG Computation]: 37%[K[SPEG Computation]: 38%[K[SPEG Computation]: 39%[K[SPEG Computation]: 40%[K[SPEG Computation]: 41%[K[SPEG Computation]: 42%[K[SPEG Computation]: 43%[K[SPEG Computation]: 44%[K[SPEG Computation]: 45%[K[SPEG Computation]: 46%[K[SPEG Computation]: 47%[K[SPEG Computation]: 48%[K[SPEG Computation]: 49%[K[SPEG Computation]: 50%[K[SPEG Computation]: 51%[K[SPEG Computation]: 52%[K[SPEG Computation]: 53%[K[SPEG Computation]: 54%[K[SPEG Computation]: 55%[K[SPEG Computation]: 56%[K[SPEG Computation]: 57%[K[SPEG Computation]: 58%[K[SPEG Computation]: 59%[K[SPEG Computation]: 60%[K[SPEG Computation]: 61%[K[SPEG Computation]: 62%[K[SPEG Computation]: 63%[K[SPEG Computation]: 64%[K[SPEG Computation]: 65%[K[SPEG Computation]: 66%[K[SPEG Computation]: 67%[K[SPEG Computation]: 68%[K[SPEG Computation]: 69%[K[SPEG Computation]: 70%[K[SPEG Computation]: 72%[K[SPEG Computation]: 73%[K[SPEG Computation]: 74%[K[SPEG Computation]: 75%[K[SPEG Computation]: 76%[K[SPEG Computation]: 77%[K[SPEG Computation]: 78%[K[SPEG Computation]: 79%[K[SPEG Computation]: 80%[K[SPEG Computation]: 81%[K[SPEG Computation]: 82%[K[SPEG Computation]: 83%[K[SPEG Computation]: 84%[K[SPEG Computation]: 85%[K[SPEG Computation]: 86%[K[SPEG Computation]: 87%[K[SPEG Computation]: 88%[K[SPEG Computation]: 89%[K[SPEG Computation]: 90%[K[SPEG Computation]: 91%[K[SPEG Computation]: 92%[K[SPEG Computation]: 93%[K[SPEG Computation]: 94%[K[SPEG Computation]: 95%[K[SPEG Computation]: 96%[K[SPEG Computation]: 97%[K[SPEG Computation]: 98%[K[SPEG Computation]: 99%[K[SPEG Computation]: 100%
+[Dumping SEG] spends time ***0s 490ms***
+SEG-Building spends time ***3s 755ms***
+SEG-Building uses memory ***1G 142M 392KB***
 
 
 Total Time: 	0min5s
-Total Memory:  ***1G 530M 528KB***
+Total Memory:  ***1G 767M 504KB***
 
-Script done on 2026-07-19 23:13:48-04:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-08-04 07:07:16+00:00 [COMMAND_EXIT_CODE="0"]
