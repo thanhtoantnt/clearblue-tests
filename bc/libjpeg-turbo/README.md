@@ -1,7 +1,7 @@
-# `bc/libjpeg-turbo/` — libjpeg-turbo bitcode for cb-check incremental-persist
+# `bc/libjpeg-turbo/` — libjpeg-turbo bitcode for fermat-check incremental-persist
 
 This folder holds typed-pointer LLVM 15 bitcode for **libjpeg-turbo**, used as the
-input for the `cb-check` incremental-persist benchmark (`scripts/run_bench.sh`).
+input for the `fermat-check` incremental-persist benchmark (`scripts/run_bench.sh`).
 
 ## Layout
 
@@ -47,7 +47,7 @@ input for the `cb-check` incremental-persist benchmark (`scripts/run_bench.sh`).
 
 The committed `.bc` files are self-contained, but you can rebuild any of them
 from the upstream source. The key rule: **`old.bc` and every `pr-*.bc` must use
-the identical toolchain and flags** so `cb-check` fingerprints match.
+the identical toolchain and flags** so `fermat-check` fingerprints match.
 
 ### Prerequisites (once)
 
@@ -103,14 +103,14 @@ variant (the generic one inserts a comment; this project needs a real statement
 because comments are stripped at `-O0` and yield identical bitcode — see the
 `build_libjpegturbo` builder).
 
-## Reproduce the results (cb-check analysis)
+## Reproduce the results (fermat-check analysis)
 
-Three explicit `cb-check` invocations reproduce one data point: **store** the
+Three explicit `fermat-check` invocations reproduce one data point: **store** the
 baseline once, then run a sample **incremental** (reuses stored SEGs) and
 **scratch** (no store) to compare.
 
 ```bash
-CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
 # 1) store the baseline once (writes ./persist/libjpeg-turbo/seg/ ...)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
@@ -136,5 +136,5 @@ reuses most SEGs and rebuilds only the dirty function(s).
 Incremental rebuilds exactly one function (the touched one) and reuses the other
 ~927, finishing ~2.5× faster than a full scratch rebuild.
 
-See [`docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md)
+See [`docs/fermat-check-incremental-persist.md`](../../docs/fermat-check-incremental-persist.md)
 and [`../../README.md`](../../README.md#result-columns) for field definitions.

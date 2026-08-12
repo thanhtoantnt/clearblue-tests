@@ -1,11 +1,11 @@
-# cb-check: Normal Mode and Store/Load Mode
+# fermat-check: Normal Mode and Store/Load Mode
 
-This document describes the three operating modes of `cb-check`, the
+This document describes the three operating modes of `fermat-check`, the
 FermatAnalyzer static analyzer, with a focus on the SEG (Symbolic Expr Graph)
 persistence feature in `lib/Persistence/`.
 
 For **PR / old.bc → new.bc** reuse (hybrid load + rebuild), see
-[cb-check-incremental-persist.md](./cb-check-incremental-persist.md)
+[fermat-check-incremental-persist.md](./fermat-check-incremental-persist.md)
 (`-enable-incremental-persist`).
 
 For compiling projects into typed-pointer bitcode (`gclang` / `get-bc`), see
@@ -13,7 +13,7 @@ For compiling projects into typed-pointer bitcode (`gclang` / `get-bc`), see
 
 ## Background
 
-`cb-check` analyzes LLVM bitcode in three phases:
+`fermat-check` analyzes LLVM bitcode in three phases:
 
 1. **IR preparation** — canonicalization passes (`mem2reg`, loop breaking,
    lowering irreducible CFG, etc.).
@@ -34,7 +34,7 @@ once and reused.
 Build SEGs from bitcode, run alias analysis, run checkers. No persistence.
 
 ```bash
-cb-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
+fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
   --report=report.json app.bc
 ```
 
@@ -45,7 +45,7 @@ analysis on it), the SEG is serialized to disk. The checkers still run on the
 in-memory SEGs as usual.
 
 ```bash
-cb-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
+fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
   -persist-dir=/path/to/persist \
   --report=report-save.json app.bc
 ```
@@ -60,7 +60,7 @@ already contain the alias-analysis-built state — interface/pseudo nodes,
 points-to summaries), then the checkers run on the loaded SEGs.
 
 ```bash
-cb-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
+fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
   -enable-load-project-from-persistence -persist-dir=/path/to/persist \
   --report=report-load.json app.bc
 ```
@@ -71,7 +71,7 @@ given bitcode.
 
 ## Pass pipeline
 
-Relevant passes, in order (see `tools/cb-check/cb-check.cpp`):
+Relevant passes, in order (see `tools/fermat-check/fermat-check.cpp`):
 
 ```
 IR canonicalization (mem2reg, LowerSwitch, IrredCFGElim, LoopBreak, ...)
@@ -84,7 +84,7 @@ IR canonicalization (mem2reg, LowerSwitch, IrredCFGElim, LoopBreak, ...)
 `IndexLLVMValueLocationPass` **must** run before the SEG producer in both store
 and load mode: persisted SEGs reference LLVM values/types by their integer
 index (not by pointer), so the index must exist before serialization and before
-deserialization. `cb-check` always schedules it before the builder.
+deserialization. `fermat-check` always schedules it before the builder.
 
 ## Storage layout
 
@@ -117,13 +117,13 @@ deserialization. `cb-check` always schedules it before the builder.
 
 ```bash
 # 1. store — build + alias-analyze + persist SEGs (and still report bugs)
-cb-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
+fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
   -persist-dir=./persist \
   --report=report-save.json --report-pass-line=0 -hide-progress-bar -omit-no-dbginfo \
   app.bc
 
 # 2. load — reload SEGs, skip rebuild + AA, report bugs again
-cb-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
+fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
   -enable-load-project-from-persistence -persist-dir=./persist \
   --report=report-load.json --report-pass-line=0 -hide-progress-bar -omit-no-dbginfo \
   app.bc
@@ -152,8 +152,8 @@ scheduling, with no persistence bug. For an exact store==load equality check,
 run both serially:
 
 ```bash
-cb-check ... -nworkers=1 -persist-dir=./persist app.bc           # store
-cb-check ... -nworkers=1 -enable-load-project-from-persistence -persist-dir=./persist app.bc  # load
+fermat-check ... -nworkers=1 -persist-dir=./persist app.bc           # store
+fermat-check ... -nworkers=1 -enable-load-project-from-persistence -persist-dir=./persist app.bc  # load
 ```
 
 ### The bitcode must match

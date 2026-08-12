@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# A/B compare two cb-check builds on the incremental-persist feature.
+# A/B compare two fermat-check builds on the incremental-persist feature.
 #
 # Real workflow per branch:
 #   1. store old.bc ONCE  (setup)
@@ -9,14 +9,14 @@
 # See docs/ab-branch-comparison.md for the methodology.
 #
 # Usage:
-#   MAIN=/tmp/cb-check-main PERF=/tmp/cb-check-perf ./scripts/ab_branches.sh
+#   MAIN=/tmp/fermat-check-main PERF=/tmp/fermat-check-perf ./scripts/ab_branches.sh
 #   PROJECTS="darknet openssl" ./scripts/ab_branches.sh   # subset
 #   OUT=/tmp/ab.tsv ./scripts/ab_branches.sh              # custom output
 set -u
 export GIT_TEMPLATE_DIR="${GIT_TEMPLATE_DIR:-$HOME/clearblue/local-tests/git/templates}"
 
-MAIN="${MAIN:-/tmp/cb-check-main}"
-PERF="${PERF:-/tmp/cb-check-perf}"
+MAIN="${MAIN:-/tmp/fermat-check-main}"
+PERF="${PERF:-/tmp/fermat-check-perf}"
 BC="${BC:-$HOME/clearblue/incremental-persist-bench/bc}"
 OUT="${OUT:-/tmp/ab2.tsv}"
 NWORKERS="${NWORKERS:-16}"

@@ -1,4 +1,4 @@
-# cb-check: Incremental Persist (PR / old.bc → new.bc)
+# fermat-check: Incremental Persist (PR / old.bc → new.bc)
 
 This document describes **`-enable-incremental-persist`**: hybrid reuse of
 persisted SEGs when analyzing a *new* bitcode against a store produced from an
@@ -7,7 +7,7 @@ request).
 
 Related:
 
-- [cb-check-modes.md](./cb-check-modes.md) — normal / store / pure load
+- [fermat-check-modes.md](./fermat-check-modes.md) — normal / store / pure load
 - [producing-bitcode.md](./producing-bitcode.md) — gllvm + typed-pointer `.bc` recipes
 
 ## When to use which mode
@@ -25,7 +25,7 @@ keys still resolve.
 
 ## Prerequisites
 
-1. **cb-check** built from a tree that includes incremental persist
+1. **fermat-check** built from a tree that includes incremental persist
    (branch `feature/incremental-persist-reuse` or later merge to main).
 2. **LLVM 15 clang** with **typed pointers** when producing bitcode
    (`-Xclang -no-opaque-pointers`). Opaque-pointer BC is rejected.
@@ -38,7 +38,7 @@ Example environment used in recent runs:
 ```bash
 export PATH="$HOME/go/bin:$HOME/tools/llvm15-official/bin:$PATH"
 export LLVM_COMPILER_PATH=$HOME/tools/llvm15-official/bin
-CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 ```
 
 ## Workflow
@@ -211,7 +211,7 @@ checkers run only on the in-memory (dirty) SEGs. This is by design:
 ### Exact commands to find a bug introduced by a PR
 
 ```bash
-CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 CHK="-segbuilder-aa=falconplus --ps-npd --enable-heap-alloc-failure --psa-enable-arg-symbol"
 
 # 1) store clean baseline once
@@ -283,7 +283,7 @@ in `old.bc` and `new.bc` to share a key when IR is unchanged.
 
 1. **Same analyzer build** for store and incremental (hierarchical indices +
    fingerprints must match the format that wrote the store).
-2. **Typed-pointer bitcode** for this tree’s LLVM 15 / cb-check (e.g. clang
+2. **Typed-pointer bitcode** for this tree’s LLVM 15 / fermat-check (e.g. clang
    `-Xclang -no-opaque-pointers` when producing `.bc`).
 3. **Same compile flags** for `old.bc` and `new.bc` (optimization, defines,
    feature toggles). Different flags invalidate reuse.
@@ -297,7 +297,7 @@ in `old.bc` and `new.bc` to share a key when IR is unchanged.
 7. **Scale**: medium programs often see large wall-time wins after one store.
    Very large modules may be neutral or slower—fixed IR prep + dirty expansion
    can dominate (those projects were dropped from this bench suite).
-8. **Static `cb-check`**: stdout may be fully buffered when redirected; use
+8. **Static `fermat-check`**: stdout may be fully buffered when redirected; use
    `script -q -c '…' logfile` (or a TTY) if logs look empty while the process
    runs.
 9. **Store vs load gating**: store mode (`-persist-dir` alone) must not hybrid
@@ -326,7 +326,7 @@ Internal multi-PR runs on one machine (`-enable-build-seg-only`,
 ```bash
 export PATH="$HOME/go/bin:$HOME/tools/llvm15-official/bin:$PATH"
 export LLVM_COMPILER_PATH=$HOME/tools/llvm15-official/bin
-CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
 # store once
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
@@ -342,10 +342,10 @@ $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only new.bc   # scratch
 
 ```bash
 # Store
-cb-check -enable-build-seg-only -persist-dir=./P -hide-progress-bar -nworkers=16 old.bc
+fermat-check -enable-build-seg-only -persist-dir=./P -hide-progress-bar -nworkers=16 old.bc
 
 # Incremental (same or slightly changed new.bc)
-cb-check -enable-build-seg-only -enable-incremental-persist -persist-dir=./P \
+fermat-check -enable-build-seg-only -enable-incremental-persist -persist-dir=./P \
   -hide-progress-bar -nworkers=16 new.bc
 ```
 
@@ -359,6 +359,6 @@ Success signals:
 ## See also
 
 - [producing-bitcode.md](./producing-bitcode.md) — how to compile projects to `.bc`
-- [cb-check-modes.md](./cb-check-modes.md) — normal / store / pure load
+- [fermat-check-modes.md](./fermat-check-modes.md) — normal / store / pure load
 - Issue #10 — store mode must not hybrid-load when only `-persist-dir` is set
 - Branch `feature/incremental-persist-reuse` — feature implementation history

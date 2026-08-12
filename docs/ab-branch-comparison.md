@@ -1,12 +1,12 @@
 # A/B branch comparison (main vs perf)
 
-How to compare two `cb-check` builds (e.g. `main` vs a perf branch) on the
+How to compare two `fermat-check` builds (e.g. `main` vs a perf branch) on the
 incremental-persist feature, the right way.
 
 Related:
 
-- [cb-check-incremental-persist.md](./cb-check-incremental-persist.md) — what the feature is
-- [cb-check-modes.md](./cb-check-modes.md) — store / load / normal modes
+- [fermat-check-incremental-persist.md](./fermat-check-incremental-persist.md) — what the feature is
+- [fermat-check-modes.md](./fermat-check-modes.md) — store / load / normal modes
 - [`scripts/ab_branches.sh`](../scripts/ab_branches.sh) — the harness this doc describes
 
 ## The workflow the feature exists for
@@ -23,10 +23,10 @@ clean SEGs from disk and rebuilds only the dirty functions.
 
 | mode | command | measures | use it? |
 |------|---------|----------|---------|
-| **store** | `cb-check -persist-dir=X old.bc` | one-time build + dump cost | ✅ |
-| **incremental** | `cb-check -enable-incremental-persist -persist-dir=X pr-*.bc` | load clean + rebuild dirty — **the feature** | ✅ |
+| **store** | `fermat-check -persist-dir=X old.bc` | one-time build + dump cost | ✅ |
+| **incremental** | `fermat-check -enable-incremental-persist -persist-dir=X pr-*.bc` | load clean + rebuild dirty — **the feature** | ✅ |
 | `zero` (incremental on `old.bc` itself) | same flags, same `old.bc` | 0 dirty funcs → builds **nothing**; only the fingerprint scan loop | ❌ not real |
-| `nopersist` / scratch (no `-persist-dir`) | `cb-check pr-*.bc` | full rebuild, no reuse | optional baseline |
+| `nopersist` / scratch (no `-persist-dir`) | `fermat-check pr-*.bc` | full rebuild, no reuse | optional baseline |
 
 `zero` re-analyzes the *exact same* `old.bc` that was just stored, so every
 fingerprint matches and nothing rebuilds. Nobody runs that in practice; it only
@@ -61,19 +61,19 @@ done
 cd ~/github/FermatAnalyzer
 # perf branch
 git checkout perf/<branch>
-cmake --build build --target cb-check -j$(nproc)
-cp build/tools/cb-check/cb-check /tmp/cb-check-perf
+cmake --build build --target fermat-check -j$(nproc)
+cp build/tools/fermat-check/fermat-check /tmp/fermat-check-perf
 # main
 git checkout main
-cmake --build build --target cb-check -j$(nproc)
-cp build/tools/cb-check/cb-check /tmp/cb-check-main
+cmake --build build --target fermat-check -j$(nproc)
+cp build/tools/fermat-check/fermat-check /tmp/fermat-check-main
 git checkout perf/<branch>   # restore
 ```
 
 ### 2. Run the harness
 
 ```bash
-MAIN=/tmp/cb-check-main PERF=/tmp/cb-check-perf \
+MAIN=/tmp/fermat-check-main PERF=/tmp/fermat-check-perf \
   bash ~/clearblue/incremental-persist-bench/scripts/ab_branches.sh
 ```
 

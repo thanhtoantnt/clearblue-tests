@@ -1,4 +1,4 @@
-# `bc/libexpat/` — Expat bitcode for cb-check incremental-persist
+# `bc/libexpat/` — Expat bitcode for fermat-check incremental-persist
 
 Typed-pointer LLVM 15 bitcode for **libexpat** (XML parser). Medium-tier
 runtime: full `--ps-npd` ~3–4 min on 16 workers (~359 functions, ~860 KB `.bc`).

@@ -1,6 +1,6 @@
-# Building `cb-check`
+# Building `fermat-check`
 
-`cb-check` is the static analyzer (part of the [FermatAnalyzer](https://github.com/fermat-hkrc/FermatAnalyzer) / "Clearblue" project) that consumes the `.bc` files in this repo and runs the store / incremental / scratch analyses. This page records **exactly how the binary used to produce the numbers in this repo was built**, so the results are reproducible.
+`fermat-check` is the static analyzer (part of the [FermatAnalyzer](https://github.com/fermat-hkrc/FermatAnalyzer) / "Clearblue" project) that consumes the `.bc` files in this repo and runs the store / incremental / scratch analyses. This page records **exactly how the binary used to produce the numbers in this repo was built**, so the results are reproducible.
 
 The same procedure builds the stock analyzer; the incremental-persist feature used here lives on the `feature/incremental-persist-reuse` branch.
 
@@ -21,8 +21,8 @@ cmake -S . -B build -G Ninja \
   -DENABLE_LICENCE_CHECK=OFF -DENABLE_LOADABLE_CHECKERS=OFF \
   -DFERMAT_STATIC_EXE=ON -DENABLE_STATICZ3=ON -DENABLE_ASSERT=ON \
   -DCMAKE_INSTALL_PREFIX=$PWD/build/fermat
-cmake --build build --target cb-check -j$(nproc)
-# -> build/tools/cb-check/cb-check
+cmake --build build --target fermat-check -j$(nproc)
+# -> build/tools/fermat-check/fermat-check
 ```
 
 ---
@@ -41,7 +41,7 @@ parallel installs side by side:
 | Install | RTTI / EH | Used by |
 |---------|-----------|---------|
 | `~/tools/llvm15-official` | OFF / OFF | **gllvm** — `gclang` used to compile the `.bc` inputs (stock LLVM is fine for bitcode generation) |
-| `~/tools/llvm15-rtti`     | **ON / ON** | **cb-check** — the analyzer itself must link against RTTI-enabled LLVM |
+| `~/tools/llvm15-rtti`     | **ON / ON** | **fermat-check** — the analyzer itself must link against RTTI-enabled LLVM |
 
 Both are LLVM 15.x (15.0.6 official / 15.0.7 rtti). Mixing is safe: the
 `.bc` format is identical; only the host toolchain ABI differs.
@@ -75,7 +75,7 @@ toolchain can compile the analyzer sources.
 
 ---
 
-## Building FermatAnalyzer / `cb-check`
+## Building FermatAnalyzer / `fermat-check`
 
 ### Prerequisites
 
@@ -108,13 +108,13 @@ cmake -S . -B build -G Ninja \
     -DENABLE_ASSERT=ON \
     -DCMAKE_INSTALL_PREFIX="$PWD/build/fermat"
 
-cmake --build build --target cb-check -j$(nproc)
+cmake --build build --target fermat-check -j$(nproc)
 
 # result (~67 MB statically linked binary)
-ls -la build/tools/cb-check/cb-check
+ls -la build/tools/fermat-check/fermat-check
 # (the README runs `ninja install`, which also stages it under
-#  build/fermat/bin/cb-check; here only `--target cb-check` was built,
-#  so use the build/tools/cb-check/cb-check path directly)
+#  build/fermat/bin/fermat-check; here only `--target fermat-check` was built,
+#  so use the build/tools/fermat-check/fermat-check path directly)
 ```
 
 `FERMAT_STATIC_EXE=ON` produces a self-contained binary (no `LD_LIBRARY_PATH`
@@ -132,7 +132,7 @@ git commit it was built from, and a build timestamp via `CMakeLists.txt`.
 ### Verify it works
 
 ```bash
-CBC=$PWD/build/tools/cb-check/cb-check
+CBC=$PWD/build/tools/fermat-check/fermat-check
 $CBC --help 2>&1 | head
 # smoke test against a committed baseline
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
@@ -150,8 +150,8 @@ $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
 | Build type | `Release` |
 | Host toolchain | `clang/clang++ 15.0.7` (RTTI+EH build) |
 | LLVM linked | `llvm15-rtti` (15.0.7, `LLVM_ENABLE_RTTI=ON`, `LLVM_ENABLE_EH=ON`) |
-| Binary | `build/tools/cb-check/cb-check`, ~67 MB |
-| Path referenced in docs | `$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check` |
+| Binary | `build/tools/fermat-check/fermat-check`, ~67 MB |
+| Path referenced in docs | `$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check` |
 
 To reproduce the benchmark numbers **exactly**, build the same commit with the
 same flags. Different commits may give slightly different times (analysis logic

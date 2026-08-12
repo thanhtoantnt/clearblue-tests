@@ -2,7 +2,7 @@
 
 This folder proves the `-enable-incremental-persist` mode **finds bugs** — not
 just builds SEGs faster. It contains one PR's bitcode with a deliberately
-injected bug, plus the baseline, and the exact `cb-check` commands to catch it.
+injected bug, plus the baseline, and the exact `fermat-check` commands to catch it.
 
 ## Files in this folder
 
@@ -34,10 +34,10 @@ The only source change vs. the baseline is those 2 lines in `src/image.c`:
  1 file changed, 2 insertions(+)
 ```
 
-## How cb-check finds it (exact commands)
+## How fermat-check finds it (exact commands)
 
 ```bash
-CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 CHK="-segbuilder-aa=falconplus --ps-npd --enable-heap-alloc-failure --psa-enable-arg-symbol"
 
 # 1) Store the clean baseline ONCE (writes ./persist/seg/ ... ~130s, one-time)
@@ -91,7 +91,7 @@ Consequences:
   not re-checked.
 - This is the right behavior for **PR review**: "report what *this* change
   introduces", not "report every pre-existing bug in the codebase".
-- To get the full (whole-module) report on a bitcode, run `cb-check` **without**
+- To get the full (whole-module) report on a bitcode, run `fermat-check` **without**
   `-enable-incremental-persist` (scratch mode).
 
 ### Worked numbers from this demo
@@ -120,5 +120,5 @@ Requires gllvm + LLVM 15 typed pointers — see [`docs/producing-bitcode.md`](..
 
 ## See also
 
-- [`docs/cb-check-incremental-persist.md`](../docs/cb-check-incremental-persist.md) — "Bug-finding behavior" section
+- [`docs/fermat-check-incremental-persist.md`](../docs/fermat-check-incremental-persist.md) — "Bug-finding behavior" section
 - [`bc/darknet/README.md`](../bc/darknet/README.md) — the real darknet PR bitcode (this demo is a synthetic addition to that tree)

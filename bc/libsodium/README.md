@@ -1,4 +1,4 @@
-# `bc/libsodium/` — libsodium bitcode for cb-check incremental-persist
+# `bc/libsodium/` — libsodium bitcode for fermat-check incremental-persist
 
 Typed-pointer LLVM 15 bitcode for **libsodium**, sized like other medium
 projects in this suite (~2.5 MB `.bc`, ~1.1k functions, full `--ps-npd` ~35 s

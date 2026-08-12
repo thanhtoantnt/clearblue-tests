@@ -1,19 +1,19 @@
-# cb-check incremental-persist — reproducibility artifacts
+# fermat-check incremental-persist — reproducibility artifacts
 
 Bitcode baselines + recorded results + a bench harness for the **incremental
-persist** feature of `cb-check` (FermatAnalyzer branch
+persist** feature of `fermat-check` (FermatAnalyzer branch
 `feature/incremental-persist-reuse`).
 
-Goal: anyone with a built `cb-check` from that branch can clone this repo and
+Goal: anyone with a built `fermat-check` from that branch can clone this repo and
 reproduce the store / incremental / scratch numbers, or add their own PR
 bitcode and re-run.
 
 Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tree):
 
-- [`docs/cb-check-incremental-persist.md`](./docs/cb-check-incremental-persist.md) — what the feature is / how it works
+- [`docs/fermat-check-incremental-persist.md`](./docs/fermat-check-incremental-persist.md) — what the feature is / how it works
 - [`docs/producing-bitcode.md`](./docs/producing-bitcode.md) — how the `.bc` files here were compiled
-- [`docs/building-cb-check.md`](./docs/building-cb-check.md) — how to build the `cb-check` analyzer itself (incl. the RTTI-enabled LLVM 15 it needs)
-- [`docs/cb-check-modes.md`](./docs/cb-check-modes.md) — normal / store / pure-load modes
+- [`docs/building-fermat-check.md`](./docs/building-fermat-check.md) — how to build the `fermat-check` analyzer itself (incl. the RTTI-enabled LLVM 15 it needs)
+- [`docs/fermat-check-modes.md`](./docs/fermat-check-modes.md) — normal / store / pure-load modes
 - [`docs/pr31-npa-global-impact.md`](./docs/pr31-npa-global-impact.md) — later: does PR #31 NPA formal-arg change move baseline `--ps-npd`?
 
 - [`results/main-vs-perf-incremental-persist-optimize.md`](./results/main-vs-perf-incremental-persist-optimize.md) — head-to-head: **main (PR #15)** vs **`perf/incremental-persist-optimize`** (store / zero-dirty / PR / no-persist; nworkers=16)
@@ -22,9 +22,9 @@ Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tr
 
 For each project:
 
-1. **Store** the baseline `old.bc` once: `cb-check -enable-build-seg-only -persist-dir=P old.bc`
-2. **Incremental** on a changed `new.bc`: `cb-check -enable-build-seg-only -enable-incremental-persist -persist-dir=P new.bc`
-3. **Scratch** on the same `new.bc` (no persist): `cb-check -enable-build-seg-only new.bc`
+1. **Store** the baseline `old.bc` once: `fermat-check -enable-build-seg-only -persist-dir=P old.bc`
+2. **Incremental** on a changed `new.bc`: `fermat-check -enable-build-seg-only -enable-incremental-persist -persist-dir=P new.bc`
+3. **Scratch** on the same `new.bc` (no persist): `fermat-check -enable-build-seg-only new.bc`
 
 Incremental should be faster than scratch when few functions changed. The
 difference is the feature's payoff.
@@ -56,12 +56,12 @@ that single store (incremental) and from scratch.
 
 ## Prerequisites
 
-1. **cb-check** built from FermatAnalyzer branch
+1. **fermat-check** built from FermatAnalyzer branch
    `feature/incremental-persist-reuse` (needs the incremental-persist code).
    Build it once and point the script at the binary:
 
    ```bash
-   export CBC=/path/to/FermatAnalyzer/build/tools/cb-check/cb-check
+   export CBC=/path/to/FermatAnalyzer/build/tools/fermat-check/fermat-check
    ```
 
    The runs behind these results used commit `9858d47f`.
@@ -80,7 +80,7 @@ directly:
 git clone <this-repo> incremental-persist-bench
 cd incremental-persist-bench
 
-export CBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check
+export CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
 # all projects (store old.bc, then inc vs scratch on every pr-*.bc)
 ./scripts/run_bench.sh
@@ -110,12 +110,12 @@ Tune with `NWORKERS=8 TIMEOUT=3600 ./scripts/run_bench.sh`.
 ### Comparing two branches (A/B)
 
 To compare `main` vs a perf branch on the incremental feature, build both
-`cb-check` binaries and run the A/B harness. It stores `old.bc` once per
+`fermat-check` binaries and run the A/B harness. It stores `old.bc` once per
 branch, then runs incremental on each `pr-*.bc` (the real workflow — **store
 once, reuse**), and reports store + per-PR median for both:
 
 ```bash
-MAIN=/tmp/cb-check-main PERF=/tmp/cb-check-perf ./scripts/ab_branches.sh
+MAIN=/tmp/fermat-check-main PERF=/tmp/fermat-check-perf ./scripts/ab_branches.sh
 python3 scripts/ab_summarize.py /tmp/ab2.tsv
 ```
 
@@ -210,7 +210,7 @@ reproduces exactly the PRs in the recorded tables. A few notes:
   `synthetic_touch`.
 - It is **resumable**: a `pr-*.bc` that already exists is skipped.
 
-See [`docs/cb-check-incremental-persist.md`](./docs/cb-check-incremental-persist.md) for the
+See [`docs/fermat-check-incremental-persist.md`](./docs/fermat-check-incremental-persist.md) for the
 end-to-end recipe used for the curl (and other) PR sweeps.
 
 ## Caveats

@@ -1,19 +1,19 @@
-# Producing LLVM bitcode (`.bc`) for cb-check
+# Producing LLVM bitcode (`.bc`) for fermat-check
 
 How to compile real C/C++ projects into **typed-pointer** LLVM bitcode that
-`cb-check` can analyze.
+`fermat-check` can analyze.
 
 Related:
 
-- [cb-check-modes.md](./cb-check-modes.md) — store / load / normal analysis
-- [cb-check-incremental-persist.md](./cb-check-incremental-persist.md) — PR /
+- [fermat-check-modes.md](./fermat-check-modes.md) — store / load / normal analysis
+- [fermat-check-incremental-persist.md](./fermat-check-incremental-persist.md) — PR /
   old.bc → new.bc reuse
 
 ## Requirements
 
 | Piece | Why |
 |-------|-----|
-| **LLVM 15 `clang` / `clang++`** | Matches this tree’s cb-check / LLVM API |
+| **LLVM 15 `clang` / `clang++`** | Matches this tree’s fermat-check / LLVM API |
 | **Typed pointers** | Pass `-Xclang -no-opaque-pointers`. Opaque-pointer BC is rejected |
 | **[gllvm](https://github.com/SRI-CSL/gllvm)** | `gclang` / `gclang++` embed bitcode; `get-bc` extracts a whole-program `.bc` |
 | **`-O0 -g`** (recommended) | More IR, less optimization noise; better for analysis / incremental fingerprints |
@@ -60,7 +60,7 @@ Recommended CFLAGS for analysis:
 2. Build the library or binary you care about
 3. get-bc -o out.bc <artifact>
 4. file out.bc   # should say "LLVM IR bitcode"
-5. cb-check … out.bc
+5. fermat-check … out.bc
 ```
 
 `get-bc` works on:
@@ -269,11 +269,11 @@ file out.bc
 llvm-dis -o - out.bc 2>/dev/null | head -5
 # expect: ; ModuleID = ...  (and typed pointers like i8*, not ptr)
 
-# smoke cb-check
-cb-check --hide-progress-bar -nworkers=4 -enable-build-seg-only out.bc
+# smoke fermat-check
+fermat-check --hide-progress-bar -nworkers=4 -enable-build-seg-only out.bc
 ```
 
-If cb-check errors about opaque pointers, rebuild with
+If fermat-check errors about opaque pointers, rebuild with
 `-Xclang -no-opaque-pointers` and re-run `get-bc`.
 
 ## Common failures
@@ -283,7 +283,7 @@ If cb-check errors about opaque pointers, rebuild with
 | `get-bc`: input file does not exist | Use real file, not a broken symlink; check Debug soname (`libfoo-d.so`) |
 | `get-bc`: no bitcode embedded | Artifact was not built with `gclang` / `gclang++` |
 | clang not found by gllvm | Set `LLVM_COMPILER_PATH` to LLVM 15 `bin` |
-| Opaque pointer / type errors in cb-check | Add `-Xclang -no-opaque-pointers` and rebuild |
+| Opaque pointer / type errors in fermat-check | Add `-Xclang -no-opaque-pointers` and rebuild |
 | Huge missing-dep / feature errors | Disable optional deps (OpenSSL, LDAP, GPU, tests) for a lean analysis build |
 | PR rebuild fails after copying a few files | Headers/API drift; need more files or a clean merge, not partial copies |
 
@@ -294,7 +294,7 @@ If cb-check errors about opaque pointers, rebuild with
 3. `get-bc -o new.bc …` from the **same kind** of artifact (same `.so` or
    binary).
 
-See [cb-check-incremental-persist.md](./cb-check-incremental-persist.md) for
+See [fermat-check-incremental-persist.md](./fermat-check-incremental-persist.md) for
 store / incremental flags and measured project sizes.
 
 ## Size ballpark (from local benches)
@@ -317,6 +317,6 @@ store / incremental flags and measured project sizes.
 
 ## See also
 
-- [cb-check-modes.md](./cb-check-modes.md)
-- [cb-check-incremental-persist.md](./cb-check-incremental-persist.md)
+- [fermat-check-modes.md](./fermat-check-modes.md)
+- [fermat-check-incremental-persist.md](./fermat-check-incremental-persist.md)
 - [gllvm](https://github.com/SRI-CSL/gllvm)

@@ -1,4 +1,4 @@
-# `bc/libyaml/` — libyaml bitcode for cb-check incremental-persist
+# `bc/libyaml/` — libyaml bitcode for fermat-check incremental-persist
 
 Typed-pointer LLVM 15 bitcode for **libyaml**. Medium-tier runtime: full
 `--ps-npd` ~1.5–2 min on 16 workers (~194 functions, ~720 KB `.bc`).

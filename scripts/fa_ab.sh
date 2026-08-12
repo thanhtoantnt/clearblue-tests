@@ -12,8 +12,8 @@
 set -u
 export GIT_TEMPLATE_DIR="${GIT_TEMPLATE_DIR:-$HOME/clearblue/local-tests/git/templates}"
 
-MAIN="${MAIN:-/tmp/cb-check-main}"
-PERF="${PERF:-/tmp/cb-check-feat}"
+MAIN="${MAIN:-/tmp/fermat-check-main}"
+PERF="${PERF:-/tmp/fermat-check-feat}"
 BC="${BC:-$HOME/clearblue/incremental-persist-bench/bc}"
 OUT="${OUT:-/tmp/fa_ab.tsv}"
 NWORKERS="${NWORKERS:-16}"

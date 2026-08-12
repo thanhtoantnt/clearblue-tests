@@ -87,9 +87,9 @@ def main():
                      key=lambda x: (0,int(x)) if x.lstrip("-").isdigit() else (1,x))
         m = META[proj]
         lines = []
-        lines.append(f"# `bc/{proj}/` — {proj} bitcode for cb-check incremental-persist\n")
+        lines.append(f"# `bc/{proj}/` — {proj} bitcode for fermat-check incremental-persist\n")
         lines.append(f"This folder holds typed-pointer LLVM 15 bitcode for **{proj}**, used as the "
-                     "input for the `cb-check` incremental-persist benchmark "
+                     "input for the `fermat-check` incremental-persist benchmark "
                      "(`scripts/run_bench.sh`).\n")
         lines.append("## Layout\n")
         lines.append("- **`old.bc`** — the stored baseline. Produced from the upstream source at "
@@ -111,7 +111,7 @@ def main():
         lines.append("## Reproduce the .bc files from source\n")
         lines.append("The committed `.bc` files are self-contained, but you can rebuild any of them "
                      "from the upstream source. The key rule: **`old.bc` and every `pr-*.bc` must "
-                     "use the identical toolchain and flags** so `cb-check` fingerprints match.\n")
+                     "use the identical toolchain and flags** so `fermat-check` fingerprints match.\n")
         lines.append("### Prerequisites (once)\n")
         lines.append("```bash\n"
                      "# gllvm wraps clang to embed bitcode -- https://github.com/SRI-CSL/gllvm\n"
@@ -152,12 +152,12 @@ def main():
                      "`./scripts/build_pr_bc.sh " + proj + "`.\n")
         lines.append("See [`docs/producing-bitcode.md`](../../docs/producing-bitcode.md) for the "
                      "full recipe.\n")
-        # cb-check analysis section
-        lines.append("## Reproduce the results (cb-check analysis)\n")
-        lines.append("Three explicit `cb-check` invocations reproduce one data point: "
+        # fermat-check analysis section
+        lines.append("## Reproduce the results (fermat-check analysis)\n")
+        lines.append("Three explicit `fermat-check` invocations reproduce one data point: "
                      "**store** the baseline once, then run a sample **incremental** "
                      "(reuses stored SEGs) and **scratch** (no store) to compare.\n")
-        lines.append("```bash\nCBC=$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check\n\n"
+        lines.append("```bash\nCBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check\n\n"
                      "# 1) store the baseline once (writes ./persist/{proj}/seg/ ...)\n"
                      "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
                      "     -persist-dir=./persist/{proj} bc/{proj}/old.bc\n\n"
@@ -172,7 +172,7 @@ def main():
                      "`[Incremental persist] body-dirty: N, +callers: M` line. "
                      "Incremental wins when `inc` wall-time < `scratch` wall-time.\n")
         lines.append("Result columns and log fields are explained in "
-                     "[`../../docs/cb-check-incremental-persist.md`](../../docs/cb-check-incremental-persist.md) "
+                     "[`../../docs/fermat-check-incremental-persist.md`](../../docs/fermat-check-incremental-persist.md) "
                      "and [`../../README.md`](../../README.md#result-columns).\n")
         lines.append(f"## Files in this folder ({len(prs) + (1 if (d/'old.bc').exists() else 0)} total)\n")
         lines.append("| File | PR / source | Title | Changed C/C++ files |\n|------|-------------|-------|---------------------|\n")

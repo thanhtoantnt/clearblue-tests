@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Reproduce cb-check incremental-persist numbers from committed bitcode.
+# Reproduce fermat-check incremental-persist numbers from committed bitcode.
 #
 # For each project under bc/<proj>/:
 #   1. store  old.bc   -> fresh persist dir   (-enable-build-seg-only -persist-dir)
@@ -18,7 +18,7 @@ set -u
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$SCRIPT_DIR/.." && pwd)"
 
-CBC="${CBC:-$HOME/github/FermatAnalyzer/build/tools/cb-check/cb-check}"
+CBC="${CBC:-$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check}"
 NWORKERS="${NWORKERS:-16}"
 PERSIST_ROOT="${PERSIST_ROOT:-$REPO/persist}"   # regeneratable; gitignored
 RESULTS_ROOT="${RESULTS_ROOT:-$REPO/results}"
@@ -28,10 +28,10 @@ TIMEOUT="${TIMEOUT:-1800}"
 log()  { echo "[$(date +%H:%M:%S)] $*"; }
 die()  { echo "ERROR: $*" >&2; exit 1; }
 
-[ -x "$CBC" ] || die "cb-check not found/executable at: $CBC (set CBC=...)"
+[ -x "$CBC" ] || die "fermat-check not found/executable at: $CBC (set CBC=...)"
 command -v script >/dev/null || die "coreutils 'script' required for TTY capture"
 
-# wrap cb-check so its progress/diagnostics flush to the log file
+# wrap fermat-check so its progress/diagnostics flush to the log file
 run_cb() {
   local logfile=$1; shift
   script -q -c "timeout $TIMEOUT $CBC --hide-progress-bar -nworkers=$NWORKERS $*" "$logfile" >/dev/null 2>&1
@@ -66,7 +66,7 @@ want() {                                # is project $1 in the ONLY filter?
 }
 
 mkdir -p "$PERSIST_ROOT" "$RESULTS_ROOT"
-log "cb-check: $CBC"
+log "fermat-check: $CBC"
 log "repo:     $REPO"
 
 for projdir in "$REPO"/bc/*/; do
