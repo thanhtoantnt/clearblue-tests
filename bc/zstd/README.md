@@ -57,11 +57,11 @@ CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
 # 1) store the baseline once (writes ./persist/zstd/seg/ ...)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -persist-dir=./persist/zstd bc/zstd/old.bc
+     -serialize-seg -store-models-dir=./persist/zstd bc/zstd/old.bc
 
 # 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -enable-incremental-persist -persist-dir=./persist/zstd bc/zstd/pr-NNNN.bc
+     -enable-incremental-persist -store-models-dir=./persist/zstd bc/zstd/pr-NNNN.bc
 
 # 3) scratch on the same bitcode (no store; full rebuild)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/zstd/pr-NNNN.bc

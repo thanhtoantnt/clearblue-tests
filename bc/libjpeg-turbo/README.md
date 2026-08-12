@@ -114,11 +114,11 @@ CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
 # 1) store the baseline once (writes ./persist/libjpeg-turbo/seg/ ...)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -persist-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/old.bc
+     -serialize-seg -store-models-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/old.bc
 
 # 2) incremental on a synthetic (loads clean SEGs, rebuilds only the dirty fn)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -enable-incremental-persist -persist-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/pr-syn3.bc
+     -enable-incremental-persist -store-models-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/pr-syn3.bc
 
 # 3) scratch on the same bitcode (no store; full rebuild)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/libjpeg-turbo/pr-syn3.bc

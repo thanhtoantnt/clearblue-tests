@@ -61,11 +61,11 @@ CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
 # 1) store the baseline once (writes ./persist/memcached/seg/ ...)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -persist-dir=./persist/memcached bc/memcached/old.bc
+     -serialize-seg -store-models-dir=./persist/memcached bc/memcached/old.bc
 
 # 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -enable-incremental-persist -persist-dir=./persist/memcached bc/memcached/pr-NNNN.bc
+     -enable-incremental-persist -store-models-dir=./persist/memcached bc/memcached/pr-NNNN.bc
 
 # 3) scratch on the same bitcode (no store; full rebuild)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/memcached/pr-NNNN.bc

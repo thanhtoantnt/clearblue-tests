@@ -42,12 +42,12 @@ CHK="-segbuilder-aa=falconplus --ps-npd --enable-heap-alloc-failure --psa-enable
 
 # 1) Store the clean baseline ONCE (writes ./persist/seg/ ... ~130s, one-time)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -persist-dir=./persist old.bc
+     -serialize-seg -store-models-dir=./persist old.bc
 
 # 2) Run incremental NPD check on the "PR" — reuses stored clean SEGs,
 #    rebuilds only the 1 dirty function, and checks ONLY that function.
 $CBC --hide-progress-bar -nworkers=16 -enable-incremental-persist \
-     -persist-dir=./persist $CHK \
+     -store-models-dir=./persist $CHK \
      --report=pr-report.json pr-injected-npd.bc
 ```
 

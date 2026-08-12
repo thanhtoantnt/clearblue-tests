@@ -23,10 +23,10 @@ clean SEGs from disk and rebuilds only the dirty functions.
 
 | mode | command | measures | use it? |
 |------|---------|----------|---------|
-| **store** | `fermat-check -persist-dir=X old.bc` | one-time build + dump cost | ✅ |
-| **incremental** | `fermat-check -enable-incremental-persist -persist-dir=X pr-*.bc` | load clean + rebuild dirty — **the feature** | ✅ |
+| **store** | `fermat-check -serialize-seg -store-models-dir=X old.bc` | one-time build + dump cost | ✅ |
+| **incremental** | `fermat-check -enable-incremental-persist -store-models-dir=X pr-*.bc` | load clean + rebuild dirty — **the feature** | ✅ |
 | `zero` (incremental on `old.bc` itself) | same flags, same `old.bc` | 0 dirty funcs → builds **nothing**; only the fingerprint scan loop | ❌ not real |
-| `nopersist` / scratch (no `-persist-dir`) | `fermat-check pr-*.bc` | full rebuild, no reuse | optional baseline |
+| `nopersist` / scratch (no `-store-models-dir`) | `fermat-check pr-*.bc` | full rebuild, no reuse | optional baseline |
 
 `zero` re-analyzes the *exact same* `old.bc` that was just stored, so every
 fingerprint matches and nothing rebuilds. Nobody runs that in practice; it only
@@ -41,15 +41,15 @@ and re-running it per-sample multiplies wall-time by ~6× for nothing.
 
 ```bash
 # RIGHT: store once, reuse
-$CBC -persist-dir=$X old.bc
+$CBC -serialize-seg -store-models-dir=$X old.bc
 for pr in bc/$proj/pr-*.bc; do
-  $CBC -enable-incremental-persist -persist-dir=$X "$pr"
+  $CBC -enable-incremental-persist -store-models-dir=$X "$pr"
 done
 
 # WRONG: re-store before every run (wastes a full store each time)
 for pr in bc/$proj/pr-*.bc; do
-  rm -rf $X; $CBC -persist-dir=$X old.bc          # ← don't
-  $CBC -enable-incremental-persist -persist-dir=$X "$pr"
+  rm -rf $X; $CBC -serialize-seg -store-models-dir=$X old.bc          # ← don't
+  $CBC -enable-incremental-persist -store-models-dir=$X "$pr"
 done
 ```
 

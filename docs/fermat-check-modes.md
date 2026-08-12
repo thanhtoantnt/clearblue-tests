@@ -38,7 +38,7 @@ fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-s
   --report=report.json app.bc
 ```
 
-### 2. Store mode — `-persist-dir=<dir>`
+### 2. Store mode — `-serialize-seg -store-models-dir=<dir>`
 
 Identical to normal mode, **plus** after building each SEG (and running alias
 analysis on it), the SEG is serialized to disk. The checkers still run on the
@@ -46,13 +46,13 @@ in-memory SEGs as usual.
 
 ```bash
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
-  -persist-dir=/path/to/persist \
+  -serialize-seg -store-models-dir=/path/to/persist \
   --report=report-save.json app.bc
 ```
 
-`-persist-dir` writes one file per function under `<dir>/seg/`.
+`-serialize-seg -store-models-dir` writes one file per function under `<dir>/seg/`.
 
-### 3. Load mode — `-enable-load-project-from-persistence -persist-dir=<dir>`
+### 3. Load mode — `-load-seg -store-models-dir=<dir>`
 
 `SymbolicExprGraphBuilder` **deserializes** the SEGs from `<dir>/seg/` instead
 of rebuilding them, **skips alias-analysis recompute** (the persisted SEGs
@@ -61,7 +61,7 @@ points-to summaries), then the checkers run on the loaded SEGs.
 
 ```bash
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
-  -enable-load-project-from-persistence -persist-dir=/path/to/persist \
+  -load-seg -store-models-dir=/path/to/persist \
   --report=report-load.json app.bc
 ```
 
@@ -89,7 +89,7 @@ deserialization. `fermat-check` always schedules it before the builder.
 ## Storage layout
 
 ```
-<persist-dir>/
+<store-models-dir>/
 └── seg/
     ├── <funcIndex>      # one file per function, named by the function's LLVM value index
     └── ...
@@ -105,8 +105,9 @@ deserialization. `fermat-check` always schedules it before the builder.
 
 | flag | default | meaning |
 |------|---------|---------|
-| `-persist-dir=<dir>` | _(empty)_ | Persistence workspace. Aliases: `-persist-store-dir`, `-persist-load-dir`. |
-| `-enable-load-project-from-persistence` | off | Load SEGs from `<dir>` instead of building. |
+| `-serialize-seg` | off | After building SEGs, dump them under `-store-models-dir`. |
+| `-store-models-dir=<dir>` | `fa-out` | Directory for SEG JSON + fingerprints. |
+| `-load-seg` | off | Load SEGs from `<dir>` instead of building. |
 | `-segbuilder-aa=<aa>` | `falconplus` | Alias analysis: `falconplus`, `falcon`, `simple`, `tuna`. |
 | `-nworkers=<n>` | min(cores, 10) | Worker threads for SEG building and checking. `1` = serial/deterministic. |
 | `-enable-index` | off | Run `IndexBuilder` after the SEG producer. |
@@ -118,13 +119,13 @@ deserialization. `fermat-check` always schedules it before the builder.
 ```bash
 # 1. store — build + alias-analyze + persist SEGs (and still report bugs)
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
-  -persist-dir=./persist \
+  -serialize-seg -store-models-dir=./persist \
   --report=report-save.json --report-pass-line=0 -hide-progress-bar -omit-no-dbginfo \
   app.bc
 
 # 2. load — reload SEGs, skip rebuild + AA, report bugs again
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
-  -enable-load-project-from-persistence -persist-dir=./persist \
+  -load-seg -store-models-dir=./persist \
   --report=report-load.json --report-pass-line=0 -hide-progress-bar -omit-no-dbginfo \
   app.bc
 ```
@@ -152,8 +153,8 @@ scheduling, with no persistence bug. For an exact store==load equality check,
 run both serially:
 
 ```bash
-fermat-check ... -nworkers=1 -persist-dir=./persist app.bc           # store
-fermat-check ... -nworkers=1 -enable-load-project-from-persistence -persist-dir=./persist app.bc  # load
+fermat-check ... -nworkers=1 -serialize-seg -store-models-dir=./persist app.bc           # store
+fermat-check ... -nworkers=1 -load-seg -store-models-dir=./persist app.bc  # load
 ```
 
 ### The bitcode must match
@@ -165,7 +166,7 @@ change. Use `-seg-hash-dump-file` to detect SEG drift between builds.
 
 ### Segfault on load (issue #6)
 
-A previous load-path bug caused `-enable-load-project-from-persistence` to
+A previous load-path bug caused `-load-seg` to
 segfault when deserializing value-less pseudo operand nodes. The fix makes
 `SymbolicExprGraphBuilder` the SEG producer in all modes and reconstructs
 placeholder values during deserialization. If load mode crashes, first confirm

@@ -32,7 +32,7 @@ run_full() {  # bin pdir bcfile  -> echoes ms, sets rc
   local t0 t1 rc
   t0=$(date +%s%N)
   timeout "$PR_TIMEOUT" "$bin" "${COMMON[@]}" \
-    -enable-incremental-persist -persist-dir="$pdir.tmp" "$bc" >/dev/null 2>&1; rc=$?
+    -enable-incremental-persist -store-models-dir="$pdir.tmp" "$bc" >/dev/null 2>&1; rc=$?
   t1=$(date +%s%N)
   rm -rf "$pdir.tmp"
   echo $(( (t1-t0)/1000000 ))
@@ -52,8 +52,8 @@ for proj in $PRJS; do
     echo "[$proj] storing old.bc (feat)..."
     rm -rf "$pdir" "$snap"; mkdir -p "$pdir"
     t0=$(date +%s%N)
-    timeout 2400 "$PERF" "${COMMON[@]}" -enable-incremental-persist \
-      -persist-dir="$pdir" "$BC/$proj/old.bc" >/dev/null 2>&1; rc=$?
+    timeout 2400 "$PERF" "${COMMON[@]}" -serialize-seg \
+      -store-models-dir="$pdir" "$BC/$proj/old.bc" >/dev/null 2>&1; rc=$?
     t1=$(date +%s%N)
     [ $rc -ne 0 ] && { echo "[$proj] store FAIL rc=$rc (psa=$(ls "$pdir/psa/" 2>/dev/null|wc -l))"; continue; }
     echo "[$proj] store: $(( (t1-t0)/1000000 ))ms psa=$(ls "$pdir/psa/" 2>/dev/null|wc -l)"

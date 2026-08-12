@@ -36,7 +36,7 @@ run_branch_project() {  # binary branch project
     rm -rf "$pdir" "$store_snap"; mkdir -p "$pdir"
     local t0 t1 rc
     t0=$(date +%s%N)
-    timeout 600 "$bin" "${args[@]}" -persist-dir="$pdir" "$BC/$proj/old.bc" >/dev/null 2>&1; rc=$?
+    timeout 600 "$bin" "${args[@]}" -serialize-seg -store-models-dir="$pdir" "$BC/$proj/old.bc" >/dev/null 2>&1; rc=$?
     t1=$(date +%s%N)
     [ $rc -ne 0 ] && { echo "[$branch/$proj] store FAIL"; return; }
     printf '%s\t%s\tstore\told\t%s\n' "$branch" "$proj" "$(( (t1-t0)/1000000 ))" >> "$OUT"
@@ -58,7 +58,7 @@ run_branch_project() {  # binary branch project
       rm -rf "$pdir"; cp -r "$store_snap" "$pdir"
       local t0 t1 rc
       t0=$(date +%s%N)
-      timeout 600 "$bin" "${args[@]}" -enable-incremental-persist -persist-dir="$pdir" "$bc" >/dev/null 2>&1; rc=$?
+      timeout 600 "$bin" "${args[@]}" -enable-incremental-persist -store-models-dir="$pdir" "$bc" >/dev/null 2>&1; rc=$?
       t1=$(date +%s%N)
       if [ $rc -ne 0 ]; then
         echo "[$branch/$proj/$s] inc FAIL (rc=$rc)"

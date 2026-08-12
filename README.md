@@ -22,8 +22,8 @@ Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tr
 
 For each project:
 
-1. **Store** the baseline `old.bc` once: `fermat-check -enable-build-seg-only -persist-dir=P old.bc`
-2. **Incremental** on a changed `new.bc`: `fermat-check -enable-build-seg-only -enable-incremental-persist -persist-dir=P new.bc`
+1. **Store** the baseline `old.bc` once: `fermat-check -enable-build-seg-only -serialize-seg -store-models-dir=P old.bc`
+2. **Incremental** on a changed `new.bc`: `fermat-check -enable-build-seg-only -enable-incremental-persist -store-models-dir=P new.bc`
 3. **Scratch** on the same `new.bc` (no persist): `fermat-check -enable-build-seg-only new.bc`
 
 Incremental should be faster than scratch when few functions changed. The

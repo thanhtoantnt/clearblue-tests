@@ -160,10 +160,10 @@ def main():
         lines.append("```bash\nCBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check\n\n"
                      "# 1) store the baseline once (writes ./persist/{proj}/seg/ ...)\n"
                      "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
-                     "     -persist-dir=./persist/{proj} bc/{proj}/old.bc\n\n"
+                     "     -serialize-seg -store-models-dir=./persist/{proj} bc/{proj}/old.bc\n\n"
                      "# 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)\n"
                      "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
-                     "     -enable-incremental-persist -persist-dir=./persist/{proj} bc/{proj}/pr-NNNN.bc\n\n"
+                     "     -enable-incremental-persist -store-models-dir=./persist/{proj} bc/{proj}/pr-NNNN.bc\n\n"
                      "# 3) scratch on the same bitcode (no store; full rebuild)\n"
                      "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/{proj}/pr-NNNN.bc\n"
                      "```\n".format(proj=proj))

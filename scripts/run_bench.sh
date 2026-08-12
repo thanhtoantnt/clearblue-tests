@@ -2,9 +2,9 @@
 # Reproduce fermat-check incremental-persist numbers from committed bitcode.
 #
 # For each project under bc/<proj>/:
-#   1. store  old.bc   -> fresh persist dir   (-enable-build-seg-only -persist-dir)
+#   1. store  old.bc   -> fresh persist dir   (-enable-build-seg-only -serialize-seg -store-models-dir)
 #   2. for every other *.bc (new.bc, pr-NNNN.bc, ...) run:
-#        incremental  (-enable-incremental-persist -persist-dir)
+#        incremental  (-enable-incremental-persist -store-models-dir)
 #        scratch      (no persist)
 #   3. append a row to results/<proj>/summary.tsv
 #
@@ -84,7 +84,7 @@ for projdir in "$REPO"/bc/*/; do
 
   log "==== $proj : store old.bc ===="
   t0=$(date +%s)
-  run_cb "$rdir/store.log" -enable-build-seg-only -persist-dir="$pdir" "$oldbc"
+  run_cb "$rdir/store.log" -enable-build-seg-only -serialize-seg -store-models-dir="$pdir" "$oldbc"
   rc=$?
   store_s=$(($(date +%s) - t0))
   [ $rc -ne 0 ] && { log "store failed ($rc) for $proj; skipping samples"; \
@@ -98,7 +98,7 @@ for projdir in "$REPO"/bc/*/; do
     log "---- $proj / $sname ----"
 
     t0=$(date +%s)
-    run_cb "$rdir/inc_$sname.log" -enable-build-seg-only -enable-incremental-persist -persist-dir="$pdir" "$samplebc"
+    run_cb "$rdir/inc_$sname.log" -enable-build-seg-only -enable-incremental-persist -store-models-dir="$pdir" "$samplebc"
     inc_rc=$?
     inc_s=$(($(date +%s) - t0))
 
