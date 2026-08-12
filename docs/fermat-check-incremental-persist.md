@@ -249,8 +249,7 @@ baseline, the incremental run:
 - **found 2 NPD findings, both in the injected function**
 
 Scratch (whole-module) would report every pre-existing NPD in darknet too;
-incremental correctly reports only the diff. See the `bug-finding-demo/`
-folder in the repro repo for the committed `.bc` + full walkthrough.
+incremental correctly reports only the diff.
 
 ## What “dirty” means
 
