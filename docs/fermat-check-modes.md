@@ -38,11 +38,11 @@ fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-s
   --report=report.json app.bc
 ```
 
-### 2. Store mode — `-serialize-seg -store-models-dir=<dir>`
+### 2. Store mode — `-serialize-seg`
 
-Identical to normal mode, **plus** after building each SEG (and running alias
-analysis on it), the SEG is serialized to disk. The checkers still run on the
-in-memory SEGs as usual.
+Identical to normal mode, **plus** after building every SEG (and running alias
+analysis on it), each SEG is written as JSON under `-store-models-dir`. The
+checkers still run on the in-memory SEGs as usual.
 
 ```bash
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
@@ -50,14 +50,13 @@ fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-s
   --report=report-save.json app.bc
 ```
 
-`-serialize-seg -store-models-dir` writes one file per function under `<dir>/seg/`.
+### 3. Load mode — `-load-seg`
 
-### 3. Load mode — `-load-seg -store-models-dir=<dir>`
-
-`SymbolicExprGraphBuilder` **deserializes** the SEGs from `<dir>/seg/` instead
-of rebuilding them, **skips alias-analysis recompute** (the persisted SEGs
-already contain the alias-analysis-built state — interface/pseudo nodes,
-points-to summaries), then the checkers run on the loaded SEGs.
+`SymbolicExprGraphBuilder` **reads every SEG from JSON** under
+`-store-models-dir` instead of building them, **skips alias-analysis
+recompute** (the persisted SEGs already contain the alias-analysis-built
+state — interface/pseudo nodes, points-to summaries), then the checkers run
+on the loaded SEGs.
 
 ```bash
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
@@ -65,9 +64,10 @@ fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-s
   --report=report-load.json app.bc
 ```
 
-Use the **same bitcode** for the store run and the load run; the persisted SEG
-files are keyed by the LLVM value index of each function, which is stable for a
-given bitcode.
+Use the **same bitcode** for the store run and the load run (or override the
+path module component with `-store-module-name` so both runs share one
+directory). Pure load has no dirty detection — do not pure-load a changed
+`new.bc` from a store of `old.bc`; use `-enable-incremental-persist` for that.
 
 ## Pass pipeline
 
@@ -88,30 +88,55 @@ deserialization. `fermat-check` always schedules it before the builder.
 
 ## Storage layout
 
+Path root is `-store-models-dir` (default `fa-out`). Under it, files are
+grouped by module name (`-store-module-name`, else the input bitcode file
+name):
+
 ```
 <store-models-dir>/
-└── seg/
-    ├── <funcIndex>      # one file per function, named by the function's LLVM value index
-    └── ...
+└── <module-name>/
+    ├── func_value_type_index.json   # module LLVM value/type index
+    └── SEG/
+        ├── <funcName>.json          # one SEG JSON per function
+        ├── <funcName>.json.fp       # body fingerprint beside each SEG
+        └── ...
 ```
 
-- **Format**: Cap'n Proto binary schema (see `lib/Schema/`).
-- **Per-file contents**: the function's SEG (nodes, intra-function edges) **and**
+- **Format**: JSON (see `lib/Persistence/JSON/`).
+- **Per-SEG file**: the function's SEG (nodes, intra-function edges) **and**
   its cross-SEG (call-site) edges that reference other functions' SEGs.
-- Cross-SEG edges are loaded in a second pass (`deserializeCrossSEGEdgesFromStorage`)
-  after every per-function SEG exists, so cross-function node references resolve.
+- **Fingerprint (`.fp`)**: written next to each SEG on store; pure `-load-seg`
+  refuses a SEG when the `.fp` is missing or the IR body no longer matches
+  (re-run with `-serialize-seg` to refresh).
+- Cross-SEG edges are loaded in a second pass after every per-function SEG
+  exists, so cross-function node references resolve.
 
-## Flags
+## SEG persistence flags
+
+SEGs are expensive to build; you can store them once and replay them.
+`-serialize-seg` and `-load-seg` are `cl::Hidden` (not shown in plain `-help`;
+use `-help-hidden`).
+
+| Option | Meaning | Default |
+|--------|---------|---------|
+| `-serialize-seg` | Full store: build every SEG and write it as JSON | off |
+| `-load-seg` | Full load: read every SEG from JSON instead of building | off |
+| `-store-models-dir <dir>` | Root directory for the persistence files | `fa-out` |
+| `-store-module-name <name>` | Module name used in the store path | derived from input file name |
+
+Related (hybrid PR workflow — see
+[fermat-check-incremental-persist.md](./fermat-check-incremental-persist.md)):
+
+| Option | Meaning | Default |
+|--------|---------|---------|
+| `-enable-incremental-persist` | Hybrid: reuse SEGs whose body fingerprint still matches; rebuild dirty cone | off |
+
+Other useful flags:
 
 | flag | default | meaning |
 |------|---------|---------|
-| `-serialize-seg` | off | After building SEGs, dump them under `-store-models-dir`. |
-| `-store-models-dir=<dir>` | `fa-out` | Directory for SEG JSON + fingerprints. |
-| `-load-seg` | off | Load SEGs from `<dir>` instead of building. |
-| `-segbuilder-aa=<aa>` | `falconplus` | Alias analysis: `falconplus`, `falcon`, `simple`, `tuna`. |
+| `-segbuilder-aa=<aa>` | `falconplus` | Alias analysis: `falconplus`, `falcon`, `simple`. |
 | `-nworkers=<n>` | min(cores, 10) | Worker threads for SEG building and checking. `1` = serial/deterministic. |
-| `-enable-index` | off | Run `IndexBuilder` after the SEG producer. |
-| `-seg-hash-dump-file=<file>` | _(empty)_ | Dump a JSON of SEG hashes (for change detection between builds). |
 | `-enable-build-seg-only` | off | (Hidden) Build SEGs and stop; skip checkers. |
 
 ## Typical workflow
@@ -159,10 +184,12 @@ fermat-check ... -nworkers=1 -load-seg -store-models-dir=./persist app.bc  # loa
 
 ### The bitcode must match
 
-The persisted SEG files are keyed by function LLVM value index. If the bitcode
-changes (recompiled, different flags), the indices change and load mode will
-fail to find the files or load stale SEGs. Re-run store mode after any bitcode
-change. Use `-seg-hash-dump-file` to detect SEG drift between builds.
+SEG files live under `<store-models-dir>/<module-name>/SEG/` and are named by
+sanitized function name (plus a short hash suffix on collisions). Each SEG has
+a sibling `.fp` body fingerprint. Pure `-load-seg` requires matching IR bodies;
+if the bitcode changes, either re-store with `-serialize-seg` or use
+`-enable-incremental-persist` for dirty/rebuild. Keep `-store-models-dir` (and
+`-store-module-name` if set) identical between store and load.
 
 ### Segfault on load (issue #6)
 

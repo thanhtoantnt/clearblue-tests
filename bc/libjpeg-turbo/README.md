@@ -112,7 +112,7 @@ baseline once, then run a sample **incremental** (reuses stored SEGs) and
 ```bash
 CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
-# 1) store the baseline once (writes ./persist/libjpeg-turbo/seg/ ...)
+# 1) store the baseline once (-serialize-seg → ./persist/libjpeg-turbo/<module>/SEG/*.json)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
      -serialize-seg -store-models-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/old.bc
 

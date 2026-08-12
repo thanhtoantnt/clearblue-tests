@@ -55,7 +55,7 @@ Three explicit `fermat-check` invocations reproduce one data point: **store** th
 ```bash
 CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
-# 1) store the baseline once (writes ./persist/c-ares/seg/ ...)
+# 1) store the baseline once (-serialize-seg → ./persist/c-ares/<module>/SEG/*.json)
 $CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
      -serialize-seg -store-models-dir=./persist/c-ares bc/c-ares/old.bc
 

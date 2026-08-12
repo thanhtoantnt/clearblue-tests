@@ -10,6 +10,19 @@ Related:
 - [fermat-check-modes.md](./fermat-check-modes.md) — normal / store / pure load
 - [producing-bitcode.md](./producing-bitcode.md) — gllvm + typed-pointer `.bc` recipes
 
+## SEG persistence (base store / load)
+
+SEGs are expensive to build; you can store them once and replay them. Both `-serialize-seg` and `-load-seg` are `cl::Hidden` (not shown in plain `-help`).
+
+| Option | Meaning | Default |
+|--------|---------|---------|
+| `-serialize-seg` | Full store: build every SEG and write it as JSON | off |
+| `-load-seg` | Full load: read every SEG from JSON instead of building | off |
+| `-store-models-dir <dir>` | Root directory for the persistence files | `fa-out` |
+| `-store-module-name <name>` | Module name used in the store path | derived from input file name |
+
+This page focuses on the **hybrid** PR path on top of that store. For pure store/load details see [fermat-check-modes.md](./fermat-check-modes.md).
+
 ## When to use which mode
 
 | Goal | Flags | Bitcode |
@@ -44,7 +57,7 @@ CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 ## Workflow
 
 ```text
-old.bc  ── store (-serialize-seg -store-models-dir=./P) ──►  ./P/{seg,pts,callgraph}/
+old.bc  ── store (-serialize-seg -store-models-dir=./P) ──►  ./P/<module>/{SEG/*.json,.fp}/
                                               │
          each PR: recompile → new.bc          │
                                               ▼
@@ -116,8 +129,8 @@ $CBC \
   old.bc
 ```
 
-Expect `[Dumping SEG]` and files under `./persist_bench/seg/` (one SEG + one
-`.fp` fingerprint per function).
+Expect files under `./persist_bench/<module>/SEG/` (one `.json` SEG + one
+`.json.fp` fingerprint per function).
 
 **Tip:** Use a **dedicated** persist directory per project/baseline
 (`persist_bench`, `persist_curl`, …). Do not mix stores from different
@@ -254,30 +267,33 @@ in-memory SEGs that were rebuilt this run (not for loaded clean SEGs).
 
 ## Storage layout
 
+Produced by a baseline **`-serialize-seg -store-models-dir=./persist_bench`**
+run (optional `-store-module-name` overrides the module directory name):
+
 ```text
 persist_bench/
-├── seg/
-│   ├── fn_list_insert       # Cap'n Proto SEG (key = hierarchical func index)
-│   ├── fn_list_insert.fp    # body fingerprint (decimal uint64 text)
-│   └── ...
-├── pts/                     # Falcon points-to (same hierarchical keys)
-└── callgraph/
+└── <module-name>/                 # input .bc basename, or -store-module-name
+    ├── func_value_type_index.json
+    └── SEG/
+        ├── list_insert.json       # SEG JSON (name-keyed)
+        ├── list_insert.json.fp    # body fingerprint beside the SEG
+        └── ...
 ```
 
-SEG filenames use **hierarchical LLVM value indices** (e.g. `fn_foo`,
-`i_foo_0_3`), not module-wide counters. That is what allows the same function
-in `old.bc` and `new.bc` to share a key when IR is unchanged.
+SEG filenames are **sanitized function names** (with a short hash suffix on
+name collisions). Body fingerprints (`.fp`) drive dirty detection for
+`-enable-incremental-persist`. Keep the same `-store-models-dir` (and
+`-store-module-name` if used) for store and incremental runs.
 
 ## Implementation map
 
 | Piece | Role |
 |-------|------|
-| `lib/Transform/LLVMValueIndexer.cpp` | Hierarchical value/type indices; cycle-safe types; no huge constant explode |
-| `lib/Persistence/SEGSwap.cpp` | SEG I/O, `functionBodyFingerprint`, `*.fp` read/write |
-| `lib/IR/SEG/SymbolicExprGraphBuilder.cpp` | Dirty set, eager rebuild, lazy load, dump only rebuilt SEGs |
-| `lib/Analysis/Alias/PathSensitiveAADriver/AADriver.cpp` | SPEG only for non-loaded SEGs; pts load+store in incremental mode |
-| `lib/Schema/SEGSerializer.cpp` | Null-safe cross-SEG resolve when callee SEG missing |
-| `lib/Persistence/PersistOptions.cpp` | `-enable-incremental-persist` |
+| `lib/IR/SEG/SymbolicExprGraphBuilder.cpp` | `-serialize-seg` / `-load-seg`; dirty set; eager rebuild; lazy load; dump only rebuilt SEGs when serializing |
+| `lib/Persistence/Basis/Options.cpp` | `-store-models-dir`, `-store-module-name`, `-enable-incremental-persist` |
+| `lib/Persistence/Basis/FuncFingerprint.cpp` | Body fingerprint + `SEG/<name>.json` / `.fp` paths |
+| `lib/Persistence/JSON/{Store,Load}Interface.cpp` | JSON SEG I/O under `-store-models-dir` |
+| `lib/Transform/LLVMValueIndexer.cpp` | Stable value/type indices used inside persisted SEGs |
 
 ## Requirements and caveats
 

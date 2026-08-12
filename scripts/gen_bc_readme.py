@@ -158,7 +158,7 @@ def main():
                      "**store** the baseline once, then run a sample **incremental** "
                      "(reuses stored SEGs) and **scratch** (no store) to compare.\n")
         lines.append("```bash\nCBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check\n\n"
-                     "# 1) store the baseline once (writes ./persist/{proj}/seg/ ...)\n"
+                     "# 1) store the baseline once (-serialize-seg → ./persist/{proj}/<module>/SEG/*.json)\n"
                      "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
                      "     -serialize-seg -store-models-dir=./persist/{proj} bc/{proj}/old.bc\n\n"
                      "# 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)\n"

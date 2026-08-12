@@ -16,15 +16,16 @@ Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tr
 - [`docs/fermat-check-modes.md`](./docs/fermat-check-modes.md) — normal / store / pure-load modes
 - [`docs/pr31-npa-global-impact.md`](./docs/pr31-npa-global-impact.md) — later: does PR #31 NPA formal-arg change move baseline `--ps-npd`?
 
-- [`results/main-vs-perf-incremental-persist-optimize.md`](./results/main-vs-perf-incremental-persist-optimize.md) — head-to-head: **main (PR #15)** vs **`perf/incremental-persist-optimize`** (store / zero-dirty / PR / no-persist; nworkers=16)
 
 ## What it measures
 
 For each project:
 
 1. **Store** the baseline `old.bc` once: `fermat-check -enable-build-seg-only -serialize-seg -store-models-dir=P old.bc`
+   (`-serialize-seg` = full store of every SEG as JSON under `-store-models-dir`; both flags are `cl::Hidden` — see `-help-hidden`)
 2. **Incremental** on a changed `new.bc`: `fermat-check -enable-build-seg-only -enable-incremental-persist -store-models-dir=P new.bc`
 3. **Scratch** on the same `new.bc` (no persist): `fermat-check -enable-build-seg-only new.bc`
+4. **Pure load** (same bitcode only): `fermat-check -enable-build-seg-only -load-seg -store-models-dir=P old.bc`
 
 Incremental should be faster than scratch when few functions changed. The
 difference is the feature's payoff.
@@ -43,7 +44,7 @@ incremental-persist-bench/
 │   ├── darknet/{old.bc, pr-2657.bc, ...}
 │   ├── libjpeg-turbo/, nghttp2/, libsodium/, libexpat/, libyaml/, ...
 │   └── (no git / redis / openssl — too slow for routine runs)
-└── results/                  # recorded runs (committed)
+└── results/                  # local runs only (gitignored; never push)
     ├── curl/summary.tsv
     └── round2/summary.tsv    # libuv / darknet / …
 ```
@@ -188,7 +189,7 @@ and incremental; mismatched flags invalidate fingerprints.
 
 ## Reproducing the per-PR tables
 
-The committed `results/<proj>/summary.tsv` tables were produced by rebuilding a
+Local `results/<proj>/summary.tsv` tables (gitignored) are produced by rebuilding a
 bitcode **per PR** and benching each against the store. To reproduce:
 
 ```bash
