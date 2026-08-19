@@ -152,8 +152,6 @@ via gllvm; all `-O0 -g`. Store time and one full per-PR sweep per project.
 | libssh2 | ~7s | ~1.2k | ~moderate | 8 | ~2s | ~6s | **~65%** | **8/8** |
 | nghttp2 | ~3s | ~0.5k | ~small | 8 | ~1s | ~4s | **~75%** | **8/8** |
 | memcached | ~8s | 0.6k | ~15k | 5 | ~2s | ~5s | ~60% | 5/5 |
-| wolfssl | ~16s | 2.1k | ~160k | 12 | ~4s | ~11s | **~64%** | **12/12** |
-| zstd | ~205s | 1.5k | ~300k | 12 | ~39s | ~130s | **~71%** | **12/12** |
 | openssh | ~14s | 1.8k | ~75k | 11 | ~3s | ~8s | ~62% | 11/11 |
 | mbedtls | ~3s | 0.8k | ~25k | 9 | ~1s | ~2s | ~50% | 9/9 |
 | libevent | ~4s | 0.7k | ~30k | 12 | ~1s | ~2s | ~50% | 12/12 |
@@ -169,7 +167,7 @@ via gllvm; all `-O0 -g`. Store time and one full per-PR sweep per project.
 - Best wins are on PRs with small dirty sets (a few functions). Worst cases are
   PRs that touch widely-included headers (dirty counts in the thousands).
 - **Dropped from the suite:** `git`, `redis`, `openssl` (multi-hour full NPD
-  store/load; keep local if you need scale stress tests).
+  store/load); `zstd` (≥1h PSA timeout); `wolfssl` (~46 min PSA, too slow).
 
 Always re-measure on your own hardware; these are indicative, not a guarantee.
 

@@ -192,27 +192,6 @@ make -j$(nproc) sshd        # build just the server
 get-bc -o openssh.bc sshd
 ```
 
-### zstd (make, multithreaded lib)
-
-```bash
-make -C lib -j$(nproc) lib-mt CC=gclang \
-  CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers'
-get-bc -o zstd.bc lib/libzstd.so.1.6.0   # soname may vary
-```
-
-### wolfssl (cmake)
-
-```bash
-cmake -S . -B build-gllvm -G Ninja \
-  -DCMAKE_C_COMPILER=gclang \
-  -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
-  -DCMAKE_BUILD_TYPE=Debug \
-  -DWOLFSSL_SHARED=ON -DBUILD_SHARED_LIBS=ON \
-  -DWOLFSSL_EXAMPLES=OFF -DWOLFSSL_CRYPT_TESTS=OFF
-ninja -C build-gllvm
-get-bc -o wolfssl.bc build-gllvm/libwolfssl.so.45.0.0   # soname may vary
-```
-
 ### memcached (autotools; needs libevent)
 
 ```bash
@@ -301,8 +280,6 @@ store / incremental flags and measured project sizes.
 
 | Project | Artifact | Approx size | Functions / inst (order of) |
 |---------|----------|------------:|-----------------------------|
-| zstd | `libzstd.so` | ~8 MB | ~1.5k fn / ~300k inst |
-| wolfssl | `libwolfssl.so` | ~4 MB | ~2.1k fn / ~160k inst |
 | memcached | `memcached` | ~2 MB | ~0.6k fn / ~15k inst |
 | openssh | `sshd` | ~3 MB | ~1.8k fn / ~75k inst |
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |

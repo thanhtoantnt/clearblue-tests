@@ -44,8 +44,6 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     libevent) echo "$SRC_ROOT/libevent|libevent/libevent|@cmake|libevent" ;;
     mbedtls) echo "$SRC_ROOT/mbedtls|Mbed-TLS/mbedtls|@cmake|mbedtls" ;;
     openssh) echo "$SRC_ROOT/openssh-portable|openssh/openssh-portable|sshd|openssh" ;;
-    zstd)    echo "$SRC_ROOT/zstd|facebook/zstd|lib/libzstd.so.1.6.0|zstd" ;;
-    wolfssl) echo "$SRC_ROOT/wolfssl|wolfSSL/wolfssl|@cmake|wolfssl" ;;
     nghttp2) echo "$SRC_ROOT/nghttp2|nghttp2/nghttp2|@cmake|nghttp2" ;;
     libssh2) echo "$SRC_ROOT/libssh2|libssh2/libssh2|@cmake|libssh2" ;;
     memcached) echo "$SRC_ROOT/memcached|memcached/memcached|memcached|memcached" ;;
@@ -122,24 +120,6 @@ build_openssh() {  # $1=srcdir  $2=artifact (sshd)
     [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" >/tmp/prbc_ss_cf.log 2>&1 || return 1
     make -j"$(nproc)" sshd >/tmp/prbc_ss_mk.log 2>&1 || return 1
     get-bc -o /tmp/prbc_out.bc sshd >/dev/null 2>&1 || return 1
-  )
-}
-build_zstd() {  # $1=srcdir
-  ( cd "$1"
-    make -C lib clean >/dev/null 2>&1
-    make -C lib -j"$(nproc)" lib-mt CC=gclang CFLAGS="$GFLAGS" >/tmp/prbc_zstd_mk.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc "$(find lib -maxdepth 1 -name 'libzstd.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
-  )
-}
-build_wolfssl() {  # $1=srcdir
-  ( cd "$1"
-    rm -rf build-prbc && mkdir build-prbc && cd build-prbc
-    cmake .. -G Ninja -DCMAKE_C_COMPILER=gclang \
-      -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
-      -DWOLFSSL_SHARED=ON -DBUILD_SHARED_LIBS=ON \
-      -DWOLFSSL_EXAMPLES=OFF -DWOLFSSL_CRYPT_TESTS=OFF >/tmp/prbc_ws_cm.log 2>&1 || return 1
-    ninja -j"$(nproc)" >/tmp/prbc_ws_nj.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libwolfssl.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
   )
 }
 build_nghttp2() {  # $1=srcdir

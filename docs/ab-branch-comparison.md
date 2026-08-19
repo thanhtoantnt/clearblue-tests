@@ -105,8 +105,8 @@ Single run per branch (store once + all PRs):
 | tier | projects | ~time |
 |------|----------|------:|
 | small | c-ares, libuv, libssh2, mbedtls, nghttp2, memcached, libevent | ~1 min |
-| medium | curl, libjpeg-turbo, wolfssl, openssh | ~10 min |
-| large | darknet, zstd | ~15 min each |
+| medium | curl, libjpeg-turbo, openssh | ~10 min |
+| large | darknet | ~15 min |
 
 Full A/B (13 projects, both branches): under **~1 hour** for SEG-only. The
 store-once rule is what keeps it there. (`git` / `redis` / `openssl` removed
