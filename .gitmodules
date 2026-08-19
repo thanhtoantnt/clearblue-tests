@@ -1,0 +1,56 @@
+[submodule "c-ares"]
+	path = src/c-ares
+	url = https://github.com/c-ares/c-ares.git
+	ignore = dirty
+[submodule "curl"]
+	path = src/curl
+	url = https://github.com/curl/curl.git
+	ignore = dirty
+[submodule "darknet"]
+	path = src/darknet
+	url = https://github.com/pjreddie/darknet.git
+	ignore = dirty
+[submodule "libevent"]
+	path = src/libevent
+	url = https://github.com/libevent/libevent.git
+	ignore = dirty
+[submodule "libexpat"]
+	path = src/libexpat
+	url = https://github.com/libexpat/libexpat.git
+	ignore = dirty
+[submodule "libjpeg-turbo"]
+	path = src/libjpeg-turbo
+	url = https://github.com/libjpeg-turbo/libjpeg-turbo.git
+	ignore = dirty
+[submodule "libsodium"]
+	path = src/libsodium
+	url = https://github.com/jedisct1/libsodium.git
+	ignore = dirty
+[submodule "libssh2"]
+	path = src/libssh2
+	url = https://github.com/libssh2/libssh2.git
+	ignore = dirty
+[submodule "libuv"]
+	path = src/libuv
+	url = https://github.com/libuv/libuv.git
+	ignore = dirty
+[submodule "libyaml"]
+	path = src/libyaml
+	url = https://github.com/yaml/libyaml.git
+	ignore = dirty
+[submodule "mbedtls"]
+	path = src/mbedtls
+	url = https://github.com/Mbed-TLS/mbedtls.git
+	ignore = dirty
+[submodule "memcached"]
+	path = src/memcached
+	url = https://github.com/memcached/memcached.git
+	ignore = dirty
+[submodule "nghttp2"]
+	path = src/nghttp2
+	url = https://github.com/nghttp2/nghttp2.git
+	ignore = dirty
+[submodule "openssh"]
+	path = src/openssh
+	url = https://github.com/openssh/openssh-portable.git
+	ignore = dirty

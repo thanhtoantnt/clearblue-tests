@@ -78,6 +78,9 @@ get-bc -o out.bc build/lib/libfoo-d.so.1.2.3
 
 ## Project recipes
 
+Pinned sources are `src/<proj>/` git submodules (`git submodule update --init`).
+`./scripts/build_old_bc.sh <proj>` rebuilds `bc/<proj>/old.bc` from that pin.
+
 Paths and sonames may differ slightly by version; adjust after `find` / `ls`.
 
 ### curl (cmake, libcurl only)

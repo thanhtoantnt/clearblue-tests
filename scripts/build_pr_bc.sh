@@ -15,6 +15,7 @@
 #   ./scripts/build_pr_bc.sh <project>        # one project
 #   ./scripts/build_pr_bc.sh all              # every project
 #   PRS="22328 22326" ./scripts/build_pr_bc.sh curl   # override PR list
+#   ONLY_OLD=1 ./scripts/build_pr_bc.sh curl  # rebuild bc/<proj>/old.bc only
 set -u
 
 export PATH="$HOME/go/bin:$HOME/tools/llvm15-official/bin:$PATH"
@@ -22,7 +23,7 @@ export LLVM_COMPILER_PATH="$HOME/tools/llvm15-official/bin"
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$SCRIPT_DIR/.." && pwd)"
-SRC_ROOT="${SRC_ROOT:-$HOME/clearblue/local-tests}"
+SRC_ROOT="${SRC_ROOT:-$REPO/src}"
 GFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers'
 
 log()  { echo "[$(date +%H:%M:%S)] $*"; }
@@ -43,11 +44,14 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     c-ares)  echo "$SRC_ROOT/c-ares|c-ares/c-ares|@cmake|cares" ;;
     libevent) echo "$SRC_ROOT/libevent|libevent/libevent|@cmake|libevent" ;;
     mbedtls) echo "$SRC_ROOT/mbedtls|Mbed-TLS/mbedtls|@cmake|mbedtls" ;;
-    openssh) echo "$SRC_ROOT/openssh-portable|openssh/openssh-portable|sshd|openssh" ;;
+    openssh) echo "$SRC_ROOT/openssh|openssh/openssh-portable|sshd|openssh" ;;
     nghttp2) echo "$SRC_ROOT/nghttp2|nghttp2/nghttp2|@cmake|nghttp2" ;;
     libssh2) echo "$SRC_ROOT/libssh2|libssh2/libssh2|@cmake|libssh2" ;;
     memcached) echo "$SRC_ROOT/memcached|memcached/memcached|memcached|memcached" ;;
     libjpeg-turbo) echo "$SRC_ROOT/libjpeg-turbo|libjpeg-turbo/libjpeg-turbo|libjpeg.so.62.4.0|libjpegturbo" ;;
+    libexpat) echo "$SRC_ROOT/libexpat|libexpat/libexpat|expat|libexpat" ;;
+    libsodium) echo "$SRC_ROOT/libsodium|jedisct1/libsodium|libsodium|libsodium" ;;
+    libyaml) echo "$SRC_ROOT/libyaml|yaml/libyaml|libyaml|libyaml" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -105,6 +109,7 @@ build_libevent() {  # $1=srcdir
 }
 build_mbedtls() {  # $1=srcdir
   ( cd "$1"
+    git submodule update --init --recursive >/tmp/prbc_mb_sub.log 2>&1 || true
     rm -rf build-prbc && mkdir build-prbc && cd build-prbc
     cmake .. -G Ninja -DCMAKE_C_COMPILER=gclang \
       -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
@@ -167,6 +172,35 @@ build_libjpegturbo() {  # $1=srcdir  $2=artifact
     # paths from the artifact and llvm-links them (same mechanism).
     getbc-link "$(find . -name 'libjpeg.so*' -type f \! -type l | head -1)" \
       -o /tmp/prbc_out.bc >/tmp/prbc_ljt_gb.log 2>&1 || return 1
+  )
+}
+build_libexpat() {  # $1=srcdir (libexpat repo; sources live in expat/)
+  ( cd "$1/expat"
+    [ -f configure ] || ./buildconf.sh >/tmp/prbc_ex_bc.log 2>&1 || return 1
+    [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" \
+      --disable-shared --enable-static --without-docbook --without-xmlwf \
+      --disable-dependency-tracking >/tmp/prbc_ex_cf.log 2>&1 || return 1
+    make -j"$(nproc)" >/tmp/prbc_ex_mk.log 2>&1 || return 1
+    llvm-link -o /tmp/prbc_out.bc lib/.xmlparse.o.bc lib/.xmltok.o.bc lib/.xmlrole.o.bc
+  )
+}
+build_libsodium() {  # $1=srcdir
+  ( cd "$1"
+    [ -f configure ] || ./autogen.sh >/tmp/prbc_na_ag.log 2>&1 || return 1
+    [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" \
+      --disable-shared --enable-static --disable-dependency-tracking >/tmp/prbc_na_cf.log 2>&1 || return 1
+    make -j"$(nproc)" >/tmp/prbc_na_mk.log 2>&1 || return 1
+    find src/libsodium -name '*.bc' | sort | xargs llvm-link -o /tmp/prbc_out.bc
+  )
+}
+build_libyaml() {  # $1=srcdir
+  ( cd "$1"
+    [ -f configure ] || ./bootstrap >/tmp/prbc_ym_bs.log 2>&1 || return 1
+    [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" \
+      --disable-shared --enable-static --disable-dependency-tracking >/tmp/prbc_ym_cf.log 2>&1 || return 1
+    make -j"$(nproc)" >/tmp/prbc_ym_mk.log 2>&1 || return 1
+    llvm-link -o /tmp/prbc_out.bc src/.api.o.bc src/.dumper.o.bc src/.emitter.o.bc \
+      src/.loader.o.bc src/.parser.o.bc src/.reader.o.bc src/.scanner.o.bc src/.writer.o.bc
   )
 }
 # libjpeg-turbo synthetics need a REAL statement (not a comment): at -O0
@@ -291,6 +325,7 @@ do_project() {
     cp /tmp/prbc_out.bc "$bcdir/old.bc"
     log "$proj old.bc ready ($(du -h "$bcdir/old.bc" | cut -f1))"
   fi
+  if [ "${ONLY_OLD:-}" = 1 ]; then log "$proj only-old done"; return; fi
 
   # PR list (override via PRS=)
   local prs=()

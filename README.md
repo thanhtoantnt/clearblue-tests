@@ -78,7 +78,7 @@ If `bc/<proj>/` already contains `pr-*.bc` files, you can run the benchmark
 directly:
 
 ```bash
-git clone <this-repo> incremental-persist-bench
+git clone <this-repo> incremental-persist-bench   # bitcode only; no src/ needed
 cd incremental-persist-bench
 
 export CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
@@ -90,20 +90,22 @@ export CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 ONLY=curl ./scripts/run_bench.sh
 ```
 
-### Option B — regenerate per-PR bitcode from source, then bench
+### Option B — rebuild `old.bc` (or per-PR bitcode) from pinned sources
+
+Upstream trees live in `src/<proj>/` as git submodules, each pinned to the
+commit that produced that project's `old.bc`.
 
 ```bash
-# 1. clone the upstream sources into ~/clearblue/local-tests/{curl,git,...}
-#    (see build_pr_bc.sh header for the list)
+# fetch the source pins (skip if you cloned with --recurse-submodules)
+git submodule update --init
 
-# 2. rebuild each PR's bitcode into bc/<proj>/pr-<NNNN>.bc
-#    (needs network: git-fetches each PR ref from github)
-./scripts/build_pr_bc.sh curl        # one project
-./scripts/build_pr_bc.sh all         # every project
-PRS="22328 22326" ./scripts/build_pr_bc.sh curl   # specific PRs
+# rebuild one (or every) old.bc with the same gllvm flags
+./scripts/build_old_bc.sh curl
+./scripts/build_old_bc.sh all
 
-# 3. bench them
-ONLY=curl ./scripts/run_bench.sh
+# optional: also rebuild per-PR bitcode (needs network to fetch PR refs)
+./scripts/build_pr_bc.sh curl
+PRS="22328 22326" ./scripts/build_pr_bc.sh curl
 ```
 
 Tune with `NWORKERS=8 TIMEOUT=3600 ./scripts/run_bench.sh`.
@@ -191,7 +193,7 @@ Local `results/<proj>/summary.tsv` tables (gitignored) are produced by rebuildin
 bitcode **per PR** and benching each against the store. To reproduce:
 
 ```bash
-# needs the upstream sources cloned (Option B above) + network to fetch PR refs
+# needs `git submodule update --init` (Option B) + network to fetch PR refs
 ./scripts/build_pr_bc.sh <project>     # -> bc/<project>/pr-<NNNN>.bc for every PR in results/
 ONLY=<project> ./scripts/run_bench.sh  # stores old.bc, benches each pr-*.bc
 ```
