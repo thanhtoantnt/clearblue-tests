@@ -1,0 +1,21 @@
+{
+  "project": "fn_cares_qcache",
+  "input_bc": "buggy.bc",
+  "checkers": "-ps-ml",
+  "extra_args": "-load-memory-spec=bug_regression/fn_cares_qcache/mem-spec.json",
+  "analyzer_note": "c-ares pre-fix bitcode (d4bd20cc, parent of 299bd617). Stock fermat-check finds the ares_qcache_insert_int leak ONLY with the c-ares mem spec; without it the alloc is invisible (ML=0). Gate: the qcache sink must be found.",
+  "nworkers": 8,
+  "time_limit_sec": 900,
+  "match_mode": "by_sink",
+  "counts": {
+    "ML": 1
+  },
+  "findings": [
+    {
+      "type": "ML",
+      "file": "ares_qcache.c",
+      "line": 374,
+      "func": "ares_qcache_insert_int"
+    }
+  ]
+}

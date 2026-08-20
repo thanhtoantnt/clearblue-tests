@@ -1,0 +1,17 @@
+[FermatCheck]
+Checkers = -ps-npd
+InputBitCode = ../../bc/libyaml/old.bc
+ExtraFlags = -omit-no-dbginfo
+
+[TimeCheck]
+TimeLimit = 900
+
+[Expected]
+TotalFindings = 3
+Counts = NPD:3
+MatchMode = by_sink  # type + basename(file) + line
+
+# True bugs (yaml-0.2.5 parser.c): PEEK_TOKEN may be NULL when first==1
+#   parser.c:733  yaml_parser_parse_block_sequence_entry
+#   parser.c:841  yaml_parser_parse_block_mapping_key
+#   parser.c:956  yaml_parser_parse_flow_sequence_entry

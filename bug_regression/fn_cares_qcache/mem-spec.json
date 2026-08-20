@@ -1,0 +1,22 @@
+{
+  "mem-alloc": [
+    "ares_malloc",
+    "ares_malloc_zero",
+    "ares_malloc_zero_array",
+    "ares_realloc",
+    "ares_realloc_zero",
+    "ares_realloc_zero_array",
+    "ares_strdup"
+  ],
+  "mem-free": {
+    "ares_free": [0],
+    "ares_realloc": [0]
+  },
+  "mem-alloc-size-arg": {
+    "ares_malloc": [0],
+    "ares_malloc_zero": [0],
+    "ares_realloc": [1],
+    "ares_realloc_zero": [1],
+    "ares_strdup": [0]
+  }
+}

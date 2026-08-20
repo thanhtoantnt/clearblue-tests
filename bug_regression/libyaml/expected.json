@@ -1,0 +1,33 @@
+{
+  "project": "libyaml",
+  "input_bc": "../../bc/libyaml/old.bc",
+  "checkers": "-ps-npd",
+  "analyzer_note": "TP-only baseline 2026-08-13: three missing-NULL checks after PEEK_TOKEN when first==1 (parser.c). Source yaml-0.2.5. FermatAnalyzer main @ e96525c3.",
+  "nworkers": 8,
+  "time_limit_sec": 900,
+  "match_mode": "by_sink",
+  "min_total": 3,
+  "counts": {
+    "NPD": 3
+  },
+  "findings": [
+    {
+      "type": "NPD",
+      "file": "parser.c",
+      "line": 733,
+      "func": "yaml_parser_parse_block_sequence_entry"
+    },
+    {
+      "type": "NPD",
+      "file": "parser.c",
+      "line": 841,
+      "func": "yaml_parser_parse_block_mapping_key"
+    },
+    {
+      "type": "NPD",
+      "file": "parser.c",
+      "line": 956,
+      "func": "yaml_parser_parse_flow_sequence_entry"
+    }
+  ]
+}

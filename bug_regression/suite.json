@@ -1,0 +1,8 @@
+{
+  "description": "TP-only bug regression: fermat-check must find known real bugs on committed bitcode (bc/*/old.bc or case-local pre-fix bc).",
+  "cases": [
+    "libyaml",
+    "fn_cares_qcache"
+  ],
+  "baseline_total_findings": 4
+}

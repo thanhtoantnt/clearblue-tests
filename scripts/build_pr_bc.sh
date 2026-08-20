@@ -65,7 +65,9 @@ build_curl() {  # $1=srcdir $2=artifact
       -DBUILD_SHARED_LIBS=ON -DCURL_USE_OPENSSL=OFF \
       -DCURL_DISABLE_LDAP=ON -DCURL_USE_LIBPSL=OFF >/tmp/prbc_curl_cm.log 2>&1 || return 1
     ninja -j"$(nproc)" >/tmp/prbc_curl_nj.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libcurl-d.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+    so=$(find . -name 'libcurl-d.so*' -type f ! -type l | head -1)
+    get-bc -o /tmp/prbc_out.bc "$so" >/dev/null 2>&1 || \
+      getbc-link "$so" -o /tmp/prbc_out.bc >/tmp/prbc_curl_gb.log 2>&1 || return 1
   )
 }
 build_git() {  # $1=srcdir
@@ -91,7 +93,9 @@ build_cares() {  # $1=srcdir
       -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug \
       -DCARES_SHARED=ON -DCARES_STATIC=OFF >/tmp/prbc_cares_cm.log 2>&1 || return 1
     ninja -j"$(nproc)" >/tmp/prbc_cares_nj.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libcares.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+    so=$(find . -name 'libcares.so*' -type f ! -type l | head -1)
+    get-bc -o /tmp/prbc_out.bc "$so" >/dev/null 2>&1 || \
+      getbc-link "$so" -o /tmp/prbc_out.bc >/tmp/prbc_cares_gb.log 2>&1 || return 1
   )
 }
 build_libevent() {  # $1=srcdir
@@ -311,7 +315,7 @@ do_project() {
   local proj=$1
   local cfg srcdir repo artifact builder
   cfg=$(cfg "$proj"); IFS='|' read -r srcdir repo artifact builder <<<"$cfg"
-  [ -d "$srcdir/.git" ] || die "source not found: $srcdir"
+  [ -e "$srcdir/.git" ] || die "source not found: $srcdir"
   local bcdir="$REPO/bc/$proj"; mkdir -p "$bcdir"
 
   local base; base=$(git -C "$srcdir" rev-parse --short HEAD)
