@@ -71,7 +71,7 @@ run_branch_project() {  # binary branch project
   rm -rf "$pdir" "$store_snap"
 }
 
-PROJECTS="${PROJECTS:-c-ares libuv libssh2 mbedtls nghttp2 memcached libevent curl libjpeg-turbo openssh darknet redis openssl git}"
+PROJECTS="${PROJECTS:-c-ares libuv libssh2 mbedtls nghttp2 memcached libevent curl libjpeg-turbo openssh darknet redis openssl git unbound}"
 
 for proj in $PROJECTS; do
   [ -d "$BC/$proj" ] || { echo "skip $proj"; continue; }

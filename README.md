@@ -43,6 +43,7 @@ incremental-persist-bench/
 │   ├── libuv/{old.bc, pr-5193.bc, ...}
 │   ├── darknet/{old.bc, pr-2657.bc, ...}
 │   ├── libjpeg-turbo/, nghttp2/, libsodium/, libexpat/, libyaml/, ...
+│   ├── unbound/{old.bc}          # NLnetLabs unbound 1.25.2 (~openssh-sized)
 │   └── (no git / redis / openssl — too slow for routine runs)
 └── results/                  # local runs only (gitignored; never push)
     ├── curl/summary.tsv

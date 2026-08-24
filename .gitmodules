@@ -54,3 +54,6 @@
 	path = src/openssh
 	url = https://github.com/openssh/openssh-portable.git
 	ignore = dirty
+[submodule "src/unbound"]
+	path = src/unbound
+	url = https://github.com/NLnetLabs/unbound.git

@@ -195,6 +195,18 @@ make -j$(nproc) sshd        # build just the server
 get-bc -o openssh.bc sshd
 ```
 
+### unbound (autotools)
+
+```bash
+./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  --disable-shared --enable-static \
+  --without-pyunbound --without-pythonmodule \
+  --disable-flto --disable-rpath \
+  --with-libevent=no --with-libhiredis=no
+make -j$(nproc) unbound
+getbc-link unbound -o unbound.bc
+```
+
 ### memcached (autotools; needs libevent)
 
 ```bash
@@ -285,6 +297,7 @@ store / incremental flags and measured project sizes.
 |---------|----------|------------:|-----------------------------|
 | memcached | `memcached` | ~2 MB | ~0.6k fn / ~15k inst |
 | openssh | `sshd` | ~3 MB | ~1.8k fn / ~75k inst |
+| unbound | `unbound` | ~8 MB | ~3.5k fn / ~327k inst |
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |
 | libsodium | `libsodium` (linked TUs) | ~2.5 MB | ~1.1k fn |

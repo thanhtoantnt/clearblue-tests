@@ -52,6 +52,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     libexpat) echo "$SRC_ROOT/libexpat|libexpat/libexpat|expat|libexpat" ;;
     libsodium) echo "$SRC_ROOT/libsodium|jedisct1/libsodium|libsodium|libsodium" ;;
     libyaml) echo "$SRC_ROOT/libyaml|yaml/libyaml|libyaml|libyaml" ;;
+    unbound) echo "$SRC_ROOT/unbound|NLnetLabs/unbound|unbound|unbound" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -129,6 +130,18 @@ build_openssh() {  # $1=srcdir  $2=artifact (sshd)
     [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" >/tmp/prbc_ss_cf.log 2>&1 || return 1
     make -j"$(nproc)" sshd >/tmp/prbc_ss_mk.log 2>&1 || return 1
     get-bc -o /tmp/prbc_out.bc sshd >/dev/null 2>&1 || return 1
+  )
+}
+build_unbound() {  # $1=srcdir  $2=artifact (unbound daemon)
+  ( cd "$1"
+    [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" \
+      --disable-shared --enable-static \
+      --without-pyunbound --without-pythonmodule \
+      --disable-flto --disable-rpath \
+      --with-libevent=no --with-libhiredis=no >/tmp/prbc_ub_cf.log 2>&1 || return 1
+    make -j"$(nproc)" unbound >/tmp/prbc_ub_mk.log 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc unbound >/dev/null 2>&1 || \
+      getbc-link unbound -o /tmp/prbc_out.bc >/tmp/prbc_ub_gb.log 2>&1 || return 1
   )
 }
 build_nghttp2() {  # $1=srcdir

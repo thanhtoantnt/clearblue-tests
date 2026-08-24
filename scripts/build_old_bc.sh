@@ -6,7 +6,7 @@
 set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 REPO="$(cd "$SCRIPT_DIR/.." && pwd)"
-ALL=(c-ares curl darknet libevent libexpat libjpeg-turbo libsodium libssh2 libuv libyaml mbedtls memcached nghttp2 openssh)
+ALL=(c-ares curl darknet libevent libexpat libjpeg-turbo libsodium libssh2 libuv libyaml mbedtls memcached nghttp2 openssh unbound)
 
 [ $# -ge 1 ] || { echo "usage: $0 <project|all>"; exit 1; }
 if [ "$1" = all ]; then projs=("${ALL[@]}"); else projs=("$1"); fi
