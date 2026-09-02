@@ -6,7 +6,7 @@ Ground-truth leak that `fermat-check -ps-ml` does **not** report.
 |---|---|
 | Project | c-ares |
 | Fix | [`299bd617`](https://github.com/c-ares/c-ares/commit/299bd617c2ab5bb86cae0cbee25d48c29780a3ef) *Fix memory leak of qcache entry on key allocation failure* |
-| Buggy parent | `d4bd20cc` |
+| Buggy parent | `d4bd20cc` (rebuild `buggy.bc` from this commit with the standard gllvm recipe — see [`bc/c-ares/README.md`](../../bc/c-ares/README.md)) |
 | File | `src/lib/ares_qcache.c` `ares_qcache_insert_int` |
 | Checker | `-ps-ml` |
 | Run | 2026-08-19, FermatAnalyzer `main`, 248s, `-nworkers=8` |

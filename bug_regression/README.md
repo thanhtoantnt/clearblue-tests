@@ -43,7 +43,9 @@ UAF/IUSA noise from full dumps was triaged as FP and is **not** in the baseline.
 |------|---------|-----|--------------|-----------|
 | [`fn_cares_qcache/`](fn_cares_qcache/) | `-ps-ml` | c-ares `299bd617` qcache entry leak, pre-fix bitcode `d4bd20cc` | **ML = 0** (FN) | **found** (`ares_qcache_insert_int:374`) |
 
-The case ships its own pre-fix `buggy.bc` and `mem-spec.json` (c-ares
+The case needs the pre-fix `buggy.bc` (rebuild from c-ares `d4bd20cc` with the
+standard gllvm recipe, see the case README) and the committed `mem-spec.json`
+(c-ares
 alloc wrappers for `-load-memory-spec`). The harness passes `extra_args`
 from `expected.json`, so this is a normal must-pass case — a future
 `fermat-check` that regresses on spec-file alloc handling fails the gate.
