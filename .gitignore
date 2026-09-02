@@ -8,3 +8,6 @@
 # editor/OS noise
 .DS_Store
 *.swp
+
+# rebuilt bitcode stays local (rebuild via scripts/build_old_bc.sh / build_pr_bc.sh)
+*.bc
