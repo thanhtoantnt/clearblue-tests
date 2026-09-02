@@ -83,8 +83,9 @@ build_libuv() {  # $1=srcdir
   cmake -S "$1" -B "$bdir" -G Ninja -DCMAKE_C_COMPILER=gclang \
     -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_BUILD_TYPE=Debug -DBUILD_TESTING=OFF >/tmp/prbc_libuv_cm.log 2>&1 || return 1
   ninja -C "$bdir" -j"$(nproc)" >/tmp/prbc_libuv_nj.log 2>&1 || return 1
-  get-bc -o /tmp/prbc_out.bc "$bdir"/libuv.so.1.0.0 >/dev/null 2>&1 || \
-    get-bc -o /tmp/prbc_out.bc "$bdir"/libuv.so >/dev/null 2>&1 || return 1
+  so=$(find "$bdir" -name 'libuv.so*' -type f | head -1)
+  get-bc -o /tmp/prbc_out.bc "$so" >/dev/null 2>&1 || \
+    getbc-link "$so" -o /tmp/prbc_out.bc >/tmp/prbc_libuv_gb.log 2>&1 || return 1
   rm -rf "$bdir"
 }
 build_cares() {  # $1=srcdir
@@ -109,7 +110,9 @@ build_libevent() {  # $1=srcdir
       -DEVENT__DISABLE_TESTS=ON -DEVENT__DISABLE_SAMPLES=ON >/tmp/prbc_lev_cm.log 2>&1 || return 1
     ninja -j"$(nproc)" >/tmp/prbc_lev_nj.log 2>&1 || return 1
     # core is the smallest meaningful target; soname version varies
-    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libevent_core*.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+    so=$(find . -name 'libevent_core*.so*' -type f | head -1)
+    get-bc -o /tmp/prbc_out.bc "$so" >/dev/null 2>&1 || \
+      getbc-link "$so" -o /tmp/prbc_out.bc >/tmp/prbc_lev_gb.log 2>&1 || return 1
   )
 }
 build_mbedtls() {  # $1=srcdir
@@ -121,7 +124,9 @@ build_mbedtls() {  # $1=srcdir
       -DENABLE_PROGRAMS=OFF -DENABLE_TESTING=OFF \
       -DUSE_SHARED_MBEDTLS_LIBRARY=ON >/tmp/prbc_mb_cm.log 2>&1 || return 1
     ninja -j"$(nproc)" >/tmp/prbc_mb_nj.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libmbedtls.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+    so=$(find . -name 'libmbedtls.so*' -type f | head -1)
+    get-bc -o /tmp/prbc_out.bc "$so" >/dev/null 2>&1 || \
+      getbc-link "$so" -o /tmp/prbc_out.bc >/tmp/prbc_mb_gb.log 2>&1 || return 1
   )
 }
 build_openssh() {  # $1=srcdir  $2=artifact (sshd)
@@ -129,7 +134,8 @@ build_openssh() {  # $1=srcdir  $2=artifact (sshd)
     [ -f configure ] || autoreconf -fi >/tmp/prbc_ss_ar.log 2>&1 || return 1
     [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" >/tmp/prbc_ss_cf.log 2>&1 || return 1
     make -j"$(nproc)" sshd >/tmp/prbc_ss_mk.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc sshd >/dev/null 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc sshd >/dev/null 2>&1 || \
+      getbc-link sshd -o /tmp/prbc_out.bc >/tmp/prbc_ss_gb.log 2>&1 || return 1
   )
 }
 build_unbound() {  # $1=srcdir  $2=artifact (unbound daemon)
@@ -152,7 +158,9 @@ build_nghttp2() {  # $1=srcdir
       -DENABLE_SHARED_LIB=ON -DBUILD_STATIC_LIBS=OFF \
       -DENABLE_APP=OFF -DENABLE_HPACK_TOOLS=OFF -DENABLE_EXAMPLES=OFF >/tmp/prbc_ng_cm.log 2>&1 || return 1
     ninja -j"$(nproc)" >/tmp/prbc_ng_nj.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc "$(find . -name 'libnghttp2.so*' -type f | head -1)" >/dev/null 2>&1 || return 1
+    so=$(find . -name 'libnghttp2.so*' -type f | head -1)
+    get-bc -o /tmp/prbc_out.bc "$so" >/dev/null 2>&1 || \
+      getbc-link "$so" -o /tmp/prbc_out.bc >/tmp/prbc_ng_gb.log 2>&1 || return 1
   )
 }
 build_libssh2() {  # $1=srcdir
@@ -162,7 +170,9 @@ build_libssh2() {  # $1=srcdir
     -DBUILD_SHARED_LIBS=ON -DBUILD_EXAMPLES=OFF -DBUILD_TESTING=OFF \
     -DENABLE_ZLIB_COMPRESSION=OFF >/tmp/prbc_ssh2_cm.log 2>&1 || { rm -rf "$bdir"; return 1; }
   ninja -C "$bdir" -j"$(nproc)" >/tmp/prbc_ssh2_nj.log 2>&1 || { rm -rf "$bdir"; return 1; }
-  get-bc -o /tmp/prbc_out.bc "$(find "$bdir" -name 'libssh2.so*' -type f | head -1)" >/dev/null 2>&1 || { rm -rf "$bdir"; return 1; }
+  so=$(find "$bdir" -name 'libssh2.so*' -type f | head -1)
+  get-bc -o /tmp/prbc_out.bc "$so" >/dev/null 2>&1 || \
+    getbc-link "$so" -o /tmp/prbc_out.bc >/tmp/prbc_ssh2_gb.log 2>&1 || { rm -rf "$bdir"; return 1; }
   rm -rf "$bdir"
 }
 # memcached needs libevent; ensure libevent is installed to this prefix first
@@ -174,7 +184,8 @@ build_memcached() {  # $1=srcdir  $2=artifact (memcached)
     [ -f Makefile ] || ./configure CC=gclang CFLAGS="$GFLAGS" --with-libevent="$MC_LEV" \
       LDFLAGS="-L$MC_LEV/lib -Wl,-rpath,$MC_LEV/lib" CPPFLAGS="-I$MC_LEV/include" >/tmp/prbc_mc_cf.log 2>&1 || return 1
     make -j"$(nproc)" >/tmp/prbc_mc_mk.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc memcached >/dev/null 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc memcached >/dev/null 2>&1 || \
+      getbc-link memcached -o /tmp/prbc_out.bc >/tmp/prbc_mc_gb.log 2>&1 || return 1
   )
 }
 build_libjpegturbo() {  # $1=srcdir  $2=artifact
@@ -246,7 +257,8 @@ build_darknet() {  # $1=srcdir
     make -j"$(nproc)" CC=gclang CPP=gclang++ DEBUG=1 GPU=0 \
       CFLAGS="-Wall -Wno-unused-result -Wno-unknown-pragmas -Wfatal-errors -fPIC $GFLAGS" \
       >/tmp/prbc_dn.log 2>&1 || return 1
-    get-bc -o /tmp/prbc_out.bc darknet >/dev/null 2>&1 || return 1
+    get-bc -o /tmp/prbc_out.bc darknet >/dev/null 2>&1 || \
+      getbc-link darknet -o /tmp/prbc_out.bc >/tmp/prbc_dn_gb.log 2>&1 || return 1
   )
 }
 build_redis() {  # $1=srcdir
