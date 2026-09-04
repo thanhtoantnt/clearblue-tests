@@ -1,0 +1,980 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:40:12 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/libuv/old.bc",
+    "TotalBugs": 14,
+    "TotalFunc": "1024",
+    "ExternalFuncRate": "23.3%",
+    "TotalInst": "49186",
+    "AvgInstPerFunc": "62.657",
+    "MaxInstPerFunc": "884",
+    "FuncWithMostInst": "uv__signal_tree_s_RB_REMOVE_COLOR",
+    "AvgCyclomaticComplexity": "4.944",
+    "MaxCyclomaticComplexity": "86",
+    "FuncWithMaxCyclomaticComplexity": "uv_err_name_r",
+    "SrcFiles": [
+        "/home/toan/github/clearblue-tests/src/libuv/src/uv-common.c",
+        "/home/toan/github/clearblue-tests/src/libuv/src/unix/udp.c",
+        "/home/toan/github/clearblue-tests/src/libuv/src/unix/tcp.c",
+        "/home/toan/github/clearblue-tests/src/libuv/src/unix/tty.c",
+        "/home/toan/github/clearblue-tests/src/libuv/src/unix/random-sysctl-linux.c",
+        "/home/toan/github/clearblue-tests/src/libuv/src/unix/pipe.c",
+        "/home/toan/github/clearblue-tests/src/libuv/src/unix/stream.c"
+    ],
+    "BugTypes": [
+        {
+            "Name": "Use After Free",
+            "Description": "CWE-416",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 1,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 95,
+                    "Valid": true,
+                    "ReportChecker": "PSA Use After Free Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "call void @free(i8* noundef %32) #18, !dbg !13670",
+                            "File": 0,
+                            "Line": 784,
+                            "Tip": "The memory pointed by dents[nbufs-1] is freed",
+                            "FuncKey": "uv_fs_scandir_next",
+                            "FuncName": "uv_fs_scandir_next"
+                        },
+                        {
+                            "Inst": "store i8* %49, i8** %50, align 8, !dbg !13689",
+                            "File": 0,
+                            "Line": 795,
+                            "Tip": "Store &(&(dent->d_name)[0]) to ent->!0 (Use After Free, CWE-415, CWE-416)",
+                            "FuncKey": "uv_fs_scandir_next",
+                            "FuncName": "uv_fs_scandir_next"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 764,
+                            "FuncEnd": 799,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @free(i8* noundef %32) #18, !dbg !13670",
+                            "File": 0,
+                            "Line": 784,
+                            "Tip": "The memory pointed by dents[nbufs-1] is freed",
+                            "FuncKey": "uv_fs_scandir_next",
+                            "FuncName": "uv_fs_scandir_next"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 764,
+                            "FuncEnd": 799,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %49, i8** %50, align 8, !dbg !13689",
+                            "File": 0,
+                            "Line": 795,
+                            "Tip": "Store &(&(dent->d_name)[0]) to ent->!0 (Use After Free, CWE-415, CWE-416)",
+                            "FuncKey": "uv_fs_scandir_next",
+                            "FuncName": "uv_fs_scandir_next"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        },
+        {
+            "Name": "Invalid Use of Stack Address",
+            "Description": "CWE-562",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 13,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %2, %struct.sockaddr** %11, align 8, !dbg !32436",
+                            "File": 1,
+                            "Line": 647,
+                            "Tip": "Store addr to %temp_var3",
+                            "FuncKey": "uv__udp_disconnect",
+                            "FuncName": "uv__udp_disconnect"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !32453",
+                            "File": 1,
+                            "Line": 662,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__udp_disconnect",
+                            "FuncName": "uv__udp_disconnect"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 626,
+                            "FuncEnd": 662,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %2, %struct.sockaddr** %11, align 8, !dbg !32436",
+                            "File": 1,
+                            "Line": 647,
+                            "Tip": "Store addr to %temp_var3",
+                            "FuncKey": "uv__udp_disconnect",
+                            "FuncName": "uv__udp_disconnect"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 626,
+                            "FuncEnd": 662,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !32453",
+                            "File": 1,
+                            "Line": 662,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__udp_disconnect",
+                            "FuncName": "uv__udp_disconnect"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %8, %struct.sockaddr** %7, align 8, !dbg !28967",
+                            "File": 2,
+                            "Line": 45,
+                            "Tip": "Store s to %temp_var4",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !29011",
+                            "File": 2,
+                            "Line": 61,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 39,
+                            "FuncEnd": 61,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %8, %struct.sockaddr** %7, align 8, !dbg !28967",
+                            "File": 2,
+                            "Line": 45,
+                            "Tip": "Store s to %temp_var4",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 39,
+                            "FuncEnd": 61,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !29011",
+                            "File": 2,
+                            "Line": 61,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %43, %struct.sockaddr** %42, align 8, !dbg !30913",
+                            "File": 3,
+                            "Line": 446,
+                            "Tip": "Store ss to %temp_var6",
+                            "FuncKey": "uv_guess_handle",
+                            "FuncName": "uv_guess_handle"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !30963",
+                            "File": 3,
+                            "Line": 487,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv_guess_handle",
+                            "FuncName": "uv_guess_handle"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 403,
+                            "FuncEnd": 487,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %43, %struct.sockaddr** %42, align 8, !dbg !30913",
+                            "File": 3,
+                            "Line": 446,
+                            "Tip": "Store ss to %temp_var6",
+                            "FuncKey": "uv_guess_handle",
+                            "FuncName": "uv_guess_handle"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 403,
+                            "FuncEnd": 487,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !30963",
+                            "File": 3,
+                            "Line": 487,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv_guess_handle",
+                            "FuncName": "uv_guess_handle"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i64* %5, i64** %60, align 8, !dbg !38012",
+                            "File": 4,
+                            "Line": 60,
+                            "Tip": "Store n to args.oldlenp",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i64* %5, i64** %60, align 8, !dbg !38012",
+                            "File": 4,
+                            "Line": 60,
+                            "Tip": "Store n to args.oldlenp",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i8* %64, i8** %67, align 16, !dbg !32021",
+                            "File": 1,
+                            "Line": 238,
+                            "Tip": "Store &(&(control[k])[0]) to msgs[k].msg_hdr.msg_control",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !32118",
+                            "File": 1,
+                            "Line": 293,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 206,
+                            "FuncEnd": 293,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %64, i8** %67, align 16, !dbg !32021",
+                            "File": 1,
+                            "Line": 238,
+                            "Tip": "Store &(&(control[k])[0]) to msgs[k].msg_hdr.msg_control",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 206,
+                            "FuncEnd": 293,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !32118",
+                            "File": 1,
+                            "Line": 293,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.01 = phi %struct.sockaddr* [ %43, %39 ], [ %2, %33 ]",
+                            "File": 2,
+                            "Line": 306,
+                            "Tip": "Variable addr comes from addr",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        },
+                        {
+                            "Inst": "br i1 %38, label %39, label %44, !dbg !29204",
+                            "File": 2,
+                            "Line": 302,
+                            "Tip": "Possible path: Select the true branch at this point",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        },
+                        {
+                            "Inst": "store %struct.sockaddr* %.1, %struct.sockaddr** %51, align 8, !dbg !29217",
+                            "File": 2,
+                            "Line": 310,
+                            "Tip": "Store addr to %temp_var7",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !29276",
+                            "File": 2,
+                            "Line": 349,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 282,
+                            "FuncEnd": 349,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.01 = phi %struct.sockaddr* [ %43, %39 ], [ %2, %33 ]",
+                            "File": 2,
+                            "Line": 306,
+                            "Tip": "Variable addr comes from addr",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 282,
+                            "FuncEnd": 349,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %38, label %39, label %44, !dbg !29204",
+                            "File": 2,
+                            "Line": 302,
+                            "Tip": "Possible path: Select the true branch at this point",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 282,
+                            "FuncEnd": 349,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %.1, %struct.sockaddr** %51, align 8, !dbg !29217",
+                            "File": 2,
+                            "Line": 310,
+                            "Tip": "Store addr to %temp_var7",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 282,
+                            "FuncEnd": 349,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !29276",
+                            "File": 2,
+                            "Line": 349,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__tcp_connect",
+                            "FuncName": "uv__tcp_connect"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 95,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %77, %struct.sockaddr** %76, align 8, !dbg !23102",
+                            "File": 5,
+                            "Line": 143,
+                            "Tip": "Store saddr to %temp_var6",
+                            "FuncKey": "uv_pipe_bind2",
+                            "FuncName": "uv_pipe_bind2"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !23128",
+                            "File": 5,
+                            "Line": 162,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv_pipe_bind2",
+                            "FuncName": "uv_pipe_bind2"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 79,
+                            "FuncEnd": 162,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %77, %struct.sockaddr** %76, align 8, !dbg !23102",
+                            "File": 5,
+                            "Line": 143,
+                            "Tip": "Store saddr to %temp_var6",
+                            "FuncKey": "uv_pipe_bind2",
+                            "FuncName": "uv_pipe_bind2"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 79,
+                            "FuncEnd": 162,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !23128",
+                            "File": 5,
+                            "Line": 162,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv_pipe_bind2",
+                            "FuncName": "uv_pipe_bind2"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 98,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %47, %struct.sockaddr** %46, align 8, !dbg !29002",
+                            "File": 2,
+                            "Line": 57,
+                            "Tip": "Store s to %temp_var5",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !29011",
+                            "File": 2,
+                            "Line": 61,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 39,
+                            "FuncEnd": 61,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %47, %struct.sockaddr** %46, align 8, !dbg !29002",
+                            "File": 2,
+                            "Line": 57,
+                            "Tip": "Store s to %temp_var5",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 39,
+                            "FuncEnd": 61,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !29011",
+                            "File": 2,
+                            "Line": 61,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "maybe_bind_socket",
+                            "FuncName": "maybe_bind_socket"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i8* %36, i8** %37, align 8, !dbg !28141",
+                            "File": 6,
+                            "Line": 797,
+                            "Tip": "Store cmsg to msg.msg_control",
+                            "FuncKey": "uv__try_write",
+                            "FuncName": "uv__try_write"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !28196",
+                            "File": 6,
+                            "Line": 835,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__try_write",
+                            "FuncName": "uv__try_write"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 778,
+                            "FuncEnd": 835,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %36, i8** %37, align 8, !dbg !28141",
+                            "File": 6,
+                            "Line": 797,
+                            "Tip": "Store cmsg to msg.msg_control",
+                            "FuncKey": "uv__try_write",
+                            "FuncName": "uv__try_write"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 778,
+                            "FuncEnd": 835,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !28196",
+                            "File": 6,
+                            "Line": 835,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__try_write",
+                            "FuncName": "uv__try_write"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i8* %58, i8** %59, align 8, !dbg !38010",
+                            "File": 4,
+                            "Line": 59,
+                            "Tip": "Store &(uuid[0]) to args.oldval",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %58, i8** %59, align 8, !dbg !38010",
+                            "File": 4,
+                            "Line": 59,
+                            "Tip": "Store &(uuid[0]) to args.oldval",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i64* %5, i64** %15, align 8, !dbg !38012",
+                            "File": 4,
+                            "Line": 60,
+                            "Tip": "Store n to args.oldlenp",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i64* %5, i64** %15, align 8, !dbg !38012",
+                            "File": 4,
+                            "Line": 60,
+                            "Tip": "Store n to args.oldlenp",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.uv_buf_t* %33, %struct.uv_buf_t** %36, align 16, !dbg !31983",
+                            "File": 1,
+                            "Line": 228,
+                            "Tip": "Store &(iov[0][k]) to msgs[k].msg_hdr.msg_iov",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !32118",
+                            "File": 1,
+                            "Line": 293,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 206,
+                            "FuncEnd": 293,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.uv_buf_t* %33, %struct.uv_buf_t** %36, align 16, !dbg !31983",
+                            "File": 1,
+                            "Line": 228,
+                            "Tip": "Store &(iov[0][k]) to msgs[k].msg_hdr.msg_iov",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 206,
+                            "FuncEnd": 293,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !32118",
+                            "File": 1,
+                            "Line": 293,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__udp_recvmmsg",
+                            "FuncName": "uv__udp_recvmmsg"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i8* %13, i8** %14, align 8, !dbg !38010",
+                            "File": 4,
+                            "Line": 59,
+                            "Tip": "Store &(uuid[0]) to args.oldval",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %13, i8** %14, align 8, !dbg !38010",
+                            "File": 4,
+                            "Line": 59,
+                            "Tip": "Store &(uuid[0]) to args.oldval",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 45,
+                            "FuncEnd": 99,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !38046",
+                            "File": 4,
+                            "Line": 99,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "uv__random_sysctl",
+                            "FuncName": "uv__random_sysctl"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        }
+    ]
+}

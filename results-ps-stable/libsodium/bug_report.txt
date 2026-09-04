@@ -1,0 +1,17 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:45:34 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/libsodium/old.bc",
+    "TotalBugs": 0,
+    "TotalFunc": "1182",
+    "ExternalFuncRate": "5.3%",
+    "TotalInst": "196124",
+    "AvgInstPerFunc": "175.267",
+    "MaxInstPerFunc": "16643",
+    "FuncWithMostInst": "blake2b_compress_avx2",
+    "AvgCyclomaticComplexity": "2.189",
+    "MaxCyclomaticComplexity": "30",
+    "FuncWithMaxCyclomaticComplexity": "argon2_validate_inputs",
+    "SrcFiles": [],
+    "BugTypes": []
+}

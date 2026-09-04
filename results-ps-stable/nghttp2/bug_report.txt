@@ -1,0 +1,26 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 02:28:01 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/nghttp2/old.bc",
+    "TotalBugs": 0,
+    "TotalFunc": "681",
+    "ExternalFuncRate": "3.5%",
+    "TotalInst": "38877",
+    "AvgInstPerFunc": "59.174",
+    "MaxInstPerFunc": "3310",
+    "FuncWithMostInst": "nghttp2_session_mem_recv2",
+    "AvgCyclomaticComplexity": "4.525",
+    "MaxCyclomaticComplexity": "284",
+    "FuncWithMaxCyclomaticComplexity": "nghttp2_session_mem_recv2",
+    "SrcFiles": [],
+    "BugTypes": [
+        {
+            "Name": "Null Pointer Dereference",
+            "Description": "CWE-476, CWE-690",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 0,
+            "Reports": []
+        }
+    ]
+}

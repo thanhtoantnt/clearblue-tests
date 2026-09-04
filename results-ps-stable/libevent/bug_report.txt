@@ -1,0 +1,1122 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:44:53 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/libevent/old.bc",
+    "TotalBugs": 11,
+    "TotalFunc": "803",
+    "ExternalFuncRate": "11.8%",
+    "TotalInst": "53057",
+    "AvgInstPerFunc": "74.939",
+    "MaxInstPerFunc": "739",
+    "FuncWithMostInst": "event_base_assert_ok_nolock_",
+    "AvgCyclomaticComplexity": "5.186",
+    "MaxCyclomaticComplexity": "46",
+    "FuncWithMaxCyclomaticComplexity": "event_add_nolock_",
+    "SrcFiles": [
+        "/home/toan/github/clearblue-tests/src/libevent/buffer.c",
+        "/home/toan/github/clearblue-tests/src/libevent/event.c",
+        "/home/toan/github/clearblue-tests/src/libevent/evutil.c",
+        "/home/toan/github/clearblue-tests/src/libevent/bufferevent.c",
+        "/home/toan/github/clearblue-tests/src/libevent/bufferevent_filter.c"
+    ],
+    "BugTypes": [
+        {
+            "Name": "Use After Free",
+            "Description": "CWE-416",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 1,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA Use After Free Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "call void @evbuffer_file_segment_free(%struct.evbuffer_file_segment* noundef %66), !dbg !7074",
+                            "File": 0,
+                            "Line": 242,
+                            "Tip": "info->segment is used as the 1st parameter in function evbuffer_file_segment_free",
+                            "FuncKey": "evbuffer_chain_free",
+                            "FuncName": "evbuffer_chain_free"
+                        },
+                        {
+                            "Inst": "call void @event_mm_free_(i8* noundef %107), !dbg !7200",
+                            "File": 0,
+                            "Line": 3250,
+                            "Tip": "seg is used as the 1st parameter in function event_mm_free_",
+                            "FuncKey": "evbuffer_file_segment_free",
+                            "FuncName": "evbuffer_file_segment_free"
+                        },
+                        {
+                            "Inst": "call void @free(i8* noundef %0) #17, !dbg !19495",
+                            "File": 1,
+                            "Line": 3674,
+                            "Tip": "The memory pointed by ptr is freed",
+                            "FuncKey": "event_mm_free_",
+                            "FuncName": "event_mm_free_"
+                        },
+                        {
+                            "Inst": "%temp_var114",
+                            "File": 0,
+                            "Line": 256,
+                            "Tip": "Load value from info->source->lock (Use After Free, CWE-415, CWE-416)",
+                            "FuncKey": "evbuffer_chain_free",
+                            "FuncName": "evbuffer_chain_free"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 205,
+                            "FuncEnd": 262,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @evbuffer_file_segment_free(%struct.evbuffer_file_segment* noundef %66), !dbg !7074",
+                            "File": 0,
+                            "Line": 242,
+                            "Tip": "info->segment is used as the 1st parameter in function evbuffer_file_segment_free",
+                            "FuncKey": "evbuffer_chain_free",
+                            "FuncName": "evbuffer_chain_free"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 3215,
+                            "FuncEnd": 3251,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @event_mm_free_(i8* noundef %107), !dbg !7200",
+                            "File": 0,
+                            "Line": 3250,
+                            "Tip": "seg is used as the 1st parameter in function event_mm_free_",
+                            "FuncKey": "evbuffer_file_segment_free",
+                            "FuncName": "evbuffer_file_segment_free"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3669,
+                            "FuncEnd": 3675,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @free(i8* noundef %0) #17, !dbg !19495",
+                            "File": 1,
+                            "Line": 3674,
+                            "Tip": "The memory pointed by ptr is freed",
+                            "FuncKey": "event_mm_free_",
+                            "FuncName": "event_mm_free_"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 205,
+                            "FuncEnd": 262,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var114",
+                            "File": 0,
+                            "Line": 256,
+                            "Tip": "Load value from info->source->lock (Use After Free, CWE-415, CWE-416)",
+                            "FuncKey": "evbuffer_chain_free",
+                            "FuncName": "evbuffer_chain_free"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        },
+        {
+            "Name": "Invalid Use of Stack Address",
+            "Description": "CWE-562",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 6,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 95,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %46, %struct.sockaddr** %45, align 8, !dbg !31676",
+                            "File": 2,
+                            "Line": 2984,
+                            "Tip": "Store listen_addr to %temp_var8",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %46, %struct.sockaddr** %45, align 8, !dbg !31676",
+                            "File": 2,
+                            "Line": 2984,
+                            "Tip": "Store listen_addr to %temp_var8",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 95,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %63, %struct.sockaddr** %62, align 8, !dbg !31694",
+                            "File": 2,
+                            "Line": 2998,
+                            "Tip": "Store connect_addr to %temp_var9",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %63, %struct.sockaddr** %62, align 8, !dbg !31694",
+                            "File": 2,
+                            "Line": 2998,
+                            "Tip": "Store connect_addr to %temp_var9",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 95,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %76, %struct.sockaddr** %75, align 8, !dbg !31705",
+                            "File": 2,
+                            "Line": 3002,
+                            "Tip": "Store connect_addr to %temp_var10",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %76, %struct.sockaddr** %75, align 8, !dbg !31705",
+                            "File": 2,
+                            "Line": 3002,
+                            "Tip": "Store connect_addr to %temp_var10",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %128, %struct.sockaddr** %127, align 8, !dbg !31741",
+                            "File": 2,
+                            "Line": 3020,
+                            "Tip": "Store connect_addr to %temp_var12",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %128, %struct.sockaddr** %127, align 8, !dbg !31741",
+                            "File": 2,
+                            "Line": 3020,
+                            "Tip": "Store connect_addr to %temp_var12",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %95, %struct.sockaddr** %94, align 8, !dbg !31723",
+                            "File": 2,
+                            "Line": 3012,
+                            "Tip": "Store listen_addr to %temp_var11",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %95, %struct.sockaddr** %94, align 8, !dbg !31723",
+                            "File": 2,
+                            "Line": 3012,
+                            "Tip": "Store listen_addr to %temp_var11",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2957,
+                            "FuncEnd": 3048,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !31802",
+                            "File": 2,
+                            "Line": 3048,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "evutil_ersatz_socketpair_",
+                            "FuncName": "evutil_ersatz_socketpair_"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i16* %3, i16** %14, align 8, !dbg !24143",
+                            "File": 1,
+                            "Line": 1410,
+                            "Tip": "Store ncalls to ((%struct.anon.5*)ev->ev_)->!18 (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "event_signal_closure",
+                            "FuncName": "event_signal_closure"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 1403,
+                            "FuncEnd": 1434,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i16* %3, i16** %14, align 8, !dbg !24143",
+                            "File": 1,
+                            "Line": 1410,
+                            "Tip": "Store ncalls to ((%struct.anon.5*)ev->ev_)->!18 (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "event_signal_closure",
+                            "FuncName": "event_signal_closure"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        },
+        {
+            "Name": "Null Pointer Dereference",
+            "Description": "CWE-476, CWE-690",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 4,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 75,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var13",
+                            "File": 2,
+                            "Line": 2392,
+                            "Tip": "Function strchr executes and stores the return value to cp (cp can be null)",
+                            "FuncKey": "evutil_parse_sockaddr_port",
+                            "FuncName": "evutil_parse_sockaddr_port"
+                        },
+                        {
+                            "Inst": "%temp_var35",
+                            "File": 2,
+                            "Line": 2402,
+                            "Tip": "Load value from cp[1] (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evutil_parse_sockaddr_port",
+                            "FuncName": "evutil_parse_sockaddr_port"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2377,
+                            "FuncEnd": 2476,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var13",
+                            "File": 2,
+                            "Line": 2392,
+                            "Tip": "Function strchr executes and stores the return value to cp (cp can be null)",
+                            "FuncKey": "evutil_parse_sockaddr_port",
+                            "FuncName": "evutil_parse_sockaddr_port"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2377,
+                            "FuncEnd": 2476,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var35",
+                            "File": 2,
+                            "Line": 2402,
+                            "Tip": "Load value from cp[1] (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evutil_parse_sockaddr_port",
+                            "FuncName": "evutil_parse_sockaddr_port"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 74,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.0 = phi %struct.evbuffer_cb_entry* [ %5, %61 ], [ null, %7 ], !dbg !12693",
+                            "File": 0,
+                            "Line": 0,
+                            "Tip": "Variable e comes from e, or null",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "Inst": "br i1 %6, label %8, label %7, !dbg !12700",
+                            "File": 0,
+                            "Line": 3394,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "Inst": "ret %struct.evbuffer_cb_entry* %.0, !dbg !12729",
+                            "File": 0,
+                            "Line": 3403,
+                            "Tip": "Return e to caller, which can be null (The return value can be null)",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "Inst": "%temp_var50",
+                            "File": 3,
+                            "Line": 621,
+                            "Tip": "Function evbuffer_add_cb executes and returns",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "Inst": "store %struct.evbuffer_cb_entry* %50, %struct.evbuffer_cb_entry** %51, align 8, !dbg !14427",
+                            "File": 3,
+                            "Line": 620,
+                            "Tip": "Store the return value of function evbuffer_add_cb to bufev_private->read_watermarks_cb",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "Inst": "%temp_var56",
+                            "File": 3,
+                            "Line": 626,
+                            "Tip": "Load value from bufev_private->read_watermarks_cb",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "Inst": "%temp_var57",
+                            "File": 3,
+                            "Line": 625,
+                            "Tip": "bufev_private->read_watermarks_cb is used as the 2nd parameter in function evbuffer_cb_set_flags (bufev_private->read_watermarks_cb can be null)",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "Inst": "%temp_var19",
+                            "File": 0,
+                            "Line": 3440,
+                            "Tip": "Load value from cb->flags (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evbuffer_cb_set_flags",
+                            "FuncName": "evbuffer_cb_set_flags"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 3391,
+                            "FuncEnd": 3403,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.0 = phi %struct.evbuffer_cb_entry* [ %5, %61 ], [ null, %7 ], !dbg !12693",
+                            "File": 0,
+                            "Line": 0,
+                            "Tip": "Variable e comes from e, or null",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 3391,
+                            "FuncEnd": 3403,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %6, label %8, label %7, !dbg !12700",
+                            "File": 0,
+                            "Line": 3394,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3391,
+                            "FuncEnd": 3403,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret %struct.evbuffer_cb_entry* %.0, !dbg !12729",
+                            "File": 0,
+                            "Line": 3403,
+                            "Tip": "Return e to caller, which can be null (The return value can be null)",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 599,
+                            "FuncEnd": 643,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var50",
+                            "File": 3,
+                            "Line": 621,
+                            "Tip": "Function evbuffer_add_cb executes and returns",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 599,
+                            "FuncEnd": 643,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.evbuffer_cb_entry* %50, %struct.evbuffer_cb_entry** %51, align 8, !dbg !14427",
+                            "File": 3,
+                            "Line": 620,
+                            "Tip": "Store the return value of function evbuffer_add_cb to bufev_private->read_watermarks_cb",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 599,
+                            "FuncEnd": 643,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var56",
+                            "File": 3,
+                            "Line": 626,
+                            "Tip": "Load value from bufev_private->read_watermarks_cb",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 599,
+                            "FuncEnd": 643,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var57",
+                            "File": 3,
+                            "Line": 625,
+                            "Tip": "bufev_private->read_watermarks_cb is used as the 2nd parameter in function evbuffer_cb_set_flags (bufev_private->read_watermarks_cb can be null)",
+                            "FuncKey": "bufferevent_setwatermark",
+                            "FuncName": "bufferevent_setwatermark"
+                        },
+                        {
+                            "ID": 8,
+                            "Parents": [
+                                7
+                            ],
+                            "FuncStart": 3434,
+                            "FuncEnd": 3442,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var19",
+                            "File": 0,
+                            "Line": 3440,
+                            "Tip": "Load value from cb->flags (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evbuffer_cb_set_flags",
+                            "FuncName": "evbuffer_cb_set_flags"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 86,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.0 = phi %struct.evbuffer_cb_entry* [ %5, %61 ], [ null, %7 ], !dbg !12693",
+                            "File": 0,
+                            "Line": 0,
+                            "Tip": "Variable e comes from e, or null",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "Inst": "br i1 %6, label %8, label %7, !dbg !12700",
+                            "File": 0,
+                            "Line": 3394,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "Inst": "ret %struct.evbuffer_cb_entry* %.0, !dbg !12729",
+                            "File": 0,
+                            "Line": 3403,
+                            "Tip": "Return e to caller, which can be null (The return value can be null)",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "Inst": "store %struct.evbuffer_cb_entry* %50, %struct.evbuffer_cb_entry** %51, align 8, !dbg !15624",
+                            "File": 4,
+                            "Line": 210,
+                            "Tip": "Store the return value of function evbuffer_add_cb to bufev_f->inbuf_cb",
+                            "FuncKey": "bufferevent_filter_new",
+                            "FuncName": "bufferevent_filter_new"
+                        },
+                        {
+                            "Inst": "%temp_var58",
+                            "File": 4,
+                            "Line": 212,
+                            "Tip": "bufev_f->inbuf_cb is used as the 2nd parameter in function evbuffer_cb_clear_flags (bufev_f->inbuf_cb can be null)",
+                            "FuncKey": "bufferevent_filter_new",
+                            "FuncName": "bufferevent_filter_new"
+                        },
+                        {
+                            "Inst": "%temp_var20",
+                            "File": 0,
+                            "Line": 3452,
+                            "Tip": "Load value from cb->flags (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evbuffer_cb_clear_flags",
+                            "FuncName": "evbuffer_cb_clear_flags"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 3391,
+                            "FuncEnd": 3403,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.0 = phi %struct.evbuffer_cb_entry* [ %5, %61 ], [ null, %7 ], !dbg !12693",
+                            "File": 0,
+                            "Line": 0,
+                            "Tip": "Variable e comes from e, or null",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 3391,
+                            "FuncEnd": 3403,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %6, label %8, label %7, !dbg !12700",
+                            "File": 0,
+                            "Line": 3394,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3391,
+                            "FuncEnd": 3403,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret %struct.evbuffer_cb_entry* %.0, !dbg !12729",
+                            "File": 0,
+                            "Line": 3403,
+                            "Tip": "Return e to caller, which can be null (The return value can be null)",
+                            "FuncKey": "evbuffer_add_cb",
+                            "FuncName": "evbuffer_add_cb"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 169,
+                            "FuncEnd": 225,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.evbuffer_cb_entry* %50, %struct.evbuffer_cb_entry** %51, align 8, !dbg !15624",
+                            "File": 4,
+                            "Line": 210,
+                            "Tip": "Store the return value of function evbuffer_add_cb to bufev_f->inbuf_cb",
+                            "FuncKey": "bufferevent_filter_new",
+                            "FuncName": "bufferevent_filter_new"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 169,
+                            "FuncEnd": 225,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var58",
+                            "File": 4,
+                            "Line": 212,
+                            "Tip": "bufev_f->inbuf_cb is used as the 2nd parameter in function evbuffer_cb_clear_flags (bufev_f->inbuf_cb can be null)",
+                            "FuncKey": "bufferevent_filter_new",
+                            "FuncName": "bufferevent_filter_new"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 3446,
+                            "FuncEnd": 3454,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var20",
+                            "File": 0,
+                            "Line": 3452,
+                            "Tip": "Load value from cb->flags (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evbuffer_cb_clear_flags",
+                            "FuncName": "evbuffer_cb_clear_flags"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 89,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.0 = phi i8* [ null, %6 ], [ null, %30 ], [ %17, %25 ], [ %28, %27 ], !dbg !20016",
+                            "File": 1,
+                            "Line": 0,
+                            "Tip": "Variable p comes from null, or p",
+                            "FuncKey": "event_mm_calloc_",
+                            "FuncName": "event_mm_calloc_"
+                        },
+                        {
+                            "Inst": "br i1 %5, label %6, label %7, !dbg !20022",
+                            "File": 1,
+                            "Line": 3605,
+                            "Tip": "Possible path: Select the true branch at this point",
+                            "FuncKey": "event_mm_calloc_",
+                            "FuncName": "event_mm_calloc_"
+                        },
+                        {
+                            "Inst": "ret i8* %.0, !dbg !20054",
+                            "File": 1,
+                            "Line": 3629,
+                            "Tip": "Return p to caller, which can be null (The return value can be null)",
+                            "FuncKey": "event_mm_calloc_",
+                            "FuncName": "event_mm_calloc_"
+                        },
+                        {
+                            "Inst": "%temp_var11",
+                            "File": 2,
+                            "Line": 1791,
+                            "Tip": "Function event_mm_calloc_ executes and stores the return value to prev (prev can be null)",
+                            "FuncKey": "evutil_dup_addrinfo_",
+                            "FuncName": "evutil_dup_addrinfo_"
+                        },
+                        {
+                            "Inst": "call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 8 %13, i8* align 8 %14, i64 %15, i1 false), !dbg !30448",
+                            "File": 2,
+                            "Line": 1792,
+                            "Tip": "prev is used as the 1st parameter in function memcpy (prev can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evutil_dup_addrinfo_",
+                            "FuncName": "evutil_dup_addrinfo_"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 3603,
+                            "FuncEnd": 3629,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.0 = phi i8* [ null, %6 ], [ null, %30 ], [ %17, %25 ], [ %28, %27 ], !dbg !20016",
+                            "File": 1,
+                            "Line": 0,
+                            "Tip": "Variable p comes from null, or p",
+                            "FuncKey": "event_mm_calloc_",
+                            "FuncName": "event_mm_calloc_"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 3603,
+                            "FuncEnd": 3629,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %5, label %6, label %7, !dbg !20022",
+                            "File": 1,
+                            "Line": 3605,
+                            "Tip": "Possible path: Select the true branch at this point",
+                            "FuncKey": "event_mm_calloc_",
+                            "FuncName": "event_mm_calloc_"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3603,
+                            "FuncEnd": 3629,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i8* %.0, !dbg !20054",
+                            "File": 1,
+                            "Line": 3629,
+                            "Tip": "Return p to caller, which can be null (The return value can be null)",
+                            "FuncKey": "event_mm_calloc_",
+                            "FuncName": "event_mm_calloc_"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 1785,
+                            "FuncEnd": 1804,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var11",
+                            "File": 2,
+                            "Line": 1791,
+                            "Tip": "Function event_mm_calloc_ executes and stores the return value to prev (prev can be null)",
+                            "FuncKey": "evutil_dup_addrinfo_",
+                            "FuncName": "evutil_dup_addrinfo_"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1785,
+                            "FuncEnd": 1804,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 8 %13, i8* align 8 %14, i64 %15, i1 false), !dbg !30448",
+                            "File": 2,
+                            "Line": 1792,
+                            "Tip": "prev is used as the 1st parameter in function memcpy (prev can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "evutil_dup_addrinfo_",
+                            "FuncName": "evutil_dup_addrinfo_"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        }
+    ]
+}

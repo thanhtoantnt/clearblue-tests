@@ -1,0 +1,17 @@
+project	total_bugs	npd	iusa	uaf	funcs	insts
+c-ares	42	38	4	0	1055	64545
+curl	83	22	61	0	2467	218172
+darknet	317	17	300	0	1111	122042
+libevent	11	4	6	1	803	53057
+libexpat	7	2	5	0	379	49986
+libjpeg-turbo	0	0	0	0	949	224335
+libsodium	0	0	0	0	1182	196124
+libssh2	17	17	0	0	609	70396
+libuv	14	0	13	1	1024	49186
+libyaml	0	0	0	0	212	48198
+mbedtls	10	3	7	0	910	64525
+memcached	10	4	6	0	779	65169
+nghttp2	0	0	0	0	681	38877
+openssh	2	0	2	0	2179	136299
+unbound	126	62	63	1	3469	326973
+TOTAL	639	169	467	3		

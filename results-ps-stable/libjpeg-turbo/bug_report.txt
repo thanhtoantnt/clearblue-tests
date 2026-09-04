@@ -1,0 +1,17 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:50:01 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/libjpeg-turbo/old.bc",
+    "TotalBugs": 0,
+    "TotalFunc": "949",
+    "ExternalFuncRate": "2.2%",
+    "TotalInst": "224335",
+    "AvgInstPerFunc": "241.740",
+    "MaxInstPerFunc": "41184",
+    "FuncWithMostInst": "encode_one_block",
+    "AvgCyclomaticComplexity": "7.336",
+    "MaxCyclomaticComplexity": "454",
+    "FuncWithMaxCyclomaticComplexity": "encode_one_block",
+    "SrcFiles": [],
+    "BugTypes": []
+}

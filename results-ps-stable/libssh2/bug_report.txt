@@ -1,0 +1,3182 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:44:58 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/libssh2/old.bc",
+    "TotalBugs": 17,
+    "TotalFunc": "609",
+    "ExternalFuncRate": "24.0%",
+    "TotalInst": "70396",
+    "AvgInstPerFunc": "152.043",
+    "MaxInstPerFunc": "2010",
+    "FuncWithMostInst": "chacha_encrypt_bytes",
+    "AvgCyclomaticComplexity": "9.570",
+    "MaxCyclomaticComplexity": "118",
+    "FuncWithMaxCyclomaticComplexity": "ssh2_packet_add",
+    "SrcFiles": [
+        "/home/toan/github/clearblue-tests/src/libssh2/src/userauth.c",
+        "/home/toan/github/clearblue-tests/src/libssh2/src/pem.c",
+        "/home/toan/github/clearblue-tests/src/libssh2/src/openssl.c",
+        "/home/toan/github/clearblue-tests/src/libssh2/src/misc.c"
+    ],
+    "BugTypes": [
+        {
+            "Name": "Null Pointer Dereference",
+            "Description": "CWE-476, CWE-690",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 17,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 82,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "%temp_var22",
+                            "File": 0,
+                            "Line": 758,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "Inst": "%temp_var47",
+                            "File": 0,
+                            "Line": 776,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "Inst": "%temp_var49",
+                            "File": 0,
+                            "Line": 776,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 753,
+                            "FuncEnd": 783,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var22",
+                            "File": 0,
+                            "Line": 758,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 753,
+                            "FuncEnd": 783,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var47",
+                            "File": 0,
+                            "Line": 776,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 753,
+                            "FuncEnd": 783,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var49",
+                            "File": 0,
+                            "Line": 776,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 82,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "%temp_var22",
+                            "File": 0,
+                            "Line": 758,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "Inst": "%temp_var58",
+                            "File": 0,
+                            "Line": 781,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "Inst": "%temp_var60",
+                            "File": 0,
+                            "Line": 781,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 753,
+                            "FuncEnd": 783,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var22",
+                            "File": 0,
+                            "Line": 758,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 753,
+                            "FuncEnd": 783,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var58",
+                            "File": 0,
+                            "Line": 781,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 753,
+                            "FuncEnd": 783,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var60",
+                            "File": 0,
+                            "Line": 781,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_sign",
+                            "FuncName": "userauth_sign"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 78,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "%temp_var131",
+                            "File": 0,
+                            "Line": 984,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "Inst": "%temp_var186",
+                            "File": 0,
+                            "Line": 1004,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "Inst": "%temp_var188",
+                            "File": 0,
+                            "Line": 1004,
+                            "Tip": "Load value from privkeyobj->signv (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var131",
+                            "File": 0,
+                            "Line": 984,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var186",
+                            "File": 0,
+                            "Line": 1004,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var188",
+                            "File": 0,
+                            "Line": 1004,
+                            "Tip": "Load value from privkeyobj->signv (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 73,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "%temp_var131",
+                            "File": 0,
+                            "Line": 984,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "Inst": "%temp_var209",
+                            "File": 0,
+                            "Line": 1007,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "Inst": "%temp_var211",
+                            "File": 0,
+                            "Line": 1007,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var131",
+                            "File": 0,
+                            "Line": 984,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var209",
+                            "File": 0,
+                            "Line": 1007,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var211",
+                            "File": 0,
+                            "Line": 1007,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 78,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var17",
+                            "File": 3,
+                            "Line": 957,
+                            "Tip": "Load value from bnptr and assign to bnptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var17",
+                            "File": 3,
+                            "Line": 957,
+                            "Tip": "Load value from bnptr and assign to bnptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 80,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "Inst": "%temp_var4",
+                            "File": 3,
+                            "Line": 979,
+                            "Tip": "Load value from buf->data (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 872,
+                            "FuncEnd": 880,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "ID": 8,
+                            "Parents": [
+                                7
+                            ],
+                            "FuncStart": 977,
+                            "FuncEnd": 981,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var4",
+                            "File": 3,
+                            "Line": 979,
+                            "Tip": "Load value from buf->data (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 78,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var32",
+                            "File": 2,
+                            "Line": 1244,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var8",
+                            "File": 3,
+                            "Line": 877,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var32",
+                            "File": 2,
+                            "Line": 1244,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 872,
+                            "FuncEnd": 880,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var8",
+                            "File": 3,
+                            "Line": 877,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": true,
+                    "Score": 79,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 878,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 872,
+                            "FuncEnd": 880,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 878,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 73,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "Inst": "%temp_var131",
+                            "File": 0,
+                            "Line": 984,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "Inst": "%temp_var214",
+                            "File": 0,
+                            "Line": 1008,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "Inst": "%temp_var216",
+                            "File": 0,
+                            "Line": 1008,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.hostkey_method* null, %struct.hostkey_method** %1, align 8, !dbg !49065",
+                            "File": 0,
+                            "Line": 707,
+                            "Tip": "Store null to hostkey_method",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 697,
+                            "FuncEnd": 738,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !49114",
+                            "File": 0,
+                            "Line": 738,
+                            "Tip": "Program reaches the return point, modifying the value *(hostkey_method) to null",
+                            "FuncKey": "userauth_read_privkey",
+                            "FuncName": "userauth_read_privkey"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var131",
+                            "File": 0,
+                            "Line": 984,
+                            "Tip": "Function userauth_read_privkey modifies the value *(privkeyobj) to null, where privkeyobj is used as the 3rd parameter (hostkey_method)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var214",
+                            "File": 0,
+                            "Line": 1008,
+                            "Tip": "Load value from privkeyobj",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 907,
+                            "FuncEnd": 1105,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var216",
+                            "File": 0,
+                            "Line": 1008,
+                            "Tip": "Load value from privkeyobj->dtor (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "userauth_hostbased_fromfile",
+                            "FuncName": "userauth_hostbased_fromfile"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 82,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "Inst": "%temp_var4",
+                            "File": 3,
+                            "Line": 979,
+                            "Tip": "Load value from buf->data (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 872,
+                            "FuncEnd": 880,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "ID": 8,
+                            "Parents": [
+                                7
+                            ],
+                            "FuncStart": 977,
+                            "FuncEnd": 981,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var4",
+                            "File": 3,
+                            "Line": 979,
+                            "Tip": "Load value from buf->data (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 80,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var8",
+                            "File": 3,
+                            "Line": 877,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 872,
+                            "FuncEnd": 880,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var8",
+                            "File": 3,
+                            "Line": 877,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": true,
+                    "Score": 80,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 953,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 953,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 977,
+                            "FuncEnd": 981,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": true,
+                    "Score": 78,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var32",
+                            "File": 2,
+                            "Line": 1244,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 953,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var32",
+                            "File": 2,
+                            "Line": 1244,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 953,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 977,
+                            "FuncEnd": 981,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 79,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var17",
+                            "File": 3,
+                            "Line": 957,
+                            "Tip": "Load value from bnptr and assign to bnptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var22",
+                            "File": 2,
+                            "Line": 1233,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var17",
+                            "File": 3,
+                            "Line": 957,
+                            "Tip": "Load value from bnptr and assign to bnptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": true,
+                    "Score": 78,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var37",
+                            "File": 2,
+                            "Line": 1249,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var37",
+                            "File": 2,
+                            "Line": 1249,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 872,
+                            "FuncEnd": 880,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "ID": 8,
+                            "Parents": [
+                                7
+                            ],
+                            "FuncStart": 977,
+                            "FuncEnd": 981,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": true,
+                    "Score": 79,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var32",
+                            "File": 2,
+                            "Line": 1244,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var32",
+                            "File": 2,
+                            "Line": 1244,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 3,
+                            "Line": 951,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_get_u32 (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 872,
+                            "FuncEnd": 880,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 874,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_u32",
+                            "FuncName": "ssh2_get_u32"
+                        },
+                        {
+                            "ID": 8,
+                            "Parents": [
+                                7
+                            ],
+                            "FuncStart": 977,
+                            "FuncEnd": 981,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": true,
+                    "Score": 79,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 953,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.string_buf* null, %struct.string_buf** %5, align 8, !dbg !33065",
+                            "File": 1,
+                            "Line": 728,
+                            "Tip": "Store null to decrypted_buf",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 719,
+                            "FuncEnd": 813,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !33177",
+                            "File": 1,
+                            "Line": 813,
+                            "Tip": "Program reaches the return point, modifying the value *(decrypted_buf) to null",
+                            "FuncKey": "ssh2_openssh_pem_parse",
+                            "FuncName": "ssh2_openssh_pem_parse"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var29",
+                            "File": 2,
+                            "Line": 3361,
+                            "Tip": "Function ssh2_openssh_pem_parse modifies the value *(decrypted) to null, where decrypted is used as the 7th parameter (decrypted_buf)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3344,
+                            "FuncEnd": 3440,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var79",
+                            "File": 2,
+                            "Line": 3401,
+                            "Tip": "decrypted is used as the 2nd parameter in function ossl_rsa_openssh_priv_to_pubkey (decrypted can be null)",
+                            "FuncKey": "ossl_key_from_openssh",
+                            "FuncName": "ossl_key_from_openssh"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1225,
+                            "FuncEnd": 1313,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var27",
+                            "File": 2,
+                            "Line": 1238,
+                            "Tip": "decrypted is used as the 1st parameter in function ssh2_get_bignum_bytes (decrypted can be null)",
+                            "FuncKey": "ossl_rsa_openssh_priv_to_pubkey",
+                            "FuncName": "ossl_rsa_openssh_priv_to_pubkey"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 947,
+                            "FuncEnd": 972,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var11",
+                            "File": 3,
+                            "Line": 953,
+                            "Tip": "buf is used as the 1st parameter in function ssh2_check_length (buf can be null)",
+                            "FuncKey": "ssh2_get_bignum_bytes",
+                            "FuncName": "ssh2_get_bignum_bytes"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 977,
+                            "FuncEnd": 981,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 980,
+                            "Tip": "Load value from buf->dataptr (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssh2_check_length",
+                            "FuncName": "ssh2_check_length"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        }
+    ]
+}
