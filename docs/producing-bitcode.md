@@ -195,6 +195,24 @@ make -j$(nproc) sshd        # build just the server
 get-bc -o openssh.bc sshd
 ```
 
+### rnp (cmake, C++)
+
+The `rnp` CLI, not `librnp`, is the artifact: `src/rnp/rnpcfg.cpp` is linked
+only into the CLI. Needs `libssl-dev`, `zlib1g-dev`, `libbz2-dev`, and
+`libjson-c-dev`, plus `gclang++`.
+
+```bash
+cmake -S . -B build-gllvm -G Ninja \
+  -DCMAKE_C_COMPILER=gclang -DCMAKE_CXX_COMPILER=gclang++ \
+  -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  -DCMAKE_CXX_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' \
+  -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON \
+  -DBUILD_TESTING=OFF -DENABLE_DOC=OFF -DDOWNLOAD_GTEST=OFF \
+  -DCRYPTO_BACKEND=openssl
+ninja -C build-gllvm rnp
+get-bc -o rnp.bc build-gllvm/src/rnp/rnp
+```
+
 ### unbound (autotools)
 
 ```bash
@@ -298,6 +316,7 @@ store / incremental flags and measured project sizes.
 | memcached | `memcached` | ~2 MB | ~0.6k fn / ~15k inst |
 | openssh | `sshd` | ~3 MB | ~1.8k fn / ~75k inst |
 | unbound | `unbound` | ~8 MB | ~3.5k fn / ~327k inst |
+| rnp | `rnp` CLI | not measured | `rnpcfg.cpp` `operator[]` stores |
 | c-ares | `libcares.so` | ~2 MB | ~1k fn / ~40k inst |
 | mbedtls | `libmbedtls.so` | ~2 MB | ~0.8k fn / ~25k inst |
 | libsodium | `libsodium` (linked TUs) | ~2.5 MB | ~1.1k fn |

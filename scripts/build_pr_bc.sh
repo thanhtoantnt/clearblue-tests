@@ -53,6 +53,7 @@ cfg() {  # cfg <project> -> echoes: srcdir|ghrepo|artifact|builder
     libsodium) echo "$SRC_ROOT/libsodium|jedisct1/libsodium|libsodium|libsodium" ;;
     libyaml) echo "$SRC_ROOT/libyaml|yaml/libyaml|libyaml|libyaml" ;;
     unbound) echo "$SRC_ROOT/unbound|NLnetLabs/unbound|unbound|unbound" ;;
+    rnp)     echo "$SRC_ROOT/rnp|rnpgp/rnp|rnp|rnp" ;;
     *) die "unknown project: $1" ;;
   esac
 }
@@ -136,6 +137,21 @@ build_openssh() {  # $1=srcdir  $2=artifact (sshd)
     make -j"$(nproc)" sshd >/tmp/prbc_ss_mk.log 2>&1 || return 1
     get-bc -o /tmp/prbc_out.bc sshd >/dev/null 2>&1 || \
       getbc-link sshd -o /tmp/prbc_out.bc >/tmp/prbc_ss_gb.log 2>&1 || return 1
+  )
+}
+build_rnp() {  # $1=srcdir  $2=artifact (rnp CLI; contains rnpcfg.cpp)
+  ( cd "$1"
+    command -v gclang++ >/dev/null || return 1
+    rm -rf build-prbc && mkdir build-prbc && cd build-prbc
+    cmake .. -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_CXX_COMPILER=gclang++ \
+      -DCMAKE_C_FLAGS="$GFLAGS" -DCMAKE_CXX_FLAGS="$GFLAGS" \
+      -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON \
+      -DBUILD_TESTING=OFF -DENABLE_DOC=OFF -DDOWNLOAD_GTEST=OFF \
+      -DCRYPTO_BACKEND=openssl >/tmp/prbc_rnp_cm.log 2>&1 || return 1
+    ninja -j"$(nproc)" rnp >/tmp/prbc_rnp_nj.log 2>&1 || return 1
+    bin=$(find . -name rnp -type f -perm -111 | head -1)
+    get-bc -o /tmp/prbc_out.bc "$bin" >/dev/null 2>&1 || \
+      getbc-link "$bin" -o /tmp/prbc_out.bc >/tmp/prbc_rnp_gb.log 2>&1 || return 1
   )
 }
 build_unbound() {  # $1=srcdir  $2=artifact (unbound daemon)
