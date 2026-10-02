@@ -52,6 +52,10 @@ recompiling with the identical gllvm flags. `run_bench.sh` stores `old.bc`
 once, then benches **every** `pr-*.bc` against that single store (incremental)
 and from scratch.
 
+`bc/rnp/` is the C++ case ([rnpgp/rnp](https://github.com/rnpgp/rnp) v0.18.1).
+`rnp_cfg::vals_` is a `std::unordered_map<std::string, rnp_cfg_val *>` filled
+by `vals_[key] = new ...` and freed in `clear()` / `unset()`.
+
 ## Prerequisites
 
 1. **fermat-check** built from FermatAnalyzer branch
