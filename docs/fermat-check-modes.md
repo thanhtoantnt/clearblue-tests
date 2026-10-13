@@ -38,7 +38,7 @@ fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-s
   --report=report.json app.bc
 ```
 
-### 2. Store mode — `-serialize-seg`
+### 2. Store mode — `-store-seg`
 
 Identical to normal mode, **plus** after building every SEG (and running alias
 analysis on it), each SEG is written as JSON under `-store-models-dir`. The
@@ -46,7 +46,7 @@ checkers still run on the in-memory SEGs as usual.
 
 ```bash
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
-  -serialize-seg -store-models-dir=/path/to/persist \
+  -store-seg -store-models-dir=/path/to/persist \
   --report=report-save.json app.bc
 ```
 
@@ -107,19 +107,19 @@ name):
   its cross-SEG (call-site) edges that reference other functions' SEGs.
 - **Fingerprint (`.fp`)**: written next to each SEG on store; pure `-load-seg`
   refuses a SEG when the `.fp` is missing or the IR body no longer matches
-  (re-run with `-serialize-seg` to refresh).
+  (re-run with `-store-seg` to refresh).
 - Cross-SEG edges are loaded in a second pass after every per-function SEG
   exists, so cross-function node references resolve.
 
 ## SEG persistence flags
 
 SEGs are expensive to build; you can store them once and replay them.
-`-serialize-seg` and `-load-seg` are `cl::Hidden` (not shown in plain `-help`;
+`-store-seg` and `-load-seg` are `cl::Hidden` (not shown in plain `-help`;
 use `-help-hidden`).
 
 | Option | Meaning | Default |
 |--------|---------|---------|
-| `-serialize-seg` | Full store: build every SEG and write it as JSON | off |
+| `-store-seg` | Full store: build every SEG and write it as JSON | off |
 | `-load-seg` | Full load: read every SEG from JSON instead of building | off |
 | `-store-models-dir <dir>` | Root directory for the persistence files | `fa-out` |
 | `-store-module-name <name>` | Module name used in the store path | derived from input file name |
@@ -137,14 +137,13 @@ Other useful flags:
 |------|---------|---------|
 | `-segbuilder-aa=<aa>` | `falconplus` | Alias analysis: `falconplus`, `falcon`, `simple`. |
 | `-nworkers=<n>` | min(cores, 10) | Worker threads for SEG building and checking. `1` = serial/deterministic. |
-| `-enable-build-seg-only` | off | (Hidden) Build SEGs and stop; skip checkers. |
 
 ## Typical workflow
 
 ```bash
 # 1. store — build + alias-analyze + persist SEGs (and still report bugs)
 fermat-check -segbuilder-aa=falconplus -ps-npd -ps-uaf -psa-enable-side-effect-source \
-  -serialize-seg -store-models-dir=./persist \
+  -store-seg -store-models-dir=./persist \
   --report=report-save.json --report-pass-line=0 -hide-progress-bar -omit-no-dbginfo \
   app.bc
 
@@ -178,8 +177,8 @@ scheduling, with no persistence bug. For an exact store==load equality check,
 run both serially:
 
 ```bash
-fermat-check ... -nworkers=1 -serialize-seg -store-models-dir=./persist app.bc           # store
-fermat-check ... -nworkers=1 -load-seg -store-models-dir=./persist app.bc  # load
+fermat-check ... -nworkers=1 -store-seg -store-models-dir=./persist app.bc # store
+fermat-check ... -nworkers=1 -load-seg -store-models-dir=./persist app.bc # load
 ```
 
 ### The bitcode must match
@@ -187,7 +186,7 @@ fermat-check ... -nworkers=1 -load-seg -store-models-dir=./persist app.bc  # loa
 SEG files live under `<store-models-dir>/<module-name>/SEG/` and are named by
 sanitized function name (plus a short hash suffix on collisions). Each SEG has
 a sibling `.fp` body fingerprint. Pure `-load-seg` requires matching IR bodies;
-if the bitcode changes, either re-store with `-serialize-seg` or use
+if the bitcode changes, either re-store with `-store-seg` or use
 `-enable-incremental-persist` for dirty/rebuild. Keep `-store-models-dir` (and
 `-store-module-name` if set) identical between store and load.
 
