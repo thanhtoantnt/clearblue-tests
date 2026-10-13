@@ -12,11 +12,11 @@ Related:
 
 ## SEG persistence (base store / load)
 
-SEGs are expensive to build; you can store them once and replay them. Both `-serialize-seg` and `-load-seg` are `cl::Hidden` (not shown in plain `-help`).
+SEGs are expensive to build; you can store them once and replay them. Both `-store-seg` and `-load-seg` are `cl::Hidden` (not shown in plain `-help`).
 
 | Option | Meaning | Default |
 |--------|---------|---------|
-| `-serialize-seg` | Full store: build every SEG and write it as JSON | off |
+| `-store-seg` | Full store: build every SEG and write it as JSON | off |
 | `-load-seg` | Full load: read every SEG from JSON instead of building | off |
 | `-store-models-dir <dir>` | Root directory for the persistence files | `fa-out` |
 | `-store-module-name <name>` | Module name used in the store path | derived from input file name |
@@ -28,7 +28,7 @@ This page focuses on the **hybrid** PR path on top of that store. For pure store
 | Goal | Flags | Bitcode |
 |------|--------|---------|
 | Full analysis, no disk | *(none)* | any |
-| Save SEGs for later | `-serialize-seg -store-models-dir=DIR` | **same** as later load |
+| Save SEGs for later | `-store-seg -store-models-dir=DIR` | **same** as later load |
 | Re-run checkers only | `-load-seg -store-models-dir=DIR` | **identical** to store |
 | **PR / changed code** | **`-enable-incremental-persist -store-models-dir=DIR`** | **new** bc; store from **old** |
 
@@ -57,7 +57,7 @@ CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 ## Workflow
 
 ```text
-old.bc  ── store (-serialize-seg -store-models-dir=./P) ──►  ./P/<module>/{SEG/*.json,.fp}/
+old.bc  ── store (-store-seg -store-models-dir=./P) ──►  ./P/<module>/{SEG/*.json,.fp}/
                                               │
          each PR: recompile → new.bc          │
                                               ▼
@@ -110,8 +110,7 @@ Flags used for **SEG-phase** timing and PR benches (no checkers):
 $CBC \
   --hide-progress-bar \
   -nworkers=16 \
-  -enable-build-seg-only \
-  -serialize-seg -store-models-dir=./persist_bench \
+  -store-seg -store-models-dir=./persist_bench \
   old.bc
 ```
 
@@ -124,7 +123,7 @@ $CBC \
   -segbuilder-aa=falconplus \
   --ps-npd --enable-heap-alloc-failure --psa-enable-arg-symbol \
   --psa-enable-side-effect-source \
-  -serialize-seg -store-models-dir=./persist_bench \
+  -store-seg -store-models-dir=./persist_bench \
   --report=store-report.json \
   old.bc
 ```
@@ -159,7 +158,6 @@ SEG-only (matches recent wall-time benches):
 $CBC \
   --hide-progress-bar \
   -nworkers=16 \
-  -enable-build-seg-only \
   -enable-incremental-persist \
   -store-models-dir=./persist_bench \
   new.bc
@@ -182,7 +180,7 @@ $CBC \
 Scratch baseline for comparison (same machine/flags, no persist):
 
 ```bash
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only new.bc
+$CBC --hide-progress-bar -nworkers=16 new.bc
 ```
 
 ### 5. What a good incremental log looks like
@@ -205,7 +203,7 @@ skips full SPEG.
 
 ## Bug-finding behavior (checker runs)
 
-The benches above use `-enable-build-seg-only` (SEG phase only, no checkers).
+The SEG-phase benches above omit checker flags (`--ps-npd`, etc.).
 When you run the **actual bug checkers** (`--ps-npd`, etc.) in incremental
 mode, there is one crucial behavior to understand:
 
@@ -228,7 +226,7 @@ CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 CHK="-segbuilder-aa=falconplus --ps-npd --enable-heap-alloc-failure --psa-enable-arg-symbol"
 
 # 1) store clean baseline once
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only -serialize-seg -store-models-dir=./P old.bc
+$CBC --hide-progress-bar -nworkers=16 -store-seg -store-models-dir=./P old.bc
 
 # 2) incremental check on the PR — checks ONLY the dirty functions
 $CBC --hide-progress-bar -nworkers=16 -enable-incremental-persist -store-models-dir=./P \
@@ -266,7 +264,7 @@ in-memory SEGs that were rebuilt this run (not for loaded clean SEGs).
 
 ## Storage layout
 
-Produced by a baseline **`-serialize-seg -store-models-dir=./persist_bench`**
+Produced by a baseline **`-store-seg -store-models-dir=./persist_bench`**
 run (optional `-store-module-name` overrides the module directory name):
 
 ```text
@@ -288,7 +286,7 @@ name collisions). Body fingerprints (`.fp`) drive dirty detection for
 
 | Piece | Role |
 |-------|------|
-| `lib/IR/SEG/SymbolicExprGraphBuilder.cpp` | `-serialize-seg` / `-load-seg`; dirty set; eager rebuild; lazy load; dump only rebuilt SEGs when serializing |
+| `lib/IR/SEG/SymbolicExprGraphBuilder.cpp` | `-store-seg` / `-load-seg`; dirty set; eager rebuild; lazy load; dump only rebuilt SEGs when serializing |
 | `lib/Persistence/Basis/Options.cpp` | `-store-models-dir`, `-store-module-name`, `-enable-incremental-persist` |
 | `lib/Persistence/Basis/FuncFingerprint.cpp` | Body fingerprint + `SEG/<name>.json` / `.fp` paths |
 | `lib/Persistence/JSON/{Store,Load}Interface.cpp` | JSON SEG I/O under `-store-models-dir` |
@@ -315,12 +313,12 @@ name collisions). Body fingerprints (`.fp`) drive dirty detection for
 8. **Static `fermat-check`**: stdout may be fully buffered when redirected; use
    `script -q -c '…' logfile` (or a TTY) if logs look empty while the process
    runs.
-9. **Store vs load gating**: store mode (`-serialize-seg -store-models-dir` alone) must not hybrid
+9. **Store vs load gating**: store mode (`-store-seg -store-models-dir` alone) must not hybrid
    load; pure load only with `-load-seg` (issue #10).
 
 ## Measured results (SEG build only; indicative)
 
-Internal multi-PR runs on one machine (`-enable-build-seg-only`,
+Internal multi-PR runs on one machine (``,
 `-nworkers=16`). **Not** a CI guarantee—always re-measure on your hardware.
 
 | Project | Store | SEGs (approx) | Inst (approx) | PR sample | Avg inc | Avg scratch | Wins / note |
@@ -344,23 +342,23 @@ export LLVM_COMPILER_PATH=$HOME/tools/llvm15-official/bin
 CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
 # store once
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-  -serialize-seg -store-models-dir=./persist_bench old.bc
+$CBC --hide-progress-bar -nworkers=16 \
+  -store-seg -store-models-dir=./persist_bench old.bc
 
 # per PR: apply sources → rebuild new.bc → compare
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
+$CBC --hide-progress-bar -nworkers=16 \
   -enable-incremental-persist -store-models-dir=./persist_bench new.bc
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only new.bc   # scratch
+$CBC --hide-progress-bar -nworkers=16 new.bc # scratch
 ```
 
 ## Minimal check
 
 ```bash
 # Store
-fermat-check -enable-build-seg-only -serialize-seg -store-models-dir=./P -hide-progress-bar -nworkers=16 old.bc
+fermat-check -store-seg -store-models-dir=./P -hide-progress-bar -nworkers=16 old.bc
 
 # Incremental (same or slightly changed new.bc)
-fermat-check -enable-build-seg-only -enable-incremental-persist -store-models-dir=./P \
+fermat-check -enable-incremental-persist -store-models-dir=./P \
   -hide-progress-bar -nworkers=16 new.bc
 ```
 
@@ -375,5 +373,5 @@ Success signals:
 
 - [producing-bitcode.md](./producing-bitcode.md) — how to compile projects to `.bc`
 - [fermat-check-modes.md](./fermat-check-modes.md) — normal / store / pure load
-- Issue #10 — store mode must not hybrid-load when only `-serialize-seg -store-models-dir` is set
+- Issue #10 — store mode must not hybrid-load when only `-store-seg -store-models-dir` is set
 - Branch `feature/incremental-persist-reuse` — feature implementation history

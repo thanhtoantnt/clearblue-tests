@@ -282,7 +282,7 @@ llvm-dis -o - out.bc 2>/dev/null | head -5
 # expect: ; ModuleID = ...  (and typed pointers like i8*, not ptr)
 
 # smoke fermat-check
-fermat-check --hide-progress-bar -nworkers=4 -enable-build-seg-only out.bc
+fermat-check --hide-progress-bar -nworkers=4 out.bc
 ```
 
 If fermat-check errors about opaque pointers, rebuild with

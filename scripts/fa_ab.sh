@@ -52,7 +52,7 @@ for proj in $PRJS; do
     echo "[$proj] storing old.bc (feat)..."
     rm -rf "$pdir" "$snap"; mkdir -p "$pdir"
     t0=$(date +%s%N)
-    timeout 2400 "$PERF" "${COMMON[@]}" -serialize-seg \
+    timeout 2400 "$PERF" "${COMMON[@]}" -store-seg \
       -store-models-dir="$pdir" "$BC/$proj/old.bc" >/dev/null 2>&1; rc=$?
     t1=$(date +%s%N)
     [ $rc -ne 0 ] && { echo "[$proj] store FAIL rc=$rc (psa=$(ls "$pdir/psa/" 2>/dev/null|wc -l))"; continue; }

@@ -58,16 +58,16 @@ Three explicit `fermat-check` invocations reproduce one data point: **store** th
 ```bash
 CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
-# 1) store the baseline once (-serialize-seg → ./persist/mbedtls/<module>/SEG/*.json)
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -serialize-seg -store-models-dir=./persist/mbedtls bc/mbedtls/old.bc
+# 1) store the baseline once (-store-seg → ./persist/mbedtls/<module>/SEG/*.json)
+$CBC --hide-progress-bar -nworkers=16 \
+     -store-seg -store-models-dir=./persist/mbedtls bc/mbedtls/old.bc
 
 # 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
+$CBC --hide-progress-bar -nworkers=16 \
      -enable-incremental-persist -store-models-dir=./persist/mbedtls bc/mbedtls/pr-NNNN.bc
 
 # 3) scratch on the same bitcode (no store; full rebuild)
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/mbedtls/pr-NNNN.bc
+$CBC --hide-progress-bar -nworkers=16 bc/mbedtls/pr-NNNN.bc
 ```
 Run steps 2–3 for each `pr-*.bc` in this folder. Compare the `SEG-Building spends time ***...***` line and the `[Incremental persist] body-dirty: N, +callers: M` line. Incremental wins when `inc` wall-time < `scratch` wall-time.
 Result columns and log fields are explained in [`../../docs/fermat-check-incremental-persist.md`](../../docs/fermat-check-incremental-persist.md) and [`../../README.md`](../../README.md#result-columns).
