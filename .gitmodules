@@ -57,3 +57,7 @@
 [submodule "src/unbound"]
 	path = src/unbound
 	url = https://github.com/NLnetLabs/unbound.git
+[submodule "src/rnp"]
+	path = src/rnp
+	url = https://github.com/rnpgp/rnp.git
+	ignore = dirty

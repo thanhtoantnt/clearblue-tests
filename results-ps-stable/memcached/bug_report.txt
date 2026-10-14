@@ -1,0 +1,997 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:52:36 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/memcached/old.bc",
+    "TotalBugs": 10,
+    "TotalFunc": "779",
+    "ExternalFuncRate": "20.5%",
+    "TotalInst": "65169",
+    "AvgInstPerFunc": "105.281",
+    "MaxInstPerFunc": "1813",
+    "FuncWithMostInst": "main",
+    "AvgCyclomaticComplexity": "6.557",
+    "MaxCyclomaticComplexity": "222",
+    "FuncWithMaxCyclomaticComplexity": "main",
+    "SrcFiles": [
+        "/home/toan/github/clearblue-tests/src/memcached/thread.c",
+        "/home/toan/github/clearblue-tests/src/memcached/memcached.c",
+        "/home/toan/github/clearblue-tests/src/memcached/vendor/mcmc/mcmc.c",
+        "/home/toan/github/clearblue-tests/src/memcached/proto_text.c",
+        "/home/toan/github/clearblue-tests/src/memcached/storage.c",
+        "/home/toan/github/clearblue-tests/src/memcached/proto_parser.c"
+    ],
+    "BugTypes": [
+        {
+            "Name": "Invalid Use of Stack Address",
+            "Description": "CWE-562",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 6,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 83,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct._io_pending_t** %9, %struct._io_pending_t*** %10, align 8, !dbg !25341",
+                            "File": 0,
+                            "Line": 552,
+                            "Tip": "Store &(head.stqh_first) to head.stqh_last",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        },
+                        {
+                            "Inst": "ret void, !dbg !25383",
+                            "File": 0,
+                            "Line": 582,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 549,
+                            "FuncEnd": 582,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct._io_pending_t** %9, %struct._io_pending_t*** %10, align 8, !dbg !25341",
+                            "File": 0,
+                            "Line": 552,
+                            "Tip": "Store &(head.stqh_first) to head.stqh_last",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 549,
+                            "FuncEnd": 582,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret void, !dbg !25383",
+                            "File": 0,
+                            "Line": 582,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 93,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %154, %struct.sockaddr** %153, align 8, !dbg !17248",
+                            "File": 1,
+                            "Line": 3564,
+                            "Tip": "Store my_sockaddr to %temp_var18",
+                            "FuncKey": "server_socket",
+                            "FuncName": "server_socket"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !17336",
+                            "File": 1,
+                            "Line": 3625,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "server_socket",
+                            "FuncName": "server_socket"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 3455,
+                            "FuncEnd": 3625,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %154, %struct.sockaddr** %153, align 8, !dbg !17248",
+                            "File": 1,
+                            "Line": 3564,
+                            "Tip": "Store my_sockaddr to %temp_var18",
+                            "FuncKey": "server_socket",
+                            "FuncName": "server_socket"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 3455,
+                            "FuncEnd": 3625,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !17336",
+                            "File": 1,
+                            "Line": 3625,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "server_socket",
+                            "FuncName": "server_socket"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %37, %struct.sockaddr** %36, align 8, !dbg !13395",
+                            "File": 1,
+                            "Line": 2123,
+                            "Tip": "Store local_addr to %temp_var6",
+                            "FuncKey": "conn_to_str",
+                            "FuncName": "conn_to_str"
+                        },
+                        {
+                            "Inst": "ret void, !dbg !13429",
+                            "File": 1,
+                            "Line": 2139,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "conn_to_str",
+                            "FuncName": "conn_to_str"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2112,
+                            "FuncEnd": 2139,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %37, %struct.sockaddr** %36, align 8, !dbg !13395",
+                            "File": 1,
+                            "Line": 2123,
+                            "Tip": "Store local_addr to %temp_var6",
+                            "FuncKey": "conn_to_str",
+                            "FuncName": "conn_to_str"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2112,
+                            "FuncEnd": 2139,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret void, !dbg !13429",
+                            "File": 1,
+                            "Line": 2139,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "conn_to_str",
+                            "FuncName": "conn_to_str"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.iovec* %17, %struct.iovec** %18, align 8, !dbg !10457",
+                            "File": 1,
+                            "Line": 2807,
+                            "Tip": "Store &(iovs[0]) to msg.msg_iov",
+                            "FuncKey": "transmit_udp",
+                            "FuncName": "transmit_udp"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !10573",
+                            "File": 1,
+                            "Line": 2879,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "transmit_udp",
+                            "FuncName": "transmit_udp"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2786,
+                            "FuncEnd": 2879,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.iovec* %17, %struct.iovec** %18, align 8, !dbg !10457",
+                            "File": 1,
+                            "Line": 2807,
+                            "Tip": "Store &(iovs[0]) to msg.msg_iov",
+                            "FuncKey": "transmit_udp",
+                            "FuncName": "transmit_udp"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2786,
+                            "FuncEnd": 2879,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !10573",
+                            "File": 1,
+                            "Line": 2879,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "transmit_udp",
+                            "FuncName": "transmit_udp"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 79,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct._io_pending_t** %68, %struct._io_pending_t*** %69, align 8, !dbg !25376",
+                            "File": 0,
+                            "Line": 579,
+                            "Tip": "Store &(head.stqh_first) to head.stqh_last",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        },
+                        {
+                            "Inst": "ret void, !dbg !25383",
+                            "File": 0,
+                            "Line": 582,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 549,
+                            "FuncEnd": 582,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct._io_pending_t** %68, %struct._io_pending_t*** %69, align 8, !dbg !25376",
+                            "File": 0,
+                            "Line": 579,
+                            "Tip": "Store &(head.stqh_first) to head.stqh_last",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 549,
+                            "FuncEnd": 582,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret void, !dbg !25383",
+                            "File": 0,
+                            "Line": 582,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "thread_libevent_ionotify",
+                            "FuncName": "thread_libevent_ionotify"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.iovec* %5, %struct.iovec** %6, align 8, !dbg !10360",
+                            "File": 1,
+                            "Line": 2695,
+                            "Tip": "Store &(iovs[0]) to msg.msg_iov",
+                            "FuncKey": "transmit",
+                            "FuncName": "transmit"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !10430",
+                            "File": 1,
+                            "Line": 2740,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "transmit",
+                            "FuncName": "transmit"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 2689,
+                            "FuncEnd": 2740,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.iovec* %5, %struct.iovec** %6, align 8, !dbg !10360",
+                            "File": 1,
+                            "Line": 2695,
+                            "Tip": "Store &(iovs[0]) to msg.msg_iov",
+                            "FuncKey": "transmit",
+                            "FuncName": "transmit"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 2689,
+                            "FuncEnd": 2740,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !10430",
+                            "File": 1,
+                            "Line": 2740,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "transmit",
+                            "FuncName": "transmit"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        },
+        {
+            "Name": "Null Pointer Dereference",
+            "Description": "CWE-476, CWE-690",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 4,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 92,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.0 = phi i8* [ %13, %11 ], [ null, %14 ], !dbg !42238",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from _mcmc_token(l,t,idx,len), or null",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "br i1 %10, label %11, label %14, !dbg !42231",
+                            "File": 2,
+                            "Line": 631,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "ret i8* %.0, !dbg !42239",
+                            "File": 2,
+                            "Line": 636,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 494,
+                            "Tip": "Function mcmc_token_get executes and stores the return value to command (command can be null)",
+                            "FuncKey": "process_stats_detail",
+                            "FuncName": "process_stats_detail"
+                        },
+                        {
+                            "Inst": "%temp_var12",
+                            "File": 3,
+                            "Line": 496,
+                            "Tip": "command is used as the 1st parameter in function strncmp (command can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "process_stats_detail",
+                            "FuncName": "process_stats_detail"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.0 = phi i8* [ %13, %11 ], [ null, %14 ], !dbg !42238",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from _mcmc_token(l,t,idx,len), or null",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %10, label %11, label %14, !dbg !42231",
+                            "File": 2,
+                            "Line": 631,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i8* %.0, !dbg !42239",
+                            "File": 2,
+                            "Line": 636,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 493,
+                            "FuncEnd": 512,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var9",
+                            "File": 3,
+                            "Line": 494,
+                            "Tip": "Function mcmc_token_get executes and stores the return value to command (command can be null)",
+                            "FuncKey": "process_stats_detail",
+                            "FuncName": "process_stats_detail"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 493,
+                            "FuncEnd": 512,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var12",
+                            "File": 3,
+                            "Line": 496,
+                            "Tip": "command is used as the 1st parameter in function strncmp (command can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "process_stats_detail",
+                            "FuncName": "process_stats_detail"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 96,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.0 = phi %struct.io_queue_s* [ %.01.lcssa2, %13 ], [ null, %16 ], !dbg !11607",
+                            "File": 1,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from 01, or null",
+                            "FuncKey": "thread_io_queue_get",
+                            "FuncName": "thread_io_queue_get"
+                        },
+                        {
+                            "Inst": "br i1 %21, label %22, label %16, !dbg !11612",
+                            "File": 1,
+                            "Line": 585,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "thread_io_queue_get",
+                            "FuncName": "thread_io_queue_get"
+                        },
+                        {
+                            "Inst": "ret %struct.io_queue_s* %.0, !dbg !11626",
+                            "File": 1,
+                            "Line": 592,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "thread_io_queue_get",
+                            "FuncName": "thread_io_queue_get"
+                        },
+                        {
+                            "Inst": "%temp_var88",
+                            "File": 4,
+                            "Line": 420,
+                            "Tip": "Function thread_io_queue_get executes and stores the return value to q (q can be null)",
+                            "FuncKey": "recache_or_free",
+                            "FuncName": "recache_or_free"
+                        },
+                        {
+                            "Inst": "store %struct._io_pending_t** %109, %struct._io_pending_t*** %111, align 8, !dbg !46883",
+                            "File": 4,
+                            "Line": 421,
+                            "Tip": "Store &(curelm->iop_next.!0) to q->stack.stqh_last (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "recache_or_free",
+                            "FuncName": "recache_or_free"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 583,
+                            "FuncEnd": 592,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.0 = phi %struct.io_queue_s* [ %.01.lcssa2, %13 ], [ null, %16 ], !dbg !11607",
+                            "File": 1,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from 01, or null",
+                            "FuncKey": "thread_io_queue_get",
+                            "FuncName": "thread_io_queue_get"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 583,
+                            "FuncEnd": 592,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %21, label %22, label %16, !dbg !11612",
+                            "File": 1,
+                            "Line": 585,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "thread_io_queue_get",
+                            "FuncName": "thread_io_queue_get"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 583,
+                            "FuncEnd": 592,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret %struct.io_queue_s* %.0, !dbg !11626",
+                            "File": 1,
+                            "Line": 592,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "thread_io_queue_get",
+                            "FuncName": "thread_io_queue_get"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 399,
+                            "FuncEnd": 475,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var88",
+                            "File": 4,
+                            "Line": 420,
+                            "Tip": "Function thread_io_queue_get executes and stores the return value to q (q can be null)",
+                            "FuncKey": "recache_or_free",
+                            "FuncName": "recache_or_free"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 399,
+                            "FuncEnd": 475,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct._io_pending_t** %109, %struct._io_pending_t*** %111, align 8, !dbg !46883",
+                            "File": 4,
+                            "Line": 421,
+                            "Tip": "Store &(curelm->iop_next.!0) to q->stack.stqh_last (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "recache_or_free",
+                            "FuncName": "recache_or_free"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 92,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.0 = phi i8* [ %13, %11 ], [ null, %14 ], !dbg !42238",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from _mcmc_token(l,t,idx,len), or null",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "br i1 %10, label %11, label %14, !dbg !42231",
+                            "File": 2,
+                            "Line": 631,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "ret i8* %.0, !dbg !42239",
+                            "File": 2,
+                            "Line": 636,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "%temp_var16",
+                            "File": 3,
+                            "Line": 1057,
+                            "Tip": "Function mcmc_token_get executes and stores the return value to subcmd (subcmd can be null)",
+                            "FuncKey": "process_lru_command",
+                            "FuncName": "process_lru_command"
+                        },
+                        {
+                            "Inst": "%temp_var22",
+                            "File": 3,
+                            "Line": 1062,
+                            "Tip": "subcmd is used as the 1st parameter in function strncmp (subcmd can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "process_lru_command",
+                            "FuncName": "process_lru_command"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.0 = phi i8* [ %13, %11 ], [ null, %14 ], !dbg !42238",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from _mcmc_token(l,t,idx,len), or null",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %10, label %11, label %14, !dbg !42231",
+                            "File": 2,
+                            "Line": 631,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i8* %.0, !dbg !42239",
+                            "File": 2,
+                            "Line": 636,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 1050,
+                            "FuncEnd": 1108,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var16",
+                            "File": 3,
+                            "Line": 1057,
+                            "Tip": "Function mcmc_token_get executes and stores the return value to subcmd (subcmd can be null)",
+                            "FuncKey": "process_lru_command",
+                            "FuncName": "process_lru_command"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 1050,
+                            "FuncEnd": 1108,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var22",
+                            "File": 3,
+                            "Line": 1062,
+                            "Tip": "subcmd is used as the 1st parameter in function strncmp (subcmd can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "process_lru_command",
+                            "FuncName": "process_lru_command"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 92,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%.0 = phi i8* [ %13, %11 ], [ null, %14 ], !dbg !42238",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from _mcmc_token(l,t,idx,len), or null",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "br i1 %10, label %11, label %14, !dbg !42231",
+                            "File": 2,
+                            "Line": 631,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "ret i8* %.0, !dbg !42239",
+                            "File": 2,
+                            "Line": 636,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "Inst": "%temp_var8",
+                            "File": 5,
+                            "Line": 338,
+                            "Tip": "Function mcmc_token_get executes and stores the return value to t (t can be null)",
+                            "FuncKey": "mc_prcmp",
+                            "FuncName": "mc_prcmp"
+                        },
+                        {
+                            "Inst": "%temp_var11",
+                            "File": 5,
+                            "Line": 339,
+                            "Tip": "t is used as the 1st parameter in function strncmp (t can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "mc_prcmp",
+                            "FuncName": "mc_prcmp"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.0 = phi i8* [ %13, %11 ], [ null, %14 ], !dbg !42238",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Variable 0 comes from _mcmc_token(l,t,idx,len), or null",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %10, label %11, label %14, !dbg !42231",
+                            "File": 2,
+                            "Line": 631,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 630,
+                            "FuncEnd": 636,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i8* %.0, !dbg !42239",
+                            "File": 2,
+                            "Line": 636,
+                            "Tip": "Return 0 to caller (The return value can be null)",
+                            "FuncKey": "mcmc_token_get",
+                            "FuncName": "mcmc_token_get"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 337,
+                            "FuncEnd": 339,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var8",
+                            "File": 5,
+                            "Line": 338,
+                            "Tip": "Function mcmc_token_get executes and stores the return value to t (t can be null)",
+                            "FuncKey": "mc_prcmp",
+                            "FuncName": "mc_prcmp"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 337,
+                            "FuncEnd": 339,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var11",
+                            "File": 5,
+                            "Line": 339,
+                            "Tip": "t is used as the 1st parameter in function strncmp (t can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "mc_prcmp",
+                            "FuncName": "mc_prcmp"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        }
+    ]
+}

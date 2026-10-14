@@ -1,0 +1,1021 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:45:56 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/libexpat/old.bc",
+    "TotalBugs": 7,
+    "TotalFunc": "379",
+    "ExternalFuncRate": "5.3%",
+    "TotalInst": "49986",
+    "AvgInstPerFunc": "139.237",
+    "MaxInstPerFunc": "3207",
+    "FuncWithMostInst": "doProlog",
+    "AvgCyclomaticComplexity": "14.582",
+    "MaxCyclomaticComplexity": "284",
+    "FuncWithMaxCyclomaticComplexity": "doProlog",
+    "SrcFiles": [
+        "/home/toan/github/clearblue-tests/src/libexpat/expat/lib/xmlparse.c",
+        "/home/toan/github/clearblue-tests/src/libexpat/expat/lib/siphash.h",
+        "Source file not found"
+    ],
+    "BugTypes": [
+        {
+            "Name": "Invalid Use of Stack Address",
+            "Description": "CWE-562",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 5,
+            "Reports": [
+                {
+                    "Dominated": true,
+                    "Score": 83,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var467",
+                            "File": 0,
+                            "Line": 3616,
+                            "Tip": "sip_state is used as the 1st parameter in function sip24_init",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        },
+                        {
+                            "Inst": "store i8* %24, i8** %25, align 8, !dbg !10025",
+                            "File": 1,
+                            "Line": 197,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        },
+                        {
+                            "Inst": "ret %struct.siphash* %0, !dbg !10028",
+                            "File": 1,
+                            "Line": 200,
+                            "Tip": "Return with value H->p modified",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        },
+                        {
+                            "Inst": "%temp_var467",
+                            "File": 0,
+                            "Line": 3616,
+                            "Tip": "Calling to function sip24_init modified sip_state->p, where sip_state is used as the 1st parameter (H)",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !9251",
+                            "File": 0,
+                            "Line": 3791,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 3612,
+                            "FuncEnd": 3791,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var467",
+                            "File": 0,
+                            "Line": 3616,
+                            "Tip": "sip_state is used as the 1st parameter in function sip24_init",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 191,
+                            "FuncEnd": 200,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %24, i8** %25, align 8, !dbg !10025",
+                            "File": 1,
+                            "Line": 197,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 191,
+                            "FuncEnd": 200,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret %struct.siphash* %0, !dbg !10028",
+                            "File": 1,
+                            "Line": 200,
+                            "Tip": "Return with value H->p modified",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3612,
+                            "FuncEnd": 3791,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var467",
+                            "File": 0,
+                            "Line": 3616,
+                            "Tip": "Calling to function sip24_init modified sip_state->p, where sip_state is used as the 1st parameter (H)",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 3612,
+                            "FuncEnd": 3791,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !9251",
+                            "File": 0,
+                            "Line": 3791,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 92,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var8",
+                            "File": 0,
+                            "Line": 7179,
+                            "Tip": "state is used as the 1st parameter in function sip24_update",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "Inst": "store i8* %84, i8** %85, align 8, !dbg !10073",
+                            "File": 1,
+                            "Line": 222,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "sip24_update",
+                            "FuncName": "sip24_update"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 7174,
+                            "FuncEnd": 7180,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var8",
+                            "File": 0,
+                            "Line": 7179,
+                            "Tip": "state is used as the 1st parameter in function sip24_update",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 206,
+                            "FuncEnd": 226,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %84, i8** %85, align 8, !dbg !10073",
+                            "File": 1,
+                            "Line": 222,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "sip24_update",
+                            "FuncName": "sip24_update"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 0,
+                            "Line": 7178,
+                            "Tip": "state is used as the 1st parameter in function sip24_init",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "Inst": "store i8* %24, i8** %25, align 8, !dbg !10025",
+                            "File": 1,
+                            "Line": 197,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 7174,
+                            "FuncEnd": 7180,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 0,
+                            "Line": 7178,
+                            "Tip": "state is used as the 1st parameter in function sip24_init",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 191,
+                            "FuncEnd": 200,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %24, i8** %25, align 8, !dbg !10025",
+                            "File": 1,
+                            "Line": 197,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 84,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var8",
+                            "File": 0,
+                            "Line": 7179,
+                            "Tip": "state is used as the 1st parameter in function sip24_update",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "Inst": "store i8* %84, i8** %85, align 8, !dbg !10073",
+                            "File": 1,
+                            "Line": 222,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p",
+                            "FuncKey": "sip24_update",
+                            "FuncName": "sip24_update"
+                        },
+                        {
+                            "Inst": "ret %struct.siphash* %0, !dbg !10078",
+                            "File": 1,
+                            "Line": 226,
+                            "Tip": "Return with value H->p modified",
+                            "FuncKey": "sip24_update",
+                            "FuncName": "sip24_update"
+                        },
+                        {
+                            "Inst": "%temp_var8",
+                            "File": 0,
+                            "Line": 7179,
+                            "Tip": "Calling to function sip24_update modified state->p, where state is used as the 1st parameter (H)",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "Inst": "ret i64 %9, !dbg !10577",
+                            "File": 0,
+                            "Line": 7180,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 7174,
+                            "FuncEnd": 7180,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var8",
+                            "File": 0,
+                            "Line": 7179,
+                            "Tip": "state is used as the 1st parameter in function sip24_update",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 206,
+                            "FuncEnd": 226,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %84, i8** %85, align 8, !dbg !10073",
+                            "File": 1,
+                            "Line": 222,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p",
+                            "FuncKey": "sip24_update",
+                            "FuncName": "sip24_update"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 206,
+                            "FuncEnd": 226,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret %struct.siphash* %0, !dbg !10078",
+                            "File": 1,
+                            "Line": 226,
+                            "Tip": "Return with value H->p modified",
+                            "FuncKey": "sip24_update",
+                            "FuncName": "sip24_update"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 7174,
+                            "FuncEnd": 7180,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var8",
+                            "File": 0,
+                            "Line": 7179,
+                            "Tip": "Calling to function sip24_update modified state->p, where state is used as the 1st parameter (H)",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 7174,
+                            "FuncEnd": 7180,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i64 %9, !dbg !10577",
+                            "File": 0,
+                            "Line": 7180,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "hash",
+                            "FuncName": "hash"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 94,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var467",
+                            "File": 0,
+                            "Line": 3616,
+                            "Tip": "sip_state is used as the 1st parameter in function sip24_init",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        },
+                        {
+                            "Inst": "store i8* %24, i8** %25, align 8, !dbg !10025",
+                            "File": 1,
+                            "Line": 197,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 3612,
+                            "FuncEnd": 3791,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var467",
+                            "File": 0,
+                            "Line": 3616,
+                            "Tip": "sip_state is used as the 1st parameter in function sip24_init",
+                            "FuncKey": "storeAtts",
+                            "FuncName": "storeAtts"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 191,
+                            "FuncEnd": 200,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %24, i8** %25, align 8, !dbg !10025",
+                            "File": 1,
+                            "Line": 197,
+                            "Tip": "Store &(&(H->buf)[0]) to H->p (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "sip24_init",
+                            "FuncName": "sip24_init"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        },
+        {
+            "Name": "Null Pointer Dereference",
+            "Description": "CWE-476, CWE-690",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 2,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 74,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i8* null, i8** %2, align 8, !dbg !9428",
+                            "File": 0,
+                            "Line": 4113,
+                            "Tip": "Store null to startPtr",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !9588",
+                            "File": 0,
+                            "Line": 4214,
+                            "Tip": "Program reaches the return point, modifying the value *(startPtr) to null",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "Inst": "%temp_var15",
+                            "File": 0,
+                            "Line": 4077,
+                            "Tip": "Function doCdataSection modifies the value *(start) to null, where start is used as the 4th parameter (startPtr)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "Inst": "%temp_var28",
+                            "File": 0,
+                            "Line": 4085,
+                            "Tip": "start is used as the 2nd parameter in function externalEntityContentProcessor (start can be null)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "Inst": "%temp_var14",
+                            "File": 0,
+                            "Line": 2812,
+                            "Tip": "start is used as the 4th parameter in function doContent (start can be null)",
+                            "FuncKey": "externalEntityContentProcessor",
+                            "FuncName": "externalEntityContentProcessor"
+                        },
+                        {
+                            "Inst": "store i8* %3, i8** %9, align 8",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Store %%3 to s",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "Inst": "%temp_var61",
+                            "File": 0,
+                            "Line": 2848,
+                            "Tip": "s is used as the 3rd parameter in function accountingDiffTolerated (s can be null)",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "Inst": "call void @accountingReportDiff(%struct.XML_ParserStruct* noundef %13, i32 noundef %71, i8* noundef %2, i8* noundef %3, i64 noundef %28, i32 noundef %4, i32 noundef %5), !dbg !4774",
+                            "File": 0,
+                            "Line": 7936,
+                            "Tip": "before is used as the 3rd parameter in function accountingReportDiff (before can be null)",
+                            "FuncKey": "accountingDiffTolerated",
+                            "FuncName": "accountingDiffTolerated"
+                        },
+                        {
+                            "Inst": "%temp_var35",
+                            "File": 0,
+                            "Line": 7873,
+                            "Tip": "Load value from walker (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "accountingReportDiff",
+                            "FuncName": "accountingReportDiff"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 4101,
+                            "FuncEnd": 4214,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* null, i8** %2, align 8, !dbg !9428",
+                            "File": 0,
+                            "Line": 4113,
+                            "Tip": "Store null to startPtr",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 4101,
+                            "FuncEnd": 4214,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !9588",
+                            "File": 0,
+                            "Line": 4214,
+                            "Tip": "Program reaches the return point, modifying the value *(startPtr) to null",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 4075,
+                            "FuncEnd": 4092,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var15",
+                            "File": 0,
+                            "Line": 4077,
+                            "Tip": "Function doCdataSection modifies the value *(start) to null, where start is used as the 4th parameter (startPtr)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 4075,
+                            "FuncEnd": 4092,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var28",
+                            "File": 0,
+                            "Line": 4085,
+                            "Tip": "start is used as the 2nd parameter in function externalEntityContentProcessor (start can be null)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 2809,
+                            "FuncEnd": 2820,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var14",
+                            "File": 0,
+                            "Line": 2812,
+                            "Tip": "start is used as the 4th parameter in function doContent (start can be null)",
+                            "FuncKey": "externalEntityContentProcessor",
+                            "FuncName": "externalEntityContentProcessor"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 2829,
+                            "FuncEnd": 2834,
+                            "ToGuess": "Func",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %3, i8** %9, align 8",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Store %%3 to s",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 2824,
+                            "FuncEnd": 3290,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var61",
+                            "File": 0,
+                            "Line": 2848,
+                            "Tip": "s is used as the 3rd parameter in function accountingDiffTolerated (s can be null)",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "ID": 8,
+                            "Parents": [
+                                7
+                            ],
+                            "FuncStart": 7906,
+                            "FuncEnd": 7941,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @accountingReportDiff(%struct.XML_ParserStruct* noundef %13, i32 noundef %71, i8* noundef %2, i8* noundef %3, i64 noundef %28, i32 noundef %4, i32 noundef %5), !dbg !4774",
+                            "File": 0,
+                            "Line": 7936,
+                            "Tip": "before is used as the 3rd parameter in function accountingReportDiff (before can be null)",
+                            "FuncKey": "accountingDiffTolerated",
+                            "FuncName": "accountingDiffTolerated"
+                        },
+                        {
+                            "ID": 9,
+                            "Parents": [
+                                8
+                            ],
+                            "FuncStart": 7863,
+                            "FuncEnd": 7886,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var35",
+                            "File": 0,
+                            "Line": 7873,
+                            "Tip": "Load value from walker (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "accountingReportDiff",
+                            "FuncName": "accountingReportDiff"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 74,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store i8* null, i8** %2, align 8, !dbg !9428",
+                            "File": 0,
+                            "Line": 4113,
+                            "Tip": "Store null to startPtr",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !9588",
+                            "File": 0,
+                            "Line": 4214,
+                            "Tip": "Program reaches the return point, modifying the value *(startPtr) to null",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "Inst": "%temp_var15",
+                            "File": 0,
+                            "Line": 4077,
+                            "Tip": "Function doCdataSection modifies the value *(start) to null, where start is used as the 4th parameter (startPtr)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "Inst": "%temp_var32",
+                            "File": 0,
+                            "Line": 4088,
+                            "Tip": "start is used as the 2nd parameter in function contentProcessor (start can be null)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "Inst": "%temp_var14",
+                            "File": 0,
+                            "Line": 2696,
+                            "Tip": "start is used as the 4th parameter in function doContent (start can be null)",
+                            "FuncKey": "contentProcessor",
+                            "FuncName": "contentProcessor"
+                        },
+                        {
+                            "Inst": "store i8* %3, i8** %9, align 8",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Store %%3 to s",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "Inst": "%temp_var61",
+                            "File": 0,
+                            "Line": 2848,
+                            "Tip": "s is used as the 3rd parameter in function accountingDiffTolerated (s can be null)",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "Inst": "call void @accountingReportDiff(%struct.XML_ParserStruct* noundef %13, i32 noundef %71, i8* noundef %2, i8* noundef %3, i64 noundef %28, i32 noundef %4, i32 noundef %5), !dbg !4774",
+                            "File": 0,
+                            "Line": 7936,
+                            "Tip": "before is used as the 3rd parameter in function accountingReportDiff (before can be null)",
+                            "FuncKey": "accountingDiffTolerated",
+                            "FuncName": "accountingDiffTolerated"
+                        },
+                        {
+                            "Inst": "%temp_var35",
+                            "File": 0,
+                            "Line": 7873,
+                            "Tip": "Load value from walker (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "accountingReportDiff",
+                            "FuncName": "accountingReportDiff"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 4101,
+                            "FuncEnd": 4214,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* null, i8** %2, align 8, !dbg !9428",
+                            "File": 0,
+                            "Line": 4113,
+                            "Tip": "Store null to startPtr",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 4101,
+                            "FuncEnd": 4214,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !9588",
+                            "File": 0,
+                            "Line": 4214,
+                            "Tip": "Program reaches the return point, modifying the value *(startPtr) to null",
+                            "FuncKey": "doCdataSection",
+                            "FuncName": "doCdataSection"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 4075,
+                            "FuncEnd": 4092,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var15",
+                            "File": 0,
+                            "Line": 4077,
+                            "Tip": "Function doCdataSection modifies the value *(start) to null, where start is used as the 4th parameter (startPtr)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 4075,
+                            "FuncEnd": 4092,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var32",
+                            "File": 0,
+                            "Line": 4088,
+                            "Tip": "start is used as the 2nd parameter in function contentProcessor (start can be null)",
+                            "FuncKey": "cdataSectionProcessor",
+                            "FuncName": "cdataSectionProcessor"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 2694,
+                            "FuncEnd": 2704,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var14",
+                            "File": 0,
+                            "Line": 2696,
+                            "Tip": "start is used as the 4th parameter in function doContent (start can be null)",
+                            "FuncKey": "contentProcessor",
+                            "FuncName": "contentProcessor"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 2829,
+                            "FuncEnd": 2834,
+                            "ToGuess": "Func",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %3, i8** %9, align 8",
+                            "File": 2,
+                            "Line": 0,
+                            "Tip": "Store %%3 to s",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "ID": 7,
+                            "Parents": [
+                                6
+                            ],
+                            "FuncStart": 2824,
+                            "FuncEnd": 3290,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var61",
+                            "File": 0,
+                            "Line": 2848,
+                            "Tip": "s is used as the 3rd parameter in function accountingDiffTolerated (s can be null)",
+                            "FuncKey": "doContent",
+                            "FuncName": "doContent"
+                        },
+                        {
+                            "ID": 8,
+                            "Parents": [
+                                7
+                            ],
+                            "FuncStart": 7906,
+                            "FuncEnd": 7941,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @accountingReportDiff(%struct.XML_ParserStruct* noundef %13, i32 noundef %71, i8* noundef %2, i8* noundef %3, i64 noundef %28, i32 noundef %4, i32 noundef %5), !dbg !4774",
+                            "File": 0,
+                            "Line": 7936,
+                            "Tip": "before is used as the 3rd parameter in function accountingReportDiff (before can be null)",
+                            "FuncKey": "accountingDiffTolerated",
+                            "FuncName": "accountingDiffTolerated"
+                        },
+                        {
+                            "ID": 9,
+                            "Parents": [
+                                8
+                            ],
+                            "FuncStart": 7863,
+                            "FuncEnd": 7886,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var35",
+                            "File": 0,
+                            "Line": 7873,
+                            "Tip": "Load value from walker (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "accountingReportDiff",
+                            "FuncName": "accountingReportDiff"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        }
+    ]
+}

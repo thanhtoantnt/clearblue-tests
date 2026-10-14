@@ -64,6 +64,11 @@ META = {
                 "artifact": "unbound (DNS resolver daemon)",
                 "build": "./configure CC=gclang CFLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' --disable-shared --enable-static --without-pyunbound --without-pythonmodule --disable-flto --disable-rpath --with-libevent=no --with-libhiredis=no ; make unbound",
                 "out_kind": "unbound (~3.5k fn / ~327k inst)"},
+    "rnp": {"base": "aad1892e", "repo": "rnpgp/rnp", "upstream": "https://github.com/rnpgp/rnp",
+                "artifact": "rnp (CLI binary; links src/rnp/rnpcfg.cpp)",
+                "setup": "# apt: cmake ninja-build libssl-dev zlib1g-dev libbz2-dev libjson-c-dev\n# also: go install github.com/SRI-CSL/gllvm/cmd/gclang++@latest",
+                "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_CXX_COMPILER=gclang++ -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_CXX_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON -DBUILD_TESTING=OFF -DENABLE_DOC=OFF -DDOWNLOAD_GTEST=OFF -DCRYPTO_BACKEND=openssl && ninja rnp",
+                "out_kind": "rnp CLI (C++ unordered_map operator[] stores; size not measured)"},
     "libssh2": {"base": "fe667c60", "repo": "libssh2/libssh2", "upstream": "https://github.com/libssh2/libssh2",
                 "artifact": "libssh2.so.1.0.1 (shared lib, OpenSSL backend)",
                 "build": "cmake -G Ninja -DCMAKE_C_COMPILER=gclang -DCMAKE_C_FLAGS='-O0 -g -fPIC -Xclang -no-opaque-pointers' -DCMAKE_BUILD_TYPE=Debug -DBUILD_SHARED_LIBS=ON -DBUILD_EXAMPLES=OFF -DBUILD_TESTING=OFF -DENABLE_ZLIB_COMPRESSION=OFF",
@@ -154,14 +159,14 @@ def main():
                      "**store** the baseline once, then run a sample **incremental** "
                      "(reuses stored SEGs) and **scratch** (no store) to compare.\n")
         lines.append("```bash\nCBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check\n\n"
-                     "# 1) store the baseline once (-serialize-seg → ./persist/{proj}/<module>/SEG/*.json)\n"
-                     "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
-                     "     -serialize-seg -store-models-dir=./persist/{proj} bc/{proj}/old.bc\n\n"
+                     "# 1) store the baseline once (-store-seg → ./persist/{proj}/<module>/SEG/*.json)\n"
+                     "$CBC --hide-progress-bar -nworkers=16 \\\n"
+                     "     -store-seg -store-models-dir=./persist/{proj} bc/{proj}/old.bc\n\n"
                      "# 2) incremental on a PR's bitcode (loads clean SEGs, rebuilds dirty)\n"
-                     "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \\\n"
+                     "$CBC --hide-progress-bar -nworkers=16 \\\n"
                      "     -enable-incremental-persist -store-models-dir=./persist/{proj} bc/{proj}/pr-NNNN.bc\n\n"
                      "# 3) scratch on the same bitcode (no store; full rebuild)\n"
-                     "$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/{proj}/pr-NNNN.bc\n"
+                     "$CBC --hide-progress-bar -nworkers=16 bc/{proj}/pr-NNNN.bc\n"
                      "```\n".format(proj=proj))
         lines.append("Run steps 2–3 for each `pr-*.bc` in this folder. Compare the "
                      "`SEG-Building spends time ***...***` line and the "

@@ -135,7 +135,7 @@ git commit it was built from, and a build timestamp via `CMakeLists.txt`.
 CBC=$PWD/build/tools/fermat-check/fermat-check
 $CBC --help 2>&1 | head
 # smoke test against a committed baseline
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
+$CBC --hide-progress-bar -nworkers=16 \
      ~/clearblue/incremental-persist-bench/bc/c-ares/old.bc
 ```
 

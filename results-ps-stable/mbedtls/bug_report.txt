@@ -1,0 +1,890 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:51:31 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/mbedtls/old.bc",
+    "TotalBugs": 10,
+    "TotalFunc": "910",
+    "ExternalFuncRate": "11.3%",
+    "TotalInst": "64525",
+    "AvgInstPerFunc": "79.957",
+    "MaxInstPerFunc": "1186",
+    "FuncWithMostInst": "ssl_parse_client_hello",
+    "AvgCyclomaticComplexity": "5.633",
+    "MaxCyclomaticComplexity": "85",
+    "FuncWithMaxCyclomaticComplexity": "ssl_parse_client_hello",
+    "SrcFiles": [
+        "/home/toan/github/clearblue-tests/src/mbedtls/library/ssl_msg.c",
+        "/home/toan/github/clearblue-tests/src/mbedtls/library/net_sockets.c",
+        "/home/toan/github/clearblue-tests/src/mbedtls/library/ssl_tls12_server.c",
+        "/home/toan/github/clearblue-tests/src/mbedtls/library/ssl_ciphersuites.c",
+        "/home/toan/github/clearblue-tests/src/mbedtls/library/ssl_cache.c",
+        "/home/toan/github/clearblue-tests/src/mbedtls/library/ssl_tls.c",
+        "/home/toan/github/clearblue-tests/src/mbedtls/tf-psa-crypto/core/alignment.h"
+    ],
+    "BugTypes": [
+        {
+            "Name": "Invalid Use of Stack Address",
+            "Description": "CWE-562",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 7,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 69,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var13",
+                            "File": 0,
+                            "Line": 238,
+                            "Tip": "rec is used as the 4th parameter in function ssl_parse_record_header",
+                            "FuncKey": "mbedtls_ssl_check_record",
+                            "FuncName": "mbedtls_ssl_check_record"
+                        },
+                        {
+                            "Inst": "%temp_var198",
+                            "File": 0,
+                            "Line": 3766,
+                            "Tip": "&(&(rec->!0)[0]) is used as the 2nd parameter in function mbedtls_ssl_dtls_record_replay_check",
+                            "FuncKey": "ssl_parse_record_header",
+                            "FuncName": "ssl_parse_record_header"
+                        },
+                        {
+                            "Inst": "store i8* %1, i8** %5, align 8, !dbg !12521",
+                            "File": 0,
+                            "Line": 3235,
+                            "Tip": "Store record_in_ctr to ssl->in_ctr (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_ssl_dtls_record_replay_check",
+                            "FuncName": "mbedtls_ssl_dtls_record_replay_check"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 236,
+                            "FuncEnd": 267,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var13",
+                            "File": 0,
+                            "Line": 238,
+                            "Tip": "rec is used as the 4th parameter in function ssl_parse_record_header",
+                            "FuncKey": "mbedtls_ssl_check_record",
+                            "FuncName": "mbedtls_ssl_check_record"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 3561,
+                            "FuncEnd": 3776,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var198",
+                            "File": 0,
+                            "Line": 3766,
+                            "Tip": "&(&(rec->!0)[0]) is used as the 2nd parameter in function mbedtls_ssl_dtls_record_replay_check",
+                            "FuncKey": "ssl_parse_record_header",
+                            "FuncName": "ssl_parse_record_header"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3226,
+                            "FuncEnd": 3242,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %1, i8** %5, align 8, !dbg !12521",
+                            "File": 0,
+                            "Line": 3235,
+                            "Tip": "Store record_in_ctr to ssl->in_ctr (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_ssl_dtls_record_replay_check",
+                            "FuncName": "mbedtls_ssl_dtls_record_replay_check"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 98,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %67, %struct.sockaddr** %66, align 8, !dbg !7416",
+                            "File": 1,
+                            "Line": 365,
+                            "Tip": "Store client_addr to %temp_var15",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %67, %struct.sockaddr** %66, align 8, !dbg !7416",
+                            "File": 1,
+                            "Line": 365,
+                            "Tip": "Store client_addr to %temp_var15",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 74,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var16",
+                            "File": 0,
+                            "Line": 4727,
+                            "Tip": "rec is used as the 4th parameter in function ssl_parse_record_header",
+                            "FuncKey": "ssl_get_next_record",
+                            "FuncName": "ssl_get_next_record"
+                        },
+                        {
+                            "Inst": "%temp_var198",
+                            "File": 0,
+                            "Line": 3766,
+                            "Tip": "&(&(rec->!0)[0]) is used as the 2nd parameter in function mbedtls_ssl_dtls_record_replay_check",
+                            "FuncKey": "ssl_parse_record_header",
+                            "FuncName": "ssl_parse_record_header"
+                        },
+                        {
+                            "Inst": "store i8* %1, i8** %5, align 8, !dbg !12521",
+                            "File": 0,
+                            "Line": 3235,
+                            "Tip": "Store record_in_ctr to ssl->in_ctr (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_ssl_dtls_record_replay_check",
+                            "FuncName": "mbedtls_ssl_dtls_record_replay_check"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 4703,
+                            "FuncEnd": 4907,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var16",
+                            "File": 0,
+                            "Line": 4727,
+                            "Tip": "rec is used as the 4th parameter in function ssl_parse_record_header",
+                            "FuncKey": "ssl_get_next_record",
+                            "FuncName": "ssl_get_next_record"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 3561,
+                            "FuncEnd": 3776,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var198",
+                            "File": 0,
+                            "Line": 3766,
+                            "Tip": "&(&(rec->!0)[0]) is used as the 2nd parameter in function mbedtls_ssl_dtls_record_replay_check",
+                            "FuncKey": "ssl_parse_record_header",
+                            "FuncName": "ssl_parse_record_header"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3226,
+                            "FuncEnd": 3242,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store i8* %1, i8** %5, align 8, !dbg !12521",
+                            "File": 0,
+                            "Line": 3235,
+                            "Tip": "Store record_in_ctr to ssl->in_ctr (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_ssl_dtls_record_replay_check",
+                            "FuncName": "mbedtls_ssl_dtls_record_replay_check"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 98,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %82, %struct.sockaddr** %81, align 8, !dbg !7431",
+                            "File": 1,
+                            "Line": 374,
+                            "Tip": "Store local_addr to %temp_var16",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %82, %struct.sockaddr** %81, align 8, !dbg !7431",
+                            "File": 1,
+                            "Line": 374,
+                            "Tip": "Store local_addr to %temp_var16",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 98,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %105, %struct.sockaddr** %104, align 8, !dbg !7451",
+                            "File": 1,
+                            "Line": 382,
+                            "Tip": "Store local_addr to %temp_var17",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %105, %struct.sockaddr** %104, align 8, !dbg !7451",
+                            "File": 1,
+                            "Line": 382,
+                            "Tip": "Store local_addr to %temp_var17",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 98,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %37, %struct.sockaddr** %36, align 8, !dbg !7379",
+                            "File": 1,
+                            "Line": 334,
+                            "Tip": "Store client_addr to %temp_var10",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %37, %struct.sockaddr** %36, align 8, !dbg !7379",
+                            "File": 1,
+                            "Line": 334,
+                            "Tip": "Store client_addr to %temp_var10",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 98,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %48, %struct.sockaddr** %47, align 8, !dbg !7390",
+                            "File": 1,
+                            "Line": 340,
+                            "Tip": "Store client_addr to %temp_var12",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %48, %struct.sockaddr** %47, align 8, !dbg !7390",
+                            "File": 1,
+                            "Line": 340,
+                            "Tip": "Store client_addr to %temp_var12",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 310,
+                            "FuncEnd": 410,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !7501",
+                            "File": 1,
+                            "Line": 410,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "mbedtls_net_accept",
+                            "FuncName": "mbedtls_net_accept"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        },
+        {
+            "Name": "Null Pointer Dereference",
+            "Description": "CWE-476, CWE-690",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 3,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 61,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.mbedtls_ssl_ciphersuite_t* null, %struct.mbedtls_ssl_ciphersuite_t** %8, align 8, !dbg !32633",
+                            "File": 2,
+                            "Line": 1424,
+                            "Tip": "Store null to ciphersuite_info",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "Inst": "%temp_var569",
+                            "File": 2,
+                            "Line": 1480,
+                            "Tip": "Load value from ciphersuite_info",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "Inst": "%temp_var571",
+                            "File": 2,
+                            "Line": 1480,
+                            "Tip": "Load value from ciphersuite_info->name (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 861,
+                            "FuncEnd": 1511,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.mbedtls_ssl_ciphersuite_t* null, %struct.mbedtls_ssl_ciphersuite_t** %8, align 8, !dbg !32633",
+                            "File": 2,
+                            "Line": 1424,
+                            "Tip": "Store null to ciphersuite_info",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 861,
+                            "FuncEnd": 1511,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var569",
+                            "File": 2,
+                            "Line": 1480,
+                            "Tip": "Load value from ciphersuite_info",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 861,
+                            "FuncEnd": 1511,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var571",
+                            "File": 2,
+                            "Line": 1480,
+                            "Tip": "Load value from ciphersuite_info->name (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 79,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.mbedtls_ssl_ciphersuite_t* null, %struct.mbedtls_ssl_ciphersuite_t** %8, align 8, !dbg !32633",
+                            "File": 2,
+                            "Line": 1424,
+                            "Tip": "Store null to ciphersuite_info",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "Inst": "%temp_var590",
+                            "File": 2,
+                            "Line": 1496,
+                            "Tip": "ciphersuite_info is used as the 1st parameter in function mbedtls_ssl_get_ciphersuite_sig_alg (ciphersuite_info can be null)",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 948,
+                            "Tip": "Load value from info->key_exchange (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "mbedtls_ssl_get_ciphersuite_sig_alg",
+                            "FuncName": "mbedtls_ssl_get_ciphersuite_sig_alg"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 861,
+                            "FuncEnd": 1511,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.mbedtls_ssl_ciphersuite_t* null, %struct.mbedtls_ssl_ciphersuite_t** %8, align 8, !dbg !32633",
+                            "File": 2,
+                            "Line": 1424,
+                            "Tip": "Store null to ciphersuite_info",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 861,
+                            "FuncEnd": 1511,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var590",
+                            "File": 2,
+                            "Line": 1496,
+                            "Tip": "ciphersuite_info is used as the 1st parameter in function mbedtls_ssl_get_ciphersuite_sig_alg (ciphersuite_info can be null)",
+                            "FuncKey": "ssl_parse_client_hello",
+                            "FuncName": "ssl_parse_client_hello"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 946,
+                            "FuncEnd": 958,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var3",
+                            "File": 3,
+                            "Line": 948,
+                            "Tip": "Load value from info->key_exchange (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "mbedtls_ssl_get_ciphersuite_sig_alg",
+                            "FuncName": "mbedtls_ssl_get_ciphersuite_sig_alg"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 66,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "%temp_var12",
+                            "File": 4,
+                            "Line": 272,
+                            "Tip": "null is used as the 2nd parameter in function mbedtls_ssl_session_save",
+                            "FuncKey": "mbedtls_ssl_cache_set",
+                            "FuncName": "mbedtls_ssl_cache_set"
+                        },
+                        {
+                            "Inst": "%temp_var5",
+                            "File": 5,
+                            "Line": 4066,
+                            "Tip": "buf is used as the 3rd parameter in function ssl_session_save (buf can be null)",
+                            "FuncKey": "mbedtls_ssl_session_save",
+                            "FuncName": "mbedtls_ssl_session_save"
+                        },
+                        {
+                            "Inst": "%.04 = phi i8* [ %16, %15 ], [ %2, %12 ], !dbg !22689",
+                            "File": 5,
+                            "Line": 0,
+                            "Tip": "Variable p comes from p",
+                            "FuncKey": "ssl_session_save",
+                            "FuncName": "ssl_session_save"
+                        },
+                        {
+                            "Inst": "br i1 %14, label %15, label %17, !dbg !22711",
+                            "File": 5,
+                            "Line": 4007,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "ssl_session_save",
+                            "FuncName": "ssl_session_save"
+                        },
+                        {
+                            "Inst": "%temp_var50",
+                            "File": 5,
+                            "Line": 4038,
+                            "Tip": "p is used as the 2nd parameter in function ssl_tls13_session_save (p can be null)",
+                            "FuncKey": "ssl_session_save",
+                            "FuncName": "ssl_session_save"
+                        },
+                        {
+                            "Inst": "call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %60, i8* align 4 %64, i64 4, i1 false), !dbg !23022",
+                            "File": 6,
+                            "Line": 219,
+                            "Tip": "p is used as the 1st parameter in function memcpy (p can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssl_tls13_session_save",
+                            "FuncName": "ssl_tls13_session_save"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 252,
+                            "FuncEnd": 317,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var12",
+                            "File": 4,
+                            "Line": 272,
+                            "Tip": "null is used as the 2nd parameter in function mbedtls_ssl_session_save",
+                            "FuncKey": "mbedtls_ssl_cache_set",
+                            "FuncName": "mbedtls_ssl_cache_set"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 4061,
+                            "FuncEnd": 4066,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var5",
+                            "File": 5,
+                            "Line": 4066,
+                            "Tip": "buf is used as the 3rd parameter in function ssl_session_save (buf can be null)",
+                            "FuncKey": "mbedtls_ssl_session_save",
+                            "FuncName": "mbedtls_ssl_session_save"
+                        },
+                        {
+                            "ID": 3,
+                            "Parents": [
+                                2
+                            ],
+                            "FuncStart": 3990,
+                            "FuncEnd": 4020,
+                            "ToGuess": "Func",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%.04 = phi i8* [ %16, %15 ], [ %2, %12 ], !dbg !22689",
+                            "File": 5,
+                            "Line": 0,
+                            "Tip": "Variable p comes from p",
+                            "FuncKey": "ssl_session_save",
+                            "FuncName": "ssl_session_save"
+                        },
+                        {
+                            "ID": 4,
+                            "Parents": [
+                                3
+                            ],
+                            "FuncStart": 3994,
+                            "FuncEnd": 4056,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "br i1 %14, label %15, label %17, !dbg !22711",
+                            "File": 5,
+                            "Line": 4007,
+                            "Tip": "Possible path: Select the false branch at this point",
+                            "FuncKey": "ssl_session_save",
+                            "FuncName": "ssl_session_save"
+                        },
+                        {
+                            "ID": 5,
+                            "Parents": [
+                                4
+                            ],
+                            "FuncStart": 3994,
+                            "FuncEnd": 4056,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "%temp_var50",
+                            "File": 5,
+                            "Line": 4038,
+                            "Tip": "p is used as the 2nd parameter in function ssl_tls13_session_save (p can be null)",
+                            "FuncKey": "ssl_session_save",
+                            "FuncName": "ssl_session_save"
+                        },
+                        {
+                            "ID": 6,
+                            "Parents": [
+                                5
+                            ],
+                            "FuncStart": 3514,
+                            "FuncEnd": 3514,
+                            "ToGuess": "Func",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "call void @llvm.memcpy.p0i8.p0i8.i64(i8* align 1 %60, i8* align 4 %64, i64 4, i1 false), !dbg !23022",
+                            "File": 6,
+                            "Line": 219,
+                            "Tip": "p is used as the 1st parameter in function memcpy (p can be null) (Null Pointer Dereference, CWE-476, CWE-690)",
+                            "FuncKey": "ssl_tls13_session_save",
+                            "FuncName": "ssl_tls13_session_save"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        }
+    ]
+}

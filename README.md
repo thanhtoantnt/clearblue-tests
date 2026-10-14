@@ -21,11 +21,11 @@ Companion docs (in this repo's `docs/`, also mirrored from the FermatAnalyzer tr
 
 For each project:
 
-1. **Store** the baseline `old.bc` once: `fermat-check -enable-build-seg-only -serialize-seg -store-models-dir=P old.bc`
-   (`-serialize-seg` = full store of every SEG as JSON under `-store-models-dir`; both flags are `cl::Hidden` — see `-help-hidden`)
-2. **Incremental** on a changed `new.bc`: `fermat-check -enable-build-seg-only -enable-incremental-persist -store-models-dir=P new.bc`
-3. **Scratch** on the same `new.bc` (no persist): `fermat-check -enable-build-seg-only new.bc`
-4. **Pure load** (same bitcode only): `fermat-check -enable-build-seg-only -load-seg -store-models-dir=P old.bc`
+1. **Store** the baseline `old.bc` once: `fermat-check -store-seg -store-models-dir=P old.bc`
+   (`-store-seg` = full store of every SEG as JSON under `-store-models-dir`; both flags are `cl::Hidden` — see `-help-hidden`)
+2. **Incremental** on a changed `new.bc`: `fermat-check -enable-incremental-persist -store-models-dir=P new.bc`
+3. **Scratch** on the same `new.bc` (no persist): `fermat-check new.bc`
+4. **Pure load** (same bitcode only): `fermat-check -load-seg -store-models-dir=P old.bc`
 
 Incremental should be faster than scratch when few functions changed. The
 difference is the feature's payoff.
@@ -51,6 +51,10 @@ bitcode per PR, each built by applying that PR's source onto the baseline and
 recompiling with the identical gllvm flags. `run_bench.sh` stores `old.bc`
 once, then benches **every** `pr-*.bc` against that single store (incremental)
 and from scratch.
+
+`bc/rnp/` is the C++ case ([rnpgp/rnp](https://github.com/rnpgp/rnp) v0.18.1).
+`rnp_cfg::vals_` is a `std::unordered_map<std::string, rnp_cfg_val *>` filled
+by `vals_[key] = new ...` and freed in `clear()` / `unset()`.
 
 ## Prerequisites
 

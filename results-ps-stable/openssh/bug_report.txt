@@ -1,0 +1,156 @@
+{
+    "AnalyzerVer": "1.0-20260904-24de6326",
+    "Time": "Fri Sep  4 01:49:19 2026\n",
+    "ModuleName": "/home/toan/github/clearblue-tests/bc/openssh/old.bc",
+    "TotalBugs": 2,
+    "TotalFunc": "2179",
+    "ExternalFuncRate": "15.3%",
+    "TotalInst": "136299",
+    "AvgInstPerFunc": "73.875",
+    "MaxInstPerFunc": "3728",
+    "FuncWithMostInst": "process_server_config_line_depth",
+    "AvgCyclomaticComplexity": "4.587",
+    "MaxCyclomaticComplexity": "356",
+    "FuncWithMaxCyclomaticComplexity": "process_server_config_line_depth",
+    "SrcFiles": [
+        "/home/toan/github/clearblue-tests/src/openssh/srclimit.c",
+        "/home/toan/github/clearblue-tests/src/openssh/misc.c"
+    ],
+    "BugTypes": [
+        {
+            "Name": "Invalid Use of Stack Address",
+            "Description": "CWE-562",
+            "Importance": "high",
+            "Classification": "security",
+            "TotalReports": 2,
+            "Reports": [
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %6, %struct.sockaddr** %7, align 8, !dbg !18225",
+                            "File": 0,
+                            "Line": 91,
+                            "Tip": "Store sa to %temp_var5",
+                            "FuncKey": "srclimit_peer_addr",
+                            "FuncName": "srclimit_peer_addr"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !18238",
+                            "File": 0,
+                            "Line": 96,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "srclimit_peer_addr",
+                            "FuncName": "srclimit_peer_addr"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 87,
+                            "FuncEnd": 96,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %6, %struct.sockaddr** %7, align 8, !dbg !18225",
+                            "File": 0,
+                            "Line": 91,
+                            "Tip": "Store sa to %temp_var5",
+                            "FuncKey": "srclimit_peer_addr",
+                            "FuncName": "srclimit_peer_addr"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 87,
+                            "FuncEnd": 96,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !18238",
+                            "File": 0,
+                            "Line": 96,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "srclimit_peer_addr",
+                            "FuncName": "srclimit_peer_addr"
+                        }
+                    ],
+                    "DiagAssignment": []
+                },
+                {
+                    "Dominated": false,
+                    "Score": 100,
+                    "Valid": true,
+                    "ReportChecker": "PSA AllInOne Checker",
+                    "DiagSteps": [
+                        {
+                            "Inst": "store %struct.sockaddr* %8, %struct.sockaddr** %7, align 8, !dbg !41577",
+                            "File": 1,
+                            "Line": 304,
+                            "Tip": "Store to to %temp_var4",
+                            "FuncKey": "get_sock_af",
+                            "FuncName": "get_sock_af"
+                        },
+                        {
+                            "Inst": "ret i32 %.0, !dbg !41598",
+                            "File": 1,
+                            "Line": 312,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "get_sock_af",
+                            "FuncName": "get_sock_af"
+                        }
+                    ],
+                    "NewDiagSteps": [
+                        {
+                            "ID": 1,
+                            "Parents": [],
+                            "FuncStart": 300,
+                            "FuncEnd": 312,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "store %struct.sockaddr* %8, %struct.sockaddr** %7, align 8, !dbg !41577",
+                            "File": 1,
+                            "Line": 304,
+                            "Tip": "Store to to %temp_var4",
+                            "FuncKey": "get_sock_af",
+                            "FuncName": "get_sock_af"
+                        },
+                        {
+                            "ID": 2,
+                            "Parents": [
+                                1
+                            ],
+                            "FuncStart": 300,
+                            "FuncEnd": 312,
+                            "ToGuess": "",
+                            "HideOrNot": false,
+                            "ToReplace": [
+                                0
+                            ],
+                            "Inst": "ret i32 %.0, !dbg !41598",
+                            "File": 1,
+                            "Line": 312,
+                            "Tip": "Return to caller (Invalid Use of Stack Address, CWE-562)",
+                            "FuncKey": "get_sock_af",
+                            "FuncName": "get_sock_af"
+                        }
+                    ],
+                    "DiagAssignment": []
+                }
+            ]
+        }
+    ]
+}

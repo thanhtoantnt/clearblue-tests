@@ -112,16 +112,16 @@ baseline once, then run a sample **incremental** (reuses stored SEGs) and
 ```bash
 CBC=$HOME/github/FermatAnalyzer/build/tools/fermat-check/fermat-check
 
-# 1) store the baseline once (-serialize-seg → ./persist/libjpeg-turbo/<module>/SEG/*.json)
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
-     -serialize-seg -store-models-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/old.bc
+# 1) store the baseline once (-store-seg → ./persist/libjpeg-turbo/<module>/SEG/*.json)
+$CBC --hide-progress-bar -nworkers=16 \
+     -store-seg -store-models-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/old.bc
 
 # 2) incremental on a synthetic (loads clean SEGs, rebuilds only the dirty fn)
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only \
+$CBC --hide-progress-bar -nworkers=16 \
      -enable-incremental-persist -store-models-dir=./persist/libjpeg-turbo bc/libjpeg-turbo/pr-syn3.bc
 
 # 3) scratch on the same bitcode (no store; full rebuild)
-$CBC --hide-progress-bar -nworkers=16 -enable-build-seg-only bc/libjpeg-turbo/pr-syn3.bc
+$CBC --hide-progress-bar -nworkers=16 bc/libjpeg-turbo/pr-syn3.bc
 ```
 
 Run steps 2–3 for each `pr-syn*.bc`. Compare wall-time: incremental wins when it
