@@ -121,12 +121,13 @@ Output goes to `results/<proj>/summary.tsv` (+ `store.log`, `inc_*.log`,
 | `store_s` | wall seconds to store `old.bc` once |
 | `inc_s` / `scratch_s` | wall seconds for incremental / scratch on the sample |
 | `body_dirty` | functions whose IR body fingerprint changed |
-| `callers` | one-hop callers of body-dirty functions (also rebuilt) |
-| `total_dirty` | body + callers |
-| `inc_seg` / `scr_seg` | SEG-building phase time from the log |
-| `status` | `ok` if both runs exited 0 |
+| `workset` | functions the incremental scheduler rechecked |
+| `loaded` / `recheck` | PSA summaries loaded, and clean callees rechecked because the load failed |
+| `invented` / `missing` | incremental traces absent from scratch, and scratch cone traces absent from incremental |
+| `mutated` | caller that received the dead instruction |
+| `status` | `ok` if the cone reports match, a summary loaded, and nothing was rechecked. `report_mismatch` or `load_fail` fails the run. `no_cone_bug` means the store reported no multi-function bug. A slower incremental run is not a failure. |
 
-A good incremental run shows `inc_s < scratch_s` and a low `total_dirty`.
+`scripts/run_bench.sh` stores `old.bc` with `--ps-npd`, inserts a dead instruction into one caller from that report, and compares the two reports. Incremental checks only the dirty cone, so scratch bugs outside the work set are not required. Speed is recorded and not gated: a caller cone that holds the expensive functions can tie scratch and still be correct.
 
 ## Recorded results (one machine, `-nworkers=16`, SEG-build only)
 
