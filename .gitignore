@@ -11,3 +11,6 @@
 
 # rebuilt bitcode stays local (rebuild via scripts/build_old_bc.sh / build_pr_bc.sh)
 *.bc
+
+# fetched by scripts/build_robin_map_bc.sh; pin is in that script
+/src/robin-map/
