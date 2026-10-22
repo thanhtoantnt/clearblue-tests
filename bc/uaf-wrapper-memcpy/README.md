@@ -16,10 +16,18 @@ starts at the bitcast actual, so the field load is not re-materialized.
 
 ## Measured
 
-Pre-patch `fermat-check --ps-uaf` reports only `copy_freed` (`p` is the
-2nd argument of `memcpy`). `use_after` is absent. The branch should
-report both. Missing `copy_freed` is the memcpy-source regression.
-Missing `use_after` is the replay miss.
+`fermat-check` rebuilt from `tengiz-fix-issue168` @ `1d87598c`, compared
+with the pre-patch binary:
+
+| function | pre-patch | branch |
+|---|---|---|
+| `copy_freed` | reported | 0 |
+| `use_after` | 0 | 0 |
+
+`copy_freed` is the memcpy-source regression. `use_after` is not a clean
+replay witness: its use is also `memcpy`. A typed `struct msg *` wrapper
+followed by `m.rr[0]` is reported on the branch; the `void *` wrapper
+with the same load is not.
 
 ```bash
 ./scripts/build_uaf_wrapper_memcpy_bc.sh
