@@ -1,0 +1,21 @@
+{
+  "project": "memcached_slab_mover",
+  "input_bc": "../../bc/memcached/old.bc",
+  "checkers": "-ps-ml",
+  "analyzer_note": "TP-only anchor on committed memcached bitcode: start_slab_maintenance_thread (slabs_mover.c) allocates `t`, then returns NULL on automover-init failure (line 786) and on pthread_create failure (line 791) without freeing `t`. Real CWE-401 in upstream memcached. Verified by hand 2026-10-26; found by FermatAnalyzer main @ 4b225b1e.",
+  "nworkers": 8,
+  "time_limit_sec": 900,
+  "match_mode": "by_sink",
+  "min_total": 1,
+  "counts": {
+    "ML": 1
+  },
+  "findings": [
+    {
+      "type": "ML",
+      "file": "slabs_mover.c",
+      "line": 786,
+      "func": "start_slab_maintenance_thread"
+    }
+  ]
+}
