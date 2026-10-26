@@ -15,8 +15,18 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-NEED = ("leak_field", "leak_file")
-MUST_NOT = ("saved_field", "saved_file", "freed_field", "closed_file", "handoff_field")
+NEED_ML = ("leak_field", "leak_calloc", "leak_nested")
+NEED_FDL = ("leak_file", "leak_slot")
+MUST_NOT = (
+    "saved_field",
+    "saved_file",
+    "freed_field",
+    "closed_file",
+    "handoff_field",
+    "make_field",
+    "pass_by_value",
+    "copy_out",
+)
 
 
 def funcs(report):
@@ -67,8 +77,8 @@ def main():
     with tempfile.TemporaryDirectory(prefix="local-field-", dir=scratch) as tmp:
         ml = funcs(run(binary, bitcode, "--ps-ml", tmp))
         fdl = funcs(run(binary, bitcode, "--ps-fdl", tmp))
-    missing = [n for n in ("leak_field",) if n not in ml]
-    missing += [n for n in ("leak_file",) if n not in fdl]
+    missing = [n for n in NEED_ML if n not in ml]
+    missing += [n for n in NEED_FDL if n not in fdl]
     invented = [n for n in MUST_NOT if n in ml or n in fdl]
     if missing or invented:
         print(
@@ -81,7 +91,7 @@ def main():
             )
         )
         return 1
-    print("PASS: leak_field and leak_file reported; handoff and free stay quiet")
+    print("PASS: local-field leaks reported; return, handoff, and free stay quiet")
     return 0
 
 
