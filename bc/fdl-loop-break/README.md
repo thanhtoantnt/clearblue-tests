@@ -9,10 +9,13 @@ The break edge preserves the header's non-null cursor, so that null test
 is infeasible. The feasible continuation (non-null side) stores the
 socket into the caller's context before returning.
 
-`not_a_leak` is that shape and must stay quiet. `real_leak_on_break` is
-the same shape but the feasible continuation returns without releasing,
-so it must still be reported. `real_leak_on_normal_exit` leaks on the
-loop's normal exit and must still be reported.
+`not_a_leak` is that shape and must stay quiet. `saved_by_callback` is
+the same shape with the descriptor passed to an indirect call; that is
+a handoff and must stay quiet. `real_leak_on_break` returns without
+releasing on the feasible side. `leak_after_unrelated_call` calls an
+unrelated function there and then returns with the descriptor open;
+that call is not a release. `real_leak_on_normal_exit` leaks on the
+loop's normal exit. All three must still be reported.
 
 ```
 ./build.sh

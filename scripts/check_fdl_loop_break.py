@@ -1,16 +1,20 @@
 #!/usr/bin/env python3
 """Gate for the loop-break FDL false positive (issue #277).
 
-not_a_leak must be absent. real_leak_on_break and
-real_leak_on_normal_exit must both be reported: the infeasible
-null-cursor trace is not the only way those leaks exist.
+not_a_leak and saved_by_callback must be absent. The real leaks must
+be reported, including one whose feasible side calls an unrelated
+function before returning with the descriptor still open.
 """
 
 import json
 import sys
 
-MUST_REPORT = {"real_leak_on_break", "real_leak_on_normal_exit"}
-MUST_BE_ABSENT = {"not_a_leak"}
+MUST_REPORT = {
+    "real_leak_on_break",
+    "real_leak_on_normal_exit",
+    "leak_after_unrelated_call",
+}
+MUST_BE_ABSENT = {"not_a_leak", "saved_by_callback"}
 
 
 def funcs(report_path):
