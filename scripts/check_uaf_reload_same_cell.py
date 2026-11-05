@@ -25,6 +25,10 @@ NEED = (
     "branch_else_use",
     "branch_sibling",
     "early_return_store",
+    "store_back_same",
+    "callee_noop",
+    "callee_restore",
+    "index_same",
 )
 ABSENT = (
     "killed_store",
@@ -33,6 +37,8 @@ ABSENT = (
     "overlay_fp",
     "branch_both_kill",
     "snapshot_then_store",
+    "callee_fresh",
+    "index_other",
 )
 
 

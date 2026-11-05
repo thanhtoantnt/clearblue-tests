@@ -143,3 +143,45 @@ void snapshot_then_store(struct msg *m, char *dst) {
   free(p);
   memcpy(dst, m->rr, 4);
 }
+
+void set_rr(struct msg *m, char *p) { m->rr = p; }
+void touch(struct msg *m) { m->n++; }
+
+/* Storing the freed pointer back does not change the object. */
+void store_back_same(struct msg *m, char *dst) {
+  char *saved = m->rr;
+  free(m->rr);
+  m->rr = saved;
+  memcpy(dst, m->rr, 4);
+}
+
+/* A callee that writes a fresh pointer kills the cell. A callee that does
+ * not write it, or that writes the freed pointer back, does not. */
+void callee_fresh(struct msg *m, char *dst, char *fresh) {
+  free(m->rr);
+  set_rr(m, fresh);
+  memcpy(dst, m->rr, 4);
+}
+
+void callee_noop(struct msg *m, char *dst) {
+  free(m->rr);
+  touch(m);
+  memcpy(dst, m->rr, 4);
+}
+
+void callee_restore(struct msg *m, char *dst) {
+  char *p = m->rr;
+  free(p);
+  set_rr(m, p);
+  memcpy(dst, m->rr, 4);
+}
+
+void index_same(char **a, int i) {
+  free(a[i]);
+  (void)strlen(a[i]);
+}
+
+void index_other(char **a, int i, int j) {
+  free(a[i]);
+  (void)strlen(a[j]);
+}

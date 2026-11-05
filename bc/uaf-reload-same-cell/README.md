@@ -25,6 +25,12 @@ not on a later load of that cell.
 | `early_return_store` | store then `return`; use on the fallthrough | hit | hit |
 | `branch_both_kill` | both arms store, then the use | absent | absent |
 | `snapshot_then_store` | store between the snapshot and `free` | absent | absent |
+| `store_back_same` | `m->rr = saved` after `free(m->rr)` | miss | hit |
+| `callee_fresh` | callee stores a fresh pointer | reported | absent |
+| `callee_noop` | callee does not write the cell | hit | hit |
+| `callee_restore` | callee stores the freed pointer back | hit | hit |
+| `index_same` | `free(a[i]); strlen(a[i])` | miss | hit |
+| `index_other` | `free(a[i]); strlen(a[j])` | absent | absent |
 
 `overlay_fp` is libevent's extra slot: `evbuffer_chain_file_segment` and
 `evbuffer_multicast_parent` share one address. Same offset is not enough
