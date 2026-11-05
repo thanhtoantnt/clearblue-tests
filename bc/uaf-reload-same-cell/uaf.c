@@ -90,3 +90,56 @@ void overlay_fp(union extra *e) {
   if (e->mc.source)
     e->mc.source->source = 0;
 }
+
+/* A store on one arm must not drop the use on the arm that never stores.
+ * Both arms storing must still drop the use at the join: neither store
+ * dominates it. */
+void branch_partial(struct msg *m, char *dst, int cond) {
+  free(m->rr);
+  if (cond)
+    m->rr = NULL;
+  memcpy(dst, m->rr, 4);
+}
+
+void branch_else_use(struct msg *m, char *dst, int cond) {
+  free(m->rr);
+  if (cond)
+    m->rr = NULL;
+  else
+    memcpy(dst, m->rr, 4);
+}
+
+void branch_sibling(struct msg *m, char *dst, int cond) {
+  free(m->rr);
+  if (cond)
+    m->rr = NULL;
+  else {
+    memcpy(dst, m->rr, 4);
+    return;
+  }
+}
+
+void early_return_store(struct msg *m, char *dst, int cond) {
+  free(m->rr);
+  if (cond) {
+    m->rr = NULL;
+    return;
+  }
+  memcpy(dst, m->rr, 4);
+}
+
+void branch_both_kill(struct msg *m, char *dst, int cond) {
+  free(m->rr);
+  if (cond)
+    m->rr = NULL;
+  else
+    m->rr = NULL;
+  memcpy(dst, m->rr, 4);
+}
+
+void snapshot_then_store(struct msg *m, char *dst) {
+  char *p = m->rr;
+  m->rr = NULL;
+  free(p);
+  memcpy(dst, m->rr, 4);
+}

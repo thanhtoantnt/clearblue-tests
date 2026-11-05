@@ -21,12 +21,18 @@ NEED = (
     "double_reload",
     "use_before_null",
     "wrap_reload_ptr",
+    "branch_partial",
+    "branch_else_use",
+    "branch_sibling",
+    "early_return_store",
 )
 ABSENT = (
     "killed_store",
     "killed_memset",
     "other_index",
     "overlay_fp",
+    "branch_both_kill",
+    "snapshot_then_store",
 )
 
 
