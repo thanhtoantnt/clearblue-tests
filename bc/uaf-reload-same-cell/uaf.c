@@ -229,3 +229,14 @@ void probe_var_scale(void *base, int64_t i, char *dst) {
   free(*(char **)&a[i]);
   memcpy(dst, *(char **)&b[i], 4);
 }
+
+/* clang -O0 splits a[i].rr into a variable index GEP and a constant field GEP. */
+void field_index(struct msg *a, int i, char *dst) {
+  free(a[i].rr);
+  memcpy(dst, a[i].rr, 4);
+}
+
+void field_other(struct msg *a, int i, int j, char *dst) {
+  free(a[i].rr);
+  memcpy(dst, a[j].rr, 4);
+}

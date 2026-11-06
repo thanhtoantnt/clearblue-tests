@@ -32,6 +32,7 @@ NEED = (
     "use_reload_store",
     "use_store_select",
     "index_ptr_stride",
+    "field_index",
 )
 ABSENT = (
     "killed_store",
@@ -44,6 +45,7 @@ ABSENT = (
     "index_other",
     "probe_c_const_scale",
     "probe_var_scale",
+    "field_other",
 )
 
 

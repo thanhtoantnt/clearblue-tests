@@ -36,6 +36,8 @@ not on a later load of that cell.
 | `index_ptr_stride` | `char **` and `int **` at the same index | hit | hit |
 | `probe_c_const_scale` | `i64*` index 1 vs `i8*` index 1 | absent | absent |
 | `probe_var_scale` | same, with a variable index | absent | absent |
+| `field_index` | `free(a[i].rr); use(a[i].rr)`, split GEP | miss | hit |
+| `field_other` | `free(a[i].rr); use(a[j].rr)` | absent | absent |
 
 `overlay_fp` is libevent's extra slot: `evbuffer_chain_file_segment` and
 `evbuffer_multicast_parent` share one address. Same offset is not enough
