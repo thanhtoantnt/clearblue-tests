@@ -31,6 +31,11 @@ not on a later load of that cell.
 | `callee_restore` | callee stores the freed pointer back | hit | hit |
 | `index_same` | `free(a[i]); strlen(a[i])` | miss | hit |
 | `index_other` | `free(a[i]); strlen(a[j])` | absent | absent |
+| `use_reload_store` | callee reloads the field and stores it back | hit | hit |
+| `use_store_select` | callee select of the old pointer and a fresh one | hit | hit |
+| `index_ptr_stride` | `char **` and `int **` at the same index | hit | hit |
+| `probe_c_const_scale` | `i64*` index 1 vs `i8*` index 1 | absent | absent |
+| `probe_var_scale` | same, with a variable index | absent | absent |
 
 `overlay_fp` is libevent's extra slot: `evbuffer_chain_file_segment` and
 `evbuffer_multicast_parent` share one address. Same offset is not enough

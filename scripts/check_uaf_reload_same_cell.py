@@ -29,6 +29,9 @@ NEED = (
     "callee_noop",
     "callee_restore",
     "index_same",
+    "use_reload_store",
+    "use_store_select",
+    "index_ptr_stride",
 )
 ABSENT = (
     "killed_store",
@@ -39,6 +42,8 @@ ABSENT = (
     "snapshot_then_store",
     "callee_fresh",
     "index_other",
+    "probe_c_const_scale",
+    "probe_var_scale",
 )
 
 

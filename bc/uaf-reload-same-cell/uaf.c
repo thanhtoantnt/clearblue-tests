@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -184,4 +185,47 @@ void index_same(char **a, int i) {
 void index_other(char **a, int i, int j) {
   free(a[i]);
   (void)strlen(a[j]);
+}
+
+void reload_store(struct msg *m) {
+  char *p = m->rr;
+  m->rr = p;
+}
+
+void use_reload_store(struct msg *m, char *dst) {
+  free(m->rr);
+  reload_store(m);
+  memcpy(dst, m->rr, 4);
+}
+
+void store_select(struct msg *m, char *fresh, int keep) {
+  char *old = m->rr;
+  m->rr = keep ? old : fresh;
+}
+
+void use_store_select(struct msg *m, char *dst, char *fresh, int keep) {
+  free(m->rr);
+  store_select(m, fresh, keep);
+  memcpy(dst, m->rr, 4);
+}
+
+void index_ptr_stride(void *p, int i) {
+  char **a = p;
+  int **b = p;
+  free(a[i]);
+  (void)strlen((char *)b[i]);
+}
+
+void probe_c_const_scale(void *base, char *dst) {
+  int64_t *a = base;
+  char *b = base;
+  free(*(char **)&a[1]);
+  memcpy(dst, *(char **)&b[1], 4);
+}
+
+void probe_var_scale(void *base, int64_t i, char *dst) {
+  int64_t *a = base;
+  char *b = base;
+  free(*(char **)&a[i]);
+  memcpy(dst, *(char **)&b[i], 4);
 }
